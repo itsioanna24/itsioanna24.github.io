@@ -116,7 +116,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: rgba(255, 255, 255, 0.55);
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
 		line-height: 1.75;
@@ -2986,6 +2986,25 @@ input, select, textarea {
 		}
 
 /* Spotlights */
+	.name a {
+    	border-bottom: none !important;
+	}	
+	.spotlights .inner p {
+    letter-spacing: 1.5px;
+	}
+	.name h2 {
+    	font-size: 13px;
+    	text-transform: uppercase;
+    	letter-spacing: 2.2px;
+	}
+
+	#intro .name {
+    	padding-left: 4em;
+	}
+	
+	#intro .inner h1 {
+    	font-size: 50px;
+	}
 
 	.spotlights > section {
 		display: -moz-flex;
@@ -3015,6 +3034,7 @@ input, select, textarea {
 			.spotlights > section > .image img {
 				border-radius: 0;
 				display: block;
+				width: 100%;
 			}
 
 			.spotlights > section > .image:before {
@@ -3907,6 +3927,3 @@ input, select, textarea {
 			}
 
 		}
-#one .inner p {
-    letter-spacing: 2.1px;
-}
