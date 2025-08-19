@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Notes</title>
+    <link rel="stylesheet" href="/eportfolio/assets/css/main.css">
+    <link rel="stylesheet" href="/eportfolio/assets/css/landing.css" />
+    <noscript><link rel="stylesheet" href="/eportfolio/assets/css/noscript.css" /></noscript>
+	<link rel="icon" type="image/png" sizes="32x32" href="/eportfolio/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/eportfolio/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/eportfolio/images/favicon/site.webmanifest">
+	<link rel="shortcut icon" href="/eportfolio/images/favicon/favicon.ico">
+	<meta name="theme-color" content="#5e42a6">
+</head>
+<body class="is-preload">
+
+    <section id="sidebar">
+        <div class="name">
+            <h2><a href="/eportfolio/">Ioanna Tziouvaka</a></h2>
+        </div>
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="/eportfolio/index.html">Welcome</a></li>
+                    <li><a href="/eportfolio/#one">Modules</a></li>
+                    <li><a href="/eportfolio/#two">About Me</a></li>
+                    <li><a href="/eportfolio/#three">Get in touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <div id="wrapper">
+        <div id="main">
+            <section id="banner" class="wrapper style2 spotlights fade-up">
+                <div class="inner">
+                    <header class="major">
+                        <h1>Meeting Notes</h1>
+                    </header>
+                </div>
+            </section>
+
+            <!-- Example meeting card 
+            <div class="meeting-card">
+                <h3>Module: Launch into Computing</h3>
+                <div class="date">Date: 10 Jan 2025</div>
+                <p><strong>Agenda:</strong> Overview of module structure and expectations.</p>
+                <p><strong>Discussion Points:</strong></p>
+                <ul>
+                    <li>Introduction to core computing disciplines.</li>
+                    <li>Clarification of assignment deadlines.</li>
+                    <li>Feedback on previous coursework (if applicable).</li>
+                </ul>
+                <p><strong>Action Items:</strong></p>
+                <ul>
+                    <li>Complete artefacts submission by next week.</li>
+                    <li>Start reflections following Gibbs’ cycle.</li>
+                </ul>
+            </div> -->
+
+            <!-- No meetings placeholder -->
+            <div class="no-meetings">
+                No meetings held for this module.
+            </div>
+        </div>
+
+        <footer id="footer" class="wrapper style1-alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>&copy; Ioanna Tziouvaka 2025 All rights reserved.</li>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+        <!-- Scripts -->
+    <script src="/eportfolio/assets/js/jquery.min.js"></script>
+    <script src="/eportfolio/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/eportfolio/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/eportfolio/assets/js/browser.min.js"></script>
+    <script src="/eportfolio/assets/js/breakpoints.min.js"></script>
+    <script src="/eportfolio/assets/js/util.js"></script>
+    <script src="/eportfolio/assets/js/main.js"></script>
+    <script>
+        // Hide "No meetings" message if at least one meeting exists
+        document.addEventListener("DOMContentLoaded", () => {
+            const meetings = document.querySelectorAll(".meeting-card");
+            const noMeetings = document.querySelector(".no-meetings");
+            if (meetings.length > 0 && noMeetings) {
+                noMeetings.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
