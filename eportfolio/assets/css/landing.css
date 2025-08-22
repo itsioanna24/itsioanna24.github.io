@@ -560,3 +560,6 @@ body, input, select, textarea {
 .artefact-image {
     display: none;
 }
+#sidebar + #wrapper {
+    overflow-x: hidden;
+}
