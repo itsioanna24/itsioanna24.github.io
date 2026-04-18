@@ -41,12 +41,149 @@
             </div>
         </section>
 
+
         <section id="main" class="wrapper inner fade-up">
-            <div class="inner">
+            <div class="inner units">
                 <div class="section-inner">
-                    
-                </div>
-            </div>
+                    <div class="back-to-artefacts">
+                        <a href="/eportfolio/modules/machine_learning/artefacts.html"> &larr; Back to artefacts</a>
+                    </div>
+
+                    <div class="artefact">
+                        <div class="artefact-header">
+                            <h2>Collaborative Discussion 2 - Initial Post</h2>
+                            <p class="artefact-type forum">Discussion Forum</p>
+                        </div>
+
+                        <div class="artefact-description">
+                            <div class="images-container">
+                                <img src="/eportfolio/images/machine_learning_images/initial 2 1.png" alt="Screenshot of Collaborative Discussion 1 - Initial Post" class="artefact-screenshot">
+                                <img src="/eportfolio/images/machine_learning_images/initial 2 2.png" alt="Screenshot of Collaborative Discussion 1 - Initial Post" class="artefact-screenshot">
+                            </div>
+                            <div class="artefact-container">
+                                <h3>Reflection on this Artefact</h3>
+                                <p>Writing this initial post developed my ability to hold competing perspectives in tension rather than reducing one to the other. Hutson (2021) presents large language models as both transformative in efficiency (Davenport, 2018) and fundamentally limited by their reliance on statistical pattern recognition. Engaging with this required me to recognise that the same mechanism enabling fluent text generation can also produce harmful outputs in sensitive contexts.
+                                    </br>
+                                    Drawing on Bender et al. (2021) and Carlini et al. (2021) deepened my understanding of the ethical responsibilities of ML practitioners. The “stochastic parrots” concept highlighted that fluency does not imply understanding, reinforcing the need for transparency, bias mitigation and human oversight.
+                                    </br>
+                                    Floridi and Chiriatti (2020) further shaped my thinking by framing AI writing tools as socio-technical systems, where issues of authorship, ownership and accountability depend not only on technical capability but on how these systems are governed.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artefact">
+                        <div class="artefact-header">
+                            <h2>Gradient Cost Function</h2>
+                        </div>
+
+                        <div class="artefact-description">
+                            <p>In this activity, I experimentally modified the learning rate and number of iterations to observe their effect on cost minimisation using gradient descent.</p>
+                            <p>To analyse the behaviour of gradient descent, different combinations of learning rates and iteration values were selected to represent distinct optimisation scenarios, including slow convergence, optimal convergence and divergence. This systemic variation allows for a comparative evaluation of how hyperparameters influence cost reduction and model stability. </p>
+                            <p>The selected values were chosen to highlight the trade-off between convergence speed and stability, which is a key challenge in optimisation (Ruder, 2016).</p>
+                            
+                            <hr>
+
+                            <div class="case-1 background-light">
+                                <h3>Case 1: Low Learning Rate (0.01), 50 Iterations</h3>
+                                <p>The cost decreases steadily from 89.0 to 0.674 over 50 iterations. The reduction is smooth and monotonic, with no oscillations observed in parameter updates. </p>
+                                <p>This indicates stable but slow convergence. The model parameters (m and b) gradually approach the optimal values without overshooting, demonstrating that a small learning rate ensures controlled updates. </p>
+                                <p>However, even after 50 iterations, the cost remains relatively high compared to other cases. </p>
+                                <p>This suggests that: </p>
+                                <ul>
+                                    <li>The algorithm requires significantly more iterations to reach the minimum</li>
+                                    <li>Computational efficiency is low.</li>
+                                </ul>
+                                <p>Stability is achieved at the expense of speed, making this configuration impractical for larger datasets. </p>
+                            </div>
+
+                            <hr>
+                            
+                            <div class="case-2 background-light">
+                                <h3>Case 2: Moderate Learning Rate (0.08), 100 Iterations</h3>
+                                <p>The cost decreases from 89.0 to 0.0041, showing significantly faster convergence compared to Case 1. </p>
+                                <p>However, unlike Case 1, the early iterations reveal oscillatory behaviour:</p>
+                                <ul>
+                                    <li>Parameters fluctuate significantly (e.g., m alternates between ~4.96 and ~0.49).</li>
+                                    <li>This indicates initial overshooting of the minimum. </li>
+                                </ul>
+                                <p>Despite this instability, the algorithm stabilises after approximately 20-30 iterations, transitioning into a smooth convergence phase. </p>
+                                <p>This case demonstrates that:</p>
+                                <ul>
+                                    <li>A moderately high learning rate accelerates convergence.</li>
+                                    <li>But introduces initial instability before stabilisation.</li>
+                                </ul>
+                                <p>This reflects real-world optimisation, where convergence is often non-linear and occurs in phases, rather than a smooth descent (Goodfellow, Bengio and Courville, 2016). </p>
+                            </div>
+
+                            <hr>
+
+                            <div class="case-3 background-light">
+                                <h3>Case 3: High Learning Rate (0.5), 100 Iterations</h3>
+                                <p>The cost increases dramatically from 89.0 to ~10206, diverging exponentially. </p>
+                                <p>Additionally: </p>
+                                <ul>
+                                    <li>Parameter values alternate between extremely large positive and negative values. </li>
+                                    <li>The magnitude grows uncontrollably with each iteration.</li>
+                                </ul>
+                                <p>This indicates complete failure of convergence, caused by excessive step sizes that continuously overshoot the minimum (Ruder, 2016).  </p>
+                                <p>A high learning rate does not just slow convergence, it destroys the optimisation process entirely, making the model unusable.</p>
+                            </div>
+
+                            <hr>
+
+                            <div class="case-4 background-light">
+                                <h3>Case 4: High Learning Rate (0.3), Low Iterations 20</h3>
+                                <p>Similar to Case 3, the cost increases rapidly from 89.0 to ~1031, showing clear divergence.  </p>
+                                <p>Even with fewer iterations, the algorithm: </p>
+                                <ul>
+                                    <li>Exhibits large oscillations.</li>
+                                    <li>Moves further away from the minimum at each step.</li>
+                                </ul>
+                                <p>This confirms that:</p>
+                                <ul>
+                                    <li>Reducing iterations does not compensate for a poor learning rate. </li>
+                                    <li>Instability occurs immediately when the learning rate is too high. </li>
+                                </ul>
+                                <p>This case highlights that learning rate is the dominant factor in determining convergence behaviour. </p>
+                            </div>
+
+                            <hr>
+
+                            <div class="case-5">
+                                <p>Across all cases, three key behaviours emerge:</p>
+                                <p>1.	Slow but stable convergence (Case 1)</p>
+                                <p>2.	Fast but initially unstable convergence (Case 2)</p>
+                                <p>3.	Complete divergence (Case 3 & 4)</p>
+                                <p>This demonstrates that gradient descent is highly sensitive to hyperparameter selection, particularly the learning rate, which directly affects convergence behaviour (Ruder, 2016). Cost does not always descrease smoothly, and in some cases, it does not decrease at all. </p>
+                                <p>Even in this simple linear dataset:</p>
+                                <ul>
+                                    <li>Small changes in learning rate drastically alter behaviour</li>
+                                    <li>Convergence is not guaranteed</li>
+                                    <li>Stability and speed must be carefully balanced</li>
+                                </ul>
+                                <p>In more complex datasets, these challenges are amplified, making manual tuning difficult and motivating the use of adaptive optimisation methods (Goodfellow, Bengio and Courville, 2016). </p>
+                            </div>
+
+                            <hr>
+
+                            <h3>Conclusion</h3>
+                            <p>This activity confirms that:</p>
+                            <ul>
+                                <li>Learning rate controls stability vs divergence </li>
+                                <li>Iterations control degree of convergence</li>
+                                <li>Their interaction determines optimisation success</li>
+                            </ul>
+                            <p>Ultimately, effective machine learning requires empirical testing and tuning, as theoretical  expectations alone are insufficient.</p>
+                            
+                            <hr>
+
+                            <h3>References</h3>
+                            <p>Goodfellow, I., Bengio, Y. and Courville, A. (2016). Deep Learning. MIT Press.</p>
+                            <p>Mayo, M. (2025). Neural Network Foundations, Explained: Updating Weights with Gradient Descent & Backpropagation - KDnuggets. [online] KDnuggets. Available at: https://www.kdnuggets.com/2017/10/neural-network-foundations-explained-gradient-descent.html [Accessed 7 Mar. 2026].</p>
+                            <p>Ruder, S. (2016). An overview of gradient descent optimization algorithms. [online] arXiv.org. Available at: https://arxiv.org/abs/1609.04747 [Accessed 7 Mar. 2026].</p>
+                        </div>
+                    </div>
         </section>
 
                 <!-- Footer -->

@@ -41,10 +41,98 @@
             </div>
         </section>
 
+
         <section id="main" class="wrapper inner fade-up">
-            <div class="inner">
+            <div class="inner units">
                 <div class="section-inner">
-                    
+                    <div class="back-to-artefacts">
+                        <a href="/eportfolio/modules/machine_learning/artefacts.html"> &larr; Back to artefacts</a>
+                    </div>
+
+                    <div class="artefact perceptron">
+                        <div class="artefact-header">
+                            <h2>Perceptron Activities</h2>
+                        </div>
+
+                        <div class="artefact-description">
+                            <div class="case-1 background-light">
+                                <h3>1.	simple_perceptron.ipynb</h3>
+                                <p><b>Description:</b></p>
+                                <p>This notebook implements a simple perceptron using NumPy arrays, where the weighted sum of inputs is computed using the dot product and passed through a step activation function to produce a binary output. </p>
+                                
+                                <hr>
+
+                                <p><b>Output Interpretation:</b></p>
+                                <p>The initial computation using weights [0.7, 0.1] produced a weighted sum of 34.0, which exceeds the threshold of 1, resulting in an output of 1. This indicates that the input features positively contribute to the activation of the neuron. </p>
+                                <p>When the weight sign was altered to [-0.7, 0.1], the weighted sum became -29.0, leading to an output of 0. This demonstrates how changes in weight direction significantly impact the classification outcome. </p>
+                                
+                                <hr>
+                                
+                                <p><b>Critical Analysis and Reflection:</b></p>
+                                <p>This notebook highlighted that the perceptron’s output is highly dependent on the magnitude and direction of the weights, as small changes can significantly alter the classification outcome. The model operates by forming a linear decision boundary, making it effective only for linearly separable datasets (Goodfellow, Bengio and Courville, 2016). </p>
+                                <p>However, this also reveals key limitations, as real-world data is often non-linear and cannot be accurately modelled by a single-layer perceptron. Additionally, the reliance on manually defined weights in this implementation emphasises the need for learning algorithms to optimise model performance (). Overall, the exercise demonstrates both the simplicity of the perceptron and its limited applicability to more complex machine learning problems. </p>
+                            
+                                <hr>
+                                <p><b>References</b></p>
+                                <p>Bishop, C.M. and Bishop, H. (2023). Deep Learning. Springer Nature.</p>
+                                <p>Goodfellow, I., Bengio, Y. and Courville, A. (2016). Deep Learning. MIT Press.</p>
+                            
+                            </div>
+
+                            <div class="case-2 background-light">
+                                <h3>2.	perceptron_AND_operator.ipynb</h3>
+
+                                <p><b>Description:</b></p>
+                                <p>This notebook implements a perceptron model trained on the AND logic gate dataset. Unlike the previous example, the model includes a learning process in which weights are iteratively updated using a learning rate based on prediction errors. The goal is to minimise the total error and achieve correct classification for all input combinations. </p>
+                                <hr>
+
+                                <p><b>Output Interpretation:</b></p>
+                                <p>The training process shows that the weights are gradually increased from their initial values of 0.0 to 0.5 through multiple iterations, as errors are encountered and used to update the model. The total error decreases over time and eventually reaches zero, indicating that the perceptron has successfully learned the dataset. </p>
+                                <p>The final weights [0.5, 0.5] correctly classify all input combinations of the AND operator, producing an output of 1 only when both inputs are 1. This demonstrates that the model has converged to a solution that linearly separates the data, confirming the effectiveness of the perceptron on simple, structured datasets. </p>
+                                
+                                <hr>
+                                
+                                <p><b>Critical Analysis and Reflection:</b></p>
+                                <p>This activity demonstrated how a perceptron can learn from data through an iterative training process, adjusting its weights based on prediction errors. Starting from zero weights, the model progressively updated its parameters using a learning rate until the total error converged to zero, successfully, classifying the AND dataset. This confirms that perceptrons can effectively learn linearly separable patterns through supervised learning. </p>
+                                <p>However, this behaviour also highlights key limitations. The convergence to zero error is only possible because the AND dataset is linearly separable; for more complex or non-linear datasets, the perceptron would fail to converge. Additionally, the training process depends on factors such as the learning rate and initial weights, which can influence convergence speed and stability. Overall, while the perceptron demonstrates effective learning in simple cases, its applicability remains limited when dealing with real-world data that exhibits non-linear relationships (Goodfellow, Bengio and Courville, 2016; Bishop and Bishop, 2023).</p>
+                                
+                                <hr>
+
+                                <p><b>References</b></p>
+                                <p>Bishop, C.M. and Bishop, H. (2023). Deep Learning. Springer Nature.</p>
+                                <p>Goodfellow, I., Bengio, Y. and Courville, A. (2016). Deep Learning. MIT Press.</p>
+
+                            </div>
+
+                            <div class="case-3 background-light">
+                                <h3>3.	Multi-layer Perceptron.ipynb</h3>
+
+                                <p><b>Description:</b></p>
+                                <p>This notebook implements a multi-layer perceptron (MLP) with one hidden layer and sigmoid activation functions to solve a non-linear classification problem (XOR). Unlike the previous perceptron models, this network uses forward propagation and backpropagation to iteratively adjust weights based on error. The model is trained over multiple epochs using gradient-based updates to minimise prediction error. </p>
+                                
+                                <hr>
+
+                                <p><b>Output Interpretation:</b></p>
+                                <p>The results show that the network initially produces outputs close to 0.5 for all inputs, indicating uncertainty in classification. As training progresses, the error decreases significantly across epochs, as illustrated in the plot, demonstrating that the model is learning from the data. </p>
+                                <p>The reduction in error over time confirms that backpropagation and weight updates are effectively improving the model’s performance. The sigmoid activation function enables the network to produce continuous outputs between 0 and 1, allowing it to model non-linear relationships. </p>
+                                <p>Although the final rounded predictions appear inconsistent, the output values themselves move closer to the expected targets, indicating that the network has captured the underlying non-linear pattern of the XOR dataset. This highlights the capability of multi-layer networks to handle problems that single-layer perceptrons cannot solve. </p>
+                                
+                                <hr>
+                                
+                                <p><b>Critical Analysis and Reflection:</b></p>
+                                <p>This activity demonstrated how an MLP overcomes the limitations of a single-layer perceptron by introducing hidden layers and non-linear activation functions. The use of the sigmoid function enabled the network to model non-linear relationships, allowing it to address the XOR problem, which is not linearly separable. The observed reduction in error across epochs confirms that the model is learning through backpropagation and iterative weight updates. </p>
+                                <p>However, the results also highlight important challenges associated with training neural networks. Despite the decreasing error, the final rounded predictions did not fully match the expected outputs, suggesting that convergence was not entirely achieved. This may be due to factors such as the choice of learning rate, weight initialisation, or insufficient optimisation. Additionally, the sigmoid activation function can lead to issues such as vanishing gradients, which can slow down learning in deeper networks. </p>
+                                <p>Overall, this activity illustrates that while multi-layer networks significantly expand the applicability of machine learning models to complex and non-linear datasets, they also introduce new challenges related to training stability, parameter tuning, and computational cost. This emphasizes the importance of selecting appropriate architectures and hyperparameters when working with real-world data (Goodfellow, Bengio and Courville, 2016; Bishop and Bishop, 2023).</p>
+                                
+                                <hr>
+                                <p><b>References</b></p>
+                                <p>Bishop, C.M. and Bishop, H. (2023). Deep Learning. Springer Nature.</p>
+                                <p>Goodfellow, I., Bengio, Y. and Courville, A. (2016). Deep Learning. MIT Press.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

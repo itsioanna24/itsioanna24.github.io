@@ -3545,6 +3545,74 @@ input, select, textarea {
     	font-size: 17px;
 		width: 50px;
 	}
+	img.artefact-screenshot {
+    	max-width: 100%;
+    	height: auto;
+    	display: block;
+	}
+	.artefact-header h2 {
+    	font-size: 27px;
+		margin: 0;
+	}
+	.artefact {
+    	border: 1px solid #fff;
+    	border-radius: 10px;
+    	padding: 50px 25px;
+		margin-bottom: 20px;
+	}
+	.back-to-artefacts {
+    	margin-bottom: 5em;
+	}
+	.inner.units {
+    	width: 85em;
+	}
+
+	.artefact-container {
+    	margin-top: 5em;
+	}
+	h2.separation-title {
+    	margin-bottom: 1em;
+    	border-top: 1px solid grey;
+    	border-bottom: 1px solid grey;
+    	padding: 20px 0;
+    	font-size: 30px;
+	}
+	.artefact-header {
+    	display: flex;
+    	align-items: center;
+    	justify-content: space-between;
+    	margin-bottom: 10px;
+	}
+	.artefact-header p {
+		margin: 0 !important
+	}
+	.background-light {
+    	background: #fff;
+    	border-radius: 20px;
+    	padding: 50px;
+	}
+	.background-light h3, .background-light b {
+    font-weight: bold;
+    color: #5e42a6;
+	}
+	.background-light p, .background-light li {
+		color:#2b2b2b;
+	}
+	.background-light hr {
+		border-bottom: 1px solid #312450;
+	}
+	.perceptron .background-light {
+    	margin-bottom: 20px;
+	}
+
+
+
+
+
+
+
+
+
 
 
 /* Sidebar */
