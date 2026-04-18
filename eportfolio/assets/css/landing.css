@@ -563,3 +563,6 @@ body, input, select, textarea {
 #sidebar + #wrapper {
     overflow-x: hidden;
 }
+.tutor-feedback ul li {
+    list-style-type: circle;
+}
