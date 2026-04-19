@@ -51,22 +51,345 @@
 
                     <div class="artefact">
                         <div class="artefact-header">
-                            <h2>Collaborative Discussion 1 - Initial Post</h2>
+                            <h2>Clustering Activity</h2>
                         </div>
-
                         <div class="artefact-description">
-                            <div class="images-container">
-                                <img src="/eportfolio/images/machine_learning_images/initial 1 1.png" alt="Screenshot of Collaborative Discussion 1 - Initial Post" class="artefact-screenshot">
-                                <img src="/eportfolio/images/machine_learning_images/initial 1 2.png" alt="Screenshot of Collaborative Discussion 1 - Initial Post" class="artefact-screenshot">
-                            </div>
                             <div class="artefact-container">
-                                <h3>Reflection on this Artefact</h3>
-                                <p>This initial post framed machine learning within the evolution from Industry 4.0 to Industry 5.0, using the 2022 Toyota cyberattack to argue that the incident exposed the sociotechnical assumptions of optimisation-driven ML deployment rather than a failure of the technology itself. Preparing this post shifted how I thought about model evaluation — moving beyond accuracy toward resilience, governance, and human oversight.</p>
+                                <p><b>Reflection on K-means Clustering Visualisations</b></p>
+                                <p>This activity enhanced my understanding of the iterative logic of the K-means clustering algorithm through two visualisations. The first animation (Shabalin, n.d.), clearly demonstrates the core steps of K-means: assigning data points to the nearest centroid and updating centroid positions based on cluster means until convergence. This reflects the algorithm’s objective of minimising within-cluster variance and grouping similar data points together (Ikotun et al., 2022).</p>
+                                <p>The second visualisation (Harris, 2014), using the “I’ll choose” and “Uniform Points” options, highlighted the sensitivity of K-means to initial centroid selection. Different starting points produced different clustering outcomes, demonstrating that the algorithm may converge to local optima rather than a global solution (Pant, Leigh and Fajardo Rueda, 2025).</p>
+                                <p>Comparing both animations emphasised that K-means performance depends heavily on dataset structure and parameter choices. This aligns with research showing that factors such as data distribution, feature relevance, and initialisation significantly affect clustering quality (Wannaporn Junthopas and Chantha Wongoutong, 2025). From a professional perspective, this highlights the importance of critically evaluating datasets and algorithm assumptions to ensure reliable and responsible machine learning applications. </p>
+                                <br><br>
+                                <p><b>References</b></p>
+                                <p>Harris, N. (2014). Visualizing K-Means Clustering. [online] Naftaliharris.com. Available at: https://www.naftaliharris.com/blog/visualizing-k-means-clustering/ [Accessed 7 Mar. 2026].</p>
+                                <p>Ikotun, A.M., Ezugwu, A.E., Abualigah, L., Abuhaija, B. and Heming, J. (2022). K-means Clustering Algorithms: a Comprehensive Review, Variants Analysis, and Advances in the Era of Big Data. Information Sciences, [online] 622(622). doi:https://doi.org/10.1016/j.ins.2022.11.139.</p>
+                                <p>Pant, Y.R., Leigh, L. and Fajardo Rueda, J. (2025). Improving K-Means Clustering: A Comparative Study of Parallelized Version of Modified K-Means Algorithm for Clustering of Satellite Images. Algorithms, [online] 18(8), p.532. doi:https://doi.org/10.3390/a18080532.</p>
+                                <p>Shabalin, A.A. (n.d.). K-means clustering, starting with 4 left-most points. [online] shabal.in. Available at: https://shabal.in/visuals/kmeans/2.html [Accessed 7 Mar. 2026].</p>
+                                <p>Wannaporn Junthopas and Chantha Wongoutong (2025). Pre-Determining the Optimal Number of Clusters for k-Means Clustering Using the Parameters Package in R and Distance Metrics. Applied Sciences, [online] 15(21), pp.11372–11372. doi:https://doi.org/10.3390/app152111372.</p>
                             </div>
                         </div>
                     </div>
 
-             </div>
+                    <!---- Artefact #2 ----->
+                    <div class="artefact">
+                          <div class="artefact-header">
+                            <h2>Jaccard Coefficient Calculations</h2>
+                        </div>
+                        <div class="artefact-description">
+                            <div class="artefact-container">
+                                <p>Calculate Jaccard coefficient for the following pairs:</p>
+                                <div>
+                                    <p>1.	(Jack, Mary)</p>
+                                    <p>2.	(Jack, Jim)</p>
+                                    <p>3.	(Jim, Mary)</p>
+                                </div>
+
+                                <table border="1" cellspacing="0" cellpadding="8">
+                                    <thead>
+                                        <tr>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>Fever</th>
+                                        <th>Cough</th>
+                                        <th>Test-1</th>
+                                        <th>Test-2</th>
+                                        <th>Test-3</th>
+                                        <th>Test-4</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td>Jack</td>
+                                        <td>M</td>
+                                        <td>Y</td>
+                                        <td>N</td>
+                                        <td>P</td>
+                                        <td>N</td>
+                                        <td>N</td>
+                                        <td>A</td>
+                                        </tr>
+                                        <tr>
+                                        <td>Mary</td>
+                                        <td>F</td>
+                                        <td>Y</td>
+                                        <td>N</td>
+                                        <td>P</td>
+                                        <td>A</td>
+                                        <td>P</td>
+                                        <td>N</td>
+                                        </tr>
+                                        <tr>
+                                        <td>Jim</td>
+                                        <td>M</td>
+                                        <td>Y</td>
+                                        <td>P</td>
+                                        <td>N</td>
+                                        <td>N</td>
+                                        <td>N</td>
+                                        <td>A</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p><b>Answer:</b></p>  
+
+                                <p>The Jaccard coefficient is calculated as:</p>
+                                <p>J=f_11/(f_01+f_10+f_11 )</p>
+
+                                <p>Step 1 — Convert to Binary</p>
+
+                                <table border="1" cellspacing="0" cellpadding="8">
+                                    <thead>
+                                        <tr>
+                                        <th>Name</th>
+                                        <th>Fever</th>
+                                        <th>Cough</th>
+                                        <th>Test-1</th>
+                                        <th>Test-2</th>
+                                        <th>Test-3</th>
+                                        <th>Test-4</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td>Jack</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        </tr>
+                                        <tr>
+                                        <td>Mary</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        </tr>
+                                        <tr>
+                                        <td>Jim</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="jacc-first">
+                                    <p><b>1.	(Jack, Mary)</b></p>
+
+                                    <table border="1" cellspacing="0" cellpadding="8">
+                                        <thead>
+                                            <tr>
+                                            <th>Attribute</th>
+                                            <th>Jack</th>
+                                            <th>Mary</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td>Fever</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Cough</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Test-1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Test-2</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Test-3</td>
+                                            <td>0</td>
+                                            <td>1</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Test-4</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <p>Counts:</p>
+                                    <ul>
+                                        <li>f11 = 2 (Fever, Test-1)</li>
+                                        <li>f10 = 0</li>
+                                        <li>f01 = 1 (Test-3)</li>
+                                    </ul>
+                                    <p>J(Jack,Mary)=2/(2+0+1)=2/3=0.667</p>
+                                </div>
+
+                                <div class="jacc-second">
+                                    <p><b>2.	(Jack, Jim)</b></p>
+
+                                    <table border="1" cellspacing="0" cellpadding="8">
+                                        <thead>
+                                            <tr>
+                                            <th>Attribute</th>
+                                            <th>Jack</th>
+                                            <th>Jim</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td>Fever</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Cough</td>
+                                            <td>0</td>
+                                            <td>1</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Test-1</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Test-2</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Test-3</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Test-4</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <p>Counts:</p>
+                                    <ul>
+                                        <li>f11 = 1 (Fever)</li>
+                                        <li>f10 = 1 (Test-1)</li>
+                                        <li>f01 = 1 (Cough)</li>
+                                    </ul>
+                                    <p>J(Jack,Jim)=1/(1+1+1)=1/3=0.333</p>
+
+                                </div>
+
+                                <div class="jacc-third">
+                                    <p><b>3.	(Jim, Mary)</b></p>
+
+                                    <table border="1" cellspacing="0" cellpadding="8">
+                                        <thead>
+                                            <tr>
+                                            <th>Attribute</th>
+                                            <th>Jim</th>
+                                            <th>Mary</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td>Fever</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Cough</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Test-1</td>
+                                            <td>0</td>
+                                            <td>1</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Test-2</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Test-3</td>
+                                            <td>0</td>
+                                            <td>1</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Test-4</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <p>Counts:</p>
+                                    <ul>
+                                        <li>f11 = 1 (Fever)</li>
+                                        <li>f10 = 1 (Cough)</li>
+                                        <li>f01 = 2 (Test-1, Test-3)</li>
+                                    </ul>
+                                    <p>J(Jim,Mary)=1/(1+2+1)=1/4=0.25</p>
+
+                                </div>
+
+                                <h3><b>Final Results</b></h3>
+                                <table border="1" cellspacing="0" cellpadding="8">
+                                    <thead>
+                                        <tr>
+                                        <th>Pair</th>
+                                        <th>Jaccard Coefficient</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td>Jack – Mary</td>
+                                        <td>0.667</td>
+                                        </tr>
+                                        <tr>
+                                        <td>Jack – Jim</td>
+                                        <td>0.333</td>
+                                        </tr>
+                                        <tr>
+                                        <td>Jim – Mary</td>
+                                        <td>0.25</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p>Interpretation:</p>
+                                <ul>
+                                    <li>Jack and Mary are the most similar</li>
+                                    <li>Jim and Mary are the least similar</li>
+                                </ul>
+
+                                <div class="experiment-portfolio">
+                                    <p><b>Reflection on Jaccard Coefficient Calculations</b></p>
+                                    <p>This activity helped me understand how the Jaccard coefficient measures similarity between observations when working with binary and asymmetric data. In this exercise, categorical values were converted into binary form (Y/P = 1 and N/A = 0), while the symmetric attribute (Gender) was excluded from the calculation. The Jaccard coefficient focuses on shared presences of attributes and ignores joint absences, making it suitable for datasets where the presence of a feature carries more significance than its absence (Choi, Cha and Tappert, 2010). </p>
+                                    <p>The results showed that Jack and Mary had the highest similarity (0.667), followed by Jack and Jim (0.333), while Jim and Marry had the lowest similarity (0.25). This demonstrates how similarity measures help identify relationships between observations and support tasks such as clustering and pattern discovery in machine learning (Aggarwal, 2015).</p>
+                                    <p>This activity also highlights the importance of choosing appropriate similarity metrics and preparing datasets correctly, which is essential for machine learning professionals when analysing real-world data and ensuring responsible and reliable analytical outcomes. </p>
+                                    <br><br>
+                                    <p><b>References</b></p>
+                                    <p>Aggarwal, C.C. (2015). Data Mining. [online] Springer. doi:https://doi.org/10.1007/978-3-319-14142-8.</p>
+                                    <p>Choi, S.-S., Cha, S.-H. and Tappert, C. (2010). A Survey of Binary Similarity and Distance Measures. Systemics, Cybernetics and Informatics, [online] 8(1). Available at: https://www.iiisci.org/journal/PDV/sci/pdfs/GS315JG.pdf [Accessed 13 Mar. 2026].</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
