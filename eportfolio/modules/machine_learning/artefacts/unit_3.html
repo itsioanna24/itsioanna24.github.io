@@ -74,14 +74,945 @@
                             <h2>Correlation and Regression Activity</h2>
                         </div>
 
+                        <hr>
+
                         <div class="artefact-description">
                             <div class="artefact-container">
-                                <p></p>
+                                <h2>Covariance Pearson Correlation</h2>
+                                <p>About dataset:</p>
+                                <ul>
+                                    <li>data1 -> Normally distributed around 100, std ≈ 20</li>
+                                    <li>data2 -> equals data1 PLUS:
+                                        <ul>
+                                            <li>random noise (std ≈ 10)</li>
+                                            <li>constant shift of +50</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                
+                                <div class="experiment-results">
+                                    <div class="experiment-image">
+                                        <img src="/eportfolio/images/machine_learning_images/covariance.png" alt="Covariance Plot" class="artefact-screenshot">
+                                    </div>
+                                    
+                                    <div class="results-container">
+                                        <p><b>Results:</b></p>
+                                        <p>data1: mean=100.776 stdv=19.620</p>
+                                        <p>data2: mean=151.050 stdv=22.358</p>
+                                        <p>Covariance: 389.755</p>
+                                        <p>Pearsons correlation: 0.888</p>
+                                    </div>
+                                </div>
+
+                                <p><b>Output explained: </b></p>
+                                <p><b>Pearson r = 0.888 -> </b> This means: </p>
+                                <ul>
+                                    <li>Strong positive linear correlation</li>
+                                    <li>But not perfect (because of noise)</li>
+                                </ul>
+                                <p><b>Covariance = 389.755 -> </b>This means:</p>
+                                <ul>
+                                    <li>Covariance is positive -> variables increase together</li>
+                                </ul>
+                                
+                                <hr>
+
+                                <div class="experiment-1 experiments">
+                                    <h3>Experiment 1 — Reduce Noise</h3>
+                                    <p>I changed:</p>
+                                    <p>data2 = data1 + (2 * randn(1000) + 50)</p>(IMAGE)
+                                    <p>Instead of noise with std = 10, now noise std=2.</p>
+                                    
+                                    <div class="experiment-results">
+                                        <div class="experiment-image">
+                                            <img src="/eportfolio/images/machine_learning_images/covariance-reduced-noise.png" alt="Covariance Plot" class="artefact-screenshot">
+                                        </div>
+                                        <div class="results-container">
+                                            <p><b>Results:</b></p>
+                                            <p>data1: mean=100.776 stdv=19.620</p>
+                                            <p>data2: mean=150.831 stdv=19.773</p>
+                                            <p>Covariance: 386.217</p>
+                                            <p>Pearsons correlation: 0.995</p>
+                                        </div>
+                                    </div>
+                                    <p><b>Output explained: </b></p>
+                                    <p>By reducing noise:</p>
+                                    <ul>
+                                        <li>Random variation reduced </li>
+                                        <li>The linear relationship became clearer</li>
+                                        <li>Scatter points tightened around a straight line</li>
+                                    </ul>
+                                    <p>Covariance didn’t change dramatically because: </p>
+                                    <ul>
+                                        <li>The main relationship (data2 ~= data1 + 50) is still there</li>
+                                        <li>Scale didn’t change much</li>
+                                    </ul>
+                                    <p>But Pearson correlation increased because: Correlation standardizes covariance by dividing by standard deviations. </p>
+                                    <p>Less noise -> smaller random variance -> stronger standardized relationship.</p>
+
+                                    <div class="experiment-portfolio">
+                                        <p><b>Reflection</b></p>
+                                        <p>Reducing the stochastic noise in the second variable increased Pearson’s correlation from 0.888 to 0.995, demonstrating that correlation strength is highly sensitive to variance introduced by measurement noise. The scatter plot showed near-perfect linear alignment, confirming that Pearson’s coefficient approaches 1 as random disturbance decreases. This illustrates the importance of data quality in machine learning systems, as noise directly affects the reliability of inferred relationships.</p>
+                                    </div>
+                                </div>
+                                
+                                <hr><hr>
+
+                                <div class="experiment-2 experiments">
+                                    <h3>Experiment 2 — Increase Noise</h3>
+
+                                    <p>I changed:</p>
+                                    <p>data2 = data1 + (40 * randn(1000) + 50)</p>IMAGE
+
+                                    <p>std = 2 -> strong correlation (0.995)</p>
+                                    <p>std = 40 -> heavy noise</p>
+
+                                    <div class="experiment-results">
+                                        <div class="experiment-image">
+                                            <img src="/eportfolio/images/machine_learning_images/covariance-increased-noise.png" alt="Covariance Plot" class="artefact-screenshot">
+                                        </div>
+                                        <div class="results-container">
+                                            <p><b>Results:</b></p>
+                                            <p>data1: mean=100.776 stdv=19.620</p>
+                                            <p>data2: mean=151.869 stdv=46.020</p>
+                                            <p>Covariance: 403.019</p>
+                                            <p>Pearsons correlation: 0.446</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <p><b>Output explained: </b></p>
+                                    <p>data2 stdv = 46.020</p>
+                                    <p>originally std ~ 22</p>
+                                    <p>So variance almost doubled.</p>
+
+                                    <p>The linear relationship is still present (covariance still high).</p>
+                                    <p>But noise overwhelms the signal.</p>
+                                    <p>Visually:</p>
+                                    <ul>
+                                        <li>The cloud is wide.</li>
+                                        <li>Relationship harder to detect.</li>
+                                        <li>Linear trend still exists but weaker. </li>
+                                    </ul>
+
+                                    <div class="experiment-portfolio">
+                                        <p><b>Reflection</b></p>
+                                        <p>Increasing the noise variance reduced Pearson’s correlation from 0.888 to 0.446, despite covariance remaining relatively stable. This demonstrates that correlation is sensitive to variance scaling and that high measurement noise can obscure otherwise meaningful relationships. The scatter plot showed substantial dispersion, illustrating how poor data quality may reduce the predictive power of linear models.</p>
+                                    </div>
+                                
+                                    <div class="learning-outcomes">
+                                        <h3>Learning Outcomes</h3>
+                                        <p>This experiment directly links to:</p>
+                                        <ol>
+                                            <li><b>Dataset Challenges</b>   
+                                                <ul>
+                                                    <li>Noisy data weakens model reliability</li>
+                                                    <li>Signal-to-noise ratio is critical</li>
+                                                    <li>Correlation alone may mislead if variance is large</li>
+                                                </ul>
+                                            </li>
+                                            <li><b>Ethical & Professional Issues</b>
+                                                <p>In real ML systems:</p>
+                                                <ul>
+                                                    <li>Noisy sensors</li>
+                                                    <li>Poor survey design</li>
+                                                    <li>Biased measurement</li>
+                                                    <li>Data entry errors</li>
+                                                </ul>
+                                                <p>Can all reduce correlation → misinform decisions.</p>
+                                                <p>Professional responsibility includes:</p>
+                                                <ul>
+                                                    <li>Data validation</li>
+                                                    <li>Cleaning</li>
+                                                    <li>Robust modelling</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                                <hr><hr>
+
+                                <div class="experiment-3 experiments">
+
+                                    <h3>Experiment 3 — Remove the linear dependency entirely</h3>
+                                    <p>I changed:</p>
+                                    <p>data2 = data1 * (randn(1000) + 150)</p>IMAGE
+                                    
+                                    <ul>
+                                        <li>Both variables have similar scale (~20 std)</li>
+                                        <li>Covariance is very small (8.843 vs ~390 earlier)</li>
+                                        <li>Pearson = 0.022 -> essentially zero</li>
+                                    </ul>
+
+                                    <p><b>Results:</b></p>
+                                    <p>Visual Interpretation:</p>
+                                    <ul>
+                                        <li>Circular cloud</li>
+                                        <li>No upward or downward slope</li>
+                                        <li>Symmetric spread</li>
+                                    </ul>
+
+                                    <div class="experiment-portfolio">
+                                        <p><b>Reflection</b></p>
+                                        <p>
+                                            When the dependency between variables was removed, Pearson’s correlation decreased to 0.022 and covariance approached zero. Despite similar means and variances, the absence of structural dependency resulted in a random scatter pattern. This confirms that correlation captures relational structure rather than similarity in distributional characteristics.
+                                        </p>
+                                    </div>
+
+                                    <div class="learning-outcomes">
+                                        <h3>Learning Outcomes</h3>
+                                        <p>This experiment directly links to:</p>
+                                        <ol>
+                                            <li><b> Applicability of Datasets</b>   
+                                                <p>This experiment shows:</p>
+                                                <ul>
+                                                    <li>Similar statistical distributions do not imply predictive relationships.</li>
+                                                    <li>Regression models would fail because no linear structure exists.</li>
+                                                    <li>Dataset suitability must be assessed before model deployment.</li>
+                                                </ul>
+                                            </li>
+                                            <li><b>Legal, Social, Ethical & Professional Issues</b>
+                                                <p>In real ML systems:</p>
+                                                <p>Assuming relationships where none exist may lead to spurious conclusions. In regulated domains such as healthcare, finance, or public policy, such errors could result in unfair or harmful automated decisions. Machine learning professionals have a responsibility to validate statistical relationships before drawing conclusions.</p>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+
+                                <hr><hr>
+
+                                <h2>Linear Regression</h2>
+                                <p>Dataset and result:</p>
+
+                                <p>x = [5,7,8,7,2,17,2,9,4,11,12,9,6]</p>
+                                <p>y = [99,86,87,88,111,86,103,87,94,78,77,85,86]</p>
+
+                                <p><b>Result:</b></p>
+
+                                <div class="experiment-results">
+                                    <div class="experiment-image">
+                                        <img src="/eportfolio/images/machine_learning_images/linear_regression.png" alt="Linear Regression Plot" class="artefact-screenshot">
+                                    </div>
+                                    
+                                    <div class="results-container">
+                                        <p><b>Results:</b></p>
+                                        <p>Pearsons correlation: -0.759</p>
+                                        <ul>
+                                            <li>Strong negative correlation</li>
+                                            <li>As x increases -> y decreases</li>
+                                            <li>Regression line slopes downward</li>
+                                        </ul>
+                                        <p>-0.759: </p>
+                                        <ul>
+                                            <li>Strong inverse linear relationship</li>
+                                            <li>About 76% strength</li>
+                                            <li>Not perfect but meaningful</li>
+                                        </ul>
+                                        <p>R2 = r2 = (-0.759)2 ~ 0.576 ~ 57.6% of variance in y is explained by x</p>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="experiment-1 experiments">
+                                    <h3>Experiment 1 — Add an outlier</h3>
+                                    <p>I changed:</p>
+                                    <p>x.append(30)</p>
+                                    <p>y.append(200)</p>
+
+                                    <div class="experiment-results">
+                                        <div class="experiment-image">
+                                        <img src="/eportfolio/images/machine_learning_images/linear_regression_outlier.png" alt="Linear Regression Plot" class="artefact-screenshot">
+                                        </div>
+                                    
+                                        <div class="results-container">
+                                            <p><b>Results:</b></p>
+                                        
+                                            <ul>
+                                                <li>Pearson r = +0.666</li>
+                                                <li>Relationship flipped to positive </li>
+                                                <li>Predicted value at x = 10 ~ 99.89</li>
+                                                <li>Regression line now slopes upward</li>
+                                            </ul>
+                                            <p>One single data point changed: </p>
+                                            <ul>
+                                                <li>Direction of relationship</li>
+                                                <li>Correlation strength</li>
+                                                <li>Prediction</li>
+                                                <li>Interpretation</li>
+                                            </ul>
+                                            <p>OLS (Ordinary Least Squares) minimises squared errors</p>
+                                            <p>Because the outlier is:</p>
+                                            <ul>
+                                                <li>Far right (large x)</li>
+                                                <li>Very high y</li>
+                                            </ul>
+                                            <p>High-leverage points dominate slope estimation.</p>
+                                        </div> 
+                                    </div>
+                                    <div class="experiment-portfolio">
+                                        <p><b>Reflection</b></p>
+                                        <p>Introducing a single high-leverage outlier (30, 200) reversed the sign of the correlation coefficient from -0.759 to +0.666 and significantly altered the regression slope. This demonstrates the extreme sensitivity of Ordinary Least Squares regression to influential observations. The predicted value at x=10 shifted from 85.59 to 99.89, highlighting how outliers can distort model interpretation and predictive reliability.</p>
+                                    </div>
+                                
+                                    <div class="learning-outcomes">
+                                        <h3>Learning Outcomes</h3>
+                                        <p>This experiment directly demonstrates:</p>
+                                        <ol>
+                                            <li>Dataset Challenges
+                                                <ul>
+                                                    <li>Small datasets are unstable</li>
+                                                    <li>Outliers distort model structure</li>
+                                                    <li>Linear regression assumes homoscedasticity & no extreme influence</li>
+                                                </ul>
+                                            </li>
+                                            <li>Legal / Ethical / Professional Issues
+                                                <p>In real-world ML systems, failure to detect influential outliers may result in biased decision-making. In contexts such as financial risk assessment, hiring systems, or healthcare predictions, a small number of anomalous data points could distort model outcomes, leading to unfair or harmful consequences. Machine learning professionals have a responsibility to conduct diagnostic analysis and ensure data robustness before deployment.</p>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                
+                                </div>
+
+                                <hr>
+
+                                <div class="experiment-2 experiments">
+                                    <h3>Experiment 2 — Remove the Natural High-Leverage Point (x = 17)</h3>
+                                    <p>x.remove(17)</p>
+                                    <p>y.remove(86)</p>
+
+                                    <div class="experiment-results">
+                                        <div class="experiment-image">
+                                        <img src="/eportfolio/images/machine_learning_images/linear_regression_removed.png" alt="Linear Regression Plot" class="artefact-screenshot">
+                                        </div>
+                                    
+                                        <div class="results-container">
+                                            <p><b>Results:</b></p>
+                                        
+                                            <ul>
+                                                <li>Pearson r = -0.571</li>
+                                                <li>Prediction at x = 10 -> 84.46</li>
+                                                <li>Negative slope but weaker</li>
+                                            </ul>
+                                            <p>The correlation became weaker -0.571 instead of -0.759. </p>
+                                        </div> 
+                                    </div>
+
+                                    <div class="experiment-portfolio">
+                                        <p><b>Reflection</b></p>
+                                        <p>Removing a high-leverage point that aligned with the overall negative trend reduced the magnitude of the correlation from -0.759 to -0.571, indicating that not all influential observations are harmful. In contrast, introducing a single inconsistent extreme outlier reversed the correlation sign and significantly altered predictions. This demonstrates the distinction between leverage and influence, highlighting the necessity of diagnostic analysis in regression modelling.</p>
+                                    </div>
+
+                                    <div class="learning-outcomes">
+                                        <h3>Learning Outcomes</h3>
+                                        <p>This experiment directly demonstrates:</p>
+                                        <ol>
+                                            <li>Dataset Applicability
+                                                <ul>
+                                                    <li>Small datasets are structurally fragile</li>
+                                                    <li>Influential points can stabilise or destabilise models</li>
+                                                    <li>Model diagnostics (Cook’s distance, leverage statistics) are essential</li>
+                                                </ul>
+                                            </li>
+                                            <li>Ethical & Professional Responsibility
+                                                 <ul>
+                                                    <li>Removing data blindly may distort findings</li>
+                                                    <li>Keeping anomalous but valid data is sometimes correct</li>
+                                                    <li>Model auditing is part of professional ML practice</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                                <hr><hr>
+
+                                <h2>Multiple Linear Regression</h2>
+                                <p>Model:</p>
+                                <ul>Inputs (features): Weight, Volume</ul>
+                                <ul>Output (target): CO2</ul>
+
+                                <p>C02 = β0 + β1*Weight + β2*Volume</p>
+
+                                <p><b>Results:</b></p>
+                                <ul>
+                                    <li>Weight = 2300</li>
+                                    <li>Volume = 1300</li>
+                                </ul>
+
+                                <p><b>→ 107.21 g</b></p>
+
+                                <p><b>Coefficients: </b> [0.00755095 0.00780526]</p>
+                                <p>So: </p>
+                                <ul>
+                                    <li>Weight coefficient ≈ 0.00755</li>
+                                    <li>Volume coefficient ≈ 0.00781</li>
+                                </ul>
+
+                                <p>Both positive → increasing either increases CO2.</p>
+
+                                <hr>
+
+                                <div class="experiment-1 experiments">
+                                    <h3>Experiment 1 — Remove one predictor</h3>
+                                    <p>This experiment investigates how removing one predictor variable (Volume) from a multiple linear regression model affects coefficient estimates and predictions. The aim is to examine model sensitivity and how regression coefficients depend on model specification.</p>
+                                
+                                    <p>I changed:</p>
+                                    <p>X = df[['Weight']]</p>
+                                    
+                                    <p>And predict:</p>
+                                    <p>regr.predict([[2300]])</p>
+                                    
+                                    <p><b>Results:</b></p>
+                                    <ul>
+                                        <li>New Weight coefficient: <b>0.01699973</b></li>
+                                        <li>Intercept: <b>80.0594</b></li>
+                                        <li>•	Prediction for (Weight = 2300kg): <b>119.16 g CO₂</b></li>
+                                    </ul>
+                                    
+                                    <table border="1" cellspacing="0" cellpadding="8">
+                                        <thead>
+                                            <tr>
+                                            <th>Model</th>
+                                            <th>Weight Coefficient</th>
+                                            <th>Prediction (2300kg)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td>Weight + Volume</td>
+                                            <td>0.00755</td>
+                                            <td>107.21</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Weight Only</td>
+                                            <td>0.01699</td>
+                                            <td>119.16</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <p>Several important changes occurred after removing Volume:</p>
+                                    <ul>
+                                        <li>The Weight coefficient more than doubled (from 0.00755 to 0.01699).</li>
+                                        <li>The predicted CO₂ emission increased by approximately 12 grams.</li>
+                                        <li>The estimated impact of vehicle weight changed substantially.</li>
+                                    </ul>
+
+                                    <p>In the original model, the Weight coefficient represented the effect of Weight while controlling for Volume. After removing Volume, the coefficient reflects the total association between Weight and CO₂ emissions without accounting for other explanatory factors.</p>
+                                
+                                    <p>This demonstrates that regression coefficients are conditional on the variables included in the model. Changing the set of predictors alters both coefficient magnitude and predictions.</p>
+                                
+                                    <div class="learning-outcomes">
+                                        <h3>Learning Outcomes</h3>
+                                        <ol>
+                                            <li>Dataset Challenges
+                                                <ul>
+                                                    <li>Regression coefficients are sensitive to model specification.</li>
+                                                    <li>Feature selection influences interpretation.</li>
+                                                    <li>Removing predictors can significantly alter estimated relationships.</li>
+                                                    <li>Model conclusions depend on which variables are included.</li>
+                                                </ul>
+                                            </li>
+                                            <li>Legal, Ethical & Professional Issues
+                                                <ul>
+                                                    <li>Misinterpreting regression coefficients may lead to incorrect conclusions about variable importance.</li>
+                                                    <li>Removing relevant predictors without justification may distort results.</li>
+                                                    <li>Decisions based on incomplete models could lead to flawed regulatory, financial, or environmental policies.</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="experiment-2 experiments">
+                                    <h3>Experiment 2 — Diagnosing Multicollinearity</h3>
+                                    <p>print(df[['Weight','Volume']].corr())</p>
+
+
+                                    <div class="experiment-results">
+                                        <div class="experiment-image">
+                                        <img src="/eportfolio/images/machine_learning_images/correlation_matrix.png" alt="Correlation Matrix" class="artefact-screenshot">
+                                        </div>
+                                    
+                                        <div class="results-container">
+                                            <p><b>Results:</b></p>
+
+                                            <table border="1" cellspacing="0" cellpadding="8">
+                                                <thead>
+                                                    <tr>
+                                                    <th></th>
+                                                    <th>Weight</th>
+                                                    <th>Volume</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                    <th>Weight</th>
+                                                    <td>1.000</td>
+                                                    <td>0.7535</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <th>Volume</th>
+                                                    <td>0.7535</td>
+                                                    <td>1.000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p>So: Weight–Volume correlation = <b>0.7535</b></p>
+
+                                            <p>This indicates a strong positive association between predictors. Such correlation confirms the presence of multicollinearity in the model.
+                                                Because Weight and Volume are strongly related, their explanatory effects on CO₂ emissions overlap. This explains why removing Volume caused the Weight coefficient to increase substantially. When correlated predictors are included simultaneously, their individual contributions become conditional and sensitive to model specification.
+                                            </p>
+                                        </div> 
+                                    </div>
+
+                                    <div class="learning-outcomes">
+                                        <h3>Learning Outcomes</h3>
+                                        <ol>
+                                            <li>Dataset Challenges
+                                                <ul>
+                                                    <li>Correlated predictors undermine coefficient interpretability.</li>
+                                                    <li>Regression coefficients are conditional, not absolute.</li>
+                                                    <li>Diagnostic testing (correlation matrices) is necessary before interpretation.</li>
+                                                </ul>
+                                            </li>
+                                            <li>Legal, Ethical & Professional Issues
+                                                <ul>
+                                                    <li>Misinterpreting inflated coefficients may distort perceived variable importance.</li>
+                                                    <li>Responsible ML practice requires reporting predictor correlations and justifying model structure.</li>
+                                                </ul>
+                                            </li>
+                                    </div>
+                                </div>
+
+                                <hr><hr>
+
+                                <h2>Polynomial Regression</h2>
+                                    
+                                <p>mymodel = numpy.poly1d(numpy.polyfit(x, y, 3))</p>
+
+                                <p>So degree = 3</p>
+                                <ul>
+                                    <li><b>R² = 0.943</b></li>
+                                    <li>Prediction at x = 17 → <b>88.87</b></li>
+                                </ul>
+
+                                <p>Interpretation:</p>
+                                <ul>
+                                    <li>Very strong fit (94% of variance explained)</li>
+                                    <li>Smooth curve</li>
+                                    <li>Captures the U-shaped pattern</li>
+                                    <li>Reasonable prediction</li>
+                                </ul>
+
+                                <hr>
+
+                                <div class="experiment-1 experiments">
+                                    <h3>Experiment 1 — Underfitting (Degree = 1)</h3>
+                                    <p>I changed:</p>
+
+                                    <p>mymodel = numpy.poly1d(numpy.polyfit(x, y, 1))</p>
+
+                                    <p><b>R2=0.1823</b></p>
+
+
+                                    <div class="experiment-portfolio">
+                                        <p><b>Reflection</b></p>
+                                        <p>A first-degree polynomial (linear model) was fitted to the dataset.
+                                            The resulting coefficient of determination was:
+                                        </p>
+                                        <p>R^2=0.1823</p>
+                                        <p>This indicates that only 18% of the variance in vehicle speed is explained by time of day. The linear model fails to capture the clear U-shaped pattern in the data, demonstrating underfitting. The model is too simple to represent the underlying non-linear relationship.
+                                            This illustrates the risk of using overly simplistic models when the true data-generating process is non-linear.
+                                        </p>
+                                    </div>
+
+                                    <div class="learning-outcomes">
+                                        <h3>Learning Outcomes</h3>
+                                        <p>This experiment directly links to:</p>
+                                        <ol>
+                                            <li><b>Dataset Challenges</b>   
+                                                <ul>
+                                                    <li>Model assumptions must match data structure.</li>
+                                                    <li>Linear models are inappropriate for curved relationships..</li>
+                                                    <li>Low R² signals insufficient model complexity.</li>
+                                                </ul>
+                                            </li>
+                                            <li><b>Professional Implications</b>
+                                                <ul>
+                                                    <li>Deploying an underfitted model may lead to systematically biased predictions.</li>
+                                                    <li>Oversimplified models may misrepresent behavioural patterns.</li>
+                                                    <li>Model selection must be justified by data characteristics.</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="experiment-2 experiments">
+                                    <h3>Experiment 2 — Moderate Increase in Complexity (Degree 5)</h3>
+                                    <p>This tests if increasing model flexibility, will improve fit without becoming unstable.</p>
+                                    <p>mymodel = numpy.poly1d(numpy.polyfit(x, y, 5))</p>
+
+                                    
+                                    <div class="experiment-results">
+                                        <div class="experiment-image">
+                                            <img src="/eportfolio/images/machine_learning_images/polynomial_regression_exp2.png" alt="Polynomial Regression Experiment 2" class="artefact-screenshot">
+                                        </div>
+                                    
+                                        <div class="results-container">
+                                            <p><b>Results:</b></p>
+                                            <p>R² = 0.9568</p>
+                                            <p>Comparing with previous:</p>
+                                            <ul>
+                                                <li>Degree 1 → <b>R² = 0.1823</b> (underfitting)</li>
+                                                <li>Degree 3 → <b>R² = 0.9432</b> (very good fit)</li>
+                                                <li>Degree 5 → <b>R² = 0.9568</b> (slightly better)</li>
+                                            </ul>
+
+                                            <p>R² improved slightly:</p>
+                                            <p>0.943 → 0.957</p>
+                                            <p>That’s only about a 1.4% improvement.</p>
+
+                                            <p>Visually:</p>
+                                            <ul>
+                                                <li>Curve is still smooth</li>
+                                                <li>Captures the U-shape well</li>
+                                                <li>Slightly more flexible than degree 3</li>
+                                                <li>No extreme oscillations yet</li>
+                                            </ul>
+
+                                            <p>A fifth-degree polynomial model was fitted to the dataset.</p>
+                                            <p>The resulting coefficient of determination was:</p>
+                                            <p>R²=0.9568</p>
+
+                                        </div> 
+                                    </div>
+
+                                    <div class="experiment-portfolio">
+                                        <p><b>Reflection</b></p>
+                                        <p>This represents a small improvement over the degree-3 model (R² = 0.9432). The curve remains smooth and captures the non-linear structure of the data without excessive oscillation.</p>
+                                        <p>The marginal improvement suggests that increasing model complexity beyond degree 3 provides limited additional explanatory benefit. While flexibility increases, the gain in performance is relatively small.</p>
+                                        <p>This demonstrates that more complex models do not necessarily provide substantially better predictive value.</p>
+                                    </div>
+
+                                    <div class="learning-outcomes">
+                                        <h3>Learning Outcomes</h3>
+                                        <p>This experiment directly links to:</p>
+                                        <ol>
+                                            <li><b>Dataset Challenges</b>   
+                                                <ul>
+                                                    <li>Increasing model flexibility can improve training fit.</li>
+                                                    <li>However, marginal performance gains may not justify added complexity.</li>
+                                                    <li>Model selection requires balancing accuracy and simplicity.</li>
+                                                </ul>
+                                            </li>
+                                            <li><b>Professional Implications</b>
+                                                <ul>
+                                                    <li>Overly complex models may reduce interpretability.</li>
+                                                    <li>Small improvements in R² do not guarantee better generalisation.</li>
+                                                    <li>Responsible ML requires evaluating whether complexity is justified.</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="experiment-3 experiments">
+
+                                    <h3>Experiment 3 — Overfitting (Degree 10)</h3>
+                                    <p>I changed:</p>
+                                    <p>mymodel = numpy.poly1d(numpy.polyfit(x, y, 10))</p>
+
+
+                                    <div class="experiment-results">
+                                        <div class="experiment-image">
+                                            <img src="/eportfolio/images/machine_learning_images/polynomial_regression_exp3.png" alt="Polynomial Regression Experiment 3" class="artefact-screenshot">
+                                        </div>
+                                    
+                                        <div class="results-container">
+                                            <p><b>Results:</b></p>
+                                            <p>R² = 0.9919</p>
+                                            <p>Compare across experiments:</p>
+                                            
+                                            <table border="1" cellspacing="0" cellpadding="8">
+                                                <thead>
+                                                    <tr>
+                                                    <th>Degree</th>
+                                                    <th>R²</th>
+                                                    <th>Interpretation</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                    <td>1</td>
+                                                    <td>0.182</td>
+                                                    <td>Severe underfitting</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td>3</td>
+                                                    <td>0.943</td>
+                                                    <td>Good fit</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td>5</td>
+                                                    <td>0.957</td>
+                                                    <td>Slight improvement</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td>10</td>
+                                                    <td>0.992</td>
+                                                    <td>Extremely high</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p>R² increased from 0.957 → 0.992.</p>
+
+                                        </div> 
+                                    </div>
+
+                                    <div class="experiment-portfolio">
+                                        <p><b>Reflection</b></p>
+                                        <p>A tenth-degree polynomial model was fitted to the dataset.
+                                            The resulting coefficient of determination was:
+                                        </p>
+                                        <p>R²=0.9919</p>
+                                        <p>Although this value is very close to 1, the plotted curve shows noticeable oscillations and increased sensitivity to small fluctuations in the data.</p>
+                                        <p>The model fits the training data extremely closely but at the cost of increased complexity and reduced stability. With only 18 data points and 11 parameters, the model exhibits high variance and begins to capture noise rather than the underlying trend.</p>
+                                        <p>This demonstrates overfitting: a model that performs exceptionally well on observed data but may generalise poorly to new observations.</p>
+                                    </div>
+
+
+                                    <div class="learning-outcomes">
+                                        <h3>Learning Outcomes</h3>
+                                        <ol>
+                                            <li><b>Dataset Challenges</b>   
+                                                <ul>
+                                                    <li>Small datasets are vulnerable to overfitting..</li>
+                                                    <li>High R² does not guarantee good generalisation.</li>
+                                                    <li>Model complexity must be balanced with sample size.</li>
+                                                </ul>
+                                            </li>
+                                            <li><b>Legal, Ethical & Professional Issues</b>
+                                                <p>Overfitted models can appear highly accurate during development yet perform poorly in real-world deployment. In safety-critical or regulatory domains, such instability may lead to unreliable or misleading predictions.</p>
+                                                <p>Machine learning professionals must therefore:</p>
+                                                <ul>
+                                                    <li>alidate models using separate test data,</li>
+                                                    <li>Avoid relying solely on training performance metrics,</li>
+                                                    <li>Control model complexity to ensure generalisability.</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                                <hr><hr>
+
+                                <div class="experiment-portfolio experiments-reflection">
+                                    <h2>Reflection Across Experiments</h2>
+
+                                        <ol>
+
+                                        <li>
+                                            <b>Introduction</b><br>
+                                            Across the four practical notebooks (correlation, simple regression, multiple regression, and polynomial regression), I explored how data characteristics and model specification influence statistical relationships, coefficient interpretation, predictive behaviour, and model reliability.<br><br>
+
+                                            Rather than treating each notebook as an isolated coding task, I approached them as controlled experiments designed to investigate:
+                                            <ul>
+                                                <li>Sensitivity to noise</li>
+                                                <li>Sensitivity to outliers</li>
+                                                <li>Multicollinearity and feature dependence</li>
+                                                <li>Model complexity and overfitting</li>
+                                            </ul>
+
+                                            Together, these experiments illustrate that machine learning models are not purely computational tools but conditional systems whose outputs depend critically on data structure, modelling assumptions, and feature selection.
+                                        </li>
+
+                                        <hr>
+
+                                        <li>
+                                            <b>Correlation and Noise Sensitivity</b><br>
+                                            In the covariance and Pearson correlation notebook, I manipulated the noise term in synthetically generated variables.<br><br>
+
+                                            <b>Key Findings</b>
+                                            <ul>
+                                                <li>Reduced noise → Pearson r ≈ 0.995 (near-perfect alignment)</li>
+                                                <li>Increased noise → Pearson r ≈ 0.446 (weakened association)</li>
+                                                <li>Independent variables → Pearson r ≈ 0.02 (no linear relationship)</li>
+                                            </ul>
+
+                                            This experiment showed that:
+                                            <ul>
+                                                <li>Correlation strength is highly sensitive to signal-to-noise ratio.</li>
+                                                <li>High measurement noise can obscure structure and reduce predictive reliability.</li>
+                                            </ul>
+                                        </li>
+
+                                        <hr>
+
+                                        <li>
+                                            <b>Simple Linear Regression – Outliers and Model Instability</b><br>
+
+                                            <b>Baseline Model</b>
+                                            <ul>
+                                                <li>Pearson r = -0.759</li>
+                                                <li>Prediction at x = 10 → 85.59</li>
+                                            </ul>
+
+                                            <b>After Adding Extreme Outlier (30, 200)</b>
+                                            <ul>
+                                                <li>Pearson r = +0.666</li>
+                                                <li>Prediction at x = 10 → 99.89</li>
+                                            </ul>
+
+                                            This experiment demonstrated:
+                                            <ul>
+                                                <li>Ordinary Least Squares is highly sensitive to influential observations.</li>
+                                                <li>Small datasets are structurally fragile.</li>
+                                                <li>A single extreme data point can alter interpretation entirely.</li>
+                                            </ul>
+                                        </li>
+
+                                        <hr>
+
+                                        <li>
+                                            <b>Multiple Linear Regression – Model Specification and Multicollinearity</b><br>
+
+                                            <b>Baseline Model (Weight + Volume)</b>
+                                            <ul>
+                                                <li>Weight coefficient: 0.00755</li>
+                                                <li>Prediction: 107.21</li>
+                                            </ul>
+
+                                            <b>Weight-Only Model</b>
+                                            <ul>
+                                                <li>Weight coefficient: 0.01699</li>
+                                                <li>Prediction: 119.16</li>
+                                            </ul>
+
+                                            This experiment demonstrated:
+                                            <ul>
+                                                <li>Regression coefficients are conditional on model specification.</li>
+                                                <li>Removing correlated predictors alters coefficient magnitude and predictions.</li>
+                                            </ul>
+                                        </li>
+
+                                        <hr>
+
+                                        <li>
+                                            <b>Polynomial Regression – Bias–Variance Tradeoff</b><br>
+
+                                            This experiment illustrated:
+                                            <ul>
+                                                <li>Too simple → high bias (underfitting)</li>
+                                                <li>Too complex → high variance (overfitting)</li>
+                                                <li>Optimal complexity lies between extremes</li>
+                                            </ul>
+
+                                        Crucially, a high R² did not imply better generalisation.
+                                        </li>
+
+                                        <hr>
+
+                                        <li>
+                                            <b>Integrated Understanding Across Notebooks</b><br>
+
+                                            Across all experiments:
+                                            <ul>
+                                                <li>Noise sensitivity → Correlation</li>
+                                                <li>Outlier influence → Linear regression</li>
+                                                <li>Feature dependence → Multiple regression</li>
+                                                <li>Complexity sensitivity → Polynomial regression</li>
+                                            </ul>
+
+                                            Machine learning performance is contingent on data quality, model assumptions, and structural dependencies.
+                                        </li>
+
+                                        <hr>
+
+                                        <li>
+                                            <b>Dataset Challenges</b><br>
+
+                                            <ul>
+                                                <li>Measurement noise weakens detectable structure.</li>
+                                                <li>Outliers distort parameter estimation.</li>
+                                                <li>Correlated predictors complicate interpretability.</li>
+                                                <li>Limited sample sizes amplify instability.</li>
+                                                <li>Increasing model complexity increases variance.</li>
+                                            </ul>
+                                        </li>
+
+                                        <hr>
+
+                                        <li>
+                                            <b>Legal, Social, Ethical and Professional Issues</b><br>
+
+                                            <ul>
+                                                <li><b>Misleading Confidence:</b> High R² may conceal overfitting.</li>
+                                                <li><b>Misinterpretation:</b> Removing predictors can distort importance.</li>
+                                                <li><b>Outlier Sensitivity:</b> Can lead to unfair predictions.</li>
+                                                <li><b>Deployment Risk:</b> Models may fail in real-world settings.</li>
+                                            </ul>
+
+                                            <ul>
+                                                <li>Model validation is essential.</li>
+                                                <li>Feature selection must be justified.</li>
+                                                <li>Diagnostic reporting is a responsibility.</li>
+                                                <li>Transparency is ethically necessary.</li>
+                                            </ul>
+                                        </li>
+
+                                        <hr>
+
+                                        <li>
+                                            <b>Personal Reflection</b><br>
+
+                                            I moved from viewing machine learning as algorithm execution to:
+                                            <ul>
+                                                <li>A system of assumptions</li>
+                                                <li>A process sensitive to dependencies</li>
+                                                <li>A discipline requiring critical evaluation</li>
+                                            </ul>
+
+                                            <b>Key insight:</b><br>
+                                            Model outputs are not objective truths; they are conditional estimates shaped by data and modelling decisions.
+                                        </li>
+
+                                        <hr>
+
+                                        <li>
+                                            <b>Conclusion</b><br>
+
+                                            <ul>
+                                                <li>Data structure influences behaviour</li>
+                                                <li>Model complexity must be controlled</li>
+                                                <li>Coefficients are not inherently causal</li>
+                                                <li>Diagnostics are essential</li>
+                                                <li>Ethical responsibility accompanies modelling</li>
+                                            </ul>
+
+                                        </li>
+                                    </ol>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-             </div>
+
+                </div>
+            </div>
+            </div>
+            </div>
             </div>
         </section>
 

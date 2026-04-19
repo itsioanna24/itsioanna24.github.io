@@ -3604,10 +3604,38 @@ input, select, textarea {
 	.perceptron .background-light {
     	margin-bottom: 20px;
 	}
-
-
-
-
+	.experiment-results {
+    	display: flex;
+    	gap: 10em;
+    	align-items: center;
+	}
+	.experiments p {
+    	margin: 0;
+	}
+	.experiment-portfolio {
+		background: lightgrey;
+		border-radius: 20px;
+		padding: 50px;
+	}
+	.experiment-portfolio b, .experiments-reflection h2 {
+		color:#3c2c62;
+	}
+	.experiment-portfolio p, .experiment-portfolio li{
+		color:#2b2b2b;
+	}
+	.learning-outcomes {
+		background-color: #b74e91;
+		opacity:0.8;
+		border-radius: 20px;
+		padding: 50px;
+		margin-top: 30px;
+	}
+	.learning-outcomes h3, .learning-outcomes p, .learning-outcomes li {
+		color:#fff;
+	}
+	.experiment-image img.artefact-screenshot {
+    	max-width: max-content;
+	}
 
 
 
