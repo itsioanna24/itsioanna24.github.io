@@ -3642,7 +3642,32 @@ input, select, textarea {
 	.back-to-module {
     	margin-bottom: 5em;
 	}
+	summary {
+		display: flex;
+    	gap: 1rem;
+    	cursor: pointer;
+    	list-style: none;
+	}
 
+	summary::-webkit-details-marker {
+  		display: none; 
+	}
+	summary::before {
+  		content: "▸"; 
+  		display: inline-block;
+  		transition: transform 0.2s ease;
+		height: 31px;
+	}
+
+	details[open] summary::before {
+  		transform: rotate(90deg); 
+	}
+	.notes .unit-content {
+    	border: 1px solid #fff;
+    	padding: 20px 30px;
+    	border-radius: 25px;
+		margin-bottom: 20px;
+	}
 
 
 

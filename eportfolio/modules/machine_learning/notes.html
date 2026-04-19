@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Notes</title>
+    <link rel="stylesheet" href="/eportfolio/assets/css/main.css">
+    <link rel="stylesheet" href="/eportfolio/assets/css/landing.css" />
+    <noscript><link rel="stylesheet" href="/eportfolio/assets/css/noscript.css" /></noscript>
+    <link rel="icon" type="image/png" sizes="32x32" href="/eportfolio/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/eportfolio/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/eportfolio/images/favicon/site.webmanifest">
+	<link rel="shortcut icon" href="/eportfolio/images/favicon/favicon.ico">
+	<meta name="theme-color" content="#5e42a6">
+
+</head>
+<body class="is-preload">
+
+    <section id="sidebar">
+        <div class="name">
+            <h2><a href="/eportfolio/">Ioanna Tziouvaka</a></h2>
+        </div>
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="/eportfolio/index.html">Welcome</a></li>
+                    <li><a href="/eportfolio/#one">Modules</a></li>
+                    <li><a href="/eportfolio/#two">About Me</a></li>
+                    <li><a href="/eportfolio/#three">Get in touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <div id="wrapper">
+        <div id="main">
+            <section id="banner" class="wrapper style2 spotlights fade-up">
+                <div class="inner">
+                    <header class="major">
+                        <h1>Notes</h1>
+                    </header>
+                    <div class="content">
+                        <p>My Lecturecast notes and directed reading, organised by unit</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="main" class="wrapper inner fade-up">
+                <div class="inner notes">
+                    <div class="back-to-module">
+                        <a href="/eportfolio/modules/machine_learning/machine_learning.html"> &larr; Back to Machine Learning module</a>
+                    </div>
+                    <!-- =========================== UNIT 1 =========================== -->    
+                    <details class="unit-notes">
+                        <summary><h3>Unit 1 – Introduction to Machine Learning</h3></summary>
+                            <div class="unit-content">
+    
+                                <h3>Lecturecast Notes</h3>
+                                <ul>
+                                    <li><strong>Machine Learning:</strong> "automating automation" &mdash; an algorithm that learns from its output and reprogrammes itself to give better results, predictions or classifications with the next input data.</li>
+                                    <li><strong>Statistical modelling</strong> focuses on <em>inference</em>, while <strong>Machine Learning</strong> focuses on <em>prediction</em>.</li>
+                                    <li>Automotive Artificial Intelligence uses <strong>object detection</strong> and <strong>object classification</strong> algorithms of machine learning.</li>
+                                    <li>The effectiveness of an algorithm during the training phase is determined by the <strong>quality of data</strong>.</li>
+                                    <li><strong>Big Data</strong> is characterised by the <strong>4 V's</strong>: Volume, Velocity, Variety and Veracity.</li>
+                                </ul>
+    
+                                <h4>Statistical Model vs Machine Learning</h4>
+                                <table class="notes-table">
+                                    <thead>
+                                        <tr><th>Statistical model</th><th>Machine Learning</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>No training</td><td>Training</td></tr>
+                                        <tr><td>No adjustment</td><td>Adjustment</td></tr>
+                                        <tr><td>No testing</td><td>Testing</td></tr>
+                                    </tbody>
+                                </table>
+    
+                                <h4>Types of Machine Learning</h4>
+                                <table class="notes-table">
+                                    <thead>
+                                        <tr><th>Type</th><th>Training Data</th><th>Label / Desired Output</th><th>Reward</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Unsupervised</td><td>&#10004;</td><td></td><td></td></tr>
+                                        <tr><td>Supervised</td><td>&#10004;</td><td>&#10004;</td><td></td></tr>
+                                        <tr><td>Reinforced</td><td>&#10004;</td><td>&#10004;</td><td>&#10004;</td></tr>
+                                    </tbody>
+                                </table>
+    
+                                <h3>Reading List</h3>
+                                <table class="reading-list-table">
+                                    <thead>
+                                        <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Bishop, C. and Bishop, H. (2024) <em>Deep Learning: Foundations and Concepts</em>, Chapters 1&ndash;2</td>
+                                            <td>Introduces the development of deep learning and the role of probability in machine learning, including probabilistic modelling and uncertainty in predictions.</td>
+                                            <td>Provides an overview of how deep learning has evolved and establishes probability as a core concept for understanding machine learning models.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bishop, C. (2006) <em>Pattern Recognition and Machine Learning</em>, Chapter 1</td>
+                                            <td>Presents foundational concepts including polynomial curve fitting, probability theory, Bayesian inference, model selection, the curse of dimensionality and decision theory.</td>
+                                            <td>Establishes the mathematical and probabilistic foundations of machine learning, which are essential for understanding how models learn from data and make predictions.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Crawford, S.L. (2006) 'Correlation and Regression'</td>
+                                            <td>Explains statistical concepts such as correlation and regression, which describe relationships between variables and support predictive modelling.</td>
+                                            <td>Supports understanding of fundamental statistical techniques that underpin many machine learning algorithms.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Metcalf, G.S. (2024) 'An Introduction to Industry 5.0'</td>
+                                            <td>Discusses the evolution from Industry 4.0 to Industry 5.0, focusing on human-centric, sustainable and intelligent systems.</td>
+                                            <td>Provides context on how AI and machine learning are shaping modern industries and future technological developments.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zhao, X. and Li, C. (2018) 'Deep Learning in Social Computing'</td>
+                                            <td>Explores applications of deep learning in social computing, including analysing social data and human behaviour patterns.</td>
+                                            <td>Demonstrates how machine learning techniques are applied to real-world problems involving large-scale social data.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kugler, L. (2022) 'AI and the Fight Against World Hunger'</td>
+                                            <td>Highlights how AI technologies are used to address global challenges such as food security and resource optimisation.</td>
+                                            <td>Illustrates the societal impact of machine learning and its potential to solve real-world problems.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Turck, M. (2020) <em>Data &amp; AI Landscape 2020</em></td>
+                                            <td>Provides an overview of the AI ecosystem, including tools, platforms and industry trends.</td>
+                                            <td>Helps understand the broader AI landscape and the rapid growth of machine learning technologies.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pant, A. (2019) <em>Introduction to Machine Learning for Beginners</em></td>
+                                            <td>Introduces basic machine learning concepts, workflows and terminology for beginners.</td>
+                                            <td>Supports initial understanding of key concepts and terminology used throughout the module.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BBC News (2021) <em>The Great Hack</em></td>
+                                            <td>Examines ethical issues related to data usage and privacy, focusing on the Cambridge Analytica scandal.</td>
+                                            <td>Highlights ethical considerations and risks associated with data-driven technologies and machine learning.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </details>
+
+                    <!-- =========================== UNIT 2 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 2 – Exploratory Data Analysis</h3></summary>
+                        <div class="unit-content">
+ 
+                            <p class="unit-status"><em>Reading-only unit (no Lecturecast).</em></p>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bishop, C. and Bishop, H. (2024) <em>Deep Learning: Foundations and Concepts</em>, Chapter 3: Standard Distributions</td>
+                                        <td>Introduces common probability distributions (e.g. Gaussian, Bernoulli) used to model data and uncertainty.</td>
+                                        <td>Supports understanding of data distributions, which is essential during EDA when analysing feature behaviour and identifying anomalies.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bishop, C. (2006) <em>Pattern Recognition and Machine Learning</em>, Chapter 4: Linear Models for Classification</td>
+                                        <td>Explains how probabilistic models are used for classification tasks based on input features.</td>
+                                        <td>Provides context for how features identified during EDA are later used in supervised learning models.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chernozhukov, V., Hansen, C. and Spindler, M. (2024) <em>Applied Causal Inference Powered by ML and AI</em>, Chapter 1</td>
+                                        <td>Discusses the relationship between machine learning and causal inference, emphasising the difference between correlation and causation.</td>
+                                        <td>Reinforces the importance of correctly interpreting relationships discovered during EDA and avoiding misleading conclusions from data.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Patil, P. (2018) <em>What is Exploratory Data Analysis?</em></td>
+                                        <td>Introduces the purpose and techniques of EDA, including summarising datasets and identifying patterns.</td>
+                                        <td>Directly supports the unit by explaining how to explore and understand datasets before applying machine learning.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Harmadi, A. (2021) <em>10 Things to Do When Conducting EDA</em></td>
+                                        <td>Provides practical steps for performing EDA, including data cleaning, feature inspection and anomaly detection.</td>
+                                        <td>Offers practical guidance for carrying out EDA tasks such as identifying anomalies and refining features.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mostak, T. (2021) <em>How Visualization is Transforming EDA</em></td>
+                                        <td>Explains how data visualisation techniques enhance understanding of complex datasets.</td>
+                                        <td>Highlights the importance of visual analysis in identifying patterns, trends and anomalies during EDA.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 3 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 3 – Correlation and Regression</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>Correlation</h4>
+                            <ul>
+                                <li><strong>Correlation</strong> aims to find the degree of relationship between two variables <em>x</em> and <em>y</em>.</li>
+                                <li>Best visualisation method: <strong>scatter plot</strong>.</li>
+                                <li>Correlation results can be: <strong>positive</strong> (both variables change in the same direction), <strong>negative</strong> (variables change in opposite directions), or <strong>neutral</strong> (no relationship).</li>
+                                <li><strong>Correlation &ne; Causation</strong>, although both may exist at the same time.</li>
+                            </ul>
+ 
+                            <h4>Quantifying Correlation</h4>
+                            <ul>
+                                <li><strong>Covariance</strong> &mdash; a measure of how two random variables change together.
+                                    <ul>
+                                        <li>Positive sign (+): variables move in the same direction.</li>
+                                        <li>Negative sign (&minus;): variables move in opposite directions.</li>
+                                        <li>Large magnitude indicates strong correlation.</li>
+                                        <li>Covariance is dependent on the variability in the data.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Pearson Correlation Coefficient (r)</strong> &mdash; only measures linear relationships.
+                                    <ul>
+                                        <li>Limitations: sensitive to outliers; cannot be used to predict anything but a linear relationship.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+ 
+                            <h4>Regression</h4>
+                            <ul>
+                                <li><strong>Multiple Linear Regression</strong>: used to predict the correlation between more than one independent variable and a dependent variable.</li>
+                                <li>Regression can be used for classification.</li>
+                                <li><strong>Logistic Regression</strong>: predicts a binary outcome (yes/no) based on a set of independent variables.</li>
+                                <li><strong>Decision tree</strong> type classifying algorithms: used for definitive multi-class classification.</li>
+                            </ul>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bishop, C. and Bishop, H. (2024) <em>Deep Learning: Foundations and Concepts</em>, Chapter 4: Regression Models in Machine Learning</td>
+                                        <td>Introduces regression models used to describe relationships between variables and predict continuous outcomes.</td>
+                                        <td>Provides the core understanding of regression techniques used to model relationships between variables.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bishop, C. (2006) <em>Pattern Recognition and Machine Learning</em>, Chapter 6: Bayesian Regression Models</td>
+                                        <td>Explains regression from a probabilistic perspective, incorporating uncertainty and prior knowledge into model predictions.</td>
+                                        <td>Extends understanding of regression by introducing probabilistic modelling of relationships between variables.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Valaskova, K. <em>et al.</em> (2018) 'Financial Risk Measurement and Prediction Modelling&hellip;'</td>
+                                        <td>Demonstrates the use of regression analysis in predicting financial risk and supporting decision-making.</td>
+                                        <td>Shows how regression techniques are applied in real-world scenarios.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Leetaru, K. (2019) <em>Machine Learning Is About Correlations Not Causation</em></td>
+                                        <td>Highlights the distinction between correlation and causation in data analysis.</td>
+                                        <td>Reinforces understanding of the limitations of correlation when interpreting relationships between variables.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Calvello (2020) <em>Correlation vs. Regression Made Easy</em></td>
+                                        <td>Explains the differences between correlation and regression and how each is used to analyse relationships between variables.</td>
+                                        <td>Supports conceptual understanding of how correlation and regression differ and complement each other.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Goyal, C. (2021) <em>Intuition Behind Correlation</em></td>
+                                        <td>Provides an intuitive explanation of correlation and how it measures the strength and direction of relationships.</td>
+                                        <td>Helps build foundational understanding of correlation as a statistical measure.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 4 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 4 – Linear Regression with Scikit-learn</h3></summary>
+                        <div class="unit-content">
+ 
+                            <p class="unit-status"><em>Reading-only unit (no Lecturecast).</em></p>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bishop, C. and Bishop, H. (2024) <em>Deep Learning: Foundations and Concepts</em>, Chapters 6&ndash;7</td>
+                                        <td>Introduces deep neural networks and gradient descent optimisation, explaining how model parameters are iteratively updated to minimise error.</td>
+                                        <td>Provides understanding of how machine learning models are trained and optimised, which underpins regression model training.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scikit-learn (no date) <em>Supervised Learning</em></td>
+                                        <td>Provides documentation and examples of supervised learning algorithms, including linear regression, within the Scikit-learn library.</td>
+                                        <td>Directly supports implementation of linear regression models using Scikit-learn, as required in this unit.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brownlee, J. (2018) <em>How to Calculate Correlation Between Variables in Python</em></td>
+                                        <td>Demonstrates how to compute correlation between variables using Python, including practical code examples.</td>
+                                        <td>Supports feature analysis and understanding relationships between variables prior to building regression models.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 5 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 5 – Clustering</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>What is Clustering?</h4>
+                            <ul>
+                                <li><strong>Unsupervised</strong> machine learning technique.</li>
+                                <li>A set of techniques used to partition data into groups (clusters).</li>
+                                <li>Clusters are loosely defined as groups of data objects that are more similar to other objects in their cluster than to objects in other clusters.</li>
+                                <li>Clustering helps identify two qualities of data: <strong>meaningfulness</strong> (clusters expand domain knowledge) and <strong>usefulness</strong> (clusters can serve as an intermediate step in a data pipeline).</li>
+                            </ul>
+ 
+                            <h4>Applications of Clustering</h4>
+                            <ul>
+                                <li><strong>Retail</strong> &ndash; cluster customers according to buying patterns.</li>
+                                <li><strong>Banking</strong> &ndash; identification of genuine customers (e.g. fraud detection in loans).</li>
+                                <li><strong>Insurance</strong> &ndash; mostly fraud detection and identification of potential risky customers.</li>
+                            </ul>
+ 
+                            <h4>Segmentation</h4>
+                            <ul>
+                                <li><strong>Segmentation</strong>: technique to divide a population into logical groups with a common need.</li>
+                                <li><strong>Base</strong>: used for defining clusters.</li>
+                                <li><strong>Descriptor</strong>: used to profile and define identified clusters.</li>
+                            </ul>
+ 
+                            <h4>Similarity and Dissimilarity Measures</h4>
+                            <p>Measured by distance between data objects using:</p>
+                            <ul>
+                                <li>Euclidean Distance</li>
+                                <li>Simple Matching Coefficient (SMC)</li>
+                                <li>Jaccard Coefficient</li>
+                                <li>Cosine Similarity</li>
+                                <li>Pearson Correlation Coefficient</li>
+                                <li>Bregman Divergence</li>
+                            </ul>
+ 
+                            <h4>Types of Clusters</h4>
+                            <ul>
+                                <li><strong>Well-separated</strong>: any point in a cluster is closer to every other point in the cluster than to any point outside it.</li>
+                                <li><strong>Centre-based</strong>: objects are closer to their cluster centre than to the centre of any other cluster.</li>
+                                <li><strong>Density-based</strong>: a dense region of data points separated by low-density regions.</li>
+                                <li><strong>Concept-based</strong>: data share a common property or concept.</li>
+                            </ul>
+ 
+                            <h4>Clustering Methods</h4>
+                            <ul>
+                                <li><strong>K-Means</strong>: Partitioning Method</li>
+                                <li><strong>Hierarchical clustering</strong> &ndash; Agglomerative Method</li>
+                                <li><strong>DBSCAN</strong>: Density-Based Spatial Clustering of Applications with Noise</li>
+                            </ul>
+ 
+                            <h4>K-Means Clustering</h4>
+                            <p>Assumes a fixed number of clusters <em>K</em>, with a goal to create "compact" clusters.</p>
+                            <p><strong>Steps:</strong></p>
+                            <ol>
+                                <li>Randomly select <em>k</em> centroids (data points representing cluster centres).</li>
+                                <li>Apply a two-step expectation&ndash;maximisation process:
+                                    <ul>
+                                        <li><strong>Expectation step:</strong> assigns each data point to its nearest centroid.</li>
+                                        <li><strong>Maximisation step:</strong> computes the mean of all points in each cluster and sets the new centroid.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p><strong>Strengths:</strong> simple iterative method; the user provides <em>K</em>.</p>
+                            <p><strong>Weaknesses:</strong> sometimes too simple (yields poor results); difficult to guess the correct <em>K</em>.</p>
+ 
+                            <h4>Choosing an Appropriate K Value</h4>
+                            <ul>
+                                <li><strong>The Elbow Method:</strong> run K-Means multiple times, incrementing <em>K</em> on each iteration, and record the SSE.</li>
+                                <li><strong>The Silhouette Coefficient:</strong> quantifies how well a data point fits its assigned cluster by measuring how close it is to other points in its cluster, and how far it is from points in other clusters.</li>
+                            </ul>
+ 
+                            <h4>Cluster Evaluation</h4>
+                            <ul>
+                                <li>Determine cluster tendency.</li>
+                                <li>Determine the correct number of clusters.</li>
+                                <li>Evaluate how well clusters fit the data.</li>
+                                <li>Compare clusters to externally known results.</li>
+                                <li>Compare two sets of clusters to determine which is better.</li>
+                            </ul>
+                            <p><strong>Cohesion</strong> &rarr; measures cluster homogeneity. <strong>Separation</strong> &rarr; measures how well separated clusters are.</p>
+                            <p>A good clustering produces clusters with <em>low cohesion value</em> (data points close together / homogeneous) and <em>high inter-cluster separation</em>.</p>
+ 
+                            <h4>Hierarchical Clustering</h4>
+                            <ul>
+                                <li><strong>Agglomerative Clustering:</strong> start with each data item as a cluster, then iteratively merge the closest pair of clusters.</li>
+                                <li><strong>Divisive Clustering:</strong> start with one all-inclusive cluster, then iteratively split it until only singleton clusters remain.</li>
+                            </ul>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Chernozhukov, V., Hansen, C. and Spindler, M. (2024) <em>Applied Causal Inference Powered by ML and AI</em>, Chapter 3</td>
+                                        <td>Explains the use of penalised regression methods, particularly Lasso, for making predictions in high-dimensional datasets where the number of predictors may exceed the number of observations. Regularisation techniques control model complexity by penalising large coefficients.</td>
+                                        <td>Provides insight into how machine learning methods handle high-dimensional data and large feature spaces, which is relevant when analysing complex datasets where clustering techniques may also be applied.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thinsungnoen, T. <em>et al.</em> (2015) <em>The Clustering Validity with Silhouette and Sum of Squared Errors</em></td>
+                                        <td>Examines clustering evaluation techniques, particularly the Silhouette coefficient and Sum of Squared Errors (SSE), which measure cluster cohesion and separation.</td>
+                                        <td>Provided insight into how clustering algorithms can be evaluated and how the optimal number of clusters can be determined when analysing unsupervised learning results.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 6 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 6 – Clustering with Python</h3></summary>
+                        <div class="unit-content">
+ 
+                            <p class="unit-status"><em>Reading-only unit (no Lecturecast).</em></p>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bishop, C. and Bishop, H. (2024) <em>Deep Learning: Foundations and Concepts</em>, Chapter 8</td>
+                                        <td>Explains the backpropagation algorithm used to train neural networks by propagating errors backwards through the network and updating weights using gradient-based optimisation.</td>
+                                        <td>Provides the fundamental learning mechanism used to train deep neural networks, enabling models to adjust parameters and improve predictions during training.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Goodfellow, I., Bengio, Y. and Courville, A. (2016) <em>Deep Learning</em>, Chapter 6: Deep Feedforward Networks</td>
+                                        <td>Describes deep feedforward neural networks, including their architecture, hidden units and gradient-based learning methods. Explains how backpropagation and differentiation algorithms enable efficient training of multilayer neural networks.</td>
+                                        <td>Expands the theoretical understanding of neural network architectures and explains how feedforward models are trained using gradient-based optimisation and backpropagation.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scikit-learn (no date) <em>sklearn.cluster.KMeans</em></td>
+                                        <td>Provides documentation for implementing the K-Means clustering algorithm, including parameters, training procedures and evaluation methods within the Scikit-learn machine learning library.</td>
+                                        <td>Supports practical experimentation with clustering algorithms in Python, allowing the application of machine learning techniques discussed throughout the module.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 7 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 7 – Introduction to Artificial Neural Networks</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+                            <ul>
+                                <li><strong>Biological inspiration of ANN:</strong> the design of Artificial Neural Networks is motivated by the neural network of the animal nervous system, especially the brain.</li>
+                                <li><strong>AND operator:</strong> returns TRUE only when logic 1 AND logic 2 are both TRUE; in all other cases it returns FALSE.</li>
+                                <li><strong>XOR function:</strong> with two logical statements, XOR returns TRUE if either statement is TRUE, but FALSE if both are TRUE. If neither is TRUE, XOR also returns FALSE.</li>
+                            </ul>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bishop, C. and Bishop, H. (2024) <em>Deep Learning: Foundations and Concepts</em>, Chapter 15</td>
+                                        <td>Introduces models with discrete latent variables, including K-Means clustering, Gaussian Mixture Models (GMMs) and the Expectation&ndash;Maximization (EM) algorithm used to estimate model parameters.</td>
+                                        <td>Provides theoretical foundations for clustering methods and probabilistic models that identify hidden group structures in data.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Goodfellow, I., Bengio, Y. and Courville, A. (2016) <em>Deep Learning</em>, Chapter 8: Optimization for Training Deep Models</td>
+                                        <td>Discusses optimisation techniques used to train machine learning models, including gradient descent, stochastic gradient descent and strategies for improving convergence during training.</td>
+                                        <td>Helps explain how machine learning models are efficiently trained and optimised, complementing the probabilistic modelling approaches introduced in this unit.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sharma, A. (2017) <em>Understanding Activation Functions in Neural Networks</em></td>
+                                        <td>Explains the role of activation functions such as sigmoid, tanh and ReLU in neural networks and how they enable models to learn non-linear patterns in data.</td>
+                                        <td>Provides additional background on neural network behaviour and learning mechanisms used in machine learning models.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 8 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 8 – Training an Artificial Neural Network</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>Reducing the Error</h4>
+                            <ul>
+                                <li>For a neural network to learn, weights associated with neuron connections must be updated after forward passes of data through the network.</li>
+                                <li>These weights are adjusted to reconcile the differences between the actual and predicted outcomes for subsequent forward passes.</li>
+                                <li>We don't use fixed step gradient descent &mdash; we may miss the local minima.</li>
+                            </ul>
+ 
+                            <h4>Backpropagation</h4>
+                            <ul>
+                                <li>A mechanism used to update the weights using gradient descent.</li>
+                                <li>It calculates the gradient of the error function with respect to the neural network's weights.</li>
+                                <li>The calculation proceeds <strong>backwards</strong> through the network.</li>
+                            </ul>
+ 
+                            <h4>Training Goals</h4>
+                            <ul>
+                                <li>The main goal of training is to reduce the <strong>error</strong> (the difference between prediction and actual output).</li>
+                                <li>Actual output is "not changing" = constant &rarr; so we change the prediction value to reduce error.</li>
+                                <li><strong>Error</strong> = difference between actual output and predicted output at each data point.</li>
+                            </ul>
+ 
+                            <h4>Gradient Descent</h4>
+                            <ul>
+                                <li>An iterative optimisation algorithm used to find the minimum of a function.</li>
+                                <li><strong>Derivatives</strong> or slope changes enable us to quantify change.</li>
+                                <li>For adjusting weights within the network, we use this gradient approach &mdash; using the derivatives of the network's weights with respect to the output error.</li>
+                            </ul>
+ 
+                            <h4>Delta Rule (used in backpropagation)</h4>
+                            <ul>
+                                <li><strong>Output Layer Delta:</strong> &Delta;<sub>output</sub> = error &times; sigmoid<sub>derivative</sub></li>
+                                <li><strong>Hidden Layer Delta:</strong> &Delta;<sub>hidden</sub> = sigmoid<sub>derivative</sub> &times; Weight &times; &Delta;<sub>output</sub></li>
+                            </ul>
+ 
+                            <h4>Bias</h4>
+                            <p>Bias in a neural network can be thought of as analogous to the role of a constant in a linear function: the line is effectively transposed by the constant value (no gradient change).</p>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bishop, C. and Bishop, H. (2024) <em>Deep Learning: Foundations and Concepts</em>, Chapter 18: Model Evaluation and Hyperparameter Tuning</td>
+                                        <td>Discusses methods for evaluating machine learning models and selecting appropriate hyperparameters. Introduces validation techniques, performance metrics and strategies such as cross-validation.</td>
+                                        <td>Provides the theoretical foundation for assessing machine learning model performance and optimising hyperparameters to improve model accuracy and reliability.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pruciak, M. (2021) <em>10 Business Applications of Neural Network (With Examples!)</em></td>
+                                        <td>Describes practical applications of neural networks across industries such as finance, marketing, healthcare and fraud detection.</td>
+                                        <td>Demonstrates how neural network models are applied in real-world scenarios, linking theoretical machine learning concepts to practical business applications.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 9 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 9 – Introduction to Convolutional Neural Networks</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>What is a CNN?</h4>
+                            <ul>
+                                <li><strong>Convolutional Neural Network (ConvNet/CNN)</strong>: a Deep Learning algorithm.</li>
+                                <li>Input &rarr; Image &rarr; Assign importance (learnable weights and biases) to various aspects/objects in the image, enabling differentiation between them.</li>
+                                <li>Result: objects within the image can be classified by ANN.</li>
+                                <li><strong>Detection + Classification = CNN's power.</strong></li>
+                                <li>Images are represented as matrices of pixels, each with a numerical value.</li>
+                            </ul>
+ 
+                            <h4>Goal</h4>
+                            <p>To reduce images into a form easier to process without losing features that are critical for classification.</p>
+ 
+                            <h4>Two Main Steps</h4>
+                            <ol>
+                                <li><strong>Feature Learning</strong></li>
+                                <li><strong>Classification</strong></li>
+                            </ol>
+ 
+                            <h4>Three Sub-Processes</h4>
+                            <ul>
+                                <li><strong>Filter:</strong> scans and converts the area covered by the kernel into a weighted sum of pixel values according to settings.</li>
+                                <li><strong>Detect:</strong> once converted, uses an activation function like ReLU to detect important features and discard unimportant ones.</li>
+                                <li><strong>Condense:</strong> features are enhanced by pooling, which takes the maximum value of the feature &mdash; condensing the image by retaining the highest value.</li>
+                            </ul>
+ 
+                            <h4>Filtering</h4>
+                            <ul>
+                                <li>We apply certain weight matrices known as <strong>kernels</strong>.</li>
+                                <li>Kernels act like a lens &mdash; scanning the image and producing a weighted sum of pixel values.</li>
+                                <li>During training, a CNN learns what features it needs to solve the classification problem &mdash; i.e. finding the best values for its kernels.</li>
+                            </ul>
+ 
+                            <h4>Detection</h4>
+                            <ul>
+                                <li>Feature maps are passed through the <strong>ReLU activation function</strong> (a nonlinear function that separates a particular layer from the convolution layer).</li>
+                                <li>Negative values are unimportant and set to 0.</li>
+                            </ul>
+ 
+                            <h4>Condensation / Pooling</h4>
+                            <ul>
+                                <li>Responsible for reducing the spatial size of the Convolved Feature.</li>
+                                <li>Done by either taking the max or average value of the portion of the detected feature map covered by the kernel.</li>
+                            </ul>
+ 
+                            <h4>Other Concepts</h4>
+                            <ul>
+                                <li><strong>Epoch</strong>: the number of passes of the entire training dataset.</li>
+                                <li><strong>Softmax Classification technique</strong>: classifies the dominating and low-level features distinguished by the model.</li>
+                            </ul>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bishop, C. and Bishop, H. (2024) <em>Deep Learning: Foundations and Concepts</em>, Chapters 5 and 10</td>
+                                        <td>Chapter 5 introduces classification methods, including discriminant functions, decision theory, and both generative and discriminative classifiers such as logistic regression. Chapter 10 focuses on convolutional neural networks (CNNs), covering convolutional filters, pooling, object detection, image segmentation, and architectures such as U-Net.</td>
+                                        <td>Provides a comprehensive foundation for understanding both core classification techniques and advanced deep learning models for computer vision, enabling the development of accurate and scalable machine learning systems.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wall, M. (2019) 'Biased and Wrong? Facial Recognition Tech in the Dock'</td>
+                                        <td>Examines real-world issues of bias and inaccuracy in facial recognition systems, highlighting ethical and technical limitations of AI technologies.</td>
+                                        <td>Demonstrates the practical challenges and ethical implications of deploying deep learning systems, emphasising the importance of fairness, reliability, and responsible AI use.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 10 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 10 – Natural Language Processing</h3></summary>
+                        <div class="unit-content">
+ 
+                            <p class="unit-status"><em>Reading-only unit (no Lecturecast).</em></p>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bishop, C. and Bishop, H. (2024) <em>Deep Learning: Foundations and Concepts</em>, Chapter 12</td>
+                                        <td>Introduces transformer models, including attention mechanisms, self-attention, and encoder&ndash;decoder architectures. Explains how transformers overcome limitations of sequential processing and enable efficient handling of long-range dependencies in data.</td>
+                                        <td>Provides the foundation for understanding modern deep learning architectures used in natural language processing and AI systems, highlighting how attention-based models improve performance and scalability compared to traditional approaches.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Goodfellow, I., Bengio, Y. and Courville, A. (2016) <em>Deep Learning</em>, Chapter 10</td>
+                                        <td>Explores sequence modelling techniques, including recurrent neural networks (RNNs), backpropagation through time, and challenges such as vanishing gradients. Introduces architectures designed to model temporal dependencies in sequential data.</td>
+                                        <td>Provides essential background on sequence modelling, enabling comparison between traditional recurrent approaches and modern transformer-based architectures used in AI systems.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wang, J. <em>et al.</em> (2021) 'CNN Explainer: Learn Convolutional Neural Network (CNN) in Your Browser'</td>
+                                        <td>Interactive explanation of convolutional neural networks, including filters, feature maps and layer operations, designed to support intuitive understanding of CNN behaviour.</td>
+                                        <td>Supports practical understanding of deep learning architectures, reinforcing how different neural network models (CNNs vs transformers) are applied across tasks such as vision and language processing.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 11 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 11 – Model Selection and Evaluation</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>Overfitting vs Underfitting</h4>
+                            <ul>
+                                <li><strong>Overfitting:</strong> when a model does well on training data but not on test data.</li>
+                                <li><strong>Underfitting:</strong> when a model performs poorly on both test and training data.</li>
+                            </ul>
+ 
+                            <h4>Sources of Predictive Error</h4>
+                            <ul>
+                                <li>Statistical noise in the data</li>
+                                <li>Incompleteness of the data sample</li>
+                                <li>Limitations of each different model type</li>
+                            </ul>
+ 
+                            <h4>Bias vs Variance</h4>
+                            <ul>
+                                <li><strong>Bias:</strong> high bias can cause an algorithm to miss relevant relations between features and target outputs (underfitting).</li>
+                                <li><strong>Variance:</strong> error from sensitivity to small fluctuations in the training set (overfitting).</li>
+                            </ul>
+ 
+                            <h4>Reducing Underfitting</h4>
+                            <ul>
+                                <li>Bigger network</li>
+                                <li>Train for a longer duration</li>
+                                <li>Increase the number of parameters in the model</li>
+                            </ul>
+ 
+                            <h4>Reducing Overfitting</h4>
+                            <ul>
+                                <li>Add more data</li>
+                                <li>Data augmentation</li>
+                                <li>Simplify the model</li>
+                                <li>Change the training process</li>
+                                <li>Early termination</li>
+                                <li>Regularisation (Dropout, DropConnect, L1 and L2 regularisation)</li>
+                            </ul>
+ 
+                            <h4>Ideas to Improve ML/DL Strategies</h4>
+                            <ul>
+                                <li>Collect more data</li>
+                                <li>Collect more diverse training examples</li>
+                                <li>Train algorithm longer with a suitable optimiser</li>
+                                <li>Try bigger or smaller networks</li>
+                                <li>Try dropout</li>
+                                <li>Add regularisation</li>
+                            </ul>
+ 
+                            <h4>Model Selection Techniques</h4>
+                            <ul>
+                                <li><strong>Probabilistic Measures:</strong> choose a model via in-sample error and complexity. Appropriate for simpler linear models (e.g. linear regression) where the calculation of model complexity penalty is known and tractable.</li>
+                                <li><strong>Resampling Methods:</strong> choose a model via estimated out-of-sample error &mdash; splitting the training dataset into sub-train and test sets, fitting a model on the sub-train, and evaluating it on the test set.</li>
+                            </ul>
+ 
+                            <h4>Cross Validation</h4>
+                            <p>Split the dataset into two sets: training and validation. For each candidate model, form a classifier using the training data and apply it to the validation set. The final classifier is the one that classified the highest fraction of inputs correctly.</p>
+ 
+                            <h4>Performance Metrics</h4>
+                            <ul>
+                                <li><strong>Sensitivity</strong> = True Positive rate</li>
+                                <li><strong>Specificity</strong> = True Negative rate</li>
+                                <li>Sensitivity and specificity are negatively correlated: if sensitivity increases, specificity decreases.</li>
+                            </ul>
+ 
+                            <h4>Type I and Type II Errors (pregnancy example)</h4>
+                            <ul>
+                                <li><strong>Type I:</strong> classify a man as pregnant.</li>
+                                <li><strong>Type II:</strong> classify a pregnant woman as non-pregnant.</li>
+                            </ul>
+ 
+                            <h4>ROC Curve and AUC</h4>
+                            <ul>
+                                <li><strong>Receiver Operating Characteristics (ROC) Curve</strong> and <strong>Area Under the Curve (AUC)</strong>.</li>
+                                <li>For measuring the relationship between sensitivity and specificity, the ROC curve is used &mdash; the AUC provides a measurement ratio value between them.</li>
+                                <li>Moving the threshold <strong>left</strong> (lower value) &rarr; sensitivity increases (more True Positives correctly identified), but specificity decreases (more True Negatives classified as positive &rarr; higher False Positive rate).</li>
+                                <li>Moving the threshold <strong>right</strong> (higher value) &rarr; the opposite happens.</li>
+                            </ul>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bishop, C. and Bishop, H. (2024) <em>Deep Learning: Foundations and Concepts</em>, Chapter 18</td>
+                                        <td>Explores model evaluation techniques and hyperparameter tuning, including validation strategies, performance metrics, overfitting prevention, and optimisation methods such as cross-validation.</td>
+                                        <td>Provides the theoretical foundation for assessing model performance and improving generalisation, which is essential for developing reliable and robust machine learning systems.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Novakovi&cacute;, J.Dj. <em>et al.</em> (2017) 'Evaluation of classification models in machine learning', <em>Theory and Applications of Mathematics &amp; Computer Science</em>, 7(1), pp. 39&ndash;46</td>
+                                        <td>Discusses evaluation metrics for classification models, including accuracy, precision, recall, and confusion matrices, highlighting their strengths and limitations.</td>
+                                        <td>Enhances understanding of how different evaluation metrics impact model assessment, supporting more informed selection of appropriate performance measures in machine learning tasks.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jordan, J. (2017) 'Evaluating a Machine Learning Model'</td>
+                                        <td>Provides a practical overview of model evaluation techniques, focusing on real-world considerations such as data splitting, bias, variance, and model validation.</td>
+                                        <td>Bridges theoretical concepts with practical implementation, reinforcing the importance of rigorous evaluation in deploying effective machine learning solutions.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 12 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 12 – Industry 4.0 and Machine Learning</h3></summary>
+                        <div class="unit-content">
+ 
+                            <p class="unit-status"><em>Reading-only unit (no Lecturecast).</em></p>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bishop, C. and Bishop, H. (2024) <em>Deep Learning: Foundations and Concepts</em>, Chapter 20</td>
+                                        <td>Introduces Neural Architecture Search (NAS) and AI-driven model design, focusing on automated methods for optimising neural network structures and improving performance.</td>
+                                        <td>Provides insight into the future of machine learning, where model design is increasingly automated, enabling more efficient and scalable AI development.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diez-Olivan, A. <em>et al.</em> (2019) 'Data fusion and machine learning for industrial prognosis: Trends and perspectives towards Industry 4.0', <em>Information Fusion</em>, 50, pp. 92&ndash;111</td>
+                                        <td>Explores the integration of machine learning and data fusion techniques for predictive maintenance and industrial applications.</td>
+                                        <td>Demonstrates how advanced AI techniques are applied in Industry 4.0 environments, linking machine learning theory to real-world industrial systems.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Morales, M., Nousala, S. and Ghobakhloo, M. (2024) 'The complexity of sustainable innovation&hellip;', in <em>Industry 4.0 to Industry 5.0</em>. Springer</td>
+                                        <td>Examines the transition from Industry 4.0 to 5.0, focusing on sustainability, human-centric systems, and socio-economic impacts of technological innovation.</td>
+                                        <td>Highlights the broader societal implications of AI and automation, emphasising the need for responsible and sustainable deployment of intelligent systems.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CDEI (2019) 'Deepfakes and Audiovisual Disinformation'</td>
+                                        <td>Investigates the risks of deepfake technologies and their role in misinformation and digital manipulation.</td>
+                                        <td>Emphasises ethical challenges associated with AI-generated content, reinforcing the importance of trust, transparency, and regulation in AI systems.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Walter, J. (2020) 'Deepfakes: The Dark Origins of Fake Videos&hellip;'</td>
+                                        <td>Explores the development and misuse of deepfake technologies in digital media.</td>
+                                        <td>Highlights real-world risks of generative AI, supporting critical evaluation of AI technologies and their societal impact.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Random Face Generator (2022) <em>This Person Does Not Exist</em></td>
+                                        <td>Demonstrates AI-generated human faces using generative adversarial networks (GANs).</td>
+                                        <td>Provides a practical example of generative AI capabilities, illustrating both innovation and ethical concerns related to synthetic data.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OpenAI (2021) <em>DALL&middot;E: Creating Images from Text</em></td>
+                                        <td>Introduces text-to-image generation using deep learning models.</td>
+                                        <td>Demonstrates advanced generative AI systems and their applications, reinforcing the transformative potential and ethical considerations of AI-driven creativity.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+
+        <footer id="footer" class="wrapper style1-alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>&copy; Ioanna Tziouvaka 2025 All rights reserved.</li>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+        <!-- Scripts -->
+    <script src="/eportfolio/assets/js/jquery.min.js"></script>
+    <script src="/eportfolio/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/eportfolio/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/eportfolio/assets/js/browser.min.js"></script>
+    <script src="/eportfolio/assets/js/breakpoints.min.js"></script>
+    <script src="/eportfolio/assets/js/util.js"></script>
+    <script src="/eportfolio/assets/js/main.js"></script>
+</body>
+</html>
