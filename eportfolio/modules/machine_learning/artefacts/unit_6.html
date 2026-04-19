@@ -51,22 +51,186 @@
 
                     <div class="artefact">
                         <div class="artefact-header">
-                            <h2>Collaborative Discussion 1 - Initial Post</h2>
+                            <h2>Group Project</h2>
                         </div>
 
                         <div class="artefact-description">
-                            <div class="images-container">
-                                <img src="/eportfolio/images/machine_learning_images/initial 1 1.png" alt="Screenshot of Collaborative Discussion 1 - Initial Post" class="artefact-screenshot">
-                                <img src="/eportfolio/images/machine_learning_images/initial 1 2.png" alt="Screenshot of Collaborative Discussion 1 - Initial Post" class="artefact-screenshot">
+                            <h3><b>Group D Team Project: Optimising Airbnb Pricing Strategies in New York City</b></h3>
+                            <p><b>Overview</b></p>
+                            <p>Unit 6 was the first formal team assessment of the module. The brief required groups to propose an insightful business question using the Airbnb NYC dataset and address it through Exploratory Data Analysis, data preprocessing, statistical analysis, visualisation and clustering, producing a concise analytical report aimed at Airbnb executives.</p>
+                            <p>Group D implemented Track 1 (Regression &amp; Clustering). I served as <strong>Project Lead</strong>, with responsibilities including drafting the team contract, coordinating six virtual meetings across different time zones, maintaining meeting minutes and shared tracking documents, supporting the integration of individual analytical components, and producing the final consolidated report.</p>
+                        
+                            <br>
+
+                            <p><b>Business Question</b></p>
+                        
+                            <p>How can Airbnb optimise pricing strategies across New York City based on location, property characteristics and availability patterns, and what actionable listing segments can be identified using clustering techniques?</p>
+                        
+                            <br>
+
+                            <p><b>Methodology</b></p>
+                            <p>The analysis used the AB_NYC_2019 dataset from Kaggle, containing 48,884 cleaned Airbnb listings across New York City. Preprocessing included removing zero-price errors, imputing missing review values, converting <code>last_review</code> into a numerical <code>days_since_review</code> feature, and capping <code>minimum_nights</code> at 365. Given the heavily right-skewed price distribution (median $106, mean $153), the price variable was log-transformed before modelling.</p>
+                            <p>Two classical machine learning approaches were applied:</p>
+                            <ul>
+                                <li><strong>Multivariate linear regression</strong> &mdash; to model price prediction using interpretable features including borough, neighbourhood, latitude, longitude, room type, minimum nights, number of reviews, review frequency, host portfolio size and availability indicators.</li>
+                                <li><strong>K-Means clustering (with DBSCAN comparison)</strong> &mdash; to identify natural market segments of listings, with the optimal number of clusters (k = 4) selected using the Elbow Method.</li>
+                            </ul>
+
+                            <br>
+
+                            <p><b>Key Findings</b></p>
+                            <ul>
+                                <li>The multivariate linear regression model achieved <strong>R&sup2; &asymp; 0.53</strong> and <strong>RMSE &asymp; 0.475</strong> on the log scale, indicating moderate predictive performance and confirming that Airbnb pricing follows structured patterns while still being influenced by local variation.</li>
+                                <li>Borough and room type were the strongest predictors of price, with Manhattan entire-home listings consistently occupying the premium tier.</li>
+                                <li>K-Means clustering identified four practical market segments: <em>Low Activity Listings, Standard Listings, Investment Listings</em> and <em>High Demand Value Listings</em>.</li>
+                                <li>DBSCAN produced a low silhouette score (&asymp; 0.20), suggesting that the Airbnb market behaves more as a continuous economic spectrum than as sharply separated natural clusters &mdash; making K-Means the more useful segmentation approach for management insights.</li>
+                            </ul>
+
+                            <br>
+
+                            <p><b>Business Recommendations</b></p>
+                            <p>The analysis supported a recommendation for Airbnb to adopt a <em>segment-aware, location-sensitive</em> pricing strategy rather than a single city-wide rule. High-demand listings should focus on occupancy optimisation, investment listings on yield and stay-length optimisation, and low-activity listings on improved listing quality and promotional pricing.</p>
+                        
+                            <br>
+
+                            <p><b>My Individual Contribution</b></p>
+                            <p>As Project Lead, my specific contributions to the project included:</p>
+                            <ul>
+                                <li>Drafting the team contract outlining goals, roles and deliverables.</li>
+                                <li>Coordinating and chairing the six virtual team meetings across different time zones.</li>
+                                <li>Preparing and circulating the meeting minutes and maintaining recordings for team members unable to attend.</li>
+                                <li>Creating and managing the shared "Key Findings &amp; Analysis" document used to consolidate each member's work.</li>
+                                <li>Leading the final integration of the analytical components into a coherent report structure and narrative.</li>
+                                <li>Producing the final version of the report, ensuring consistency of formatting, referencing and alignment with the university submission standards.</li>
+                            </ul>
+
+                            <br>
+
+                            <p><b>Final Report</b></p>
+                            
+                            <p>The final Group D report, <em>"Optimising Airbnb Pricing Strategies in New York City: A Regression and Clustering Analysis of Listing Characteristics and Market Segmentation"</em>, is embedded below and also available for download.</p>
+                            <div class="pdf-embed">
+                                <iframe src="/eportfolio/assets/files/Report_Group D.pdf"
+                                        width="100%"
+                                        height="700px"
+                                        title="Group D Final Report &ndash; Airbnb NYC Pricing Analysis">
+                                    <p>Your browser does not support embedded PDFs.
+                                       <a href="/eportfolio/assets/files/Report_Group D.pdf">Download the report here</a>.</p>
+                                </iframe>
                             </div>
-                            <div class="artefact-container">
-                                <h3>Reflection on this Artefact</h3>
-                                <p>This initial post framed machine learning within the evolution from Industry 4.0 to Industry 5.0, using the 2022 Toyota cyberattack to argue that the incident exposed the sociotechnical assumptions of optimisation-driven ML deployment rather than a failure of the technology itself. Preparing this post shifted how I thought about model evaluation — moving beyond accuracy toward resilience, governance, and human oversight.</p>
+                            <p class="download-link"><a href="/eportfolio/assets/files/Report_Group D.pdf" download>Download the final report (PDF)</a></p>
+
+                            <br>
+
+                            <p><b>Report Appendix</b></p>
+                            <p>The supporting appendix documents the full Exploratory Data Analysis, preprocessing decisions, feature selection rationale, regression diagnostics (residuals, coefficients, permutation importance, feature correlation) and clustering analysis (DBSCAN, K-distance graph).</p>
+                            <p class="download-link"><a href="/eportfolio/assets/files/Appendix_Group D.pdf" download> Download the report appendix (PDF)</a></p>
+
+                            <br>
+
+                            <p><b>Jupyter Notebooks</b></p>
+                            <p>The Python notebooks produced during the analytical phase of the project are available for download below. Together, they document the full pipeline from initial data audit through exploratory visualisation, modelling and model evaluation.</p>
+                            <ul class="artefact-links">
+                                <li><a href="/eportfolio/assets/files/Phase1.ipynb" download>Phase 1 &ndash; Data Audit, EDA, Cleaning &amp; Feature Engineering (IPYNB)</a></li>
+                                <li><a href="/eportfolio/assets/files/AB_NYC_Visualisation.ipynb" download>EDA Visualisation &amp; Interpretation (IPYNB)</a></li>
+                                <li><a href="/eportfolio/assets/files/Linear_Regression_and_Clustering.ipynb" download>Linear Regression &amp; Clustering Models (IPYNB)</a></li>
+                                <li><a href="/eportfolio/assets/files/Model_Visualization.ipynb" download>Model Visualisation, Feature Importance &amp; K-Means vs DBSCAN (IPYNB)</a></li>
+                            </ul>
+
+                            <br>
+
+                            <p><b>Meeting Minutes</b></p>
+                            <p>Minutes were prepared for every team meeting, with meetings also recorded to allow absent members to stay informed about project decisions and next steps.</p>
+                            <ul class="artefact-links">
+                                <li><a href="/eportfolio/assets/files/Meeting Minutes/ML_Meeting Minutes - Meeting 1.docx" download>Meeting 1 &ndash; 21/02/2026</a> (Assignment review, team contract, initial business question ideas)</li>
+                                <li><a href="/eportfolio/assets/files/Meeting Minutes/ML_Meeting_Minutes_-_Meeting_2.docx" download>Meeting 2 &ndash; 22/02/2026</a> (Finalised business question, role allocation, project workflow)</li>
+                                <li><a href="/eportfolio/assets/files/Meeting Minutes/ML_Meeting_Minutes_-_Meeting_3.docx" download>Meeting 3 &ndash; 25/02/2026</a> (Review of data preparation and EDA; alignment for modelling phase)</li>
+                                <li><a href="/eportfolio/assets/files/Meeting Minutes/ML_Meeting_Minutes_-_Meeting_4.docx" download>Meeting 4 &ndash; 01/03/2026</a> (Regression and clustering results; next steps for visualisation)</li>
+                                <li><a href="/eportfolio/assets/files/Meeting Minutes/ML_Meeting_Minutes_-_Meeting_5.docx" download>Meeting 5 &ndash; 04/03/2026</a> (Visualisation review; report drafting plan)</li>
+                                <li><a href="/eportfolio/assets/files/Meeting Minutes/ML_Meeting_Minutes_-_Meeting_6.docx" download>Meeting 6 &ndash; 08/03/2026</a> (Final report edits; appendix structure; submission preparation)</li>
+                            </ul>
+                        
+                            <br>
+
+                            <p><b>Peer Evaluation</b></p>
+                            <p>A peer evaluation was completed and submitted as a confidential document through the module portal, as required by the assignment brief. A fuller critical reflection on my experience as a member of this development team &mdash; including the coordination challenges encountered and how I responded to them &mdash; is provided on the <a href="/eportfolio/modules/machine_learning/reflections.html">Reflections page</a>.</p>
+
+                            <br>
+
+                            <div class="tutor-feedback">
+                                <p><b>Tutor Feedback</b></p>
+                                <p>The tutor feedback for the Group D submission recognised the report as an <strong>excellent quality</strong> assignment. A summary of the feedback by component is provided below.</p>
+                                <div class="feedback-box">
+                                    <table class="feedback-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Component</th>
+                                                <th>Tutor Feedback</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Substantive question</strong></td>
+                                                <td>Well chosen and made business sense. Could have been further expanded with other implications considered. Good use of references, though these could have been used more to strengthen the business case.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Rationale / arguments</strong></td>
+                                                <td>Robust, although it could have been elaborated more as a coherent strategy, especially in terms of recommendations.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Expected business impact</strong></td>
+                                                <td>Well handled.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Methodology (EDA, preprocessing, analysis, ML)</strong></td>
+                                                <td>The strongest point of the report. Demonstrated good grasp of module materials and ML tools. Two points could have been better developed: the discussion of algorithm choice, and a tabular presentation of diagnostic metrics. DBSCAN was noted as an interesting choice.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Visualisations of results</strong></td>
+                                                <td><em>Excellent component</em> &mdash; highlighted as a standout of the submission. Both the main body and appendices were described as polished and professional.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Overall presentation style</strong></td>
+                                                <td>Well-structured, with good sections, solid narrative and correct pacing.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>                        
+                        
+                            <br>
+
+                            <div class="artefact-reflection">
+                                <p><b>Reflection</b></p>
+                                <p>Leading this team project developed my understanding of applying machine learning to a real-world dataset within a distributed team. The Airbnb NYC dataset, with its large size, skewed price distribution and mixed features, required careful preprocessing decisions, including removing erroneous zero-price entries, handling missing values, engineering time-based features, and capping unrealistic values. These choices were not mechanical but needed to be justified in relation to the business problem, and discussing them as a team strengthened my ability to defend analytical decisions.</p>
+                                <p>This experience highlighted challenges related to dataset applicability. The skewed price distribution required log transformation, the concentration of listings in specific boroughs limited generalisability, and ambiguous variables such as <code>availability_365</code> introduced uncertainty that could not be resolved from the data alone. This reinforced that model performance depends not only on algorithm choice but on how well its assumptions align with the dataset. The low DBSCAN silhouette score further illustrated that the data did not naturally form discrete clusters.</p>
+                                <p>Working in a distributed team required structured coordination, including clear roles, scheduled meetings, shared documentation and recorded sessions. This experience strengthened my ability to collaborate effectively in a virtual environment and to balance independent judgement with collective decision-making.</p>
                             </div>
+                        
+                            <br>
+
+                            <p><b>References</b></p>
+                            <p>Airbnb (2023) <em>Airbnb Economic Impact and Data Insights</em>. Available at: https://www.airbnb.com/economic-impact (Accessed: 7 March 2026).</p>
+
+                            <p>Almeida, A., Nunes, A.P. and Machado, L.P. (2025) 'How do reviews impact Airbnb's prices? A hedonic approach', <em>Tourism and Hospitality</em>, 6(4), pp. 181&ndash;196. doi: https://doi.org/10.3390/tourhosp6040181.</p>
+
+                            <p>Chang, C. and Li, S. (2020) 'Study of price determinants of sharing economy-based accommodation services: evidence from Airbnb.com', <em>Journal of Theoretical and Applied Electronic Commerce Research</em>, 16(4), pp. 584&ndash;601. doi: https://doi.org/10.3390/jtaer16040035.</p>
+
+                            <p>Cox, T. (2019) <em>New York City Airbnb Open Data</em>. Kaggle. Available at: https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data (Accessed: 7 March 2026).</p>
+
+                            <p>Ding, K., Niu, Y. and Choo, W.C. (2023) 'The evolution of Airbnb research: a systematic literature review using structural topic modeling', <em>Heliyon</em>, 9(6), p. e17090. doi: https://doi.org/10.1016/j.heliyon.2023.e17090.</p>
+
+                            <p>Gy&oacute;di, K. and Nawaro, &#321;. (2021) 'Determinants of Airbnb prices in European cities: a spatial econometrics approach', <em>Tourism Management</em>, 86, p. 104319. doi: https://doi.org/10.1016/j.tourman.2021.104319.</p>
+
+                            <p>Hastie, T., Tibshirani, R. and Friedman, J. (2009) <em>The Elements of Statistical Learning</em>. New York: Springer.</p>
+
+                            <p>James, G., Witten, D., Hastie, T. and Tibshirani, R. (2021) <em>An Introduction to Statistical Learning</em>. New York: Springer.</p>
+
+                            <p>Perez-Sanchez, R. (2018) 'The what, where, and why of Airbnb price determinants', <em>Sustainability</em>, 10(12), pp. 1&ndash;31. Available at: https://ideas.repec.org/a/gam/jsusta/v10y2018i12p4596-d188018.html (Accessed: 7 March 2026).</p>
+                        
                         </div>
                     </div>
-
-             </div>
+                </div>
             </div>
         </section>
 

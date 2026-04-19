@@ -3636,7 +3636,12 @@ input, select, textarea {
 	.experiment-image img.artefact-screenshot {
     	max-width: max-content;
 	}
-
+	.tutor-feedback b, .tutor-feedback th {
+		color:#3c2c62;
+	}
+	.back-to-module {
+    	margin-bottom: 5em;
+	}
 
 
 

@@ -51,19 +51,303 @@
 
                     <div class="artefact">
                         <div class="artefact-header">
-                            <h2>Collaborative Discussion 1 - Initial Post</h2>
+                            <h2>Model Performance Measurement</h2>
                         </div>
 
                         <div class="artefact-description">
-                            <div class="images-container">
-                                <img src="/eportfolio/images/machine_learning_images/initial 1 1.png" alt="Screenshot of Collaborative Discussion 1 - Initial Post" class="artefact-screenshot">
-                                <img src="/eportfolio/images/machine_learning_images/initial 1 2.png" alt="Screenshot of Collaborative Discussion 1 - Initial Post" class="artefact-screenshot">
-                            </div>
-                            <div class="artefact-container">
-                                <h3>Reflection on this Artefact</h3>
-                                <p>This initial post framed machine learning within the evolution from Industry 4.0 to Industry 5.0, using the 2022 Toyota cyberattack to argue that the incident exposed the sociotechnical assumptions of optimisation-driven ML deployment rather than a failure of the technology itself. Preparing this post shifted how I thought about model evaluation — moving beyond accuracy toward resilience, governance, and human oversight.</p>
-                            </div>
+                            <h3><b>1. Introduction</b></h3>
+                            <p>Evaluating machine learning models is essential to ensure reliability and robustness in real-world applications. Classification models are commonly assessed using the Receiver Operating Characteristic (ROC) curve and the Area Under the Curve (AUC), while regression models are evaluated using the coefficient of determination (R²).</p>
+                            <p>The ROC curve evaluates the trade-off between true positive rate and false positive rate across thresholds, while AUC provides a threshold-independent measure of performance (Saito and Rehmsmeier, 2015). AUC is particularly useful when comparing models, although it may obscure performance differences in imbalanced datasets (Imani et al., 2026).</p>
+                            <p>This report investigates how parameter changes affect AUC and R², while also addressing ethical and professional considerations in model evaluation.</p>
+                        
+                            <hr>
+
+                            <h3><b>2. AUC and ROC Analysis (Classification Performance)</b></h3>
+                            <h4><b>2.1 Logistic Regression and Regularisation (C Parameter)</b></h4>
+                            <p>The parameter C controls the strength of regularisation in Logistic Regression, balancing model simplicity and data fitting (Géron, 2022).</p>
+                            <p><b>Results</b></p>
+                            <table border="1" cellspacing="0" cellpadding="8">
+                                <thead>
+                                    <tr>
+                                    <th>C Value</th>
+                                    <th>AUC</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>0.01</td>
+                                    <td>0.9847</td>
+                                    </tr>
+                                    <tr>
+                                    <td>0.1</td>
+                                    <td>0.9914</td>
+                                    </tr>
+                                    <tr>
+                                    <td>1</td>
+                                    <td>0.9948</td>
+                                    </tr>
+                                    <tr>
+                                    <td>10</td>
+                                    <td>0.9953</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p><b>Analysis</b></p>
+                            <p>The results demonstrate that increasing C improves AUC. Lower values impose stronger regularisation, leading to underfitting and reduced performance. As C increases, the model becomes more flexible and better captures underlying patterns.
+                                </br> Higher AUC values indicate improved discrimination between classes, reflecting stronger predictive capability (Saito and Rehmsmeier, 2015).
+                            </p>
+                            <img src="/eportfolio/images/machine_learning_images/roc-underfitting.png" alt="ROC Curve - Underfitting" class="artefact-screenshot">
+                            <p><em>Figure 1: Curve for C = 0.01 (underfitting)</em></p>
+                            <br>
+
+                            <img src="/eportfolio/images/machine_learning_images/roc-best-performance.png" alt="ROC Curve - Best Performance" class="artefact-screenshot">
+                            <p><em>Figure 2: Curve for C = 10 (best performance)</em></p>
+
+                            <br>
+
+                            <h4><b>2.2 Support Vector Machine (Kernel Selection)</b></h4>
+                            <p>Kernel selection determines the complexity of the decision boundary in Support Vector Machines (Cortes and Vapnik, 1995).</p>
+                            <p><b>Results</b></p>
+
+                            <table border="1" cellspacing="0" cellpadding="8">
+                                <thead>
+                                    <tr>
+                                    <th>Kernel</th>
+                                    <th>AUC</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>Linear</td>
+                                    <td>0.728</td>
+                                    </tr>
+                                    <tr>
+                                    <td>RBF</td>
+                                    <td>0.594</td>
+                                    </tr>
+                                    <tr>
+                                    <td>Polynomial</td>
+                                    <td>0.530</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p><b>Analysis</b></p>
+                            <p>The linear kernel achieved the highest AUC, suggesting that the dataset is largely linearly separable. More complex kernels (RBF, polynomial) resulted in lower performance, likely due to overfitting or unnecessary model complexity.</p>
+                            <p>This demonstrates that increased complexity does not always improve performance and may reduce generalisation (Bishop, 2006).</p>
+
+                            <img src="/eportfolio/images/machine_learning_images/roc-linear.png" alt="ROC Curve - Linear Kernel" class="artefact-screenshot">
+                            <p><em>Figure 3: ROC curve for Linear kernel (best performance)</em></p>
+
+                            <br>
+
+                            <img src="/eportfolio/images/machine_learning_images/roc-polynomial.png" alt="ROC Curve - Polynomial Kernel" class="artefact-screenshot">
+                            <p><em>Figure 4: ROC curve for Polynomial kernel (worst performance)</em></p>
+
+                            <br>
+
+                            <h4><b>2.3 Impact of Train/Test Split</b></h4>
+                            <p>The proportion of training data significantly affects model performance and generalisation.</p>
+                            <p><b>Results</b></p>
+
+                            <table border="1" cellspacing="0" cellpadding="8">
+                                <thead>
+                                    <tr>
+                                    <th>Test Size</th>
+                                    <th>AUC</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>0.2</td>
+                                    <td>0.759</td>
+                                    </tr>
+                                    <tr>
+                                    <td>0.5</td>
+                                    <td>0.728</td>
+                                    </tr>
+                                    <tr>
+                                    <td>0.7</td>
+                                    <td>0.693</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p><b>Analysis</b></p>
+                            <p>Reducing the test size (increasing training data) improves AUC, as the model has more information to learn from. Conversely, larger test sizes reduce training data, leading to poorer performance.
+                            </br> This highlights the importance of adequate training data for reliable model evaluation (Goodfellow, Bengio and Courville, 2016).
+                            </p>
+
+                            <br>
+
+                            <img src="/eportfolio/images/machine_learning_images/roc-test02.png" alt="ROC Curve - Test Size = 0.2" class="artefact-screenshot">
+                            <p><em>Figure 5: ROC curve for test_size = 0.2 (best performance)</em></p>
+
+                            <br>
+
+                            <img src="/eportfolio/images/machine_learning_images/roc-test07.png" alt="ROC Curve - Test Size = 0.7" class="artefact-screenshot">
+                            <p><em>Figure 6: ROC curve for test_size = 0.7 (worst performance)</em></p>
+
+                            <br>
+
+                            <hr>
+
+                            <h3><b>3. R² Analysis (Regression Performance)</b></h3>
+                            <p>The R² metric measures the proportion of variance in the dependent variable explained by the model (James et al., 2021).</p>
+                            <p><b>Analysis</b></p>
+                            <p>R² is highly sensitive to prediction accuracy. When predictions closely match actual values, R² approaches 1, indicating strong explanatory power. Conversely, poor predictions result in lower or negative R² values.</p>
+                            <p>In this experiment, inconsistencies in numerical outputs were observed due to variable reuse within the notebook. This highlights the importance of controlled experimental design and proper implementation.</p>
+                            
+                            <hr>
+
+                            <h3><b>4. Ethical, Legal and Professional Considerations</b></h3>
+                            
+                            <h4><b>4.1 Reliability and Reproducibility</b></h4>
+                            <p>Reliable evaluation requires reproducible experiments. Inconsistent results, as observed in the R² section, demonstrate how poor experimental practices can lead to misleading conclusions.</p>
+                            
+                            <h4><b>4.2 Overfitting and Generalisation</b></h4>
+                            <p>The experiments showed that increasing model complexity does not always improve performance. Overfitting can lead to poor generalisation, which is critical in high-stakes applications such as healthcare and finance (Goodfellow, Bengio and Courville, 2016).</p>
+                            
+                            <h4><b>4.3 Limitations of AUC</b></h4>
+                            <p>Although widely used, AUC may not capture performance differences in imbalanced datasets, potentially masking poor model behaviour (Saito and Rehmsmeier, 2015; Imani et al., 2026).</p>
+                            
+                            <h4><b>4.4 Professional Responsibility</b></h4>
+                            <p>Machine learning professionals must ensure:</p>
+                            <ul>
+                                <li>correct experimental design </li>
+                                <li>proper validation </li>
+                                <li>critical interpretation of results </li>
+                            </ul>
+                            <p>Failure to do so may lead to biased, unreliable, or harmful systems.</p>
+
+                            <hr>
+
+                            <h3><b>5. Conclusion</b></h3>
+                            <p>This study demonstrated that:</p>
+                            <ul>
+                                <li>Increasing C improves AUC but may introduce overfitting </li>
+                                <li>Simpler models can outperform complex ones </li>
+                                <li>Training data size significantly impacts performance </li>
+                                <li>R² depends strongly on prediction accuracy and experimental design </li>
+                            </ul>
+
+                            <hr>
+
+                            <h3><b>References</b></h3>
+                            <p>Bishop, C.M. (2006). Pattern Recognition and Machine Learning. [online] link.springer.com. Springer. Available at: https://link.springer.com/book/9780387310732.</p>
+                            <p>Cortes, C. and Vapnik, V. (1995). Support-vector networks. Machine Learning, 20(3), pp.273–297. doi:https://doi.org/10.1007/BF00994018.</p>
+                            <p>Géron, A. (2022). Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow. ‘O’Reilly Media, Inc.’</p>
+                            <p>Goodfellow, I., Bengio, Y. and Courville, A. (2016). Deep Learning. MIT Press.</p>
+                            <p>Imani, M., Joudaki, M., Bagheri, A. and Arabnia, H.R. (2026). Why ROC-AUC Is Misleading for Highly Imbalanced Data: In-Depth Evaluation of MCC, F2-Score, H-Measure, and AUC-Based Metrics Across Diverse Classifiers. Technologies, 14(1), p.54. doi:https://doi.org/10.3390/technologies14010054.</p>
+                            <p>James, G., Witten, D., Hastie, T. and Tibshirani, R. (2021). An Introduction to Statistical Learning. [online] Springer Texts in Statistics. New York, NY: Springer US. doi:https://doi.org/10.1007/978-1-0716-1418-1.</p>
+                            <p>Saito, T. and Rehmsmeier, M. (2015). The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets. PLOS ONE, [online] 10(3), p.e0118432. doi:https://doi.org/10.1371/journal.pone.0118432.</p>
+
                         </div>
+                    </div>
+
+
+                    <div class="artefact">
+                        <div class="artefact-header">
+                            <h2>Individual Presentation</h2>
+                        </div>
+
+                        <div class="artefact-description">
+                            <h3><b>Comparative Analysis of Deep Learning Approaches for Object Recognition Using CIFAR-10</b></h3>
+                            <p><b>Overview</b></p>
+                            <p>This individual presentation examined how the choice of deep learning approach influences performance on an image classification task, using the CIFAR-10 dataset as a common benchmark. Three models were built, trained and evaluated under controlled conditions:</p>
+                            <ul>
+                                <li>A Baseline CNN without regularisation or augmentation, used to establish a lower performance bound and illustrate the effect of overfitting.</li>
+                                <li>An Improved CNN with increased filter depth, data augmentation, Batch Normalisation, Dropout, L2 regularisation and Global Average Pooling.</li>
+                                <li>A Transfer Learning model based on MobileNetV2 pre-trained on ImageNet, fine-tuned in a two-phase training strategy.</li>
+                            </ul>
+                            <p>The comparison was designed to answer the question: how much does the choice of deep learning approach affect performance, and what trade-offs each approach introduces between generalisation, training time, and data efficiency. The presentation was framed around Dubai's Roads and Transport Authority (RTA) smart traffic systems as a motivating real-world context for object recognition.</p>
+
+                            <p><b>Presentation Slides</b></p>
+                            <p>The full presentation deck is embedded below and available for download.</p>
+
+                            <div class="pdf-embed">
+                                <iframe src="/eportfolio/assets/files/CNN presentation.pdf"
+                                        width="100%"
+                                        height="700px"
+                                        title="Individual Presentation Slides – Comparative Analysis of Deep Learning Approaches for Object Recognition Using CIFAR-10">
+                                    <p>Your browser does not support embedded PDFs.
+                                       <a href="/eportfolio/assets/files/CNN presentation.pdf">Download the slides here</a>.</p>
+                                </iframe>
+                            </div>
+
+                            <br><br>
+                            
+                            <h3><b>Supporting Files</b></h3>
+
+                            <ul class="artefact-links">
+                                <li><a href="/eportfolio/assets/files/CNN presentation.pdf" download>Download the presentation slides (PDF)</a></li>
+                                <li><a href="/eportfolio/assets/files/Machine Learning Presentation FINAL.docx" download>Download the presentation transcript (DOCX)</a></li>
+                                <li><a href="/eportfolio/assets/files/presentation.ipynb" download>Download the Jupyter notebook (IPYNB)</a></li>
+                            </ul>
+
+                            <br><br>
+
+                            <h3><b>Key Results</b></h3>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>Test Accuracy</th>
+                                        <th>Macro F1</th>
+                                        <th>Key Characteristic</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Baseline CNN</td>
+                                        <td>71.3%</td>
+                                        <td>71.5%</td>
+                                        <td>Severe overfitting; training accuracy 92.5% vs validation 71.6%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Improved CNN</td>
+                                        <td>85.3%</td>
+                                        <td>85.1%</td>
+                                        <td>Strong generalisation; &lt;1% gap between train and validation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MobileNetV2 (Transfer Learning)</td>
+                                        <td>82.3%</td>
+                                        <td>82.2%</td>
+                                        <td>Efficient; constrained by 64&times;64 input vs native 224&times;224</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Across all three models, the cat and dog classes remained the most challenging, largely due to the limited 32&times;32 pixel resolution of CIFAR-10 where fine-grained features are lost. Frog, automobile and ship were consistently the strongest classes because their features remain visually distinguishable at low resolution.</p>
+
+                            <div class="artefact-reflection">
+                                <h4><b>Critical Reflection</b></h4>
+                                <p>The most significant learning from this presentation was recognising that the <em>most complex</em> model is not necessarily the <em>best</em> model for a given problem. The Improved CNN outperformed the MobileNetV2 transfer learning model by roughly three percentage points in both accuracy and F1 score, which initially surprised me given the literature's emphasis on pre-trained networks. On reflection, this result reflected an unfair comparison rather than a failure of transfer learning: MobileNetV2 was constrained to 64&times;64 inputs against its native 224&times;224 design, the transfer learning model had less training time and had not fully converged, and there is a domain gap between ImageNet and CIFAR-10. This taught me to interrogate my own results before accepting them and to articulate the conditions under which a model's performance can and cannot be trusted.</p>
+ 
+                                <p>Preparing this presentation also developed my technical decision-making in a way that directly responded to the developmental feedback received on the Unit 6 group project. The tutor had noted that the discussion of algorithm selection could have been deeper; this time I explicitly justified each modelling choice in the narrative — the creation of a stratified 42,500 / 7,500 / 10,000 train/validation/test split to prevent data leakage, normalisation for gradient stability (Ioffe and Szegedy, 2015; Bjorck <em>et al.</em>, 2018), the combination of L2 regularisation, Dropout (Srivastava <em>et al.</em>, 2014) and Batch Normalisation to control the overfitting observed in the baseline, and the two-phase fine-tuning strategy for the transfer learning model (Goodfellow, Bengio and Courville, 2016). Structuring the argument this way was a direct application of the critical appraisal learning outcome on real-world ML problems under technical risk and uncertainty.</p>
+ 
+                                <p>Framing the work around Dubai's RTA smart traffic systems also sharpened my professional awareness that deployment suitability is rarely reducible to accuracy alone. The Baseline CNN is unsuitable for deployment despite its simplicity because of overfitting; the Improved CNN performs well but requires large datasets and longer training; the Transfer Learning approach is the most deployment-ready because it is data-efficient and designed for edge devices. This reinforced that responsible ML practice requires balancing generalisation, data availability, training constraints and deployment context, and t
+                            </div>
+
+                            <h4><b>References</b></h4>
+                            <p>Bishop, C.M. (2006). Pattern Recognition and Machine Learning. Springer.</p>
+                            <p>Bishop, C.M. and Bishop, H. (2024). Deep Learning. Springer Nature.</p>
+                            <p>Bjorck, J., Gomes, C., Selman, B. and Weinberger, K.Q. (2018). Understanding Batch Normalization. arxiv.org. [online] doi:https://doi.org/10.48550/arXiv.1806.02375.</p>
+                            <p>Digital Watch (2025). New AI traffic control promises faster commutes in Dubai | Digital Watch Observatory. [online] Digital Watch Observatory. Available at: https://dig.watch/updates/new-ai-traffic-control-promises-faster-commutes-in-dubai [Accessed 5 Apr. 2026].</p>
+                            <p>Goodfellow, I., Bengio, Y. and Courville, A. (2016). Deep Learning. MIT Press.</p>
+                            <p>Government of Dubai Media Office (2025). RTA launches A Smart Digital Platform to monitor and analyse traffic in Dubai. [online] Government of Dubai Media Office. Available at: https://mediaoffice.ae/en/news/2025/august/11-08/rta-launches-a-smart-digital-platform-to-monitor-and-analyse-traffic-in-dubai [Accessed 5 Apr. 2026].</p>
+                            <p>Ioffe, S. and Szegedy, C. (2015). Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift. [online] arXiv.org. Available at: https://arxiv.org/abs/1502.03167 [Accessed 4 Apr. 2026].</p>
+                            <p>Krizhevsky, A. (2009). CIFAR-10 and CIFAR-100 datasets. [online] Toronto.edu. Available at: https://www.cs.toronto.edu/~kriz/cifar.html [Accessed 25 Mar. 2026].</p>
+                            <p>Lecun, Y., Bottou, L., Bengio, Y. and Haffner, P. (1998). Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86(11), pp.2278–2324. doi:https://doi.org/10.1109/5.726791.</p>
+                            <p>Pan, S.J. and Yang, Q. (2010). A Survey on Transfer Learning. IEEE Transactions on Knowledge and Data Engineering, [online] 22(10), pp.1345–1359. doi:https://doi.org/10.1109/tkde.2009.191.</p>
+                            <p>Pascanu, R., Mikolov, T. and Bengio, Y. (2013). On the difficulty of training Recurrent Neural Networks. arXiv:1211.5063 [cs]. [online] Available at: https://arxiv.org/abs/1211.5063 [Accessed 4 Apr. 2026].</p>
+                            <p>Roads and Transport Authority (2022). Self-driving transport. [online] www.rta.ae. Available at: https://www.rta.ae/wps/portal/rta/ae/home/sdt [Accessed 5 Apr. 2026].</p>
+                            <p>Sandler, M., Howard, A., Zhu, M., Zhmoginov, A. and Chen, L.-C. (2018). MobileNetV2: Inverted Residuals and Linear Bottlenecks. [online] arXiv.org. Available at: https://arxiv.org/abs/1801.04381 [Accessed 4 Apr. 2026].</p>
+                            <p>Sharma , A. (2017). Understanding Activation Functions in Neural Networks. [online] Medium. Available at: https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0 [Accessed 4 Apr. 2026].</p>
+                            <p>Shorten, C. and Khoshgoftaar, T.M. (2019). A survey on Image Data Augmentation for Deep Learning. Journal of Big Data, 6(1). doi:https://doi.org/10.1186/s40537-019-0197-0.</p>
+                            <p>Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R. (2014). Dropout: A Simple Way to Prevent Neural Networks from Overfitting. Journal of Machine Learning Research, [online] 15(56), pp.1929–1958. Available at: https://jmlr.org/papers/v15/srivastava14a.html.</p>
+                            <p>The UAE Government Platform (2025). Use of autonomous vehicles | The Official Platform of the UAE Government. [online] U.ae. Available at: https://u.ae/en/about-the-uae/digital-uae/regulatory-framework/Use-of-autonomous-vehicles [Accessed 5 Apr. 2026].</p>
+                        </div>
+
                     </div>
 
              </div>
