@@ -63,8 +63,140 @@
                             <div class="artefact-container">
                                 <h3>Reflection on this Artefact</h3>
                                 <p>
+                                    This summary effectively consolidates key ethical concerns and integrates practical mitigation strategies such as transparency, auditing, and data governance. A key strength is the clear progression from identifying risks to considering lifecycle-based solutions. However, the reflection remains largely integrative, with limited critical evaluation of the challenges involved in implementing these measures at scale. Overall, this task strengthened my ability to synthesise peer insights, while highlighting the need for deeper critical assessment of real-world applicability.
                                 </p>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="artefact">
+                        <div class="artefact-header">
+                            <h2>Individual Presentation</h2>
+                        </div>
+
+                        <div class="artefact-description">
+                            <h3><b>Designing an Intelligent Multi-Agent System for Academic Research</b></h3>
+                            <p><b>Overview</b></p>
+                            <p>This individual project required implementing the multi-agent system proposed by Group E and delivering a ten-slide presentation on the functionality and code. The system was built from scratch in Python, fully aligned with the team&rsquo;s design proposal: a blackboard-coordinated, Belief&ndash;Desire&ndash;Intention (BDI) multi-agent architecture capable of autonomously retrieving academic data from the ArXiv API, evaluating relevance, and generating structured JSON outputs.</p>
+                            <p>The presentation was structured to walk through the system across ten slides, covering the motivation for automating academic research tasks, the BDI cycle and blackboard coordination, the four specialised agents, the adaptive scoring and filtering logic, a live runtime walkthrough, the unit testing strategy, and a critical evaluation of strengths, limitations, and future directions.</p>
+
+                            <br>
+
+                            <p><b>Presentation Slides</b></p>
+                            <p>The full presentation deck is embedded below and available for download.</p>
+                            <div class="pdf-embed">
+                                <iframe src="/eportfolio/assets/files/Multi-Agent System Presentation.pdf"
+                                        width="100%"
+                                        height="700px"
+                                        title="Individual Presentation Slides &ndash; Designing an Intelligent Multi-Agent System for Academic Research">
+                                    <p>Your browser does not support embedded PDFs.
+                                    <a href="/eportfolio/assets/files/Multi-Agent System Presentation.pdf">Download the slides here</a>.</p>
+                                </iframe>
+                            </div>
+
+                            <br><br>
+
+                            <h3><b>Supporting Files</b></h3>
+                            <ul class="artefact-links">
+                                <li><a href="/eportfolio/assets/files/Multi-Agent System Presentation.pdf" download>Download the presentation slides (PDF)</a></li>
+                                <li><a href="/eportfolio/assets/files/Presentation Transcript.docx" download>Download the presentation transcript (DOCX)</a></li>
+                                <li><a href="https://github.com/itsioanna24/bdi-multiagent-system" target="_blank">View the full project code on GitHub</a></li>
+                            </ul>
+
+                            <br><br>
+
+                            <h3><b>System Implementation Summary</b></h3>
+                            <p>The full codebase was written from scratch and comprises the following components:</p>
+                            <ul>
+                                <li><strong>Core modules:</strong> the abstract BDI base agent (<code>bdi_agent.py</code>), the shared blackboard environment (<code>environment.py</code>), the relevance scoring function (<code>scoring.py</code>), and shared utilities (<code>utils.py</code>).</li>
+                                <li><strong>Specialised agents:</strong> <code>search_agent.py</code>, <code>extraction_agent.py</code>, <code>processing_agent.py</code>, and <code>storage_agent.py</code> &mdash; each implemented as a separate module reflecting the functional decomposition of the workflow.</li>
+                                <li><strong>Unit tests:</strong> 24 tests across 7 categories, covering all major system components and validating behaviour in isolation before full pipeline integration.</li>
+                            </ul>
+
+                            <br>
+
+                            <h3><b>Unit Testing Summary</b></h3>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Tests</th>
+                                        <th>What is validated</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Environment</td>
+                                        <td>3</td>
+                                        <td>Blackboard storage and retrieval</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scoring function</td>
+                                        <td>6</td>
+                                        <td>Relevance signal accuracy</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Processing Agent</td>
+                                        <td>4</td>
+                                        <td>Adaptive filtering logic</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Extraction Agent</td>
+                                        <td>4</td>
+                                        <td>XML parsing robustness</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Search Agent (mocked)</td>
+                                        <td>4</td>
+                                        <td>Network fault tolerance</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Storage Agent</td>
+                                        <td>2</td>
+                                        <td>JSON output correctness</td>
+                                    </tr>
+                                    <tr>
+                                        <td>End-to-end pipeline</td>
+                                        <td>1</td>
+                                        <td>Full pipeline integration</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Total</strong></td>
+                                        <td><strong>24</strong></td>
+                                        <td><strong>All passing</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <br>
+
+                            <div class="artefact-reflection">
+                                <h4><b>Critical Reflection</b></h4>
+                                <p>The most significant learning from this project was the difference between understanding a theoretical model and being able to operationalise it. Writing the perceive&ndash;deliberate&ndash;act cycle as a shared <code>run</code> method across the four agents, and using the blackboard as the sole communication channel, transformed my understanding of the BDI model from descriptive to operational. The abstractions I had read about in Rao and Georgeff (1995) and Wooldridge (2009) became concrete design decisions with real consequences for how the system behaved.</p>
+                                <p>The most difficult part was compressing the full functionality into ten slides, which forced me to decide what was essential and what could be omitted without losing the design logic. This discipline proved useful: the constraint made me identify the adaptive filtering loop in the ProcessingAgent as the system&rsquo;s core decision-making contribution, and I structured the presentation around demonstrating that behaviour clearly through both the slide diagrams and the runtime logs.</p>
+                                <p>Designing and running the 24 unit tests also reinforced the importance of systematic validation. They surfaced edge cases I had not anticipated &mdash; particularly around the adaptive threshold behaviour when no records meet the initial criteria &mdash; built confidence that each agent behaved correctly in isolation and in combination, and gave me a repeatable way to verify the system after any change. This directly reflected software engineering practice (Sommerville, 2016) applied to an agent-based context.</p>
+                                <p>The principal limitation I identified in the evaluation &mdash; that keyword-based scoring adjusts the quality bar rather than improving genuine relevance &mdash; is one I would address first in any future iteration, likely through Scikit-learn text classifiers or semantic similarity embeddings. The constraint to a single data source (ArXiv) and the absence of learning-based behaviour reflect a deliberate staged approach rather than an oversight, but they define a clear roadmap for extending the system toward a genuinely intelligent agent-based solution.</p>
+                            </div>
+
+                            <br>
+
+                            <h4><b>References</b></h4>
+                            <p>Bratman, M.E., Israel, D.J. and Pollack, M.E. (1988) &lsquo;Plans and resource-bounded practical reasoning&rsquo;, <em>Computational Intelligence</em>, 4(3), pp. 349&ndash;355. doi: https://doi.org/10.1111/j.1467-8640.1988.tb00284.x.</p>
+
+                            <p>Brooks, R.A. (1991) &lsquo;Intelligence without representation&rsquo;, <em>Artificial Intelligence</em>, 47(1&ndash;3), pp. 139&ndash;159. doi: https://doi.org/10.1016/0004-3702(91)90053-m.</p>
+
+                            <p>Maes, P. (1991) &lsquo;The agent network architecture (ANA)&rsquo;, <em>ACM SIGART Bulletin</em>, 2(4), pp. 115&ndash;120. doi: https://doi.org/10.1145/122344.122367.</p>
+
+                            <p>Nii, H.P. (1986) &lsquo;The blackboard model of problem solving&rsquo;, <em>AI Magazine</em>, 7(2), pp. 38&ndash;53. doi: https://doi.org/10.1609/aimag.v7i2.537.</p>
+
+                            <p>Rao, A.S. and Georgeff, M.P. (1995) <em>BDI Agents: From Theory to Practice</em>. [online] Association for the Advancement of Artificial Intelligence. Available at: https://aaai.org/papers/icmas95-042-bdi-agents-from-theory-to-practice/ [Accessed 25 Mar. 2026].</p>
+
+                            <p>Russell, S.J. and Norvig, P. (2021) <em>Artificial Intelligence: A Modern Approach</em>. 4th edn. London: Pearson.</p>
+
+                            <p>Sommerville, I. (2016) <em>Software Engineering</em>. 10th edn. Boston: Pearson Education Limited.</p>
+
+                            <p>Wooldridge, M.J. (2009) <em>An Introduction to Multiagent Systems</em>. 2nd edn. John Wiley &amp; Sons.</p>
+
                         </div>
                     </div>
                 </div>
