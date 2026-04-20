@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Agents – Notes</title>
+    <link rel="stylesheet" href="/eportfolio/assets/css/main.css">
+    <link rel="stylesheet" href="/eportfolio/assets/css/landing.css" />
+    <noscript><link rel="stylesheet" href="/eportfolio/assets/css/noscript.css" /></noscript>
+    <link rel="icon" type="image/png" sizes="32x32" href="/eportfolio/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/eportfolio/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/eportfolio/images/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/eportfolio/images/favicon/favicon.ico">
+    <meta name="theme-color" content="#5e42a6">
+</head>
+<body class="is-preload">
+
+    <section id="sidebar">
+        <div class="name">
+            <h2><a href="/eportfolio/">Ioanna Tziouvaka</a></h2>
+        </div>
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="/eportfolio/index.html">Welcome</a></li>
+                    <li><a href="/eportfolio/#one">Modules</a></li>
+                    <li><a href="/eportfolio/#two">About Me</a></li>
+                    <li><a href="/eportfolio/#three">Get in touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <div id="wrapper">
+        <div id="main">
+            <section id="banner" class="wrapper style2 spotlights fade-up">
+                <div class="inner">
+                    <header class="major">
+                        <h1>Notes</h1>
+                    </header>
+                    <div class="content">
+                        <p>My Lecturecast notes and directed reading, organised by unit</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="main" class="wrapper inner fade-up">
+                <div class="inner notes">
+                    <div class="back-to-module">
+                        <a href="/eportfolio/modules/intelligent_agents/intelligent_agents.html">&larr; Back to Intelligent Agents module</a>
+                    </div>
+
+                    <!-- =========================== UNIT 1 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 1 &ndash; Introduction to Intelligent Agents</h3></summary>
+                        <div class="unit-content">
+
+                            <h3>Lecturecast Notes</h3>
+                            <ul>
+                                <li><strong>Agent definition:</strong> a system capable of undertaking independent actions on behalf of the user.</li>
+                                <li>Agents perceive their environment through <strong>sensors</strong> (hardware or software-based) and act through <strong>effectors / actuators</strong>.</li>
+                                <li><strong>Autonomy</strong> exists on a spectrum &mdash; from fully automated to fully human-controlled.</li>
+                                <li><strong>Adjustable autonomy:</strong> control is handed back to the operator when the agent believes a human will make a better decision, when there is high uncertainty, when the decision might cause harm, or when the agent lacks the capability to decide alone.</li>
+                                <li><strong>Agent design</strong> begins with understanding the preconditions of the environment.</li>
+                            </ul>
+
+                            <h4>Examples of Agent-Based Systems</h4>
+                            <ul>
+                                <li><strong>Control systems</strong> &ndash; e.g. a heating system</li>
+                                <li><strong>Software daemons</strong> &ndash; e.g. an email service (runs as a background process and wakes up to handle periodic service requests)</li>
+                                <li><strong>Reactive and functional systems</strong> &ndash; e.g. a software compiler</li>
+                            </ul>
+
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to AI / Agents</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Wooldridge, M.J. (2009) <em>An Introduction to Multiagent Systems</em>, Chapter 2: Intelligent Agents</td>
+                                        <td>Foundations of intelligent agents, including definitions, comparison with objects and expert systems, intentional systems (beliefs, desires, intentions), and abstract agent architectures.</td>
+                                        <td>Provides the theoretical foundation for understanding how AI agents are defined, designed, and behave, forming the basis for building autonomous, goal-driven, and learning systems in Artificial Intelligence.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </details>
+
+                    <!-- =========================== UNIT 2 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 2 &ndash; Foundations of Agent-Based Learning</h3></summary>
+                        <div class="unit-content">
+
+                            <p class="unit-status"><em>Reading-only unit (no Lecturecast).</em></p>
+
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to AI / Agents</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Russell, S.J. and Norvig, P. (2022) <em>Artificial Intelligence: A Modern Approach</em>, Chapter 8: Learning from Examples</td>
+                                        <td>Foundations of machine learning, including supervised learning, classification, regression, model evaluation, and generalisation from data.</td>
+                                        <td>Explains how intelligent agents can learn from experience and improve performance over time, forming the basis for adaptive, data-driven AI systems.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </details>
+
+                    <!-- =========================== UNIT 3 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 3 &ndash; Agent Architectures</h3></summary>
+                        <div class="unit-content">
+
+                            <h3>Lecturecast Notes</h3>
+                            <p><strong>Agent Architecture:</strong> the decomposition of an agent into a number of component modules and the way in which these modules interact with each other.</p>
+
+                            <h4>Three Types of Agents</h4>
+                            <ul>
+                                <li><strong>Symbolic Reasoning Agents</strong> &ndash; a classical approach based on symbolic AI; agents are viewed as a type of knowledge-based system.
+                                    <ul>
+                                        <li><em>Problems:</em> transduction problem; difficulty representing information symbolically.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Reactive Agents</strong> &ndash; respond directly to their environment without internal symbolic representations.</li>
+                                <li><strong>Hybrid Agents</strong> &ndash; combine deliberative and reactive layers.</li>
+                            </ul>
+
+                            <h4>Practical Reasoning</h4>
+                            <ul>
+                                <li><strong>Practical reasoning:</strong> reasoning directed towards actions &mdash; figuring out what to do in a given situation.</li>
+                                <li><strong>Deliberation:</strong> deciding what outcomes to achieve; the output is <em>intentions</em>.</li>
+                                <li><strong>Means-end reasoning:</strong> deciding how to achieve those intentions; the output is a <em>plan</em>.</li>
+                            </ul>
+
+                            <h4>BDI Agents</h4>
+                            <ul>
+                                <li><strong>Belief-Desire-Intention (BDI)</strong> agents are developed based on human practical reasoning.</li>
+                                <li><strong>Emergent behaviour:</strong> agent behaviours emerge from the interaction of rules with the environment.</li>
+                            </ul>
+
+                            <h4>Action Selection</h4>
+                            <p>The way an agent selects an action is defined by an <strong>action function</strong>.</p>
+
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to AI / Agents</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Maes, P. (1991) &lsquo;The Agent Network Architecture (ANA)&rsquo;, <em>SIGART Bulletin</em>, 2(4), pp. 115&ndash;120.</td>
+                                        <td>Network-based, behaviour-driven agent architecture where competence emerges from interacting modules.</td>
+                                        <td>Shows how intelligence can emerge from distributed behaviours rather than central control, influencing modern autonomous systems.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kaelbling, L.P. (1991) &lsquo;A situated-automata approach to the design of embedded agents&rsquo;, <em>ACM SIGART Bulletin</em>, 2(4), pp. 85&ndash;88.</td>
+                                        <td>Situated agents using finite-state automata interacting directly with environments.</td>
+                                        <td>Highlights real-time, environment-driven agent design, important for embedded and robotic systems.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bratman, M.E., Israel, D.J. and Pollack, M.E. (1988) &lsquo;Plans and resource-bounded practical reasoning&rsquo;, <em>Computational Intelligence</em>, 4(3), pp. 349&ndash;355.</td>
+                                        <td>BDI model (beliefs, desires, intentions) and practical reasoning under constraints.</td>
+                                        <td>Forms the foundation for rational and goal-oriented agents used in complex AI decision-making.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brooks, R.A. (1991) &lsquo;Intelligence without representation&rsquo;, <em>Artificial Intelligence</em>, 47(1&ndash;3), pp. 139&ndash;159.</td>
+                                        <td>Behaviour-based AI rejecting symbolic representations in favour of direct interaction.</td>
+                                        <td>Influences reactive robotics and challenges traditional symbolic AI approaches.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reynolds, C.W. (1987) &lsquo;Flocks, herds, and schools: A distributed behavioral model&rsquo;, <em>Computer Graphics</em>, 21(4), pp. 25&ndash;34.</td>
+                                        <td>Emergent group behaviour from simple local rules (swarm intelligence).</td>
+                                        <td>Basis for multi-agent coordination, simulations, and swarm-based AI systems.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </details>
+
+                    <!-- =========================== UNIT 4 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 4 &ndash; Communication in Multi-Agent Systems</h3></summary>
+                        <div class="unit-content">
+
+                            <p class="unit-status"><em>Reading-only unit (no Lecturecast).</em></p>
+
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to AI / Agents</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Wooldridge, M.J. (2009) <em>An Introduction to Multiagent Systems</em>, Chapter 5</td>
+                                        <td>Communication in multi-agent systems, including agent communication languages (ACLs), interaction protocols, and speech act theory.</td>
+                                        <td>Essential for understanding how multiple agents coordinate, share information, and cooperate, forming the basis of distributed AI systems and real-world applications like negotiation and collaboration between autonomous agents.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </details>
+
+                    <!-- =========================== UNIT 5 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 5 &ndash; Agent Communication Languages</h3></summary>
+                        <div class="unit-content">
+
+                            <h3>Lecturecast Notes</h3>
+
+                            <h4>Semantics of Communication</h4>
+                            <p>The semantics of a request are made up of three components: <strong>s</strong> (the person making the request), <strong>h</strong> (the person the request is aimed at), and <strong>&phi;</strong> (the request itself). The <strong>postcondition</strong> is to make <em>h</em> aware of the desire to complete the request.</p>
+
+                            <h4>Agent Communication Languages (ACLs)</h4>
+                            <ul>
+                                <li><strong>ACLs</strong> represent a standard format for the exchange of messages between agents.</li>
+                                <li><strong>KQML</strong> (Knowledge Query and Manipulation Language) was developed as part of the DARPA-funded Knowledge Sharing Effort.</li>
+                                <li>KQML defines the outer language of acceptable communicative verbs &mdash; called <strong>performatives</strong> &mdash; including:
+                                    <ul>
+                                        <li><em>ask-if</em>: allows an agent to ask if something is true.</li>
+                                        <li><em>perform</em>: a request to perform an action.</li>
+                                        <li><em>tell</em>: an agent&rsquo;s response to an ask-if.</li>
+                                        <li><em>reply</em>: gives an answer to a question.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>KIF</strong> (Knowledge Interchange Format): a language for expressing message content or domain knowledge; based on first-order logic and can be used to express ontologies.</li>
+                            </ul>
+
+                            <h4>Ontology Alignment</h4>
+                            <ul>
+                                <li>Different contexts and requirements make modelling ontologies challenging.</li>
+                                <li><strong>Correspondence Inclusion Dialogue (CID):</strong> allows two agents to exchange knowledge about correspondences or alignments to agree on a mutually acceptable final alignment.</li>
+                                <li><strong>KQML limitation:</strong> lack of interoperability between implementations.</li>
+                            </ul>
+
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to AI / Agents</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Searle, J.R. (1969) <em>Speech Acts: An Essay in the Philosophy of Language</em>. Cambridge: Cambridge University Press, pp. 1&ndash;53.</td>
+                                        <td>Theory of speech acts, where communication is viewed as actions (e.g. asserting, requesting, promising) with intention and meaning.</td>
+                                        <td>Provides the theoretical foundation for agent communication languages (ACLs), enabling agents to exchange meaningful, intention-driven messages.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Payne, T.R. and Tamma, V. (2014) &lsquo;Negotiating over ontological correspondences with asymmetric and incomplete knowledge&rsquo;, <em>AAMAS</em>, 13(1), pp. 517&ndash;524.</td>
+                                        <td>Negotiation between agents with different knowledge representations (ontologies) under uncertainty.</td>
+                                        <td>Highlights challenges in real-world multi-agent systems where agents must align meaning and negotiate despite incomplete or mismatched knowledge.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </details>
+
+                    <!-- =========================== UNIT 6 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 6 &ndash; KQML and Agent Communication in Practice</h3></summary>
+                        <div class="unit-content">
+
+                            <p class="unit-status"><em>Reading-only unit (no Lecturecast).</em></p>
+
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to AI / Agents</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Finin, T. <em>et al.</em> (1994) &lsquo;KQML as an agent communication language&rsquo;, <em>CIKM</em>, 1, pp. 456&ndash;463.</td>
+                                        <td>Knowledge Query and Manipulation Language (KQML) as a standard for agent communication, including performatives and message structures.</td>
+                                        <td>Provides a practical implementation of agent communication based on speech act theory, enabling interoperability and coordination in multi-agent systems.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </details>
+
+                    <!-- =========================== UNIT 7 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 7 &ndash; Natural Language Processing</h3></summary>
+                        <div class="unit-content">
+
+                            <h3>Lecturecast Notes</h3>
+                            <ul>
+                                <li><strong>Natural Language Processing (NLP):</strong> a set of algorithms and processes by which machines understand and use human language.</li>
+                                <li>Examples: Siri, Google Assistant, Alexa.</li>
+                                <li>NLP is a non-trivial task.</li>
+                            </ul>
+
+                            <h4>Levels of Linguistic Analysis</h4>
+                            <p>Syntax &rarr; Semantics &rarr; Pragmatics</p>
+
+                            <h4>NLP Techniques</h4>
+                            <ul>
+                                <li><strong>Statistical NLP:</strong> predicts the next word in a sequence given the words that precede it.</li>
+                                <li><strong>Word2Vec:</strong> learns the associations between words from a large text corpus. A word is assigned a vector value that captures both semantic and syntactic qualities, and vectors can indicate semantic similarity.</li>
+                                <li><strong>Constituency-Based Parse Trees:</strong> based on context-free grammar; sentences are subdivided into constituent phrases belonging to specific grammatical categories.</li>
+                            </ul>
+
+                            <h4>Choosing a Parser</h4>
+                            <ul>
+                                <li><strong>Dependency parsing:</strong> more useful for downstream tasks like information extraction or question answering; works better in free word-order languages.</li>
+                                <li><strong>Constituency parsing:</strong> very useful when you want to consider the sub-phrases within a sentence.</li>
+                                <li>Choice is situational.</li>
+                            </ul>
+
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to AI / Agents</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mikolov, T. <em>et al.</em> (2013) &lsquo;Distributed representations of words and phrases and their compositionality&rsquo;, <em>Advances in Neural Information Processing Systems (NIPS)</em>, 1, pp. 3111&ndash;3119.</td>
+                                        <td>Word embeddings (Word2Vec) and distributed representations capturing semantic relationships between words.</td>
+                                        <td>Enables agents to understand and process natural language, forming the basis of modern NLP systems used in intelligent agents.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hearst, M.A. (1992) &lsquo;Automatic acquisition of hyponyms from large text corpora&rsquo;, <em>COLING</em>, 2, pp. 539&ndash;545.</td>
+                                        <td>Pattern-based extraction of semantic relationships (e.g. &ldquo;is-a&rdquo; relationships) from text.</td>
+                                        <td>Supports knowledge representation and ontology building, allowing agents to structure and reason about language data.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aqab, S. and Tariq, M.U. (2020) &lsquo;Handwriting recognition using artificial intelligence neural network and image processing&rsquo;, <em>IJACSA</em>, 11(7), pp. 137&ndash;146.</td>
+                                        <td>Application of neural networks and image processing for handwriting recognition.</td>
+                                        <td>Demonstrates how agents can perceive and interpret visual input, extending intelligent behaviour beyond text to real-world data.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </details>
+
+                    <!-- =========================== UNIT 8 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 8 &ndash; Parse Trees and Syntactic Analysis</h3></summary>
+                        <div class="unit-content">
+
+                            <p class="unit-status"><em>Reading-only unit (no Lecturecast).</em></p>
+
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to AI / Agents</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Zimmerman, V. (2019) &lsquo;Getting to grips with parse trees&rsquo;, <em>Towards Data Science</em>.</td>
+                                        <td>Parse trees and syntactic structure in natural language processing, including how sentences are broken into hierarchical components.</td>
+                                        <td>Enables agents to understand sentence structure and meaning, supporting natural language understanding and communication in AI systems.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </details>
+
+                    <!-- =========================== UNIT 9 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 9 &ndash; Deep Learning and Neural Networks</h3></summary>
+                        <div class="unit-content">
+
+                            <h3>Lecturecast Notes</h3>
+
+                            <h4>Adaptive Algorithms</h4>
+                            <p>An <strong>adaptive algorithm</strong> changes its behaviour at runtime, deciding the best way to act based on currently available information or a reward mechanism, rather than following a rigid plan.</p>
+
+                            <h4>Artificial Neural Networks (ANNs)</h4>
+                            <ul>
+                                <li>A class of machine learning models inspired by the brain and central nervous systems of animals.</li>
+                                <li>Good for: <strong>classification tasks</strong>.</li>
+                                <li>Made up of layers of nodes; each node consists of one or more artificial neurons.</li>
+                            </ul>
+
+                            <h4>ANN Training</h4>
+                            <ol>
+                                <li>Create training data.</li>
+                                <li>Break the training data into features.</li>
+                                <li>Train the weights associated with each connection.</li>
+                                <li>Apply new input &mdash; the right neurons fire and make a decision.</li>
+                            </ol>
+
+                            <h4>Limitations of Neural Networks</h4>
+                            <ul>
+                                <li>Large volume of training data required.</li>
+                                <li>Significant computational power needed.</li>
+                                <li>Expert knowledge required.</li>
+                                <li>Lacks a valid explanation for the classification.</li>
+                            </ul>
+
+                            <h4>Deep Learning vs Machine Learning</h4>
+                            <table class="notes-table">
+                                <thead>
+                                    <tr><th>Machine Learning</th><th>Deep Learning</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Input &rarr; Feature Extraction &rarr; Classification &rarr; Output</td><td>Input &rarr; Feature Extraction + Classification &rarr; Output</td></tr>
+                                </tbody>
+                            </table>
+
+                            <h4>Deep Learning Architecture</h4>
+                            <p><strong>Layers:</strong> Input Layer &rarr; Hidden Layer &rarr; Output Layer</p>
+                            <ul>
+                                <li><strong>Forward propagation:</strong> progression of computation through the network.</li>
+                                <li><strong>Backpropagation:</strong> calculates errors in predictions and alters weights/biases by moving backward through layers, enabling the model to become increasingly accurate over time.</li>
+                            </ul>
+
+                            <h4>Convolutional Neural Networks (CNNs)</h4>
+                            <ul>
+                                <li>Can detect features and patterns within images, enabling object detection and recognition.</li>
+                                <li>Examples: computer vision and image classification.</li>
+                                <li><strong>Convolutional layer:</strong> requires input data, a filter, and a feature map.</li>
+                                <li><strong>Pooling layer (downsampling):</strong> reduces the number of parameters.
+                                    <ul>
+                                        <li><em>Max Pooling:</em> selects the pixel with the maximum value.</li>
+                                        <li><em>Average Pooling:</em> calculates the average value within the receptive field.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Fully Connected Layer:</strong> all inputs from one layer are connected to every activation unit of the next layer.</li>
+                            </ul>
+
+                            <h4>Recurrent Neural Networks (RNNs)</h4>
+                            <ul>
+                                <li>Use sequential or time-series data.</li>
+                                <li>Examples: NLP, speech recognition, image captioning.</li>
+                                <li>Distinguish themselves by remembering prior inputs to influence current output.</li>
+                            </ul>
+
+                            <h4>Gradient Descent</h4>
+                            <p>An optimisation algorithm that finds the local minimum of a differentiable function; used to train neural networks by adjusting weights using derivatives of the network&rsquo;s output error.</p>
+
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to AI / Agents</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Thomsen, M. (2015) &lsquo;Microsoft&rsquo;s deep learning project outperforms humans in image recognition&rsquo;, <em>Forbes</em>.</td>
+                                        <td>Deep learning achieving human-level (or better) performance in image recognition tasks.</td>
+                                        <td>Demonstrates how agents can achieve high-level perception capabilities, enabling applications like computer vision in autonomous systems.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Huang, X. (2013) &lsquo;Andrew Ng on deep learning, self-taught learning and unsupervised feature learning&rsquo;.</td>
+                                        <td>Insights into deep learning, particularly unsupervised and self-taught learning for feature extraction.</td>
+                                        <td>Highlights how agents can learn representations from unlabelled data, supporting more autonomous and scalable AI systems.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </details>
+
+                    <!-- =========================== UNIT 10 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 10 &ndash; Deep Learning Applications</h3></summary>
+                        <div class="unit-content">
+
+                            <p class="unit-status"><em>Reading-only unit (no Lecturecast).</em></p>
+
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to AI / Agents</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>World Economic Forum (2022) &lsquo;How deep learning can improve productivity and boost business&rsquo;.</td>
+                                        <td>Application of deep learning in real-world business contexts, including automation, efficiency, and decision-making improvements.</td>
+                                        <td>Shows how intelligent agents powered by deep learning can enhance productivity, automate tasks, and support data-driven decision-making in industry.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </details>
+
+                    <!-- =========================== UNIT 11 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 11 &ndash; Industry 4.0 and Intelligent Agents</h3></summary>
+                        <div class="unit-content">
+
+                            <h3>Lecturecast Notes</h3>
+
+                            <h4>Industry 4.0</h4>
+                            <p>A term capturing the significant evolution of processes and technology in the manufacturing world, driven by intelligent technologies including: Robotics, Internet of Things (IoT), 3D Printing, Additive Manufacturing, Digital Twinning, and Data Analytics.</p>
+                            <ul>
+                                <li><strong>Digital Twins:</strong> a virtual model designed to reflect the physical properties of a real-world object.</li>
+                                <li>FANUC is one of the largest manufacturers of industrial robots in the world.</li>
+                            </ul>
+
+                            <h4>Types of Agents in Industry 4.0</h4>
+                            <ul>
+                                <li><strong>Machine agents:</strong> perform manufacture or testing operations.</li>
+                                <li><strong>Conveying agents:</strong> move products and equipment around a facility.</li>
+                                <li><strong>Product agents:</strong> relate to the products being processed.</li>
+                                <li><strong>Supplementary agents:</strong> buffers for the products.</li>
+                            </ul>
+
+                            <h4>Cooperation of Smart Objects</h4>
+                            <p>Different components align their behaviours to achieve system-wide goals.</p>
+
+                            <h4>FinTech Applications</h4>
+                            <ul>
+                                <li>Credit risk assessment</li>
+                                <li>Fraud detection</li>
+                                <li><strong>Financial modelling:</strong> using agent-based models to explain the behaviour of financial systems by simulating the actions of individual elements.</li>
+                            </ul>
+
+                            <h4>Generative AI</h4>
+                            <ul>
+                                <li><strong>DALL-E:</strong> generates artwork based on text prompts using a technique called <em>diffusion modelling</em>, derived from GPT-3.</li>
+                                <li>Diffusion models perform two sequential processes (forward and reverse diffusion).</li>
+                            </ul>
+
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to AI / Agents</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Foit, K. (2022) &lsquo;Agent-based modelling of manufacturing systems in the context of &ldquo;Industry 4.0&rdquo;&rsquo;, <em>Journal of Physics: Conference Series</em>, 2198(1), 012064.</td>
+                                        <td>Use of agent-based modelling to simulate and optimise manufacturing systems in Industry 4.0.</td>
+                                        <td>Demonstrates how agents can model complex industrial processes and improve efficiency through decentralised decision-making.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wang, S. <em>et al.</em> (2016) &lsquo;Towards smart factory for Industry 4.0: a self-organized multi-agent system with big data based feedback and coordination&rsquo;, <em>Computer Networks</em>, 101(4), pp. 158&ndash;168.</td>
+                                        <td>Self-organising multi-agent systems integrated with big data for smart factories.</td>
+                                        <td>Highlights real-world application of coordinated agents in industrial automation and intelligent production systems.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Malmi, E. <em>et al.</em> (2016) &lsquo;DopeLearning: A computational approach to rap lyrics generation&rsquo;, <em>ACM SIGKDD</em>, 16(1), pp. 195&ndash;204.</td>
+                                        <td>Use of machine learning for creative text generation.</td>
+                                        <td>Shows how agents can generate creative content using learned patterns, linking NLP with autonomous systems.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bank of England (no date) &lsquo;Agent-based models: understanding the economy from the bottom up&rsquo;.</td>
+                                        <td>Agent-based modelling applied to economic systems to simulate interactions between individuals and markets.</td>
+                                        <td>Demonstrates how agents can model complex adaptive systems like economies, supporting policy analysis and decision-making.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </details>
+
+                    <!-- =========================== UNIT 12 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 12 &ndash; Ethics and the Future of Intelligent Agents</h3></summary>
+                        <div class="unit-content">
+
+                            <p class="unit-status"><em>Reading-only unit (no Lecturecast).</em></p>
+
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to AI / Agents</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Nasim, S.F., Ali, M.R. and Kulsoom, U. (2022) &lsquo;Artificial intelligence incidents &amp; ethics: A narrative review&rsquo;, <em>IJTIM</em>, 2(2), pp. 52&ndash;64.</td>
+                                        <td>Overview of ethical issues and real-world incidents involving AI systems, including bias, accountability, and unintended consequences.</td>
+                                        <td>Highlights the importance of designing responsible and ethical intelligent agents, ensuring fairness, transparency, and safe deployment in real-world applications.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </details>
+
+                </div>
+            </section>
+
+        </div>
+
+        <footer id="footer" class="wrapper style1-alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>&copy; Ioanna Tziouvaka 2025 All rights reserved.</li>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/eportfolio/assets/js/jquery.min.js"></script>
+    <script src="/eportfolio/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/eportfolio/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/eportfolio/assets/js/browser.min.js"></script>
+    <script src="/eportfolio/assets/js/breakpoints.min.js"></script>
+    <script src="/eportfolio/assets/js/util.js"></script>
+    <script src="/eportfolio/assets/js/main.js"></script>
+</body>
+</html>
