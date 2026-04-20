@@ -120,7 +120,8 @@
                                 <div class="experiment-1 experiments">
                                     <h3>Experiment 1 — Reduce Noise</h3>
                                     <p>I changed:</p>
-                                    <p>data2 = data1 + (2 * randn(1000) + 50)</p>(IMAGE)
+
+                                    <img src="/eportfolio/images/machine_learning_images/colab-reducednoise.png" alt="Reduced Noise Code" class="artefact-screenshot">
                                     <p>Instead of noise with std = 10, now noise std=2.</p>
                                     
                                     <div class="experiment-results">
@@ -162,7 +163,8 @@
                                     <h3>Experiment 2 — Increase Noise</h3>
 
                                     <p>I changed:</p>
-                                    <p>data2 = data1 + (40 * randn(1000) + 50)</p>IMAGE
+
+                                    <img src="/eportfolio/images/machine_learning_images/colab-increasednoise.png" alt="Increased Noise Code" class="artefact-screenshot">
 
                                     <p>std = 2 -> strong correlation (0.995)</p>
                                     <p>std = 40 -> heavy noise</p>
@@ -236,26 +238,33 @@
 
                                     <h3>Experiment 3 — Remove the linear dependency entirely</h3>
                                     <p>I changed:</p>
-                                    <p>data2 = data1 * (randn(1000) + 150)</p>IMAGE
-                                    
-                                    <ul>
-                                        <li>Both variables have similar scale (~20 std)</li>
-                                        <li>Covariance is very small (8.843 vs ~390 earlier)</li>
-                                        <li>Pearson = 0.022 -> essentially zero</li>
-                                    </ul>
 
-                                    <p><b>Results:</b></p>
-                                    <p>Visual Interpretation:</p>
-                                    <ul>
-                                        <li>Circular cloud</li>
-                                        <li>No upward or downward slope</li>
-                                        <li>Symmetric spread</li>
-                                    </ul>
+                                    <img src="/eportfolio/images/machine_learning_images/colab-removed.png" alt="Removed Linear Dependency" class="artefact-screenshot">
+                                    <br><br>
+                                    <div class="experiment-results">
+                                        <div class="experiment-image">
+                                            <img src="/eportfolio/images/machine_learning_images/covariance-removed.png" alt="Covariance Plot" class="artefact-screenshot">
+                                        </div>
+                                        <div class="results-container">
+                                            <p><b>Results:</b></p>
+                                            <p>data1: mean=100.776 stdv=19.620</p>
+                                            <p>data2: mean=153.195 stdv=105.521</p>
+                                            <p>Covariance: 86.762</p>
+                                            <p>Pearsons correlation: 0.042</p>
+                                            <br>
+                                            <ul>
+                                                <li>Circular cloud</li>
+                                                <li>No upward or downward slope</li>
+                                                <li>Symmetric spread</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <br><br>
 
                                     <div class="experiment-portfolio">
                                         <p><b>Reflection</b></p>
                                         <p>
-                                            When the dependency between variables was removed, Pearson’s correlation decreased to 0.022 and covariance approached zero. Despite similar means and variances, the absence of structural dependency resulted in a random scatter pattern. This confirms that correlation captures relational structure rather than similarity in distributional characteristics.
+                                            When the dependency between the variables was removed, Pearson’s correlation decreased to approximately 0.042 and covariance was significantly reduced. Despite the variables maintaining similar means and variances, the absence of a structural relationship resulted in a random scatter pattern. This demonstrates that correlation measures the strength of a linear relationship between variables, rather than similarities in their individual distributions.
                                         </p>
                                     </div>
 
@@ -309,7 +318,7 @@
                                             <li>About 76% strength</li>
                                             <li>Not perfect but meaningful</li>
                                         </ul>
-                                        <p>R2 = r2 = (-0.759)2 ~ 0.576 ~ 57.6% of variance in y is explained by x</p>
+                                        <p>R² =r² = (-0.759)2 ~ 0.576 ~ 57.6% of variance in y is explained by x</p>
                                     </div>
                                 </div>
 
@@ -318,9 +327,11 @@
                                 <div class="experiment-1 experiments">
                                     <h3>Experiment 1 — Add an outlier</h3>
                                     <p>I changed:</p>
-                                    <p>x.append(30)</p>
-                                    <p>y.append(200)</p>
 
+                                    <img src="/eportfolio/images/machine_learning_images/colab-linear-exp1.png" alt="Experiment 1: Add an outlier" class="artefact-screenshot">
+                                    
+                                    <br><br>
+                                    
                                     <div class="experiment-results">
                                         <div class="experiment-image">
                                         <img src="/eportfolio/images/machine_learning_images/linear_regression_outlier.png" alt="Linear Regression Plot" class="artefact-screenshot">
@@ -351,6 +362,9 @@
                                             <p>High-leverage points dominate slope estimation.</p>
                                         </div> 
                                     </div>
+
+                                    <br><br>
+
                                     <div class="experiment-portfolio">
                                         <p><b>Reflection</b></p>
                                         <p>Introducing a single high-leverage outlier (30, 200) reversed the sign of the correlation coefficient from -0.759 to +0.666 and significantly altered the regression slope. This demonstrates the extreme sensitivity of Ordinary Least Squares regression to influential observations. The predicted value at x=10 shifted from 85.59 to 99.89, highlighting how outliers can distort model interpretation and predictive reliability.</p>
@@ -379,8 +393,10 @@
 
                                 <div class="experiment-2 experiments">
                                     <h3>Experiment 2 — Remove the Natural High-Leverage Point (x = 17)</h3>
-                                    <p>x.remove(17)</p>
-                                    <p>y.remove(86)</p>
+                                    
+                                    <img src="/eportfolio/images/machine_learning_images/colab-linear-exp2.png" alt="Experiment 2: Remove the Natural High-Leverage Point" class="artefact-screenshot">
+
+                                    <br><br>
 
                                     <div class="experiment-results">
                                         <div class="experiment-image">
@@ -398,6 +414,8 @@
                                             <p>The correlation became weaker -0.571 instead of -0.759. </p>
                                         </div> 
                                     </div>
+
+                                    <br><br>
 
                                     <div class="experiment-portfolio">
                                         <p><b>Reflection</b></p>
@@ -618,7 +636,7 @@
 
                                     <p>mymodel = numpy.poly1d(numpy.polyfit(x, y, 1))</p>
 
-                                    <p><b>R2=0.1823</b></p>
+                                    <p><b>R² = 0.1823</b></p>
 
 
                                     <div class="experiment-portfolio">

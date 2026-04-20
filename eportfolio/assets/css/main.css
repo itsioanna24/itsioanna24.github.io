@@ -3673,7 +3673,16 @@ input, select, textarea {
     	border-radius: 25px;
     	padding: 20px 35px;
 	}
-
+	.not-found p {
+    	margin: 0;
+    	text-align: center;
+		color: #fff;
+	}
+	.not-found {
+    	padding: 50px;
+    	background-color: #3e4094;
+    	border-radius: 25px;
+	}
 
 
 
