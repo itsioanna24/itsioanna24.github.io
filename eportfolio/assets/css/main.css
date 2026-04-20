@@ -3668,7 +3668,11 @@ input, select, textarea {
     	border-radius: 25px;
 		margin-bottom: 20px;
 	}
-
+	.reflective-piece {
+    	border: 1px solid #fff;
+    	border-radius: 25px;
+    	padding: 20px 35px;
+	}
 
 
 

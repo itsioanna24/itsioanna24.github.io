@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Reflections</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/eportfolio/assets/css/main.css" />
+    <link rel="stylesheet" href="/eportfolio/assets/css/landing.css" />
+    <noscript><link rel="stylesheet" href="/eportfolio/assets/css/noscript.css" /></noscript>
+    <link rel="icon" type="image/png" sizes="32x32" href="/eportfolio/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/eportfolio/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/eportfolio/images/favicon/site.webmanifest">
+	<link rel="shortcut icon" href="/eportfolio/images/favicon/favicon.ico">
+	<meta name="theme-color" content="#5e42a6">
+</head>
+<body class="is-preload">
+
+    <!-- Sidebar -->
+	    <section id="sidebar">
+			<div class="name">
+				<h2><a href="/eportfolio/">Ioanna Tziouvaka</a></h2>
+			</div>
+			<div class="inner">
+				<nav>
+					<ul>
+						<li><a href="/eportfolio/index.html">Welcome</a></li>
+						<li><a href="/eportfolio/#one">Modules</a></li>
+						<li><a href="/eportfolio/#two">About Me</a></li>
+						<li><a href="/eportfolio/#three">Get in touch</a></li>
+					</ul>
+				</nav>
+			</div>
+	    </section>
+
+    <div id="wrapper">
+
+        <section id="banner" class="style2 fade-up">
+            <div class="inner">
+                <header class="major">
+                    <h1>Reflections</h1>
+                </header>
+                <div class="content">
+                    <p>A reflective piece on my contribution, growth and learning throughout the Machine Learning module</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="main" class="wrapper inner fade-up">
+            <div class="inner reflections">
+                <div class="section-inner">
+                    <div class="back-to-module">
+                        <a href="/eportfolio/modules/machine_learning/machine_learning.html"> &larr; Back to Machine Learning module</a>
+                    </div>
+                    <div class="reflective-piece">
+                      <!-- ========== INTRODUCTION ========== -->
+                        <h2>Introduction</h2>
+                        <p>This reflection adopts Rolfe, Freshwater and Jasper's (2001) <em>What? &ndash; So What? &ndash; Now What?</em> framework to critically examine my learning across the Machine Learning module. It addresses my understanding of the algorithms studied, my contributions as Project Lead in the team assignment, my individual deep learning project, and the impact of the experience on my professional development.</p>
+ 
+                        <!-- ========== WHAT? ========== -->
+                        <h2>What?</h2>
+                        <p>The module covered a progression from classical statistical learning to deep learning architectures. Across the units I worked with correlation and regression analysis (linear, multiple and polynomial), similarity measures such as the Jaccard coefficient, clustering algorithms (K-Means, hierarchical and DBSCAN), gradient descent optimisation, perceptrons (single-layer and multi-layer for AND and XOR problems), Convolutional Neural Networks (CNNs) and transfer learning, alongside model evaluation through ROC, AUC and R&sup2; metrics. Two assessments anchored these technical strands: a team analysis of the New York City Airbnb dataset using regression and clustering, where I served as Project Lead, and an individual deep learning project comparing a Baseline CNN, an Improved CNN and MobileNetV2 transfer learning model on CIFAR-10, framed around Dubai's smart traffic systems.</p>
+ 
+                        <!-- ========== SO WHAT? ========== -->
+                        <h2>So What?</h2>
+ 
+                        <h3>Algorithmic understanding</h3>
+                        <p>My most significant shift was moving from viewing algorithms as fixed procedures to understanding them as conditional systems whose outputs depend on data structure and underlying assumptions. The correlation and regression activity made this concrete: introducing a single high-leverage outlier reversed the Pearson coefficient from &minus;0.759 to +0.666, and removing a relevant predictor in the multiple regression model more than doubled the weight coefficient (0.0076 to 0.0170), exposing multicollinearity (James <em>et al.</em>, 2021). The Airbnb dataset also revealed practical challenges such as skewed price distributions and potential bias in location-based features, reinforcing that data quality and representation significantly influence model behaviour.</p>
+                        <p>The gradient descent activity further demonstrated that a learning rate of 0.5 caused complete divergence, while 0.08 produced fast but initially unstable convergence (Ruder, 2016). These experiments shaped the technical decisions I defended in both assessments, particularly the log transformation of Airbnb prices and the use of regularisation, dropout and batch normalisation to address overfitting (Srivastava <em>et al.</em>, 2014; Ioffe and Szegedy, 2015).</p>
+ 
+                        <h3>Contribution to the team project</h3>
+                        <p>As Project Lead, I created the team contract, drafted the responsibility matrix, maintained minutes across six meetings, managed the shared findings document, and produced the final consolidated report after revisions. The tutor's feedback recognised the report as "excellent quality", highlighting the visualisations and technical methodology, but noted that the discussion of algorithm selection could have been deeper, a critique I have internalised.</p>
+                        <p>This experience also revealed limitations in my leadership approach. My conflict-avoidance, driven by a desire to maintain a positive atmosphere, came at the cost of performance. By not addressing issues early, I allowed suboptimal contributions to persist, increasing workload during the final stages. This was exacerbated by time pressure and competing commitments, which made difficult conversations harder to initiate.</p>
+                        <p>Despite this, most team members met deadlines; however, the lack of early alignment meant inconsistencies emerged late, creating tension and limiting time for meaningful improvements.</p>
+ 
+                        <h3>Contribution to the individual presentation</h3>
+                        <p>The CIFAR-10 presentation consolidated much of my deep learning understanding. The Improved CNN achieved 85.3% test accuracy, outperforming the MobileNetV2 transfer learning model (82.3%), which initially surprised me given the literature's emphasis on pre-trained networks (Pan and Yang, 2010). Initially, I assumed, based on the literature, that transfer learning models would consistently outperform custom CNN architectures. This assumption proved overly simplistic.</p>
+                        <p>On reflection, I recognised this was an unfair comparison rather than a failure of transfer learning, since MobileNetV2 was constrained to 64&times;64 inputs against its native 224&times;224 design (Sandler <em>et al.</em>, 2018). This shift in understanding emerged directly from implementing and evaluating the models myself, rather than relying solely on theoretical expectations. The discrepancy between expected and actual performance highlighted the importance of context-specific evaluation in machine learning and reinforced the need to critically interrogate results before accepting them.</p>
+ 
+                        <h3>Experience as a development team member</h3>
+                        <p>When the teams were first allocated, I felt genuinely anxious, due to uncertainty around team dynamics compared to my previous experience. This affected my communication, particularly in setting expectations and addressing deviations, contributing to early misalignment.</p>
+                        <p>Scheduling across time zones and uneven communication added complexity, which I mitigated through recorded meetings, shared tracking documents, and structured coordination. However, challenges persisted, particularly when one member deviated from the agreed workflow and submitted work close to the deadline.</p>
+                        <p>I also avoided direct confrontation, allowing one member's strong opinions to dominate, which reduced critical discussion and overall decision quality. In retrospect, this reflects a tendency to prioritise short-term harmony over long-term effectiveness, a limitation I now recognise in my leadership approach.</p>
+                        <p>Tuckman's (1965) stages of group development helped me reframe this: we became stuck between storming and norming rather than reaching performing. Before the deadline, I contacted the tutor to raise these difficulties and seek guidance, which helped me refocus on what I could control &mdash; the quality of the final submission. Recognising the dynamics analytically rather than personally reduced the emotional impact and improved my ability to respond constructively.</p>
+ 
+                        <h3>Legal, social and ethical learning</h3>
+                        <p>The collaborative discussions on the Toyota cyberattack and Hutson's (2021) AI writers article extended my thinking beyond technical performance. Interpreting the Toyota case through Perrow's (1999) tight-coupling lens, and building on peer contributions that introduced cross-sector parallels in healthcare and banking, helped me recognise that ML failures emerge within broader sociotechnical systems rather than in isolation. The discussion also highlighted that resilience must be addressed at multiple levels, including model design, organisational processes and regulatory frameworks, particularly under conditions of uncertainty (Amodei <em>et al.</em>, 2016).</p>
+                        <p>The AI writers discussion, alongside the CNN activity reflecting on Wall (2019), grounded ethical concerns such as bias, opacity and accountability in concrete examples. These included the misclassification of an airplane as a deer, the limitations of ROC-AUC under class imbalance (Imani <em>et al.</em>, 2026), and the persistent cat-dog confusion caused by resolution constraints rather than algorithmic failure (Goodfellow, Bengio and Courville, 2016). This shifted my perspective from evaluating models purely on performance metrics to considering how their limitations manifest in real-world contexts.</p>
+ 
+                        <!-- ========== NOW WHAT? ========== -->
+                        <h2>Now What?</h2>
+                        <p>Three concrete changes will carry into my professional practice. First, I will treat early role definition and conflict protocols as deliverables in their own right and address issues proactively rather than avoiding difficult conversations. Second, I will continue to justify modelling choices explicitly in writing, ensuring that technical decisions are transparent and defensible. Third, I will approach evaluation metrics with greater scepticism, particularly in imbalanced or high-stakes contexts where AUC alone can be misleading (Saito and Rehmsmeier, 2015).</p>
+                        <p>The comparative study of three deep learning approaches also reshaped how I select models. Rather than defaulting to the most complex architecture, I will evaluate candidate models empirically against the problem at hand, weighing generalisation, data availability and training constraints together. This represents a shift in how I approach model selection, moving towards a more grounded and evidence-led way of thinking that I will carry into real analytical contexts.</p>
+                        <p>Overall, this module strengthened my ability to critically evaluate machine learning techniques, understand the limitations of datasets and evaluation metrics, engage with the ethical implications of AI systems, and operate as an effective &mdash; though still developing &mdash; member of a collaborative technical team.</p>
+
+
+                        <h2>References</h2>
+                        <p>Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J. and Man&eacute;, D. (2016) 'Concrete problems in AI safety', <em>arXiv:1606.06565</em>. Available at: https://arxiv.org/abs/1606.06565 (Accessed: 14 February 2026).</p>
+
+                        <p>Goodfellow, I., Bengio, Y. and Courville, A. (2016) <em>Deep Learning</em>. Cambridge, MA: MIT Press.</p>
+
+                        <p>Hutson, M. (2021) 'Robo-writers: the rise and risks of language-generating AI', <em>Nature</em>, 591(7848), pp. 22&ndash;25. doi: https://doi.org/10.1038/d41586-021-00530-0.</p>
+
+                        <p>Imani, M., Joudaki, M., Bagheri, A. and Arabnia, H.R. (2026) 'Why ROC-AUC is misleading for highly imbalanced data: in-depth evaluation of MCC, F2-score, H-measure, and AUC-based metrics across diverse classifiers', <em>Technologies</em>, 14(1), p. 54. doi: https://doi.org/10.3390/technologies14010054.</p>
+
+                        <p>Ioffe, S. and Szegedy, C. (2015) 'Batch normalization: accelerating deep network training by reducing internal covariate shift', <em>arXiv:1502.03167</em>. Available at: https://arxiv.org/abs/1502.03167 (Accessed: 4 April 2026).</p>
+
+                        <p>James, G., Witten, D., Hastie, T. and Tibshirani, R. (2021) <em>An Introduction to Statistical Learning</em>. Springer Texts in Statistics. New York: Springer US. doi: https://doi.org/10.1007/978-1-0716-1418-1.</p>
+
+                        <p>Pan, S.J. and Yang, Q. (2010) 'A survey on transfer learning', <em>IEEE Transactions on Knowledge and Data Engineering</em>, 22(10), pp. 1345&ndash;1359. doi: https://doi.org/10.1109/tkde.2009.191.</p>
+
+                        <p>Perrow, C. (1999) <em>Normal Accidents: Living with High-Risk Technologies</em>. 2nd edn. Princeton, NJ: Princeton University Press.</p>
+
+                        <p>Rolfe, G., Freshwater, D. and Jasper, M. (2001) <em>Critical Reflection for Nursing and the Helping Professions: A User's Guide</em>. Available at: https://philpapers.org/rec/ROLCRF (Accessed: 7 April 2026).</p>
+
+                        <p>Ruder, S. (2016) 'An overview of gradient descent optimization algorithms', <em>arXiv:1609.04747</em>. Available at: https://arxiv.org/abs/1609.04747 (Accessed: 7 March 2026).</p>
+
+                        <p>Saito, T. and Rehmsmeier, M. (2015) 'The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets', <em>PLOS ONE</em>, 10(3), p. e0118432. doi: https://doi.org/10.1371/journal.pone.0118432.</p>
+
+                        <p>Sandler, M., Howard, A., Zhu, M., Zhmoginov, A. and Chen, L.-C. (2018) 'MobileNetV2: inverted residuals and linear bottlenecks', <em>arXiv:1801.04381</em>. Available at: https://arxiv.org/abs/1801.04381 (Accessed: 4 April 2026).</p>
+
+                        <p>Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R. (2014) 'Dropout: a simple way to prevent neural networks from overfitting', <em>Journal of Machine Learning Research</em>, 15(56), pp. 1929&ndash;1958. Available at: https://jmlr.org/papers/v15/srivastava14a.html (Accessed: 4 April 2026).</p>
+
+                        <p>Tuckman, B.W. (1965) 'Developmental sequence in small groups', <em>Psychological Bulletin</em>, 63(6), pp. 384&ndash;399. doi: https://doi.org/10.1037/h0022100.</p>
+
+                        <p>Wall, M. (2019) 'Biased and wrong? Facial recognition tech in the dock', <em>BBC News</em>, 8 July. Available at: https://www.bbc.com/news/business-48842750 (Accessed: 9 April 2026).</p>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+                <!-- Footer -->
+        <footer id="footer" class="wrapper style1-alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>&copy; Ioanna Tziouvaka 2025 All rights reserved.</li>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+        <!-- Scripts -->
+    <script src="/eportfolio/assets/js/jquery.min.js"></script>
+    <script src="/eportfolio/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/eportfolio/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/eportfolio/assets/js/browser.min.js"></script>
+    <script src="/eportfolio/assets/js/breakpoints.min.js"></script>
+    <script src="/eportfolio/assets/js/util.js"></script>
+    <script src="/eportfolio/assets/js/main.js"></script>
+</body>
+</html>
