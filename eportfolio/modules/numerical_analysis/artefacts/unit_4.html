@@ -49,9 +49,201 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
-                    </div>
+                           <div class="activity-header">
+                            <span class="activity-badge">Activity 1</span>
+                            <p class="activity-title">Basic Probability &mdash; Marble Sampling</p>
+                        </div>
+ 
+                        <p>
+                            This activity used an interactive marble-sampling demonstration to explore the foundations of
+                            simple probability. By adjusting the number of red, blue, and yellow marbles in a virtual sample
+                            space, I could observe directly how the probability of drawing any given colour is determined by
+                            the composition of the whole collection.
+                        </p>
+ 
+                        <div class="formula-box">
+                            P(colour) = Number of marbles of that colour &divide; Total marbles
+                        </div>
+ 
+                        <h3>Learning Outcomes</h3>
+                        <div class="lo-grid">
+                            <div class="lo-card">
+                                <span class="lo-number">1</span>
+                                <h4>Basic Probability Concepts</h4>
+                                <p>Learned to calculate simple probabilities from counts within a sample space, and understood how the formula P = favourable / total applies directly to concrete examples.</p>
+                            </div>
+                            <div class="lo-card">
+                                <span class="lo-number">2</span>
+                                <h4>Estimation Before Verification</h4>
+                                <p>Practised formulating probability estimates intuitively before checking answers, strengthening the ability to reason about likelihoods without relying solely on formulas.</p>
+                            </div>
+                            <div class="lo-card">
+                                <span class="lo-number">3</span>
+                                <h4>Dynamic Input and Output</h4>
+                                <p>Observed how increasing or decreasing marbles of a given colour adjusts all probabilities simultaneously, reinforcing that probabilities depend entirely on the composition of the sample space.</p>
+                            </div>
+                            <div class="lo-card">
+                                <span class="lo-number">4</span>
+                                <h4>Proportion and Ratio Thinking</h4>
+                                <p>Developed a stronger sense of how proportions relate to probability. The interactive format made it easier to treat probability as a ratio rather than an abstract formula.</p>
+                            </div>
+                            <div class="lo-card">
+                                <span class="lo-number">5</span>
+                                <h4>Identifying Intuitive Biases</h4>
+                                <p>By comparing estimates with correct answers, identified patterns where intuition tended to underestimate or overestimate probabilities — a direct step towards more calibrated probabilistic thinking.</p>
+                            </div>
+                            <div class="lo-card">
+                                <span class="lo-number">6</span>
+                                <h4>Theory to Practice</h4>
+                                <p>Using a dynamic visual tool bridged the gap between formula-based learning and practical understanding, applying theoretical probability concepts in a hands-on context.</p>
+                            </div>
+                        </div>
+ 
+                        <div class="task-reflection">
+                            Activity 1 made probability feel tangible rather than abstract. The most valuable moment was comparing
+                            my pre-calculation estimates with the actual values — it revealed specific situations where I
+                            systematically over- or underestimated likelihood, which formulaic study alone would not have surfaced.
+                            The interactive nature of the tool also reinforced that probability is not a fixed property of an
+                            outcome but a ratio that shifts every time the composition of the sample space changes.
+                        </div>
 
+                        <hr>
+
+                        <div class="activity-header">
+                            <span class="activity-badge">Activity 3</span>
+                            <p class="activity-title">Discrete and Continuous Probability Distributions</p>
+                        </div>
+ 
+                        <p>
+                            This activity explored seven probability distributions — four discrete and three continuous —
+                            through interactive simulations. For each distribution, the focus was on understanding the
+                            governing parameters, how changing them shapes the distribution, and what real-world processes
+                            each distribution models.
+                        </p>
+ 
+                        <!-- ── Discrete ── -->
+                        <div class="dist-section-heading">Discrete Probability Distributions</div>
+                        <div class="dist-grid">
+ 
+                            <div class="dist-card">
+                                <h4>Binomial Distribution</h4>
+                                <p class="dist-param">Parameters: n (trials), p (success probability)</p>
+                                <ul>
+                                    <li>Models the number of successes in a fixed number of independent trials.</li>
+                                    <li>Changing <em>n</em> and <em>p</em> directly shifts the shape, centre, and spread of the distribution.</li>
+                                    <li>Applications include quality control, clinical trial outcomes, and binary event modelling.</li>
+                                </ul>
+                            </div>
+ 
+                            <div class="dist-card">
+                                <h4>Poisson Distribution</h4>
+                                <p class="dist-param">Parameter: &lambda; (average rate)</p>
+                                <ul>
+                                    <li>Represents the probability of a given number of events occurring in a fixed interval at a constant average rate.</li>
+                                    <li>Increasing &lambda; shifts the distribution rightward and broadens its spread.</li>
+                                    <li>Applications include arrival modelling, call-centre traffic, and rare event analysis.</li>
+                                </ul>
+                            </div>
+ 
+                            <div class="dist-card">
+                                <h4>Hypergeometric Distribution</h4>
+                                <p class="dist-param">Parameters: N (population), K (successes in population), n (sample size)</p>
+                                <ul>
+                                    <li>Differs from the binomial by involving sampling <em>without replacement</em>, making trials dependent.</li>
+                                    <li>Population size, number of successes, and sample size all interact to determine probabilities.</li>
+                                    <li>Applications include card draws, quality inspection, and finite population sampling.</li>
+                                </ul>
+                            </div>
+ 
+                        </div>
+ 
+                        <!-- ── Continuous ── -->
+                        <div class="dist-section-heading">Continuous Probability Distributions</div>
+                        <div class="dist-grid">
+ 
+                            <div class="dist-card continuous">
+                                <h4>Normal Distribution</h4>
+                                <p class="dist-param">Parameters: &mu; (mean), &sigma; (standard deviation)</p>
+                                <ul>
+                                    <li>Models continuous data that clusters symmetrically around a mean.</li>
+                                    <li>&mu; controls the centre; &sigma; controls the width and flatness of the bell curve.</li>
+                                    <li>Fundamental in inferential statistics due to the Central Limit Theorem.</li>
+                                </ul>
+                            </div>
+ 
+                            <div class="dist-card continuous">
+                                <h4>Uniform Distribution</h4>
+                                <p class="dist-param">Parameters: a (lower bound), b (upper bound)</p>
+                                <ul>
+                                    <li>Assigns equal probability to all values in an interval [a, b].</li>
+                                    <li>The range limits determine the width and height of the constant density function.</li>
+                                    <li>Examples include random number generators and equal-chance selection systems.</li>
+                                </ul>
+                            </div>
+ 
+                            <div class="dist-card continuous">
+                                <h4>Exponential Distribution</h4>
+                                <p class="dist-param">Parameter: &lambda; (rate)</p>
+                                <ul>
+                                    <li>Models waiting times between independent events at a constant rate.</li>
+                                    <li>The rate parameter controls the steepness of the exponential decay.</li>
+                                    <li>Applications include time-to-failure analysis, queueing systems, and reliability modelling.</li>
+                                </ul>
+                            </div>
+ 
+                            <div class="dist-card continuous">
+                                <h4>Gaussian Distribution</h4>
+                                <p class="dist-param">Parameters: &mu;, &sigma; (discrete and continuous forms)</p>
+                                <ul>
+                                    <li>Essentially the continuous normal distribution; explored here in both continuous and discrete-approximation forms.</li>
+                                    <li>Emerges naturally in processes involving the aggregation of many independent random variables.</li>
+                                    <li>Ubiquitous in natural and statistical processes — from measurement error to financial returns.</li>
+                                </ul>
+                            </div>
+ 
+                        </div>
+ 
+                        <div class="task-reflection">
+                            Working through seven distributions in a single activity was demanding but rewarding. The most
+                            clarifying contrast was between the <strong>binomial</strong> and <strong>hypergeometric</strong>
+                            distributions: both count successes across a number of draws, but independence (sampling with
+                            replacement) versus dependence (sampling without replacement) produces meaningfully different
+                            probability structures — a distinction that is easy to overlook when learning from formulas alone.
+                            Similarly, seeing the <strong>Poisson</strong> distribution shift and widen as &lambda; increased
+                            made the abstract rate parameter feel concrete. On the continuous side, the
+                            <strong>exponential</strong> distribution's connection to the Poisson — both governed by a constant
+                            rate, one counting events and one measuring gaps between them — was a particularly useful link to
+                            recognise. Overall, this activity deepened my understanding of how the choice of distribution is
+                            not arbitrary but reflects specific assumptions about the data-generating process.
+                        </div>
+
+                        <hr>
+
+                        <div class="artefact-reflection">
+                            <h2>Reflection</h2>
+                            <p>
+                                Unit 4 marked a shift from data manipulation in R to the mathematical foundations that underpin
+                                statistical reasoning. Activity 1 established the intuitive groundwork — probability as a ratio
+                                of favourable to total outcomes — while Activity 3 extended that foundation across a range of
+                                named distributions, each encoding different assumptions about how randomness operates in the
+                                real world.
+                            </p>
+                            <p>
+                                The most important conceptual gain across the unit was learning to think in terms of
+                                <em>parameters</em>: every distribution is not a single fixed object but a family of shapes
+                                controlled by one or two numbers. Adjusting &mu; and &sigma;, or <em>n</em> and <em>p</em>,
+                                or &lambda;, produces a different member of the same family — and choosing the right parameter
+                                values is what links the abstract distribution to a specific real-world scenario.
+                            </p>
+                            <p>
+                                This unit also reinforced the Central Limit Theorem as a unifying idea: regardless of the
+                                underlying distribution, the sampling distribution of the mean converges to a normal distribution
+                                as sample size grows. That result connects Activity 3's discrete and continuous distributions
+                                back to the normal distribution at the centre, and explains why the normal distribution occupies
+                                such a privileged position in statistical practice.
+                            </p>
+                        </div>
+                    </div>
              </div>
             </div>
         </section>

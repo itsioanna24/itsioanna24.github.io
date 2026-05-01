@@ -49,7 +49,180 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
+                        
+                        <h2>Data Activity 2</h2>
+
+                        <h3><span class="section-label">1</span> Project Context</h3>
+
+                        <p>
+                                As part of my MSc coursework in Data Analysis and Programming, I worked with a real-world COVID-19 dataset
+                                containing daily state-level statistics from India. The aim of this formative activity was to import, clean,
+                                and analyse the dataset using R while demonstrating competency in key programming skills including file handling,
+                                data inspection, variable creation, frequency analysis, and simple descriptive statistics.
+                        </p>
+                        <hr>
+
+                        <h3><span class="section-label">2</span> Data Import and Preparation</h3>
+
+                        <p>
+                            The dataset (<code>covid19-dataset.csv</code>) was imported into R using <code>read.csv()</code>.
+                            Several verification steps confirmed correct loading:
+                        </p>
+                        <ul>
+                            <li><code>names(data)</code> confirmed the expected variables: <code>Sno</code>, <code>Date</code>, <code>State.UnionTerritory</code>, <code>ConfirmedIndianNational</code>, <code>ConfirmedForeignNational</code>, <code>Cured</code>, <code>Deaths</code>.</li>
+                            <li><code>nrow(data)</code> verified that the dataset contains <strong>270 observations</strong>.</li>
+                            <li><code>head(data)</code> allowed inspection of the first six rows to confirm correct loading.</li>
+                        </ul>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 2 1.png" alt="Data Import and Preparation" class="artefact-screenshot">
+
+
+                        <div class="note-box">
+                                <strong>Debugging note:</strong> During this process, newly created variables were initially returning <code>NULL</code>.
+                                This was traced back to R pointing to the wrong working directory. Updating it with <code>setwd()</code> resolved the issue,
+                                highlighting the importance of correct file path handling before any data operations.
+                        </div>
+
+                        <hr>
+
+                        <h3><span class="section-label">3</span> Feature Engineering</h3>
+                        <p>
+                            To explore recovery dynamics, a new categorical variable <code>recovery_flag</code> was created by applying
+                            conditional logic to the numeric <code>Cured</code> column:
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 2 2.png" alt="Feature Engineering" class="artefact-screenshot">
+
+                        <p>
+                            This transformed the numerical <code>Cured</code> field into a meaningful indicator variable, enabling quick
+                            identification of entries with at least one reported recovery. The transformation enhanced interpretability
+                            and supported subsequent frequency and proportion calculations.
+                        </p>
+                        <hr>
+
+                        <h3><span class="section-label">4</span> Frequency Analysis</h3>
+
+                        <p>A frequency table was generated to quantify recovery outcomes:</p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 2 3.png" alt="Frequency Analysis" class="artefact-screenshot">
+
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Recovered</td><td>55</td></tr>
+                                <tr><td>No Recovery</td><td>215</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <p>
+                            This breakdown provides insight into recovery patterns during the early stages of the pandemic,
+                            where recoveries were still relatively infrequent relative to total reported records.
+                        </p>
+
+                        <hr>
+
+                        <h3><span class="section-label">5</span> Creating a Binary Recovery Indicator</h3>
+
+                        <p>
+                            To support quantitative analyses and simplify comparisons, a binary variable <code>has_recovery</code>
+                            was created alongside the categorical flag:
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 2 4.png" alt="Creating a Binary Recovery Indicator" class="artefact-screenshot">
+
+                        <p>
+                            This variable takes the value <strong>1</strong> if at least one recovery was reported, and <strong>0</strong> otherwise.
+                            Converting the numeric <code>Cured</code> data into a binary indicator facilitates clarity in analysis and prepares
+                            the dataset for possible future methods such as logistic regression or time-based trend modelling.
+                        </p>
+
+                        <hr>
+
+                        <h3><span class="section-label">6</span> Percentages of Daily Reports With and Without Recoveries</h3>
+
+                        <p>
+                            To understand how frequently daily state reports included recoveries, both frequencies and proportions were calculated,
+                            and a pie chart was generated to visualise the split:
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 2 5.png" alt="Percentages of Daily Reports With and Without Recoveries" class="artefact-screenshot">
+
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Count</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>No Recovery (0)</td><td>215</td><td>79.63%</td></tr>
+                                <tr><td>Recovery Reported (1)</td><td>55</td><td>20.37%</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <p>
+                            Approximately 1 in 5 daily reports included at least one recovery. The majority of entries (almost 80%)
+                            reported zero recoveries, reflecting the early phase of the outbreak when recovered cases were still limited.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity - 2 pie.png" alt="Percentages of Reports With and Without Recoveries" class="artefact-screenshot">
+
+                        <hr>
+
+                        <h3><span class="section-label">7</span> Skills Demonstrated</h3>
+
+                        <p>This activity provided hands-on practice with the following R competencies:</p>
+                        <div class="skills-grid">
+                            <div class="skill-chip">File path management — <code>setwd()</code></div>
+                            <div class="skill-chip">Data import — <code>read.csv()</code></div>
+                            <div class="skill-chip">Data integrity checks — <code>names()</code>, <code>head()</code>, <code>str()</code>, <code>nrow()</code></div>
+                            <div class="skill-chip">Conditional variable creation — <code>ifelse()</code></div>
+                            <div class="skill-chip">Frequency analysis — <code>table()</code></div>
+                            <div class="skill-chip">Proportion calculation — <code>prop.table()</code></div>
+                            <div class="skill-chip">Base R visualisation — <code>pie()</code></div>
+                            <div class="skill-chip">Debugging file path and environment errors</div>
+                        </div>
+
+                        <hr>
+
+                        <div class="artefact-reflection">
+                            <h2>Reflection</h2>
+                            <p>
+                                This activity reinforced several important aspects of real-world data analysis.
+                                Firstly, it highlighted the significance of correct file handling — seemingly small errors such as incorrect
+                                directory paths can lead to confusing outputs like <code>NULL</code> variables. Troubleshooting these issues
+                                improved my confidence working with R's file system and debugging tools, and underlined that a systematic
+                                setup (verifying the working directory before any data operations) should become a standard first step in
+                                any R workflow.
+                            </p>
+                            <p>
+                                Secondly, creating the indicator variables <code>recovery_flag</code> and <code>has_recovery</code> deepened
+                                my understanding of how categorical and binary transformations can greatly enhance both interpretability and
+                                analytic flexibility. These transformations directly mirror common preprocessing steps in epidemiology and
+                                machine learning, where reducing a continuous or count variable to a binary indicator enables simpler, more
+                                communicable insights — and opens the door to techniques such as logistic regression or chi-square testing
+                                that require categorical inputs.
+                            </p>
+                            <p>
+                                Finally, calculating proportions alongside raw counts provided a much clearer contextual picture.
+                                Knowing that only 20.37% of daily state reports included any recovered cases &mdash; and visualising
+                                this with a pie chart &mdash; gave a more immediate grasp of the recovery landscape in the early pandemic
+                                period than a raw table of 55 vs. 215 alone would have conveyed. This reinforced the importance of choosing
+                                the right summary representation for a given audience and analytical goal.
+                            </p>
+                            <p>
+                                Overall, the activity strengthened my data preparation, problem-solving, and analytic reasoning skills in R,
+                                and demonstrated how even straightforward transformations and summaries can generate meaningful, interpretable
+                                insights from raw data — a core principle of applied data science.
+                            </p>
+                        </div>
+
                     </div>
 
              </div>

@@ -49,7 +49,210 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
+                        <h2>Data Activity 3</h2>
+
+                        <p>
+                            This activity continued working with the COVID-19 India dataset, focusing on transforming numeric
+                            variables into binary indicators, categorical groups, and labelled factors — and then exploring
+                            the resulting distributions through frequency analysis and ranking.
+                        </p>
+
+                        <hr>
+
+                        <h3><span class="section-label">Task 1</span> Creating the <code>has_deaths</code> Binary Variable</h3>
+                        <p>
+                            Raw death counts were converted into a binary indicator using <code>ifelse()</code>, assigning
+                            <strong>1</strong> where at least one death was recorded and <strong>0</strong> otherwise.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 3 1.png" alt="Binary variable creation" class="artefact-screenshot">
+
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>has_deaths</th><th>Count</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>0 — No Deaths</td><td>248</td></tr>
+                                <tr><td>1 — Deaths Reported</td><td>22</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="task-reflection">
+                            This task reinforced the importance of simplifying numeric variables into binary indicators for clearer
+                            analytical interpretation. Converting raw death counts into a 0/1 structure made it easier to conduct
+                            frequency analysis and compare reporting patterns. It also highlighted the value of using conditional
+                            logic (<code>ifelse()</code>) to efficiently transform variables in R.
+                        </div>
+
+                        <hr>
+
+                        <h3><span class="section-label">Task 2</span> Frequency Analysis of Death Reporting</h3>
+                        <p>
+                            A dedicated frequency table was generated from the binary indicator to quantify how often death-related
+                            data appeared in the dataset:
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 3 2.png" alt="Frequency analysis" class="artefact-screenshot">
+
+                        <p>
+                            The table confirmed that the overwhelming majority of entries recorded no deaths — consistent with
+                            the early phase of the pandemic represented in the dataset, when fatalities were still relatively rare.
+                        </p>
+
+                        <div class="task-reflection">
+                            Generating the frequency table deepened my understanding of how often death-related data appeared in
+                            the dataset. The large proportion of entries with zero deaths showed that fatalities were relatively
+                            uncommon during the time period observed. This emphasised the importance of frequency tables as a quick
+                            diagnostic tool for understanding dataset characteristics before conducting deeper analysis.
+                        </div>
+
+                        <hr>
+
+                        <h3><span class="section-label">Task 3</span> Converting the Death Indicator to a Labelled Factor</h3>
+                        <p>
+                            The binary <code>has_deaths</code> variable was converted to a properly labelled <code>factor</code>
+                            to improve readability in summaries and downstream visualisations:
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 3 3.png" alt="Factor conversion" class="artefact-screenshot">
+
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Label</th><th>Count</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>No Deaths</td><td>248</td></tr>
+                                <tr><td>Deaths Reported</td><td>22</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="task-reflection">
+                            Converting the binary indicator to a labelled factor reinforced how essential descriptive labels are
+                            for readability and future visualisation. Factor variables produce more meaningful summaries and are
+                            interpreted more easily by both analysts and readers. This task strengthened my understanding of data
+                            typing in R and its impact on outputs.
+                        </div>
+
+                        <hr>
+
+                        <h3><span class="section-label">Task 4</span> Creating the <code>case_level</code> Category</h3>
+                        <p>
+                            A new <code>total_confirmed</code> column was first derived by summing confirmed cases for Indian
+                            and foreign nationals. This continuous variable was then categorised into four meaningful groups
+                            using <code>cut()</code>:
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 3 4.png" alt="Categorical variable creation" class="artefact-screenshot">
+
+                        <p>The resulting <code>case_level</code> bands and their thresholds:</p>
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Band</th><th>Confirmed Cases Range</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="badge badge-no">No Cases</span></td><td>0</td></tr>
+                                <tr><td><span class="badge badge-low">Low Cases</span></td><td>1 – 5</td></tr>
+                                <tr><td><span class="badge badge-medium">Medium Cases</span></td><td>6 – 15</td></tr>
+                                <tr><td><span class="badge badge-high">High Cases</span></td><td>16+</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="task-reflection">
+                            Building the <code>case_level</code> variable helped develop my skills in categorising continuous
+                            numeric values into meaningful groups using the <code>cut()</code> function. This practice is widely
+                            used in epidemiology and public health analytics. By defining thresholds (0, 1–5, 6–15, 16+), I learned
+                            how classification enables clearer comparisons and helps identify patterns that would be harder to observe
+                            with raw numeric values alone.
+                        </div>
+
+                        <hr>
+
+                        <h3><span class="section-label">Task 5</span> State-Level Frequency Analysis</h3>
+                        <p>
+                            A frequency table was produced for the <code>State.UnionTerritory</code> column to examine how
+                            reporting was distributed across Indian states and union territories:
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 3 5.png" alt="State-level frequency analysis" class="artefact-screenshot">
+
+                        <div class="note-box">
+                            <strong>Data quality note:</strong> The frequency table revealed inconsistencies in state naming —
+                            for example, duplicate entries caused by trailing spaces or alternate spellings of the same territory.
+                            This highlighted the need for a data cleaning step (e.g., <code>trimws()</code> or manual standardisation)
+                            before relying on state-level counts for analysis.
+                        </div>
+ 
+                        <div class="task-reflection">
+                            Examining state-level reporting frequencies highlighted the uneven distribution of entries across
+                            regions. Some states, such as Kerala and Delhi, had far more records than others. This task emphasised
+                            the need to consider data collection bias, reporting practices, and even spelling inconsistencies
+                            (e.g., duplicate category names) when working with real-world datasets. It strengthened my awareness
+                            of data cleaning as a critical step in analysis.
+                        </div>
+
+                        <hr>
+
+                        <h3><span class="section-label">Task 6</span> Identifying the Top 10 Most Frequently Reported States</h3>
+                        <p>
+                            The full frequency table was sorted in descending order and the top 10 states by reporting volume
+                            were extracted:
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 3 6.png" alt="Top 10 states frequency analysis" class="artefact-screenshot">
+
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Rank</th><th>State / Union Territory</th><th>Record Count</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Kerala</td><td>highest</td></tr>
+                                <tr><td>2</td><td>Delhi</td><td>—</td></tr>
+                                <tr><td>3–10</td><td>Remaining states per output</td><td>—</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="note-box">
+                            The exact counts above reflect the output of <code>top10_states</code> in your R session.
+                            Replace the placeholder values with the printed output from your RStudio console for a complete record.
+                        </div>
+ 
+                        <div class="task-reflection">
+                            Identifying the top 10 states by reporting volume deepened my understanding of how to summarise
+                            categorical variables meaningfully. Sorting and ranking categories helped reveal which regions
+                            contributed most to the dataset and allowed for more focused interpretation. This task reinforced
+                            the practical value of simple ordering functions for exploratory analysis, and demonstrated how
+                            uneven reporting can influence downstream findings — for example, conclusions drawn about "India"
+                            may in practice reflect the patterns of a handful of heavily represented states.
+                        </div>
+
+                        <hr>
+
+                        <div class="artefact-reflection">
+                            <h2>Overall Reflection</h2>
+                            <p>
+                                Unit 3 brought together a sequence of related transformation techniques — binary indicators,
+                                labelled factors, and banded categories — and showed how each builds on the last to produce
+                                progressively more interpretable data. The shift from a raw <code>Deaths</code> count to
+                                <code>has_deaths</code> (numeric binary) to <code>has_deaths_factor</code> (labelled factor) is
+                                a microcosm of the broader data preparation pipeline: raw values are rarely analysis-ready,
+                                and the intermediate representations we create determine the quality and clarity of what follows.
+                            </p>
+                            <p>
+                                The <code>cut()</code> function introduced a different flavour of transformation — discretising
+                                a continuous variable into ordered categories. Choosing appropriate breakpoints is a non-trivial
+                                decision that requires domain knowledge; the thresholds used here (0, 5, 15, 16+) reflect
+                                epidemiological intuition about what constitutes a meaningful difference in case load at the
+                                state level in early 2020.
+                            </p>
+                            <p>
+                                The state-level frequency analysis was the most practically instructive task, precisely because
+                                it surfaced a real data quality issue: inconsistent naming of the same territories. Encountering
+                                this in a relatively small dataset underscored how pervasive such problems are in real-world data
+                                pipelines, and why data profiling and cleaning must precede any analytical conclusions. Overall,
+                                this unit reinforced that the rigour of a data analysis is determined as much by how carefully
+                                the data is prepared as by the sophistication of the methods applied to it.
+                            </p>
+                        </div>
                     </div>
 
              </div>

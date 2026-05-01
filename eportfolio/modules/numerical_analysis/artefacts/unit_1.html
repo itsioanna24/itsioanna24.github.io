@@ -49,7 +49,72 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
+                        <!-- ── Activity Header ── -->
+                        <h2>Data Activity 1</h2>
+
+                        <!-- ── Dataset ── -->
+                        <h3>Dataset</h3>
+                        <div class="dataset-meta">
+                            <p>
+                                <strong><a href="https://www.kaggle.com/datasets/aditeloo/a-small-covid19-dataset" target="_blank" rel="noopener">COVID-19 India Cases (January 2020 &ndash; March 2020)</a></strong><br>
+                                This dataset contains early COVID-19 case data from India covering the initial months of the pandemic from January to March 2020.
+                                It includes confirmed cases (both Indian and foreign nationals), recovered cases, and deaths across different states and union territories of India.
+                            </p>
+                        </div>
+
+                        <hr>
+
+                         <h2>Task 1.1 &mdash; Basic Dataset Information</h2>
+
+                         <img src="/eportfolio/images/numerical_analysis_images/data-activity-1 1.png" alt="Task 1.1: Basic Dataset Information" class="artefact-screenshot">
+                        
+                        <p>
+                            The dataset contains <strong>7 variables</strong> and <strong>167 observations</strong>.
+                            The variables include 4 numeric columns (confirmed cases for Indian nationals, foreign nationals, cured cases, and deaths),
+                            2 character columns (State/Union Territory and status notes), and 1 date column (Date, after explicit conversion from character).
+                        </p>
+
+
+                        <hr>
+
+                        <h2>Task 1.2 &mdash; Data-Related Information</h2>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data-activity-1 2.png" alt="Task 1.2: Data-Related Information" class="artefact-screenshot">
+
+                        <ul>
+                            <li><strong>Unique states / union territories:</strong> 23</li>
+                            <li><strong>Date range:</strong> 30 January 2020 to 29 March 2020</li>
+                            <li><strong>Most frequently appearing state:</strong> Kerala</li>
+                        </ul>
+
+                        <div class="artefact-reflection">
+                            <p>
+                                This activity introduced me to the practical workflow of loading, inspecting, and querying a real-world dataset in R &mdash;
+                                skills that sit at the foundation of any data science pipeline. Working with a COVID-19 dataset from the early months of the pandemic
+                                added a meaningful context: the numbers were not abstract; they represented the spread of a disease across Indian states at a time when
+                                very little was known about it.
+                            </p>
+                            <p>
+                                The most instructive moment was discovering that R does not automatically parse date columns when reading a CSV file.
+                                The initial <code>sapply(data, inherits, "Date")</code> check returned 0 date columns, which was unexpected.
+                                This required an explicit conversion using <code>as.Date()</code> with the correct format string before any date-based
+                                operations &mdash; such as computing the range &mdash; could be performed reliably. This reinforced an important principle:
+                                understanding <em>how</em> data is stored, not just <em>what</em> data is present, is critical to avoiding silent errors in analysis.
+                            </p>
+                            <p>
+                                I also encountered a column naming issue: the column referenced in the instructions as <code>State/UnionTerritory</code>
+                                was stored by R as <code>State.UnionTerritory</code> (with a period), because R replaces special characters in column
+                                names by default. Adjusting the code to match the actual column name highlighted the importance of always inspecting
+                                variable names with <code>names()</code> before attempting to reference them.
+                            </p>
+                            <p>
+                                Overall, this activity provided a systematic, hands-on introduction to the key concepts of this unit:
+                                identifying data types, understanding data structure, and distinguishing between numeric, categorical, and temporal variables.
+                                These are precisely the foundational statistical and mathematical concepts the module aims to build &mdash; specifically,
+                                the ability to assess a dataset's composition before applying any analytical technique, ensuring that subsequent inferences
+                                rest on a well-understood data foundation.
+                            </p>
+                        </div>
                     </div>
 
              </div>
