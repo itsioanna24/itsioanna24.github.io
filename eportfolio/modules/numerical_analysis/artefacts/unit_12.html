@@ -48,11 +48,451 @@
                         <a href="/eportfolio/modules/numerical_analysis/artefacts.html"> &larr; Back to artefacts</a>
                     </div>
 
+
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
+                        <h2>End of Module Presentation</h2>
+                        <h3 style="text-transform:none; color:#c4aaff; font-size:1.15em; letter-spacing:0; margin-top:0.4em;">
+                            Statistical Analysis of Type 2 Diabetes: Exploratory, Inferential and Predictive Modelling Using the Pima Indians Dataset
+                        </h3>
+
+                        <p>
+                            This end-of-module individual presentation synthesised the analytical skills developed
+                            across the full module — descriptive statistics, inferential testing, correlation, and
+                            regression — and applied them to a real-world clinical dataset. The Pima Indians Diabetes
+                            Dataset (768 adult women, UCI Machine Learning Repository) was used to explore risk factor
+                            distributions, test statistical associations, and develop predictive models for type 2
+                            diabetes status.
+                        </p>
+ 
+                        <p>
+                            The full presentation slides and supporting transcript are available for download below.
+                            The analysis was conducted entirely in R.
+                        </p>
+ 
+                        <ul>
+                            <li><a href="/eportfolio/assets/files/Statistical_Analysis_Presentation.pdf" download>Download the presentation slides (PDF)</a></li>
+                            <li><a href="/eportfolio/assets/files/EOM_1_-_Statistical_Analysis_Presentation.docx" download>Download the presentation transcript (DOCX)</a></li>
+                        </ul>
+
+                        <hr>
+
+                        <h3>Section 1 &mdash; Data Exploration and Descriptive Statistics</h3>
+                        <span class="method-pill">Cohort description &nbsp;|&nbsp; Distributions &nbsp;|&nbsp; Data quality</span>
+ 
+                        <p>
+                            The dataset contains 768 observations with a 2:1 class imbalance — 500 non-diabetic (65.1%)
+                            and 268 diabetic (34.9%). This imbalance was noted as a consideration for model interpretation.
+                        </p>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Variable</th><th>Mean</th><th>SD</th><th>Median</th><th>Min</th><th>Max</th><th>Skew</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Age (years)</td><td>33.24</td><td>11.76</td><td>29</td><td>21</td><td>81</td><td>+1.13 (right)</td></tr>
+                                <tr><td>BMI (kg/m²)</td><td>31.99</td><td>7.88</td><td>32</td><td>0*</td><td>67.1</td><td>−0.43</td></tr>
+                                <tr><td>Glucose (mg/dL)</td><td>120.89</td><td>31.97</td><td>117</td><td>0*</td><td>199.0</td><td>+0.17</td></tr>
+                                <tr><td>Blood Pressure (mmHg)</td><td>69.11</td><td>19.36</td><td>72</td><td>0*</td><td>122.0</td><td>−1.84</td></tr>
+                                <tr><td>Pregnancies</td><td>3.85</td><td>3.37</td><td>3</td><td>0</td><td>17.0</td><td>+0.90</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="note-box">
+                            <strong>Data quality:</strong> Variables marked * contain zero values that are physiologically
+                            implausible (e.g., a glucose of 0 or BMI of 0) and are likely missing data encoded as zero
+                            rather than true measurements. This limitation was flagged throughout the analysis and
+                            interpreted with appropriate caution.
+                        </div>
+ 
+                        <div class="interp-box">
+                            The mean BMI of 32 kg/m² exceeds the WHO obesity threshold. Glucose showed the highest
+                            variability. Age was right-skewed, with most participants in the younger adult range despite
+                            the presence of older, higher-risk individuals. Diabetes prevalence increased clearly with
+                            age, BMI category, and pregnancy count — all consistent with established clinical risk profiles.
+                        </div>
+
+                        <hr>
+
+                        <h3>Section 2 &mdash; Inferential Statistics</h3>
+                        <span class="method-pill">t-test &nbsp;|&nbsp; Wilcoxon &nbsp;|&nbsp; Pearson r &nbsp;|&nbsp; Chi-square &nbsp;|&nbsp; Fisher's &nbsp;|&nbsp; ANOVA + Tukey</span>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Test</th><th>Variables</th><th>Result</th><th>Decision</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Welch's t-test</td>
+                                    <td>Glucose × Diabetes status</td>
+                                    <td>t(461.33) = −13.75, p &lt; 2.2×10⁻¹⁶</td>
+                                    <td>Diabetic group significantly higher (141.26 vs 109.98 mg/dL)</td>
+                                </tr>
+                                <tr>
+                                    <td>Wilcoxon rank-sum</td>
+                                    <td>Pregnancies × Diabetes status</td>
+                                    <td>W = 50,985, p = 3.745×10⁻⁸</td>
+                                    <td>Diabetic women have significantly higher pregnancy counts</td>
+                                </tr>
+                                <tr>
+                                    <td>Chi-square</td>
+                                    <td>Age group × Diabetes</td>
+                                    <td>&chi;²(3) = 69.92, p = 4.45×10⁻¹⁵</td>
+                                    <td>Diabetes prevalence increases significantly with age</td>
+                                </tr>
+                                <tr>
+                                    <td>Fisher's Exact</td>
+                                    <td>BMI category × Diabetes</td>
+                                    <td>p &lt; 2.2×10⁻¹⁶</td>
+                                    <td>Obesity strongly associated with diabetes status</td>
+                                </tr>
+                                <tr class="highlight">
+                                    <td>One-way ANOVA + Tukey</td>
+                                    <td>Glucose across age groups</td>
+                                    <td>F(3, 759) = 20.44, p = 9.57×10⁻¹³</td>
+                                    <td>All groups ≥30 have significantly higher glucose than &lt;30; 50+ group highest (+24.9 units)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="note-box">
+                            Pearson correlation identified several moderate-to-strong associations among predictors,
+                            including insulin–glucose (r = 0.58), BMI–skinfold (r = 0.65), and age–pregnancies (r = 0.54).
+                            These correlations signalled potential multicollinearity, which was subsequently managed in
+                            the regression models.
+                        </div>
+
+                        <hr>
+
+                        <h3>Section 3 &mdash; Regression Analysis</h3>
+                        <span class="method-pill">&#946; Multiple Linear Regression &nbsp;|&nbsp; Logistic Regression &nbsp;|&nbsp; Model Comparison</span>
+ 
+                        <p>
+                            <strong>Linear regression</strong> was used to predict glucose level from age, BMI, blood
+                            pressure, and pregnancies. The overall model was significant (F(4, 719) = 25.54, p &lt; 0.001)
+                            but explained only 11.9% of glucose variance (adjusted R² = 0.119), indicating that glucose
+                            is determined by many factors beyond the four included predictors.
+                        </p>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Predictor</th><th>Estimate (β)</th><th>95% CI</th><th>p-value</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr class="highlight"><td>Age</td><td>0.63</td><td>[0.41, 0.85]</td><td>&lt; 0.001</td></tr>
+                                <tr class="highlight"><td>BMI</td><td>0.85</td><td>[0.53, 1.17]</td><td>&lt; 0.001</td></tr>
+                                <tr><td>Blood Pressure</td><td>0.23</td><td>[0.05, 0.42]</td><td>0.015</td></tr>
+                                <tr><td>Pregnancies</td><td>−0.20</td><td>[−0.95, 0.56]</td><td>0.611 (NS)</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <p>
+                            <strong>Logistic regression</strong> (Model 1) predicted binary diabetes status from glucose,
+                            BMI, and age — all statistically significant. Model 2 added a BMI×Age interaction term, which
+                            was not significant (p = 0.37) and introduced problematic multicollinearity (VIF &gt; 10).
+                            Model 1 was retained as the preferred model.
+                        </p>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Predictor</th><th>Odds Ratio</th><th>95% CI</th><th>Change in Odds</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Glucose</td><td>1.04</td><td>[1.03, 1.05]</td><td>+3.7% per unit</td></tr>
+                                <tr><td>BMI</td><td>1.08</td><td>[1.04, 1.13]</td><td>+8.1% per unit</td></tr>
+                                <tr class="highlight"><td>Age</td><td>1.06</td><td>[1.03, 1.08]</td><td>+5.6% per year</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Performance Metric</th><th>Value</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Overall Accuracy</td><td>78.8%</td></tr>
+                                <tr><td>Specificity (correctly identified non-diabetic)</td><td>88.6%</td></tr>
+                                <tr><td>Sensitivity (correctly identified diabetic)</td><td>59.2%</td></tr>
+                                <tr class="highlight"><td>Hosmer–Lemeshow test (calibration)</td><td>p = 0.93 — good calibration</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="interp-box">
+                            The model's high specificity (88.6%) relative to its sensitivity (59.2%) means it is better
+                            at correctly identifying non-diabetic individuals than diabetic ones. In a clinical screening
+                            context, this asymmetry matters: missed diabetic cases (false negatives) carry greater health
+                            risk than false positives. The Hosmer–Lemeshow result (p = 0.93) confirms that predicted
+                            probabilities are well-calibrated against observed outcomes.
+                        </div>
+
+                        <hr>
+
+                        <h3>References</h3>
+                        <ul style="font-size:0.88em; line-height:1.7; color:#8b949e;">
+                            <li>American Diabetes Association (2026). Standards of Care in Diabetes—2026. <em>Diabetes Care</em>, 49(S1). doi:10.2337/dc26-sint.</li>
+                            <li>Galaviz, K.I. et al. (2019). Lifestyle and the Prevention of Type 2 Diabetes. <em>American Journal of Lifestyle Medicine</em>, 12(1), pp.4–20.</li>
+                            <li>International Diabetes Federation (2024). <em>Type 2 diabetes</em>. idf.org.</li>
+                            <li>Kahn, M. (n.d.). <em>UCI Machine Learning Repository — Pima Indians Diabetes Dataset</em>. archive.ics.uci.edu.</li>
+                            <li>McEvoy, J.W. et al. (2024). 2024 ESC Guidelines for hypertension. <em>European Heart Journal</em>, 45(38). doi:10.1093/eurheartj/ehae178.</li>
+                            <li>R Core Team (2025). <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing.</li>
+                            <li>World Health Organization (2024). <em>Diabetes</em>. who.int.</li>
+                            <li>World Health Organization (2025). <em>Obesity and Overweight</em>. who.int.</li>
+                        </ul>
                     </div>
 
-             </div>
+                    <div class="artefact">
+                        <h2>Bayes' Probability Activity</h2>
+
+                        <p>
+                            This activity applied fundamental probability concepts — marginal probabilities, conditional
+                            probabilities, and Bayes' theorem — to COVID-19 state-level reporting data from India
+                            (January–March 2020). The focus was on Kerala and Delhi, examining how recovery reports
+                            were distributed across states and using Bayes' theorem to reverse a conditional probability.
+                        </p>
+
+                        <hr>
+
+                        <h3>Dataset Context</h3>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Count</th><th>Value</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Total reports in dataset</td><td>270</td></tr>
+                                <tr><td>Reports from Kerala</td><td>52</td></tr>
+                                <tr><td>Reports from Delhi</td><td>20</td></tr>
+                                <tr><td>Reports with at least one recovery</td><td>55</td></tr>
+                                <tr><td>Recovery reports from Kerala</td><td>19</td></tr>
+                                <tr><td>Recovery reports from Delhi</td><td>8</td></tr>
+                            </tbody>
+                        </table>
+
+                        <hr>
+
+                        <h3>Step 1 &mdash; Marginal Probabilities</h3>
+                        <span class="method-pill">P(A) = count(A) / total</span>
+ 
+                        <pre class="r-code"><span class="comment"># Total reports</span>
+                            total_reports &lt;- <span class="num">270</span>
+                            
+                            <span class="comment"># Reports per state</span>
+                            kerala_reports &lt;- <span class="num">52</span>
+                            delhi_reports  &lt;- <span class="num">20</span>
+                            
+                            <span class="comment"># Reports with recoveries</span>
+                            recovery_reports &lt;- <span class="num">55</span>
+                            
+                            <span class="comment"># Marginal probabilities</span>
+                            P_Kerala    &lt;- kerala_reports    / total_reports
+                            P_Delhi     &lt;- delhi_reports     / total_reports
+                            P_Recovery  &lt;- recovery_reports  / total_reports
+                            
+                            P_Kerala
+                            P_Delhi
+                            P_Recovery
+                        </pre>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Probability</th><th>Calculation</th><th>Value</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>P(Kerala)</td><td>52 / 270</td><td>≈ 0.1926 (19.26%)</td></tr>
+                                <tr><td>P(Delhi)</td><td>20 / 270</td><td>≈ 0.0741 (7.41%)</td></tr>
+                                <tr><td>P(Recovery)</td><td>55 / 270</td><td>≈ 0.2037 (20.37%)</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="interp-box">
+                            Approximately 1 in 5 reports in the dataset came from Kerala, and approximately 1 in 5
+                            reports included at least one recovery. These marginal probabilities are computed from the
+                            overall composition of the dataset and make no assumptions about any relationship between
+                            state and recovery status.
+                        </div>
+
+                        <hr>
+
+                        <h3>Step 2 &mdash; Conditional Probabilities</h3>
+                        <span class="method-pill">P(B|A) = P(A ∩ B) / P(A)</span>
+ 
+                        <pre class="r-code"><span class="comment"># Recovery reports per state</span>
+                            kerala_recovery &lt;- <span class="num">19</span>
+                            delhi_recovery  &lt;- <span class="num">8</span>
+                            
+                            <span class="comment"># Conditional probabilities</span>
+                            P_Recovery_given_Kerala &lt;- kerala_recovery / kerala_reports
+                            P_Recovery_given_Delhi  &lt;- delhi_recovery  / delhi_reports
+                            
+                            P_Recovery_given_Kerala
+                            P_Recovery_given_Delhi
+                        </pre>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Probability</th><th>Calculation</th><th>Value</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>P(Recovery | Kerala)</td><td>19 / 52</td><td>≈ 0.3654 (36.54%)</td></tr>
+                                <tr><td>P(Recovery | Delhi)</td><td>8 / 20</td><td>= 0.40 (40.00%)</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="interp-box">
+                            Conditional on a report coming from Kerala, there is a 36.54% chance it includes a recovery —
+                            substantially higher than the overall recovery rate of 20.37%. Delhi's conditional recovery
+                            rate is even higher at 40%. Both states show recovery rates well above the national average,
+                            suggesting that Kerala and Delhi — as among the earliest and most actively monitored states —
+                            had comparatively stronger recovery tracking during this period.
+                        </div>
+
+                        <hr>
+
+                        <h3>Step 3 &mdash; Applying Bayes' Theorem</h3>
+                        <span class="method-pill">P(A|B) = P(B|A) · P(A) / P(B)</span>
+ 
+                        <p>
+                            Bayes' theorem reverses the condition. Instead of asking "given a report is from Kerala,
+                            what is the probability it includes a recovery?", we ask: "given a report includes a
+                            recovery, what is the probability it came from Kerala?"
+                        </p>
+ 
+                        <div class="equation-box">
+                            <span class="eq-label">Bayes' Theorem</span>
+                            P(Kerala | Recovery) = P(Recovery | Kerala) &times; P(Kerala) / P(Recovery)
+                        </div>
+ 
+                        <pre class="r-code"><span class="comment"># Bayes' theorem: P(Kerala | Recovery)</span>
+                            P_Kerala_given_Recovery &lt;- (P_Recovery_given_Kerala * P_Kerala) / P_Recovery
+                            
+                            P_Kerala_given_Recovery
+                            
+                            <span class="comment"># Equivalent direct calculation from counts</span>
+                            kerala_recovery / recovery_reports   <span class="comment"># 19 / 55</span>
+                        </pre>
+                            
+                        <div class="equation-box">
+                            <span class="eq-label">Worked Calculation</span>
+                            P(Kerala | Recovery) = (19/52 &times; 52/270) / (55/270) = 19/55 ≈ 0.3455
+                        </div>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Probability</th><th>Calculation</th><th>Value</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr class="highlight">
+                                    <td>P(Kerala | Recovery)</td>
+                                    <td>19 / 55</td>
+                                    <td>≈ 0.3455 (34.55%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="verdict positive">
+                            <div class="verdict-icon">&#8679;</div>
+                            <p>
+                                <strong>Kerala is over-represented among recovery reports.</strong> While Kerala accounts
+                                for only 19.26% of all reports in the dataset, it contributes 34.55% of recovery reports
+                                — approximately 1.8 times its overall share. Bayes' theorem made this disproportionate
+                                contribution visible by conditioning on the evidence of a recovery.
+                            </p>
+                        </div>
+ 
+                        <div class="interp-box">
+                            The worked calculation shows an important simplification: when applied to count data,
+                            Bayes' theorem reduces to a straightforward ratio (19/55) because the total (270) cancels
+                            in the numerator and denominator. This is not always the case — in more complex applications,
+                            computing P(B) requires summing over all possible partitions of the sample space (the law
+                            of total probability). The algebraic simplicity here is a property of this particular
+                            two-state example, not of Bayes' theorem in general.
+                        </div>
+ 
+                        <div class="note-box">
+                            <strong>Prior vs posterior:</strong> In Bayesian language, P(Kerala) = 0.1926 is the
+                            <em>prior</em> probability — our belief about the probability of a Kerala report before
+                            observing any evidence. P(Kerala | Recovery) = 0.3455 is the <em>posterior</em> probability
+                            — our updated belief after learning that the report contains a recovery. The evidence
+                            (a recovery being present) has more than doubled our estimated probability that the report
+                            originated from Kerala.
+                        </div>
+
+                        <hr>
+
+                        <div class="reflection-qa">
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn?</p>
+                                <p class="qa-a">
+                                    The most valuable conceptual insight was understanding what Bayes' theorem actually
+                                    does: it updates a prior belief in light of new evidence. The prior (19.26%) and the
+                                    posterior (34.55%) are both valid probabilities — they answer different questions.
+                                    The prior describes the marginal composition of the dataset; the posterior describes
+                                    the composition of a specific subset defined by the evidence. Conditional probabilities
+                                    can reveal patterns that marginal proportions entirely conceal.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">Why does the simplification work here?</p>
+                                <p class="qa-a">
+                                    In this example all counts come from the same total (270), so P(A) = count(A)/270
+                                    for every event. When Bayes' formula is expanded, the 270s cancel, reducing the
+                                    result to a simple count ratio. In real Bayesian inference — for example, a spam
+                                    classifier or a medical diagnostic model — P(B) must be computed from a weighted
+                                    sum across all classes, and the cancellation does not occur.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">How will this help in future work?</p>
+                                <p class="qa-a">
+                                    Bayes' theorem underlies Naive Bayes classifiers, Bayesian networks, and probabilistic
+                                    inference in AI. Understanding how to move between prior and posterior probabilities,
+                                    and how evidence updates beliefs, is foundational for any work in probabilistic
+                                    machine learning, anomaly detection, or risk estimation. This activity grounded that
+                                    abstract framework in a concrete, interpretable dataset.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reflection-box">
+                            <span class="learning-outcome-tag">Learning Outcome</span>
+                            <h2>Overall Reflection &mdash; Unit 12</h2>
+                            <p>
+                                Unit 12 brought together two artefacts that represent opposite ends of the analytical
+                                spectrum. The Bayes' probability activity was deliberately small in scale — a handful
+                                of counts, a single theorem, a single result — but conceptually dense, requiring a
+                                precise understanding of what probability means and how conditioning on evidence changes
+                                it. The end-of-module presentation was broad in scope, synthesising descriptive, inferential,
+                                and predictive techniques across an entire dataset and communicating the findings as a
+                                structured academic argument.
+                            </p>
+                            <p>
+                                The Bayesian activity reinforced a principle that runs through all statistical reasoning:
+                                every probability is implicitly conditional on something. The marginal probability
+                                P(Kerala) = 19.26% and the posterior P(Kerala | Recovery) = 34.55% are both correct —
+                                they simply answer different questions. Learning to identify which question a probability
+                                answers, and to move between prior and posterior through Bayes' theorem, is foundational
+                                for probabilistic machine learning and AI systems where models must update their beliefs
+                                in light of new observations.
+                            </p>
+                            <p>
+                                The presentation demanded a different kind of rigour: integrating multiple analytical
+                                layers into a coherent narrative with justified methodological choices at each step.
+                                The decision to use Welch's t-test despite non-normality (justified by sample size),
+                                to use Fisher's Exact Test instead of chi-square for small cell counts, to prefer
+                                Model 1 over Model 2 on parsimony and multicollinearity grounds — each of these
+                                reflected the kind of applied statistical judgement that the module as a whole has
+                                been building. The low adjusted R² in the linear regression (0.119) was also an
+                                honest result: acknowledging that a significant model can still explain only a modest
+                                fraction of variance is part of responsible quantitative reporting.
+                            </p>
+                            <p>
+                                Taken together, Unit 12 demonstrated that statistical analysis is not a single
+                                technique but a toolkit that must be assembled thoughtfully for each problem —
+                                from the first frequency table to the final model evaluation — with decisions at
+                                every stage grounded in the properties of the data, the assumptions of the method,
+                                and the question being asked.
+                            </p>
+                    </div>
+                </div>
             </div>
         </section>
 

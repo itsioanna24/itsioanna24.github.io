@@ -49,10 +49,273 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
+                        <div class="artefact-header">
+                            <h2>Collaborative Discussion 2 - Summary Post</h2>
+                            <p class="artefact-type forum">Discussion Forum</p>
+                        </div>
+
+                        <div class="artefact-description">
+                            <div class="images-container">
+                                <img src="/eportfolio/images/numerical_analysis_images/summary 2 1.png" alt="Screenshot of Collaborative Discussion 2 - Summary Post" class="artefact-screenshot">
+                                <img src="/eportfolio/images/numerical_analysis_images/summary 2 2.png" alt="Screenshot of Collaborative Discussion 2 - Summary Post" class="artefact-screenshot">
+                            </div>
+                            <div class="artefact-container">
+                                <h3>Reflection on this Artefact</h3>
+                                <p>
+                                    This summary post demonstrates a clear development in my thinking, as I moved from presenting a critical viewpoint to refining and contextualising it through peer engagement. Initially, my position was more absolute in questioning the value of confidence intervals and p-values. However, through discussion, I developed a more balanced perspective that recognises their usefulness when applied and communicated appropriately.
+                                    <br>
+                                    A key learning outcome was understanding the importance of conditional use and transparency. Rather than rejecting statistical tools, I now appreciate that their value depends on clearly communicating assumptions, limitations, and context. This reflects a shift from critique to a more constructive and nuanced approach.
+                                    <br>
+                                    I also improved my ability to synthesise peer feedback. By integrating different perspectives—such as the risks of misinterpretation and the role of reporting practices—I produced a more comprehensive and cohesive argument. This strengthened my skills in academic dialogue and critical reflection.
+                                    <br>
+                                    Another important insight was recognising statistical reporting as an ethical and communicative responsibility, not just a technical task. The discussion highlighted how presentation choices influence interpretation and decision-making, particularly for non-expert audiences.
+                                    <br>
+                                    Overall, this artefact marks significant progress in my academic development. It shows my ability to adapt my viewpoint, engage with diverse perspectives, and develop a more informed and responsible approach to statistical communication. In future work, I will aim to maintain this balance between critical evaluation and practical application.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-             </div>
+                    <div class="artefact">
+
+                        <h2>Data Activity 9</h2>
+                         <p>
+                            Building directly on the correlation analysis from Unit 10, this activity fitted a simple
+                            linear regression model to predict diastolic blood pressure (DBP) from systolic blood pressure
+                            (SBP) using the <code>Health_Data.sav</code> dataset. The aims were to derive the population
+                            regression equation, assess statistical significance at the 5% level, evaluate model fit,
+                            check residual assumptions, and demonstrate practical prediction.
+                        </p>
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 9 1.png" alt="Screenshot of Data Activity 9" class="artefact-screenshot">
+
+                        <hr>
+
+                        <h3>Fitting the Regression Model</h3>
+
+                         <div class="equation-box">
+                            <span class="eq-label">Estimated Population Regression Equation</span>
+                            DBP&#770; = 19.41 + 0.496 &times; SBP
+                        </div>
+ 
+                        <p>
+                            The equation states that for every 1 mmHg increase in systolic blood pressure, diastolic
+                            blood pressure is predicted to increase by approximately <strong>0.5 mmHg</strong> on average.
+                            The intercept (19.41) represents the estimated DBP when SBP equals zero — a value that lies
+                            outside the meaningful physiological range and should not be interpreted clinically.
+                        </p>
+
+                        <hr>
+
+                        <h3>Regression Output</h3>
+
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Term</th>
+                                    <th>Estimate</th>
+                                    <th>Std. Error</th>
+                                    <th>t-value</th>
+                                    <th>p-value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>(Intercept)</td>
+                                    <td>19.41</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr class="sig">
+                                    <td>SBP (slope)</td>
+                                    <td>0.496</td>
+                                    <td>—</td>
+                                    <td>22.96</td>
+                                    <td>&lt; 0.001</td>
+                                </tr>
+                            </tbody>
+                        </table>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Model Fit Statistic</th><th>Value</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr class="highlight"><td>R² (coefficient of determination)</td><td>0.717</td></tr>
+                                <tr><td>F-statistic</td><td>F(1, 208) = 527.2</td></tr>
+                                <tr><td>Overall model p-value</td><td>&lt; 0.001</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="verdict positive">
+                            <div class="verdict-icon">&#8679;</div>
+                            <p>
+                                <strong>SBP is a statistically significant predictor of DBP</strong> at the 5% level
+                                (t = 22.96, p &lt; 0.001). The model accounts for <strong>71.7%</strong> of the
+                                variance in diastolic blood pressure (R² = 0.717), indicating a strong and well-fitting
+                                model.
+                            </p>
+                        </div>
+ 
+                        <div class="interp-box">
+                            R² = 0.717 means that systolic blood pressure alone explains approximately 71.7% of the
+                            variability in diastolic blood pressure across individuals in this dataset. The remaining
+                            28.3% is attributable to other factors not included in this single-predictor model —
+                            such as age, weight, medication, or lifestyle variables. The F-statistic (527.2, p &lt; 0.001)
+                            confirms that the overall model is significantly better than predicting DBP from the mean
+                            alone.
+                        </div>
+
+                        <hr>
+
+                        <h3>Regression Line on Scatter Plot</h3>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 9 2.png" alt="Screenshot of Data Activity 9" class="artefact-screenshot">
+                        <br>
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 9 plot.png" alt="Screenshot of Data Activity 9" class="artefact-screenshot">
+
+                        <div class="interp-box">
+                            The scatter plot with the overlaid regression line shows that the linear model fits the data
+                            well — points cluster closely around the line with consistent spread, and there are no obvious
+                            non-linear patterns or influential outlier clusters. Using <code>lwd = 2</code> renders the
+                            trend line thicker and more legible against the point cloud. The <code>abline(model)</code>
+                            call draws the line directly from the fitted model object, ensuring it is exactly aligned with
+                            the estimated equation.
+                        </div>
+
+                        <hr>
+
+                        <h3>Diagnostic Checks</h3>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 9 3.png" alt="Screenshot of Data Activity 9" class="artefact-screenshot">
+
+                         <div class="assumption-grid">
+                            <div class="assumption-card">
+                                <h4>Normality of Residuals</h4>
+                                <div class="result">Shapiro–Wilk: W = 0.993, p = 0.471</div>
+                                <p>p &gt; 0.05 — no evidence of departure from normality. Residuals are approximately
+                                normally distributed, satisfying a key assumption of OLS regression.</p>
+                            </div>
+                            <div class="assumption-card">
+                                <h4>Diagnostic Plots</h4>
+                                <div class="result">par(mfrow = c(2, 2)); plot(model)</div>
+                                <p>The four-panel plot checks residuals vs fitted values (linearity and homoscedasticity),
+                                Q-Q plot of residuals (normality), scale-location (constant variance), and Cook's distance
+                                (influential observations).</p>
+                            </div>
+                        </div>
+ 
+                        <div class="verdict pass">
+                            <div class="verdict-icon">&#10003;</div>
+                            <p>
+                                All checked assumptions are satisfied. The Shapiro–Wilk test on residuals is
+                                non-significant (p = 0.471), confirming normality. The OLS regression results are
+                                therefore valid and can be interpreted with confidence.
+                            </p>
+                        </div>
+
+                        <hr>
+
+                        <h3>Practical Prediction</h3>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 9 4.png" alt="Screenshot of Data Activity 9" class="artefact-screenshot">
+
+                       <table class="results-table">
+                            <thead>
+                                <tr><th>SBP (input)</th><th>Predicted DBP</th><th>95% CI Lower</th><th>95% CI Upper</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr class="highlight">
+                                    <td>140 mmHg</td>
+                                    <td>88.85 mmHg</td>
+                                    <td>87.85 mmHg</td>
+                                    <td>89.85 mmHg</td>
+                                </tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="interp-box">
+                            For an individual with a systolic blood pressure of 140 mmHg, the model predicts a diastolic
+                            blood pressure of approximately <strong>88.85 mmHg</strong>. The 95% confidence interval
+                            (87.85 – 89.85 mmHg) is narrow — a range of just 2 mmHg — reflecting the precision of this
+                            estimate. This narrowness is consistent with the high R² of the model: when a predictor
+                            explains 71.7% of the variance, predictions made within the observed range of SBP values
+                            will be highly precise. Note that this is a <em>confidence interval for the mean response</em>
+                            at SBP = 140, not a prediction interval for an individual — the latter would be considerably
+                            wider.
+                        </div>
+ 
+                        <div class="note-box">
+                            <strong>Confidence interval vs prediction interval:</strong> <code>interval = "confidence"</code>
+                            estimates the plausible range for the <em>average</em> DBP among all individuals with
+                            SBP = 140 mmHg. To estimate the range within which a single new individual's DBP would fall,
+                            use <code>interval = "prediction"</code> instead — this produces a wider interval because it
+                            accounts for individual-level variability in addition to uncertainty in the mean estimate.
+                        </div>
+                        
+                        <hr>
+
+                        <div class="reflection-qa">
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn?</p>
+                                <p class="qa-a">
+                                    This task showed how regression extends correlation: while Unit 10 established that SBP
+                                    and DBP are strongly associated (&rho; = 0.80), regression quantified <em>how much</em>
+                                    DBP changes per unit increase in SBP (0.496 mmHg) and enabled actual predictions with
+                                    confidence intervals. I also learned that R² and the F-statistic serve different purposes
+                                    — R² describes how much variance is explained, while the F-test asks whether the model
+                                    is significantly better than a null model of no predictors.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">Why check residual normality if SBP itself was non-normal?</p>
+                                <p class="qa-a">
+                                    OLS regression requires that the <em>residuals</em> — not the predictors — are
+                                    approximately normally distributed. A non-normal predictor does not automatically
+                                    produce non-normal residuals. The Shapiro–Wilk test on <code>residuals(model)</code>
+                                    (W = 0.993, p = 0.471) confirmed that this assumption was satisfied, making the
+                                    inference valid despite SBP's non-normality.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">How will this help in future work?</p>
+                                <p class="qa-a">
+                                    Simple linear regression is the foundation for multiple regression, logistic regression,
+                                    and many machine learning models. Understanding how to fit, interpret, validate, and
+                                    predict from a regression model — including the distinction between confidence and
+                                    prediction intervals — provides a rigorous base for more complex modelling tasks in
+                                    data science and AI.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reflection-box">
+                            <h2>Overall Reflection</h2>
+                            <p>
+                                Unit 11 completed the analytical arc that began in Unit 10. Correlation established the
+                                existence and strength of the SBP–DBP relationship; regression quantified it precisely,
+                                assigned a formal equation, and made the relationship practically usable for prediction.
+                                This progression — from association to model to inference — mirrors the workflow of real
+                                applied analysis.
+                            </p>
+                            <p>
+                                The diagnostic step was the most technically instructive part of the activity. The
+                                four-panel <code>plot(model)</code> output and the Shapiro–Wilk test on residuals turned
+                                the model from a black box into a verified object. Without assumption checking, a model's
+                                standard errors, p-values, and confidence intervals cannot be trusted — a principle that
+                                applies equally to logistic regression, mixed models, and many machine learning algorithms
+                                that share OLS-like assumptions.
+                            </p>
+                            <p>
+                                The prediction exercise also introduced an important distinction that is often glossed over:
+                                the difference between estimating the mean response at a given input (confidence interval)
+                                versus predicting an individual outcome (prediction interval). Communicating this distinction
+                                clearly is part of responsible quantitative reporting, particularly in health contexts where
+                                precise language around uncertainty directly affects how results are understood and acted upon.
+                            </p>
+                    </div>
+                </div>
             </div>
         </section>
 

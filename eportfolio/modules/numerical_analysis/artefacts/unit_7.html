@@ -49,10 +49,318 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
+                        <div class="artefact-header">
+                            <h2>Collaborative Discussion 1 - Summary Post</h2>
+                            <p class="artefact-type forum">Discussion Forum</p>
+                        </div>
+
+                        <div class="artefact-description">
+                            <div class="images-container">
+                                <img src="/eportfolio/images/numerical_analysis_images/summary 1 1.png" alt="Screenshot of Collaborative Discussion 1 - Summary Post" class="artefact-screenshot">
+                                <img src="/eportfolio/images/numerical_analysis_images/summary 1 2.png" alt="Screenshot of Collaborative Discussion 1 - Summary Post" class="artefact-screenshot">
+                            </div>
+                            <div class="artefact-container">
+                                <h3>Reflection on this Artefact</h3>
+                                <p>
+                                    This summary post represents a progression in my thinking, as I moved from presenting an individual solution to engaging with multiple perspectives and integrating peer feedback. It required me to critically reassess my original decisions and refine my understanding of effective statistical communication.
+                                    <br>
+                                    A key learning outcome was developing a more nuanced view of the balance between clarity and completeness. While I initially prioritised agreement to improve interpretability, the discussion highlighted that uncertainty—particularly “no opinion” responses—can carry important meaning. Incorporating this insight into my summary demonstrated my ability to adapt my perspective and acknowledge the value of previously overlooked data.
+                                    <br>
+                                    I also strengthened my ability to synthesise feedback from different peers. Rather than addressing comments in isolation, I identified common themes—such as the need for transparency and the role of uncertainty—and integrated them into a coherent reflection. This improved my ability to engage in academic dialogue and build on collective insights.
+                                    <br>
+                                    Another important development was my increased focus on methodological transparency. Reflecting on suggestions to clarify thematic grouping and data ranges made me more aware of how small details can significantly impact interpretation and credibility.
+                                    <br>
+                                    Overall, this task marked an important step in my academic development. It demonstrated my ability to reflect critically, respond to feedback, and refine my approach. In future work, I will aim to balance simplification with transparency and ensure that key uncertainties are acknowledged to better support evidence-based decision-making.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-             </div>
+                    <div class="artefact">
+
+                       <h2>Data Activity 5</h2>
+                        <p>
+                            This activity moved from the COVID-19 dataset to a health dataset (<code>Health_Data.sav</code>),
+                            shifting focus from data wrangling and visualisation to descriptive statistics and inferential
+                            testing. The three questions covered measures of central tendency, five-number summaries, and a
+                            formal hypothesis test comparing systolic blood pressure across groups.
+                        </p> 
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 5 1.png" alt="Screenshot of Data Activity 5" class="artefact-screenshot">
+
+                        <hr>
+
+                        <div class="question-header">
+                            <span class="question-badge">Question 1</span>
+                            <p class="question-title">Measures of Central Tendency for SBP, DBP, and Income</p>
+                        </div>
+                        <span class="method-pill">&#956; Mean &nbsp;|&nbsp; Median &nbsp;|&nbsp; Mode</span>
+ 
+                        <p>
+                            Since R has no built-in <code>mode()</code> function for statistical mode, a custom function was
+                            written to identify the most frequently occurring value. A loop then applied all three measures
+                            across the three variables of interest.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 5 2.png" alt="Screenshot of Data Activity 5" class="artefact-screenshot">
+
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Variable</th>
+                                    <th>Mean</th>
+                                    <th>Median</th>
+                                    <th>Mode</th>
+                                    <th>Skew direction</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Systolic BP (SBP)</td>
+                                    <td>127.73 mmHg</td>
+                                    <td>123 mmHg</td>
+                                    <td>120 mmHg</td>
+                                    <td>Slight right skew</td>
+                                </tr>
+                                <tr>
+                                    <td>Diastolic BP (DBP)</td>
+                                    <td>82.77 mmHg</td>
+                                    <td>82 mmHg</td>
+                                    <td>80 mmHg</td>
+                                    <td>Approximately symmetrical</td>
+                                </tr>
+                                <tr>
+                                    <td>Income</td>
+                                    <td>$85,194.49</td>
+                                    <td>$86,560.50</td>
+                                    <td>$79,774</td>
+                                    <td>Slight left skew</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="interp-box">
+                            <strong>SBP</strong> — the mean exceeds the median, suggesting a slight right skew driven by a
+                            minority of individuals with higher systolic readings. The average sits in the pre-hypertensive
+                            range.<br><br>
+                            <strong>DBP</strong> — mean and median are very close (82.77 vs 82), pointing to a near-symmetrical
+                            distribution. Values fall at the upper edge of the normal range.<br><br>
+                            <strong>Income</strong> — the median slightly exceeds the mean ($86,560.50 vs $85,194.49), indicating
+                            a mild left skew consistent with a small number of lower-income values pulling the mean downward.
+                            No extreme outliers are apparent.
+                        </div>
+
+                        <div class="reflection-qa">
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn?</p>
+                                <p class="qa-a">
+                                    Writing a custom <code>get_mode()</code> function reinforced that R prioritises
+                                    general-purpose tools over domain-specific shortcuts — and that understanding the underlying
+                                    logic (<code>tabulate</code> + <code>match</code>) matters as much as knowing which
+                                    function to call. I also deepened my understanding of skewness: when mean &gt; median the
+                                    distribution pulls right; when median &gt; mean it pulls left. Seeing this play out
+                                    differently across three variables in the same dataset made the concept concrete.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">How will this help in future work?</p>
+                                <p class="qa-a">
+                                    Central tendency measures are the first diagnostic step in any statistical analysis.
+                                    Comparing mean and median to detect skew before choosing between parametric and
+                                    non-parametric methods will be a routine part of my analytical workflow going forward.
+                                </p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="question-header">
+                            <span class="question-badge">Question 2</span>
+                            <p class="question-title">Five-Number Summary and Boxplot of Income</p>
+                        </div>
+                        <span class="method-pill">&#9633; summary() &nbsp;|&nbsp; boxplot()</span>
+ 
+                        <p>
+                            R's <code>summary()</code> function returns the complete five-number summary alongside the mean.
+                            A boxplot was then produced to visualise the distribution and inspect the spread and symmetry of
+                            income values.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 5 3.png" alt="Screenshot of Data Activity 5" class="artefact-screenshot">
+
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Statistic</th>
+                                    <th>Value</th>
+                                    <th>Meaning</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Minimum</td><td>$52,933</td><td>Lowest income in the dataset</td></tr>
+                                <tr><td>Q1 (1st Quartile)</td><td>$68,636</td><td>25% of individuals earn below this</td></tr>
+                                <tr class="highlight"><td>Median (Q2)</td><td>$86,560</td><td>Central income value</td></tr>
+                                <tr><td>Q3 (3rd Quartile)</td><td>$99,696</td><td>75% of individuals earn below this</td></tr>
+                                <tr><td>Maximum</td><td>$117,210</td><td>Highest income in the dataset</td></tr>
+                                <tr><td>IQR</td><td>$31,060</td><td>Spread of the middle 50% of earners</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="interp-box">
+                            The IQR of $31,060 reflects moderate variability — incomes are spread but not drastically dispersed.
+                            The boxplot shows the median sitting slightly closer to Q3 than Q1, consistent with the mild left
+                            skew identified in Question 1. The lower whisker is longer than the upper whisker, indicating
+                            greater variability among lower-income individuals. No extreme outliers are visible, suggesting
+                            the dataset does not contain unusually high or low earners relative to the group.
+                        </div>
+ 
+                        <div class="reflection-qa">
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn?</p>
+                                <p class="qa-a">
+                                    The five-number summary gave a richer picture of income spread than central tendency
+                                    measures alone. The IQR is a more robust measure of variability than the standard deviation
+                                    when skewness is present, because it is not affected by extreme values. Seeing the boxplot
+                                    confirm the skew direction identified from mean vs median comparison showed how multiple
+                                    tools can cross-validate the same finding.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">How will this help in future work?</p>
+                                <p class="qa-a">
+                                    Five-number summaries and boxplots are standard components of any descriptive statistics
+                                    report. Being able to read and produce them fluently — and connect their features to
+                                    distributional properties like skewness and outliers — will be essential for both academic
+                                    assignments and professional data reporting.
+                                </p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="question-header">
+                            <span class="question-badge">Question 3</span>
+                            <p class="question-title">Hypothesis Test — SBP and Peptic Ulcer Status</p>
+                        </div>
+                        <span class="method-pill">t Welch's Independent Samples t-test &mdash; t.test()</span>
+ 
+                        <p>
+                            Because systolic blood pressure (SBP) is a continuous variable and peptic ulcer status is binary
+                            (present / absent), the appropriate test is a Welch's independent samples t-test, which compares
+                            the mean SBP between the two groups without assuming equal variances.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 5 4.png" alt="Screenshot of Data Activity 5" class="artefact-screenshot">
+
+                        <h3>Hypotheses</h3>
+                        <div class="hypothesis-grid">
+                            <div class="hyp-card">
+                                <div class="hyp-label">Null Hypothesis</div>
+                                <div class="hyp-symbol">H&#8320;</div>
+                                <p>There is no difference in mean systolic blood pressure between individuals with and without peptic ulcer.</p>
+                            </div>
+                            <div class="hyp-card">
+                                <div class="hyp-label">Alternative Hypothesis</div>
+                                <div class="hyp-symbol">H&#8321;</div>
+                                <p>There is a difference in mean systolic blood pressure between individuals with and without peptic ulcer.</p>
+                            </div>
+                        </div>
+ 
+                        <h3>Results</h3>
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Statistic</th><th>Value</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Mean SBP — Peptic ulcer present</td><td>131.32 mmHg</td></tr>
+                                <tr><td>Mean SBP — Peptic ulcer absent</td><td>126.86 mmHg</td></tr>
+                                <tr><td>Difference in means</td><td>4.46 mmHg</td></tr>
+                                <tr><td>t-value</td><td>1.21</td></tr>
+                                <tr><td>Degrees of freedom</td><td>57.56</td></tr>
+                                <tr class="highlight"><td>p-value</td><td>0.23</td></tr>
+                                <tr><td>95% Confidence Interval</td><td>−2.89 to 11.80</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="verdict">
+                            <div class="verdict-icon">&#9711;</div>
+                            <p>
+                                <strong>Fail to reject H&#8320;</strong> &mdash; At the 5% significance level (p = 0.23 &gt; 0.05),
+                                there is insufficient evidence to conclude that mean SBP differs between individuals with and without
+                                peptic ulcer. The 95% confidence interval (−2.89 to 11.80) includes zero, confirming that the
+                                observed difference of 4.46 mmHg could plausibly arise by chance.
+                            </p>
+                        </div>
+ 
+                        <div class="interp-box">
+                            Although individuals with a peptic ulcer had a slightly higher mean SBP (131.32 vs 126.86 mmHg), the
+                            difference was not statistically significant. This does not mean no relationship exists — the sample
+                            may be underpowered to detect a small true effect — but on the basis of this data, the null hypothesis
+                            is retained. A larger sample or a more focused study design would be needed before drawing clinical
+                            conclusions.
+                        </div>
+ 
+                        <div class="reflection-qa">
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn?</p>
+                                <p class="qa-a">
+                                    This task introduced the full cycle of inferential testing: selecting the appropriate test
+                                    based on variable types, stating formal hypotheses, running the test in R, and interpreting
+                                    the output in context. I learned that a non-significant result does not confirm the null
+                                    hypothesis — it simply means the data do not provide sufficient evidence against it. I also
+                                    reinforced the importance of the confidence interval as a complement to the p-value: a CI
+                                    that spans zero tells the same story as p &gt; 0.05, but also conveys the plausible range
+                                    of the true effect.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">Why Welch's t-test rather than Student's t-test?</p>
+                                <p class="qa-a">
+                                    Welch's t-test does not assume equal variances between groups — a more conservative and
+                                    generally safer choice unless variance equality has been formally verified. R's
+                                    <code>t.test()</code> applies Welch's correction by default, which is why the degrees of
+                                    freedom (57.56) are non-integer.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">How will this help in future work?</p>
+                                <p class="qa-a">
+                                    Hypothesis testing is central to research and data science. Knowing how to select the
+                                    right test, formulate clear hypotheses, run the analysis in R, and interpret p-values and
+                                    confidence intervals together will be directly applicable to any future study involving
+                                    group comparisons — clinical, social, or otherwise.
+                                </p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="artefact-reflection">
+                            <h2>Reflection</h2>
+                            <p>
+                                Unit 7 marked a significant step forward from descriptive to inferential statistics. The first
+                                two questions built a thorough portrait of the dataset's key variables — identifying skew
+                                direction, typical values, and spread — while the third question used those foundations to frame
+                                and test a formal research question. This progression mirrors real analytical workflows: you
+                                cannot test hypotheses responsibly without first understanding your data's distributional
+                                properties.
+                            </p>
+                            <p>
+                                Writing a custom mode function was a reminder that R's ecosystem rewards users who understand
+                                the underlying logic rather than simply knowing which package to import. Equally, the need to
+                                use <code>haven::read_sav()</code> to load an SPSS file highlighted that real-world datasets
+                                rarely arrive in the same format — adaptability in data ingestion is a practical skill in itself.
+                            </p>
+                            <p>
+                                The hypothesis testing question reinforced a key principle of statistical reasoning: statistical
+                                significance and practical significance are not the same thing. A 4.46 mmHg difference in mean
+                                SBP between groups could be clinically meaningful, yet the p-value of 0.23 means we cannot
+                                rule out chance with confidence. Holding both ideas simultaneously — the observed effect and the
+                                uncertainty around it — is the hallmark of careful statistical thinking.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

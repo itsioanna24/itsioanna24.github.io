@@ -49,10 +49,355 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
+                        <div class="artefact-header">
+                           <h2>Data Activity 6</h2>
+                        </div>
+                        <p>
+                            This activity continued working with the <code>Health_Data.sav</code> dataset, extending the
+                            analysis from Unit 7 to cover three new questions: descriptive statistics for age, a
+                            non-parametric group comparison for diastolic blood pressure, and a normality-informed
+                            choice of test for systolic blood pressure across occupational groups.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 6 1.png" alt="Screenshot of Data Activity 6" class="artefact-screenshot">
+
+                        <hr>
+
+                         <div class="question-header">
+                            <span class="question-badge">Question 1</span>
+                            <p class="question-title">Mean, Median, and Mode of Age</p>
+                        </div>
+                        <span class="method-pill">&#956; Mean &nbsp;|&nbsp; Median &nbsp;|&nbsp; Mode</span>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 6 2.png" alt="Screenshot of Data Activity 6" class="artefact-screenshot">
+
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Measure</th><th>Value</th><th>Note</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Mean</td><td>26.51 years</td><td>Pulled slightly below median — mild left skew</td></tr>
+                                <tr class="highlight"><td>Median</td><td>27 years</td><td>Central age value</td></tr>
+                                <tr><td>Mode</td><td>26 years</td><td>Most frequently occurring age</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="interp-box">
+                            The three measures of central tendency are very close together (26–27 years), indicating an
+                            approximately symmetrical age distribution with only marginal skew. The median is slightly above
+                            the mean, suggesting a small number of younger participants may be pulling the mean down marginally.
+                            Overall, the dataset represents a relatively young population.
+                        </div>
+
+                        <hr>
+
+                        <div class="question-header">
+                            <span class="question-badge">Question 2</span>
+                            <p class="question-title">Median DBP — Diabetic vs Non-Diabetic Participants</p>
+                        </div>
+                        <span class="method-pill">W Wilcoxon Rank-Sum Test &mdash; wilcox.test()</span>
+ 
+                        <p>
+                            Because the comparison involves medians between two independent groups — and non-parametric
+                            methods make fewer assumptions about the underlying distribution — a Wilcoxon rank-sum test
+                            was selected over an independent samples t-test.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 6 3.png" alt="Screenshot of Data Activity 6" class="artefact-screenshot">
+
+                        <div class="hypothesis-grid">
+                            <div class="hyp-card">
+                                <div class="hyp-label">Null Hypothesis</div>
+                                <div class="hyp-symbol">H&#8320;</div>
+                                <p>There is no difference in median diastolic blood pressure between diabetic and non-diabetic participants.</p>
+                            </div>
+                            <div class="hyp-card">
+                                <div class="hyp-label">Alternative Hypothesis</div>
+                                <div class="hyp-symbol">H&#8321;</div>
+                                <p>There is a difference in median diastolic blood pressure between diabetic and non-diabetic participants.</p>
+                            </div>
+                        </div>
+ 
+                        <table class="results-table">
+                            <thead><tr><th>Statistic</th><th>Value</th></tr></thead>
+                            <tbody>
+                                <tr><td>Median DBP — Diabetes group 0</td><td>83 mmHg</td></tr>
+                                <tr><td>Median DBP — Diabetes group 1</td><td>82 mmHg</td></tr>
+                                <tr><td>W statistic</td><td>3804.5</td></tr>
+                                <tr class="highlight"><td>p-value</td><td>0.7999</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="verdict retain">
+                            <div class="verdict-icon">&#9711;</div>
+                            <p>
+                                <strong>Fail to reject H&#8320;</strong> &mdash; p = 0.7999 &gt; 0.05. The 1 mmHg difference
+                                in median DBP between groups is not statistically significant. There is no evidence of a
+                                meaningful difference in diastolic blood pressure between diabetic and non-diabetic participants
+                                in this dataset.
+                            </p>
+                        </div>
+
+                        <hr>
+
+                        <div class="question-header">
+                            <span class="question-badge">Question 3</span>
+                            <p class="question-title">SBP Across Occupational Groups</p>
+                        </div>
+                        <span class="method-pill">&#8776; Shapiro–Wilk &rarr; Kruskal–Wallis Test</span>
+ 
+                        <p>
+                            Before selecting a test, the normality of systolic blood pressure was formally assessed.
+                            Since comparing more than two groups is required, the choice was between a one-way ANOVA
+                            (parametric, assumes normality) and the Kruskal–Wallis test (non-parametric alternative).
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 6 4.png" alt="Screenshot of Data Activity 6" class="artefact-screenshot">
+
+                        <table class="results-table">
+                            <thead><tr><th>Test</th><th>Statistic</th><th>p-value</th><th>Decision</th></tr></thead>
+                            <tbody>
+                                <tr class="sig">
+                                    <td>Shapiro–Wilk (normality of SBP)</td>
+                                    <td>W = 0.955</td>
+                                    <td>&lt; 0.001</td>
+                                    <td>Normality violated &rarr; use non-parametric test</td>
+                                </tr>
+                                <tr class="highlight">
+                                    <td>Kruskal–Wallis (SBP across occupations)</td>
+                                    <td>&chi;²(3) = 0.78</td>
+                                    <td>0.8545</td>
+                                    <td>Fail to reject H&#8320;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="verdict retain">
+                            <div class="verdict-icon">&#9711;</div>
+                            <p>
+                                <strong>Fail to reject H&#8320;</strong> &mdash; p = 0.8545 &gt; 0.05. There is no statistically
+                                significant difference in systolic blood pressure across occupational groups in this dataset.
+                                The very small &chi;² value (0.78) relative to 3 degrees of freedom confirms negligible
+                                between-group variation.
+                            </p>
+                        </div>
+ 
+                        <div class="reflection-qa">
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn?</p>
+                                <p class="qa-a">
+                                    This activity reinforced that test selection is not arbitrary — it follows directly from
+                                    the properties of the data. The Shapiro–Wilk result for SBP (p &lt; 0.001) made the choice
+                                    of Kruskal–Wallis necessary; using ANOVA without checking normality first would have
+                                    been a methodological error. I also learned to use <code>dplyr</code>'s
+                                    <code>group_by() %&gt;% summarise()</code> pipeline to compute group-level statistics
+                                    efficiently — a pattern that will recur throughout any multi-group analysis.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">How will this help in future work?</p>
+                                <p class="qa-a">
+                                    Health and social science datasets frequently violate normality assumptions. Knowing when
+                                    to step down to a non-parametric method — and how to justify that choice with a formal
+                                    test — is an essential skill for any evidence-based analysis role.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-             </div>
+                    <div class="artefact">
+                        <div class="artefact-header">
+                            <h2>Scenario-Based Exercise &mdash; Comparing Training Vendors</h2>
+                        </div>
+                        
+                        <p>
+                            An HR organisation hired three training vendors, each delivering a one-week programme to a
+                            separate employee group. Assuming equal pre-training efficiency across groups, the task was
+                            to compare post-training efficiency scores and determine whether vendor differences were
+                            statistically significant at the 95% confidence level.
+                        </p>
+ 
+                        <div class="note-box">
+                            The problem statement described 8 employees per group, but only 7 observations were provided
+                            per vendor. The analysis proceeds with the available 7 scores per group.
+                        </div>
+
+                        <hr>
+
+                        <h3>Descriptive Statistics</h3>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Vendor</th>
+                                    <th>Scores</th>
+                                    <th>n</th>
+                                    <th>Mean</th>
+                                    <th>SD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Vendor 1</td><td>45, 29, 56, 52, 45, 45, 41</td><td>7</td><td>44.71</td><td>8.58</td></tr>
+                                <tr class="highlight"><td>Vendor 2</td><td>61, 53, 41, 58, 53, 47, 44</td><td>7</td><td>51.00</td><td>7.33</td></tr>
+                                <tr><td>Vendor 3</td><td>35, 21, 33, 27, 22, 26, 30</td><td>7</td><td>27.71</td><td>5.28</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="interp-box">
+                            Vendor 2 achieves the highest mean efficiency (51.00) with moderate variability (SD = 7.33) —
+                            a desirable combination. Vendor 1 shows moderate mean performance (44.71) but the largest spread
+                            (SD = 8.58), suggesting more heterogeneous outcomes. Vendor 3 performs substantially below both
+                            competitors (mean = 27.71) with the lowest variability (SD = 5.28), indicating consistently
+                            poor — rather than erratically poor — results. A boxplot confirmed these patterns visually,
+                            with Vendor 3's box lying entirely below the other two and the interquartile ranges of Vendors
+                            1 and 2 overlapping partially.
+                        </div>
+
+                        <hr>
+
+                        <h3>Inferential Statistics &mdash; One-Way ANOVA</h3>
+                        <span class="method-pill">F One-Way ANOVA &mdash; aov() + summary()</span>
+ 
+                        <div class="hypothesis-grid">
+                            <div class="hyp-card">
+                                <div class="hyp-label">Null Hypothesis</div>
+                                <div class="hyp-symbol">H&#8320;</div>
+                                <p>No difference in mean post-training efficiency across the three vendors.</p>
+                            </div>
+                            <div class="hyp-card">
+                                <div class="hyp-label">Alternative Hypothesis</div>
+                                <div class="hyp-symbol">H&#8321;</div>
+                                <p>At least one vendor's mean efficiency differs from the others.</p>
+                            </div>
+                        </div>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Source</th><th>df</th><th>Sum of Squares</th><th>Mean Square</th><th>F</th><th>p-value</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr class="sig"><td>Vendor</td><td>2</td><td>2031.7</td><td>1015.9</td><td>19.64</td><td>&lt; 0.001</td></tr>
+                                <tr><td>Residuals</td><td>18</td><td>930.9</td><td>51.7</td><td>—</td><td>—</td></tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="verdict reject">
+                            <div class="verdict-icon">&#10007;</div>
+                            <p>
+                                <strong>Reject H&#8320;</strong> &mdash; F(2, 18) = 19.64, p &lt; 0.001. At the 95% confidence
+                                level, there is strong evidence that training vendor significantly affects post-training
+                                efficiency. The between-vendor variance is approximately 19.6 times greater than within-vendor
+                                variance, indicating vendor choice is a substantial determinant of outcome.
+                            </p>
+                        </div>
+
+                        <hr>
+
+                        <h3>Assumption Checking</h3>
+ 
+                        <div class="assumption-grid">
+                            <div class="assumption-card pass">
+                                <h4>Normality of Residuals</h4>
+                                <div class="result">Shapiro–Wilk: W = 0.977, p = 0.877</div>
+                                <p>p &gt; 0.05 — no evidence of departure from normality. The Q-Q plot confirms residuals
+                                follow the theoretical normal line closely. Normality assumption satisfied.</p>
+                            </div>
+                            <div class="assumption-card pass">
+                                <h4>Homogeneity of Variance</h4>
+                                <div class="result">Levene's Test: F(2, 18) = 0.216, p = 0.808</div>
+                                <p>p &gt; 0.05 — no evidence of unequal variances across vendor groups. Homogeneity of
+                                variance assumption satisfied. ANOVA results are valid and reliable.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <h3>Post-Hoc Analysis &mdash; Tukey's HSD</h3>
+                        <span class="method-pill">T Tukey's Honest Significant Difference</span>
+                        <p>
+                            ANOVA indicates that at least one mean differs, but does not identify which pairs.
+                            Tukey's HSD test was conducted to locate the specific group differences.
+                        </p>
+ 
+                        <table class="results-table">
+                            <thead>
+                                <tr><th>Comparison</th><th>Mean Difference</th><th>95% CI</th><th>Adjusted p-value</th><th>Significant?</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr class="ns">
+                                    <td>Vendor 2 &minus; Vendor 1</td>
+                                    <td>+6.29</td>
+                                    <td>(&minus;3.52, 16.10)</td>
+                                    <td>0.257</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr class="sig">
+                                    <td>Vendor 3 &minus; Vendor 1</td>
+                                    <td>&minus;17.00</td>
+                                    <td>(&minus;26.81, &minus;7.19)</td>
+                                    <td>&lt; 0.001</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr class="sig">
+                                    <td>Vendor 3 &minus; Vendor 2</td>
+                                    <td>&minus;23.29</td>
+                                    <td>(&minus;33.10, &minus;13.48)</td>
+                                    <td>&lt; 0.001</td>
+                                    <td>Yes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+ 
+                        <div class="interp-box">
+                            <strong>Vendor 2 vs Vendor 1:</strong> The 6.29-point mean difference is not statistically
+                            significant (p = 0.257); the CI includes zero. Vendors 1 and 2 cannot be statistically
+                            distinguished on this evidence alone.<br><br>
+                            <strong>Vendor 3 vs Vendor 1:</strong> Vendor 3 scores 17 points lower on average (p &lt; 0.001).
+                            The CI excludes zero, providing strong evidence of inferior performance.<br><br>
+                            <strong>Vendor 3 vs Vendor 2:</strong> The largest difference in the analysis — Vendor 3 scores
+                            23.29 points below Vendor 2 (p &lt; 0.001). This is the most decisive comparison.
+                        </div>
+
+                        <hr>
+
+                        <h3>Conclusion</h3>
+                        <p>
+                            At the 95% confidence level, training vendor significantly affects post-training efficiency.
+                            Vendor 3 performs substantially and significantly worse than both Vendor 1 and Vendor 2, while
+                            no statistically significant difference exists between Vendors 1 and 2. Although Vendor 2 is
+                            not statistically superior to Vendor 1, it achieves the highest mean efficiency score (51.00)
+                            and moderate variability — making it the strongest overall recommendation based on both
+                            descriptive evidence and statistical inference.
+                        </p>
+                    </div>
+
+                    <div class="reflection-box">
+                        <h2>Overall Reflection</h2>
+                            <p>
+                                Unit 8 covered the full spectrum from non-parametric group comparisons to parametric
+                                ANOVA — and the crucial skill linking them: knowing which to use and why. Both artefacts
+                                reinforced the same decision-making sequence: inspect the data, check assumptions, choose
+                                the appropriate test, run it, and interpret the result in context.
+                            </p>
+                            <p>
+                                The Wilcoxon and Kruskal–Wallis tests in Data Activity 6 demonstrated that "non-parametric"
+                                does not mean inferior — it means making fewer assumptions, which is often the correct
+                                choice. Crucially, using the Shapiro–Wilk test to motivate the switch from ANOVA to
+                                Kruskal–Wallis showed that assumption checking is not a formality but an active part of
+                                the analysis.
+                            </p>
+                            <p>
+                                The scenario-based exercise introduced a complete ANOVA workflow — descriptive analysis,
+                                formal hypothesis testing, assumption verification (normality and homogeneity of variance),
+                                and post-hoc pairwise comparisons via Tukey's HSD. The most important lesson from the
+                                Tukey results was that a significant overall ANOVA does not mean every pair of groups
+                                differs: Vendors 1 and 2 were indistinguishable despite the ANOVA flagging a global
+                                effect. Post-hoc testing is therefore not optional — it is where the actionable
+                                conclusions are actually located.
+                            </p>
+                    </div>
+
+                </div>
             </div>
         </section>
 

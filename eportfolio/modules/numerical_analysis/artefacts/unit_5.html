@@ -49,10 +49,261 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
+                        <h2>Data Activity 4</h2>
+                        <p>
+                            This activity focused on data visualisation in R, using the COVID-19 India dataset to produce
+                            four distinct chart types: a bar chart, a pie chart, a histogram, and a line chart. Each question
+                            targeted a different aspect of the data and a different visualisation technique, building a
+                            practical toolkit for exploratory data analysis.
+                        </p>
+
+                        <hr>
+
+                        <div class="question-header">
+                            <span class="question-badge">Question 1</span>
+                            <p class="question-title">Bar Chart of COVID-19 Reports by Region</p>
+                        </div>
+                        <span class="chart-pill">&#9646; Bar Chart &mdash; barplot()</span>
+ 
+                        <p>
+                            The first task was to summarise how many COVID-19 observations were recorded for each Indian
+                            State and Union Territory, and to display those frequencies as a bar chart.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 4 1.png" alt="Bar Chart of COVID-19 Reports by Region" class="artefact-screenshot">
+
+                        <img src="/eportfolio/images/numerical_analysis_images/frequency bar chart.png" alt="Frequency Bar Chart" class="artefact-screenshot">
+
+                        <div class="findings-box">
+                            <ul>
+                                <li><code>table()</code> was used to count how many COVID-19 observations were recorded for each State / Union Territory.</li>
+                                <li>The resulting frequency table shows which states had the highest number of reported entries and which had fewer.</li>
+                                <li>A bar chart produced with <code>barplot()</code> visually compared these frequencies across all regions.</li>
+                                <li>The chart clearly highlights the states with the largest volume of records, which may correspond to higher reporting rates, larger populations, or earlier outbreak timing.</li>
+                            </ul>
+                        </div>
+
+                        <div class="reflection-qa">
+                            <div class="qa-item">
+                                <p class="qa-q">What was the task?</p>
+                                <p class="qa-a">To produce a bar chart illustrating how many COVID-19 reports were recorded for each Indian State and Union Territory, using <code>table()</code> to compute frequencies and <code>barplot()</code> to visualise them.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What did I do?</p>
+                                <p class="qa-a">I imported the dataset, confirmed column names with <code>names()</code>, applied <code>table()</code> to the state variable, and rendered the result as a bar chart with rotated axis labels to improve readability.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What were the results?</p>
+                                <p class="qa-a">Some states had significantly more reported entries than others. The bar chart made these differences immediately visible, showing which regions dominated the dataset.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn?</p>
+                                <p class="qa-a">I learned how to summarise categorical data with <code>table()</code> and visualise it using <code>barplot()</code>. I also saw how label parameters like <code>las</code> and <code>cex.names</code> are essential for legibility when there are many categories.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">How will this help in future work?</p>
+                                <p class="qa-a">Quickly summarising and visualising categorical distributions is a fundamental step in any exploratory analysis. These skills will carry directly into future assignments and professional reporting where communicating data patterns clearly is essential.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="question-header">
+                            <span class="question-badge">Question 2</span>
+                            <p class="question-title">Pie Chart of Case Severity Levels by Nationality</p>
+                        </div>
+                        <span class="chart-pill">&#9632; Pie Chart &mdash; pie()</span>
+ 
+                        <p>
+                            The second task required aggregating confirmed case counts by nationality and visualising the
+                            proportional split between Indian nationals and foreign nationals as a pie chart.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 4 2.png" alt="Pie Chart of Case Severity Levels by Nationality" class="artefact-screenshot">
+                        <img src="/eportfolio/images/numerical_analysis_images/distribution pie.png" alt="Pie Chart" class="artefact-screenshot">
+
+                        <div class="findings-box">
+                            <ul>
+                                <li><code>ConfirmedIndianNational</code> and <code>ConfirmedForeignNational</code> were each summed using <code>sum(na.rm = TRUE)</code> to handle any missing values.</li>
+                                <li>The two totals were combined into a named vector and passed to <code>pie()</code>.</li>
+                                <li>The chart clearly shows the proportional split: the vast majority of confirmed cases were among Indian nationals, with a much smaller share among foreign nationals.</li>
+                            </ul>
+                        </div>
+ 
+                        <div class="reflection-qa">
+                            <div class="qa-item">
+                                <p class="qa-q">What was the task?</p>
+                                <p class="qa-a">To create a pie chart showing the distribution of confirmed COVID-19 cases by nationality, using the two nationality-specific variables in the dataset.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What did I do?</p>
+                                <p class="qa-a">I computed the total confirmed cases for each nationality using <code>sum()</code>, combined the results into a named vector, and visualised the proportions with <code>pie()</code>.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What were the results?</p>
+                                <p class="qa-a">The pie chart revealed a substantial imbalance: confirmed cases among Indian nationals far outnumbered those among foreign nationals, reflecting both the demographic composition of India and likely differences in testing and reporting patterns.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn?</p>
+                                <p class="qa-a">I learned how to aggregate numeric variables using <code>sum()</code> and how pie charts can effectively highlight proportional differences. I also reinforced the importance of summarising data before plotting to ensure the visualisation reflects meaningful totals rather than raw row values.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">How will this help in future work?</p>
+                                <p class="qa-a">Comparing groups by proportion is a common requirement in data reporting and research. This workflow — aggregate, combine, visualise — will be reusable whenever proportional comparisons need to be communicated clearly to a non-technical audience.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                         <div class="question-header">
+                            <span class="question-badge">Question 3</span>
+                            <p class="question-title">Histogram of Recovery Numbers</p>
+                        </div>
+                        <span class="chart-pill">&#9644; Histogram &mdash; hist()</span>
+ 
+                        <p>
+                            The third task focused on understanding the distribution of recovery counts across all
+                            observations, using a histogram to reveal shape, spread, and skewness.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 4 3.png" alt="Histogram of Recovery Numbers" class="artefact-screenshot">
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity 4-histogram.png" alt="Histogram" class="artefact-screenshot">
+
+                        <div class="findings-box">
+                            <ul>
+                                <li>The histogram was generated from the <code>Cured</code> variable, showing how recovery numbers were distributed across all reported entries.</li>
+                                <li>The distribution revealed the relative frequency of low, moderate, and high recovery counts.</li>
+                                <li>The plot allowed identification of patterns such as right-skewness, where the majority of records had very few recoveries and a small number had high counts — consistent with the early pandemic period.</li>
+                            </ul>
+                        </div>
+
+                        <div class="reflection-qa">
+                            <div class="qa-item">
+                                <p class="qa-q">What was the task?</p>
+                                <p class="qa-a">To create a histogram of the recovery variable (<code>Cured</code>) to visualise how recovery counts were distributed across all observations in the dataset.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What did I do?</p>
+                                <p class="qa-a">After loading the dataset, I identified the <code>Cured</code> column and passed it to <code>hist()</code>, adding axis labels, a title, and a fill colour to improve readability.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What were the results?</p>
+                                <p class="qa-a">The histogram showed that most observations had low recovery counts, with the distribution trailing off steeply to the right. This right-skewed shape reflects the early stage of the outbreak, when recoveries were still relatively rare events.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn?</p>
+                                <p class="qa-a">I learned how to generate and interpret histograms in R. More broadly, the task reinforced that understanding distributional shape — including skewness and concentration — is a necessary step before choosing summary statistics or statistical models, since many methods assume normality.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">How will this help in future work?</p>
+                                <p class="qa-a">Histograms are a cornerstone of exploratory data analysis. Knowing how to read and produce them quickly will support outlier detection, model selection, and assumption checking in future statistical work.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="question-header">
+                            <span class="question-badge">Question 4</span>
+                            <p class="question-title">Line Chart of Total Confirmed Cases Over Time</p>
+                        </div>
+                        <span class="chart-pill">&#8212; Line Chart &mdash; plot(type = "l")</span>
+ 
+                        <p>
+                            The fourth task introduced time-series visualisation, requiring the date column to be properly
+                            formatted before plotting confirmed cases against time.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 4 4.png" alt="Line Chart of Total Confirmed Cases Over Time" class="artefact-screenshot">
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity 4 - plot.png" alt="Line Chart of Total Confirmed Cases Over Time" class="artefact-screenshot">
+
+                        <div class="findings-box">
+                            <ul>
+                                <li>The <code>Date</code> column was converted from character to a proper <code>Date</code> object using <code>as.Date()</code> with the format <code>"%d-%m-%Y"</code>, enabling correct chronological ordering on the x-axis.</li>
+                                <li>A line chart was produced with <code>plot(type = "l")</code>, placing dates on the x-axis and total confirmed cases on the y-axis.</li>
+                                <li>The resulting chart shows an upward trend with cases increasing gradually at first before rising more sharply, illustrating the accelerating pace of the outbreak over the recorded period.</li>
+                            </ul>
+                        </div>
+
+                        <div class="reflection-qa">
+                            <div class="qa-item">
+                                <p class="qa-q">What was the task?</p>
+                                <p class="qa-a">To create a line chart showing how total confirmed COVID-19 cases changed over time, requiring the date column to be formatted correctly before plotting.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What did I do?</p>
+                                <p class="qa-a">I converted the <code>Date</code> column to a standard <code>Date</code> type using <code>as.Date()</code> with the correct format string, verified the result with <code>head()</code>, and then produced a line chart using <code>plot(type = "l")</code>.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What were the results?</p>
+                                <p class="qa-a">The line chart displayed a clear upward trend in confirmed cases over the recorded period, with a gradual initial rise followed by a steeper increase — consistent with the exponential early growth pattern typical of infectious disease outbreaks.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn?</p>
+                                <p class="qa-a">I learned that date formatting is a prerequisite for any time-series visualisation in R: without explicit conversion via <code>as.Date()</code>, R treats date strings as unordered factors, which would produce a meaningless or incorrectly ordered plot. I also gained confidence with <code>plot()</code>'s <code>type</code> parameter for selecting chart geometry.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">How will this help in future work?</p>
+                                <p class="qa-a">Time-series plotting is central to monitoring trends, forecasting, and reporting in any data-intensive field. Mastering date formatting and line chart construction in R will be directly applicable to future coursework, research, and professional analysis tasks involving temporal data.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="artefact-reflection">
+                            <h2>Reflection</h2>
+                            <p>
+                                Unit 5 brought together four core visualisation types and demonstrated that no single chart
+                                is universally appropriate — the right choice depends on the nature of the variable and the
+                                question being asked. Bar charts suit categorical frequency comparisons; pie charts communicate
+                                proportional breakdowns between a small number of groups; histograms reveal distributional shape
+                                for continuous or count variables; and line charts track change over an ordered dimension such
+                                as time.
+                            </p>
+                            <p>
+                                A consistent theme across all four tasks was the importance of data preparation before plotting.
+                                In Question 1, confirming column names with <code>names()</code> was essential before referencing
+                                <code>State.UnionTerritory</code>. In Question 2, aggregating with <code>sum()</code> meant
+                                the pie chart reflected meaningful totals rather than row-level values. In Question 4, the date
+                                formatting step was the difference between a chronologically correct line chart and a meaningless
+                                one. This reinforced a principle that runs through the whole module: the quality of a visualisation
+                                is determined upstream, in the preparation of the data that feeds it.
+                            </p>
+                            <p>
+                                Overall, this activity built a reusable mental framework: identify the question, choose the
+                                appropriate chart type, prepare the data, produce the plot, and interpret the result in context.
+                                That sequence — not any individual function — is the transferable skill.
+                            </p>
+                        </div>
                     </div>
 
-             </div>
+                    <div class="artefact">
+                        <div class="artefact-header">
+                            <h2>Collaborative Discussion 1 - Initial Post</h2>
+                            <p class="artefact-type forum">Discussion Forum</p>
+                        </div>
+
+                        <div class="artefact-description">
+                            <div class="images-container">
+                                <img src="/eportfolio/images/numerical_analysis_images/initial 1 1.png" alt="Screenshot of Collaborative Discussion 1 - Initial Post" class="artefact-screenshot">
+                                <img src="/eportfolio/images/numerical_analysis_images/initial 1 2.png" alt="Screenshot of Collaborative Discussion 1 - Initial Post" class="artefact-screenshot">
+                            </div>
+                            <div class="artefact-container">
+                                <h3>Reflection on this Artefact</h3>
+                                <p>
+                                    This artefact reflects my first discussion post, where I critically evaluated and redesigned a complex statistical table from Brown (1994). The task highlighted that effective data presentation is not only about accuracy, but also about clarity and usability.
+                                    <br>
+                                    A key learning point was recognising the importance of interpretability. While the original table was comprehensive, its structure made it difficult to extract meaningful insights. By grouping statements into thematic categories and focusing on agreement percentages, I prioritised clarity and decision-making relevance over completeness. This marked a shift in my perspective—from viewing data analysis as purely technical to understanding it as a communication tool.
+                                    <br>
+                                    I also developed a stronger awareness of audience needs. My redesign aimed to support policymakers and healthcare professionals, who require clear and actionable insights. This reinforced the importance of reducing cognitive load and presenting key patterns effectively.
+                                    <br>
+                                    Another important aspect was learning to justify selective presentation of data. Initially, I was hesitant to omit categories such as “no opinion” and “disagree.” However, I came to understand that selective emphasis can enhance clarity, provided transparency is maintained through supplementary materials.
+                                    <br>
+                                    Overall, this task strengthened my ability to critically evaluate data presentation, apply visualisation principles, and communicate insights effectively. In future work, I would complement such summaries with visual tools (e.g., charts) and seek feedback from non-technical users to further improve clarity and impact.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

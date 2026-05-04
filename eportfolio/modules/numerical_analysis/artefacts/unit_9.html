@@ -49,10 +49,367 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
+                        <div class="artefact-header">
+                            <h2>Collaborative Discussion 2 - Initial Post</h2>
+                            <p class="artefact-type forum">Discussion Forum</p>
+                        </div>
+
+                        <div class="artefact-description">
+                            <div class="images-container">
+                                <img src="/eportfolio/images/numerical_analysis_images/initial 2 1.png" alt="Screenshot of Collaborative Discussion 2 - Initial Post" class="artefact-screenshot">
+                            </div>
+                            <div class="artefact-container">
+                                <h3>Reflection on this Artefact</h3>
+                                <p>
+                                    This artefact reflects my engagement with the limitations of common statistical reporting practices, particularly confidence intervals and p-values. Writing this post marked a shift in my thinking from applying statistical tools to critically evaluating their appropriateness in context.
+                                    <br>
+                                    A key insight was recognising that statistical measures can create a false sense of certainty when underlying assumptions are weak or when data quality issues dominate. By questioning the routine use of confidence intervals, I demonstrated a growing awareness that statistical outputs are not inherently meaningful unless their assumptions are valid. This reflects an important development in my ability to think beyond standard practices and consider the reliability of results.
+                                    <br>
+                                    I also critically examined the use of p-values, highlighting their limitations in supporting decision-making. This reinforced my understanding that statistical significance does not equate to practical importance, and that overreliance on p-values can lead to superficial interpretations. Engaging with this debate helped me align my thinking with contemporary critiques of null hypothesis significance testing.
+                                    <br>
+                                    Another important aspect of this task was considering the audience. I recognised that statistical outputs are often interpreted by non-experts, which increases the responsibility to present results in a way that is both accurate and meaningful. This strengthened my view that effect sizes, assumptions, and contextual uncertainty should be prioritised over isolated metrics.
+                                    <br>
+                                    Overall, this post reflects my development towards a more critical, reflective, and context-aware approach to statistical communication.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-             </div>
+                    <div class="artefact">
+                        <h2>Data Activity 7</h2>
+                        <p>
+                            This activity returned to the COVID-19 India dataset (January–March 2020) to explore
+                            relationships between categorical variables using cross-tabulation. Two tasks were completed:
+                            examining how COVID-19 case severity varied across geographical regions, and exploring the
+                            relationship between case severity and recovery status.
+                        </p>
+                        <h3>Data Preparation</h3>
+                        <p>
+                            Before cross-tabulation could be performed, three new categorical variables had to be
+                            engineered from the raw dataset. This required importing the dataset, inspecting its
+                            structure, and applying conditional transformations using <code>dplyr::mutate()</code>
+                            with <code>case_when()</code>.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 7 1.png" alt="Screenshot of Data Activity 7" class="artefact-screenshot">
+
+                        <h3>Step 1 &mdash; Create the Region Variable</h3>
+                        <p>
+                            Individual states and union territories were mapped to five broader geographical regions
+                            using <code>case_when()</code>. States not explicitly listed were assigned to the
+                            <em>Other</em> category.
+                        </p>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 7 2.png" alt="Screenshot of Data Activity 7" class="artefact-screenshot">
+
+                        <div class="region-grid">
+                            <div class="region-card">
+                                <div class="region-name">North</div>
+                                <ul>
+                                    <li>Delhi</li><li>Haryana</li><li>Punjab</li>
+                                    <li>Uttar Pradesh</li><li>Rajasthan</li>
+                                </ul>
+                            </div>
+                            <div class="region-card">
+                                <div class="region-name">South</div>
+                                <ul>
+                                    <li>Tamil Nadu</li><li>Kerala</li><li>Karnataka</li>
+                                    <li>Andhra Pradesh</li><li>Telangana</li>
+                                </ul>
+                            </div>
+                            <div class="region-card">
+                                <div class="region-name">West</div>
+                                <ul>
+                                    <li>Maharashtra</li><li>Gujarat</li><li>Goa</li>
+                                </ul>
+                            </div>
+                            <div class="region-card">
+                                <div class="region-name">East</div>
+                                <ul>
+                                    <li>West Bengal</li><li>Odisha</li>
+                                    <li>Bihar</li><li>Jharkhand</li>
+                                </ul>
+                            </div>
+                            <div class="region-card">
+                                <div class="region-name">Other</div>
+                                <ul>
+                                    <li>All remaining states &amp; union territories</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>Step 2 &mdash; Create Case Severity and Recovery Status</h3>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 7 3.png" alt="Screenshot of Data Activity 7" class="artefact-screenshot">
+
+                        <p>The case severity thresholds and their labels:</p>
+                        <p>
+                            <span class="sev-no">No Cases</span> &nbsp; 0 confirmed &nbsp;&nbsp;
+                            <span class="sev-low">Low</span> &nbsp; 1–10 &nbsp;&nbsp;
+                            <span class="sev-medium">Medium</span> &nbsp; 11–100 &nbsp;&nbsp;
+                            <span class="sev-high">High</span> &nbsp; 101+
+                        </p>
+
+                        <hr>
+
+                        <div class="task-header">
+                            <span class="task-badge">Task 1</span>
+                            <p class="task-title">Region &times; Case Severity Level</p>
+                        </div>
+                        <span class="method-pill">&#9638; table() &nbsp;|&nbsp; prop.table(margin = 1)</span>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 7 4.png" alt="Screenshot of Data Activity 7" class="artefact-screenshot">
+
+                        <h3>Raw Counts</h3>
+                        <div class="crosstab-wrap">
+                            <table class="crosstab">
+                                <thead>
+                                    <tr>
+                                        <th class="row-header">Region</th>
+                                        <th>High</th>
+                                        <th>Low</th>
+                                        <th>Medium</th>
+                                        <th>No Cases</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="row-label">East</td><td>0</td><td>17</td><td>0</td><td>4</td></tr>
+                                    <tr><td class="row-label">North</td><td>0</td><td>40</td><td>10</td><td>14</td></tr>
+                                    <tr><td class="row-label">Other</td><td>0</td><td>72</td><td>13</td><td>28</td></tr>
+                                    <tr><td class="row-label">South</td><td>0</td><td>50</td><td>19</td><td>5</td></tr>
+                                    <tr><td class="row-label">West</td><td>0</td><td>9</td><td>12</td><td>6</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+ 
+                        <h3>Row Proportions</h3>
+                        <div class="crosstab-wrap">
+                            <table class="crosstab">
+                                <thead>
+                                    <tr>
+                                        <th class="row-header">Region</th>
+                                        <th>High</th>
+                                        <th>Low</th>
+                                        <th>Medium</th>
+                                        <th>No Cases</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="row-label">East</td>
+                                        <td class="heat-low">0.00</td>
+                                        <td class="heat-high">0.81</td>
+                                        <td class="heat-low">0.00</td>
+                                        <td class="heat-low">0.19</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row-label">North</td>
+                                        <td class="heat-low">0.00</td>
+                                        <td class="heat-high">0.63</td>
+                                        <td class="heat-med">0.16</td>
+                                        <td class="heat-med">0.22</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row-label">Other</td>
+                                        <td class="heat-low">0.00</td>
+                                        <td class="heat-high">0.64</td>
+                                        <td class="heat-med">0.12</td>
+                                        <td class="heat-med">0.25</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row-label">South</td>
+                                        <td class="heat-low">0.00</td>
+                                        <td class="heat-high">0.68</td>
+                                        <td class="heat-med">0.26</td>
+                                        <td class="heat-low">0.07</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row-label">West</td>
+                                        <td class="heat-low">0.00</td>
+                                        <td class="heat-med">0.33</td>
+                                        <td class="heat-high">0.44</td>
+                                        <td class="heat-med">0.22</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p style="font-size:0.8em; color:#8b949e; margin-top:-0.8em;">
+                            Darker blue shading indicates a higher row proportion. Each row sums to 1.
+                        </p>
+ 
+                        <div class="interp-box">
+                            <strong>East</strong> recorded exclusively low-severity cases during the period analysed — no
+                            medium or high-severity entries at all, consistent with limited early outbreak spread in that
+                            region.<br><br>
+                            <strong>North and South</strong> were both dominated by low-severity cases but also showed a
+                            notable medium-severity proportion (16% and 26% respectively), with the South having the highest
+                            share of medium-severity records among all regions.<br><br>
+                            <strong>West</strong> stands out: it is the only region where medium-severity cases (44%)
+                            outnumbered low-severity cases (33%), suggesting that while total case volume was lower, the
+                            cases that did appear tended to be more severe.<br><br>
+                            Across all regions, no high-severity cases (&gt;100 confirmed) were recorded during January–March
+                            2020, reflecting the very early stage of the outbreak.
+                        </div>
+
+                        <hr>
+
+                        <div class="task-header">
+                            <span class="task-badge">Task 2</span>
+                            <p class="task-title">Case Severity Level &times; Recovery Status</p>
+                        </div>
+                        <span class="method-pill">&#9638; table() &nbsp;|&nbsp; prop.table(margin = 1)</span>
+
+                        <img src="/eportfolio/images/numerical_analysis_images/data activity- 7 5.png" alt="Screenshot of Data Activity 7" class="artefact-screenshot">
+
+                        <h3>Raw Counts</h3>
+                        <div class="crosstab-wrap">
+                            <table class="crosstab">
+                                <thead>
+                                    <tr>
+                                        <th class="row-header">Case Severity</th>
+                                        <th>Not Recovered</th>
+                                        <th>Recovered</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="row-label"><span class="sev-no">No Cases</span></td><td>57</td><td>0</td></tr>
+                                    <tr><td class="row-label"><span class="sev-low">Low</span></td><td>144</td><td>44</td></tr>
+                                    <tr><td class="row-label"><span class="sev-medium">Medium</span></td><td>27</td><td>24</td></tr>
+                                    <tr><td class="row-label"><span class="sev-high">High</span></td><td>0</td><td>0</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+ 
+                        <h3>Row Proportions</h3>
+                        <div class="crosstab-wrap">
+                            <table class="crosstab">
+                                <thead>
+                                    <tr>
+                                        <th class="row-header">Case Severity</th>
+                                        <th>Not Recovered</th>
+                                        <th>Recovered</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="row-label"><span class="sev-no">No Cases</span></td>
+                                        <td class="heat-high">1.00</td>
+                                        <td class="heat-low">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row-label"><span class="sev-low">Low</span></td>
+                                        <td class="heat-high">0.77</td>
+                                        <td class="heat-med">0.23</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row-label"><span class="sev-medium">Medium</span></td>
+                                        <td class="heat-med">0.53</td>
+                                        <td class="heat-med">0.47</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row-label"><span class="sev-high">High</span></td>
+                                        <td class="heat-low">—</td>
+                                        <td class="heat-low">—</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p style="font-size:0.8em; color:#8b949e; margin-top:-0.8em;">
+                            Darker blue shading indicates a higher row proportion. Each row sums to 1.
+                        </p>
+ 
+                        <div class="interp-box">
+                            <strong>No Cases</strong> entries unsurprisingly show a 100% "Not Recovered" rate since no
+                            confirmed cases means no recorded recoveries.<br><br>
+                            <strong>Low-severity cases</strong> show a predominantly "Not Recovered" pattern (77%), with
+                            only 23% classified as recovered. This is consistent with the early stage of the outbreak
+                            when limited treatment pathways and short observation windows meant few cases had been
+                            formally closed as recovered.<br><br>
+                            <strong>Medium-severity cases</strong> show a strikingly different pattern: 47% were classified
+                            as recovered — nearly as many as "Not Recovered". This finding is counterintuitive at first
+                            glance but may reflect that medium-severity cases required longer hospitalisation and therefore
+                            had more complete follow-up data, or that higher-severity records were from later in the period
+                            when recovery tracking had improved.<br><br>
+                            No high-severity cases were observed in this dataset, as confirmed above.
+                        </div>
+ 
+                        <div class="note-box">
+                            <strong>Methodological note:</strong> These proportional tables use
+                            <code>prop.table(..., margin = 1)</code>, meaning each row sums to 1. This gives the
+                            conditional distribution of the column variable <em>given</em> the row category — the
+                            appropriate choice when asking "within each severity level, what proportion recovered?"
+                            Using <code>margin = 2</code> (column proportions) or no margin (overall proportions) would
+                            answer different questions and should not be confused with this approach.
+                        </div>
+
+                        <hr>
+
+                        <div class="reflection-qa">
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn?</p>
+                                <p class="qa-a">
+                                    This task demonstrated that cross-tabulation is not merely a counting exercise — the
+                                    choice between raw counts, row proportions, column proportions, and overall proportions
+                                    fundamentally changes what question is being answered. Using <code>margin = 1</code>
+                                    for row proportions was the correct choice here because both tasks asked about the
+                                    conditional distribution of one variable <em>within</em> each category of another.
+                                    I also deepened my understanding of <code>dplyr::mutate()</code> with
+                                    <code>case_when()</code> as a powerful tool for creating multiple categorical variables
+                                    from a single transformation pipeline — a pattern that is far cleaner than repeated
+                                    <code>ifelse()</code> calls.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What surprised you?</p>
+                                <p class="qa-a">
+                                    The most unexpected result was that medium-severity cases had a substantially higher
+                                    recovery proportion (47%) than low-severity cases (23%). This challenged the intuition
+                                    that higher severity should correlate with worse outcomes, and prompted thinking about
+                                    confounding factors — such as reporting completeness, follow-up duration, and temporal
+                                    trends — that could explain the pattern. It was a useful reminder that descriptive
+                                    statistics reveal patterns but do not explain them.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">How will this help in future work?</p>
+                                <p class="qa-a">
+                                    Cross-tabulation and proportional tables are foundational tools in exploratory data
+                                    analysis, feature engineering, and model diagnostics. Being comfortable with
+                                    <code>table()</code>, <code>prop.table()</code>, and the distinction between margin
+                                    types will support any future work involving categorical data — from public health
+                                    research to machine learning feature analysis.
+                                </p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="artefact-reflection">
+                            <h2>Reflection</h2>
+                            <p>
+                                Unit 9 introduced cross-tabulation as a bridge between data transformation and statistical
+                                exploration. The real analytical work happened before the tables were even produced — in
+                                the decisions about how to group states into regions, where to draw the case severity
+                                thresholds, and how to define a binary recovery status from a continuous cured count.
+                                These choices are not neutral: different boundaries would produce different tables and
+                                potentially different conclusions.
+                            </p>
+                            <p>
+                                The <code>case_when()</code> function proved to be a significant upgrade over nested
+                                <code>ifelse()</code> calls for multi-category variable creation. Its explicit, readable
+                                structure makes the classification logic self-documenting — an important quality in
+                                reproducible analysis where code may be revisited or reviewed by others.
+                            </p>
+                            <p>
+                                The most intellectually valuable outcome was encountering a result that required
+                                explanation — the higher recovery rate among medium-severity cases. Descriptive analysis
+                                can surface anomalies, but understanding them requires contextual knowledge about how
+                                the data were collected. This is the point where statistical literacy and domain
+                                knowledge must work together, and it is a principle that extends well beyond this dataset.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

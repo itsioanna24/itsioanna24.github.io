@@ -49,7 +49,636 @@
                     <div class="back-to-module">
                         <a href="/eportfolio/modules/numerical_analysis/numerical_analysis.html">&larr; Back to Numerical Analysis module</a>
                     </div>
-                    <p>There is not available content for this section.</p>
+                    <!-- =========================== UNIT 1 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 1 &ndash; Types and Sources of Data and an Introduction to R</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+                            <ul>
+                                <li>Statistics rely heavily on the calculations of numbers, but also on <strong>how the numbers are chosen</strong> and how the statistics are <strong>interpreted</strong>. Interpretations can sometimes be problematic.</li>
+                                <li>With <strong>inferential statistics</strong>, we take a sample — a small subset of a larger dataset — and use it to draw inferences about the population as a whole.</li>
+                                <li>Before conducting a statistical analysis, variables must be measured. Exactly how depends on the <strong>type of variable</strong> involved.</li>
+                            </ul>
+ 
+                            <h4>Measures of Central Tendency</h4>
+                            <ul>
+                                <li><strong>Mean:</strong> the sum of all values divided by the count of values. Describes the centre of a frequency distribution. Often used interchangeably with "average".</li>
+                                <li><strong>Median:</strong> the middle number in an ordered list of values.</li>
+                                <li><strong>Mode:</strong> the most frequently occurring value.</li>
+                            </ul>
+ 
+                            <h4>Measures of Variability</h4>
+                            <ul>
+                                <li><strong>Variability</strong> refers to how "spread out" a group of scores is.</li>
+                                <li><strong>Range:</strong> the simplest measure — highest score minus lowest score.</li>
+                                <li><strong>Interquartile Range (IQR):</strong> the 75th percentile minus the 25th percentile.</li>
+                                <li><strong>Variance:</strong> the average squared difference of each score from the mean.</li>
+                                <li><strong>Standard Deviation:</strong> the square root of the variance.</li>
+                            </ul>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bader, M. and Leuzinger, S. (2025) <em>R-ticulate: A Beginner's Guide to Data Analysis for Natural Scientists</em>, Chapter 1</td>
+                                        <td>Introduces the R programming environment, basic syntax, data structures, and the role of R in scientific data analysis. Emphasises reproducibility and workflow in data-driven research.</td>
+                                        <td>Provides foundational knowledge of R, which is essential for performing data analysis tasks throughout the unit and supports the development of reproducible research practices.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Datacarpentry (2018) <em>Intro to R and RStudio for Genomics: Glossary</em></td>
+                                        <td>Defines key terms related to R, RStudio, and data analysis, including variables, functions, scripts, and data types.</td>
+                                        <td>Supports understanding of core terminology, enabling clearer comprehension of programming concepts and practical exercises in R.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Khan Academy (2020) <em>Summarizing Quantitative Data</em></td>
+                                        <td>Explains statistical methods for summarising numerical data, including measures of central tendency (mean, median) and variability (range, quartiles).</td>
+                                        <td>Provides essential statistical background for analysing and interpreting datasets, which complements practical data analysis performed in R.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 2 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 2 &ndash; Data Analysis and Programming in R</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>R Data Structures</h4>
+                            <ul>
+                                <li><strong>Vector:</strong> an object containing elements of the same data type. Defined using the <code>c()</code> function to concatenate elements.</li>
+                                <li><strong>Matrix:</strong> a collection of elements of the same data type (usually integers or real numbers) arranged in a two-dimensional rectangular or square format.</li>
+                                <li><strong>Limitation of vectors and matrices:</strong> they can only contain one data type — no mixing of integers and characters.</li>
+                                <li><strong>List:</strong> an object that allows a combination of different data types in a single object.</li>
+                                <li><strong>Data Frame:</strong> a special case of a list. The most commonly used data structure for statistical analysis.</li>
+                            </ul>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Dong, Y. (2023) 'Descriptive statistics and its applications', <em>Highlights in Science, Engineering and Technology</em>, 47, pp. 16&ndash;23</td>
+                                        <td>Explores key descriptive statistics concepts, including measures of central tendency (mean, median, mode), variability (range, variance, standard deviation), and their application in summarising datasets.</td>
+                                        <td>Provides essential statistical foundations for understanding how data can be summarised and interpreted, which is critical for analysing datasets in R and supporting data-driven decision-making.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Feuerstahler, L. (2023) 'Scale Type Revisited: Some Misconceptions, Misinterpretations, and Recommendations', <em>Psych</em>, 5(2), pp. 234&ndash;248</td>
+                                        <td>Examines different types of measurement scales (nominal, ordinal, interval, ratio), addressing common misconceptions and their implications for statistical analysis.</td>
+                                        <td>Enhances understanding of how data type influences the choice of statistical methods, which is crucial for selecting appropriate analyses and avoiding misinterpretation of results.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 3 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 3 &ndash; Data Transformation and Exploratory Analysis in R</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>Loading Data into R</h4>
+                            <p>R can open a variety of file types directly:</p>
+                            <ul>
+                                <li>Comma-separated values files (<code>.csv</code>)</li>
+                                <li>Text files (<code>.txt</code>)</li>
+                                <li>Table files (<code>.tab</code>)</li>
+                                <li>Excel files (<code>.xlsx</code>)</li>
+                            </ul>
+                            <p>R can also open files saved in other statistical program formats:</p>
+                            <ul>
+                                <li>STATA (<code>.dta</code>)</li>
+                                <li>SPSS (<code>.sav</code>)</li>
+                                <li>SAS (<code>.sas</code>)</li>
+                            </ul>
+                            <p>R also has its own native data file format: <code>.Rdata</code></p>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Borghi, J. and Van Gulick, A. (2022) 'Promoting Open Science Through Research Data Management', <em>Harvard Data Science Review</em>, 4(3)</td>
+                                        <td>Discusses principles of open science, including data sharing, transparency, reproducibility, and best practices in research data management.</td>
+                                        <td>Highlights the importance of managing and sharing data responsibly, supporting reproducibility and transparency in data analysis workflows developed throughout the unit.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Data Carpentry (2020) <em>Intro to R and RStudio for Genomics: Glossary</em></td>
+                                        <td>Provides definitions of key terms related to R, RStudio, and data analysis, including programming concepts and data structures.</td>
+                                        <td>Reinforces understanding of core terminology, supporting continued development of R skills and ensuring clarity when working with data analysis concepts.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 4 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 4 &ndash; Probability and Probability Distributions</h3></summary>
+                        <div class="unit-content">
+ 
+                            <p class="unit-status"><em>Reading-only unit (no Lecturecast).</em></p>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bader, M. and Leuzinger, S. (2025) <em>R-ticulate: A Beginner's Guide to Data Analysis for Natural Scientists</em>, Chapter 3</td>
+                                        <td>Introduces probability concepts and their implementation in R, including random variables, distributions, and simulation techniques for analysing uncertainty.</td>
+                                        <td>Provides foundational understanding of probability within a computational context, supporting practical data analysis and modelling tasks carried out in R.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Park, H. (2015) 'Marble Probability', <em>Wolfram Demonstrations Project</em></td>
+                                        <td>Demonstrates probability concepts through visual and interactive simulations, illustrating outcomes, randomness, and probability distributions using marble-based scenarios.</td>
+                                        <td>Enhances conceptual understanding of probability by linking theory to visual, intuitive examples, supporting deeper comprehension of uncertainty and stochastic processes.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 5 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 5 &ndash; Data Visualisation in R</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>Data Visualisation Overview</h4>
+                            <ul>
+                                <li>Graphical representation of data gives a broader and deeper understanding of patterns. The main aim is to organise raw data and present patterns concisely for better understanding.</li>
+                                <li>The appropriate chart type generally depends on the <strong>nature of the data</strong>.</li>
+                                <li><strong>Graphs</strong> are created using raw data and show trends (e.g. line graphs). <strong>Charts</strong> are based on classified, categorised, or summarised data (e.g. bar charts).</li>
+                            </ul>
+ 
+                            <h4>Chart Types Covered in This Unit</h4>
+                            <table class="notes-table">
+                                <thead>
+                                    <tr><th>Chart / Graph</th><th>Best Used For</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Bar Chart</td><td>Comparing frequencies of categorical variables</td></tr>
+                                    <tr><td>Histogram</td><td>Distribution of a continuous numeric variable</td></tr>
+                                    <tr><td>Pie Chart</td><td>Proportional composition of a whole</td></tr>
+                                    <tr><td>Scatter Plot</td><td>Examining association between two continuous variables</td></tr>
+                                    <tr><td>Boxplot</td><td>Distribution, spread, and outliers of a variable</td></tr>
+                                    <tr><td>Line Graph</td><td>Trends over time or ordered categories</td></tr>
+                                </tbody>
+                            </table>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bader, M. and Leuzinger, S. (2025) <em>R-ticulate: A Beginner's Guide to Data Analysis for Natural Scientists</em>, Chapter 6</td>
+                                        <td>Focuses on data visualisation in R, including creating plots, selecting appropriate chart types, and presenting data effectively.</td>
+                                        <td>Develops practical skills in visualising data, which is essential for communicating insights clearly and supporting data-driven decision-making.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Balan, S. (2024) 'A Systematic Review of Data Visualization', <em>Journal of Strategic Innovation and Sustainability</em>, 19(3), pp. 116&ndash;131</td>
+                                        <td>Reviews key principles, techniques, and best practices in data visualisation, including clarity, accuracy, and audience-focused design.</td>
+                                        <td>Provides theoretical grounding for effective data visualisation, complementing practical R skills and reinforcing the importance of clear and meaningful data presentation.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 6 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 6 &ndash; Statistical Inference and Hypothesis Testing</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>Statistical Inference</h4>
+                            <ul>
+                                <li>Statistical inference uses probability to support decision-making under uncertainty.</li>
+                                <li>Sample data provides an <strong>estimate</strong> of a population parameter, not its exact value.</li>
+                                <li>A <strong>confidence interval</strong> expresses the degree of closeness between sample and population values. A 95% confidence level means we are 95% confident the sample values correspond to population values, with a 5% chance of error.</li>
+                            </ul>
+ 
+                            <h4>Hypothesis Testing</h4>
+                            <ul>
+                                <li>A <strong>hypothesis</strong> is a supposition made from observation, used to guide data collection.</li>
+                                <li><strong>Null hypothesis (H₀):</strong> states there is no effect in the underlying population.</li>
+                                <li><strong>Alternative hypothesis (H₁ / Hₐ):</strong> the opposite — states that groups are different.</li>
+                            </ul>
+ 
+                            <h4>Possible Outcomes When Testing H₀</h4>
+                            <table class="notes-table">
+                                <thead>
+                                    <tr><th>State of H₀</th><th>Test Decision</th><th>Outcome</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>True</td><td>Rejected</td><td>Type I Error (&alpha;)</td></tr>
+                                    <tr><td>False</td><td>Not rejected</td><td>Type II Error (&beta;)</td></tr>
+                                    <tr><td>True</td><td>Not rejected</td><td>Correct</td></tr>
+                                    <tr><td>False</td><td>Rejected</td><td>Correct</td></tr>
+                                </tbody>
+                            </table>
+ 
+                            <h4>The p-value</h4>
+                            <ul>
+                                <li>Represents the probability that the observed results occurred purely by chance.</li>
+                                <li>0.05 &gt; p &gt; 0.01 &rarr; <strong>Significant</strong></li>
+                                <li>p &lt; 0.01 &rarr; <strong>Highly significant</strong></li>
+                                <li>p &lt; 0.001 or 0.005 &rarr; <strong>Very highly significant</strong></li>
+                                <li>The <strong>level of significance (&alpha;)</strong> is the threshold strength of evidence required to reject H₀.</li>
+                            </ul>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bader, M. and Leuzinger, S. (2025) <em>R-ticulate: A Beginner's Guide to Data Analysis for Natural Scientists</em>, Chapter 10</td>
+                                        <td>Covers statistical inference in R, including hypothesis testing, confidence intervals, and interpretation of statistical results.</td>
+                                        <td>Provides practical and conceptual understanding of inferential statistics, supporting the analysis and interpretation of data within R and reinforcing links between statistical theory and application.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Patrick, S., Bossers, S. M. and Schwarte, L. A. (2018) 'Statistical significance versus clinical importance of observed effect sizes: what do P values and confidence intervals really represent?', <em>Anesthesia &amp; Analgesia</em>, 126(3), pp. 1068&ndash;1072</td>
+                                        <td>Explores the distinction between statistical significance and practical importance, highlighting limitations of p-values and confidence intervals in decision-making.</td>
+                                        <td>Reinforces critical thinking about statistical results, aligning with the unit's focus on interpreting findings responsibly and understanding the limitations of common statistical measures.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 7 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 7 &ndash; Descriptive Statistics and Hypothesis Testing in R</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>t-Tests</h4>
+                            <table class="notes-table">
+                                <thead>
+                                    <tr><th>Test Type</th><th>Purpose</th><th>Hypotheses</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>One-Sample t-Test</strong></td>
+                                        <td>Compares the mean of a sample to a constant or hypothetical population mean (&mu;₀).</td>
+                                        <td>H₀: Population mean = &mu;₀ &nbsp;|&nbsp; Hₐ: Population mean &ne; &mu;₀</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Two-Sample t-Test</strong></td>
+                                        <td>Compares the means of two independent samples.</td>
+                                        <td>H₀: &mu;₁ = &mu;₂ &nbsp;|&nbsp; Hₐ: &mu;₁ &ne; &mu;₂</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Paired t-Test</strong></td>
+                                        <td>Compares means of two related samples (e.g. before/after measurements on the same subjects).</td>
+                                        <td>H₀: means are equal &nbsp;|&nbsp; Hₐ: means are not equal</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                            <h4>Normality Testing</h4>
+                            <ul>
+                                <li>The <strong>Shapiro–Wilk test</strong> is used to assess whether data are normally distributed.</li>
+                                <li>H₀: the data are normally distributed.</li>
+                                <li>R command: <code>shapiro.test(data$variable)</code></li>
+                            </ul>
+ 
+                            <h4>ANOVA (Analysis of Variance)</h4>
+                            <ul>
+                                <li>Used to compare the means of <strong>three or more independent groups</strong>.</li>
+                                <li><strong>One-Way ANOVA</strong>: involves one categorical variable (with &gt;2 levels) and one quantitative variable.</li>
+                                <li>The t-test compares two groups; ANOVA extends this to more than two.</li>
+                            </ul>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bader, M. and Leuzinger, S. (2025) <em>R-ticulate: A Beginner's Guide to Data Analysis for Natural Scientists</em>, Chapter 5 and revisit Chapter 1</td>
+                                        <td>Chapter 5 introduces statistical testing in R, including comparing groups and applying appropriate tests, while Chapter 1 revisits foundational concepts of R and reproducible workflows.</td>
+                                        <td>Supports the application of statistical tests in R while reinforcing core programming and data analysis principles, ensuring a strong foundation for more advanced analysis.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vrbin, C. M. (2022) 'Parametric or nonparametric statistical tests: considerations when choosing the most appropriate option for your data', <em>Cytopathology</em>, 33(6), pp. 663&ndash;667</td>
+                                        <td>Discusses the differences between parametric and nonparametric tests, including assumptions, data requirements, and when each approach is appropriate.</td>
+                                        <td>Enhances understanding of how to select appropriate statistical methods based on data characteristics, supporting accurate and reliable analysis.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 8 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 8 &ndash; Non-Parametric Tests and ANOVA in R</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>Non-Parametric Tests</h4>
+                            <table class="notes-table">
+                                <thead>
+                                    <tr><th>Test</th><th>Key Characteristics</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Mann-Whitney U Test</strong></td>
+                                        <td>
+                                            <ul>
+                                                <li>Compares two <em>independent</em> groups.</li>
+                                                <li>Compares the medians of two samples.</li>
+                                                <li>Dependent variable: ordinal or continuous scale; independent variable: two independent categorical groups.</li>
+                                                <li>Data can be skewed. Equivalent to a two-sample Wilcoxon rank-sum test.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Wilcoxon Signed Ranks Test</strong></td>
+                                        <td>
+                                            <ul>
+                                                <li>Used for two measures from the <em>same</em> cases when data are not normally distributed, or when sample size is large.</li>
+                                                <li>Key difference from Mann-Whitney U: tests two <em>dependent</em> (paired) samples, not independent ones.</li>
+                                                <li>Use the Sign test when differences have a direction but the absolute quantity is not precise and scores are paired.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Kruskal-Wallis Test</strong></td>
+                                        <td>
+                                            <ul>
+                                                <li>Uses ranks of the data rather than raw values.</li>
+                                                <li>Extends the Mann-Whitney U test to <strong>more than two groups</strong>.</li>
+                                                <li>Appropriate when normality is violated for interval-scaled dependent variables.</li>
+                                                <li>H₀: the mean ranks of all groups are the same.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Goyal, M. and Kumar, N. (2021) 'Non-parametric tests for testing of scale parameters', <em>Journal of Modern Applied Statistical Methods</em>, 19(1), 23</td>
+                                        <td>Explores non-parametric methods for analysing scale parameters, focusing on techniques that do not rely on strict distributional assumptions.</td>
+                                        <td>Supports understanding of alternative statistical approaches when parametric assumptions are violated, enhancing flexibility in data analysis.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ranganathan, P. (2021) 'An introduction to statistics: choosing the correct statistical test', <em>Indian Journal of Critical Care Medicine</em>, 25(Suppl 2), pp. S184&ndash;S186</td>
+                                        <td>Provides guidance on selecting appropriate statistical tests based on study design, data type, and research questions.</td>
+                                        <td>Helps develop decision-making skills in choosing suitable statistical methods, which is essential for accurate and reliable analysis.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Garrocho-Rangel, A. <em>et al.</em> (2024) 'Fundamentals of Nonparametric Statistical Tests for Dental Clinical Research', <em>Dentistry Journal</em>, 12(10), 314</td>
+                                        <td>Introduces key non-parametric statistical tests and their applications in clinical research, highlighting their advantages and limitations.</td>
+                                        <td>Reinforces understanding of non-parametric methods in real-world contexts, supporting appropriate application of statistical techniques in applied research.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 9 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 9 &ndash; Cross-Tabulation and Categorical Analysis in R</h3></summary>
+                        <div class="unit-content">
+ 
+                            <p class="unit-status"><em>Lecturecast content not available for this unit.</em></p>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bader, M. and Leuzinger, S. (2025) <em>R-ticulate: A Beginner's Guide to Data Analysis for Natural Scientists</em>, Chapter 7</td>
+                                        <td>Introduces more advanced statistical analysis in R, including applying statistical tests and interpreting outputs such as p-values and confidence intervals.</td>
+                                        <td>Supports the practical application of inferential statistics in R, reinforcing skills in analysing and interpreting data within a computational environment.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tijssen, J. G. P. (2021) 'More Confidence Intervals and Fewer p Values: A Positive Trend?', <em>JACC</em>, 77(12), pp. 1562&ndash;1563</td>
+                                        <td>Discusses the growing emphasis on confidence intervals over p-values in statistical reporting and the implications for interpreting research findings.</td>
+                                        <td>Encourages critical evaluation of statistical reporting practices, aligning with the unit's focus on responsible interpretation of results.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aslam, M. and Smarandache, F. (2023) 'Chi-square test for imprecise data in consistency table', <em>Frontiers in Applied Mathematics and Statistics</em>, 9(1), pp. 1&ndash;5</td>
+                                        <td>Explores adaptations of the chi-square test for handling imprecise or uncertain data in statistical analysis.</td>
+                                        <td>Extends understanding of statistical methods to more complex and uncertain data scenarios, supporting advanced analytical thinking.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 10 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 10 &ndash; Correlation Analysis in R</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>Correlation</h4>
+                            <ul>
+                                <li>Correlation is a statistical measurement of the relationship between two variables.</li>
+                                <li><strong>Independent variable:</strong> can be controlled or manipulated. <strong>Dependent variable:</strong> cannot be controlled; its values are predicted from the independent variable.</li>
+                                <li>Best visualised using a <strong>scatter plot</strong>.</li>
+                                <li>The <strong>correlation coefficient (r)</strong> ranges from &minus;1 to +1 and measures the strength and direction of a linear relationship.</li>
+                            </ul>
+ 
+                            <h4>Types of Correlation</h4>
+                            <table class="notes-table">
+                                <thead>
+                                    <tr><th>Type</th><th>r value</th><th>Meaning</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Exact positive linear</td><td>+1</td><td>Both variables increase together perfectly</td></tr>
+                                    <tr><td>Strong positive</td><td>Close to +1</td><td>Both variables tend to increase together</td></tr>
+                                    <tr><td>Exact negative linear</td><td>&minus;1</td><td>One increases as the other decreases perfectly</td></tr>
+                                    <tr><td>Strong negative</td><td>Close to &minus;1</td><td>One tends to increase as the other decreases</td></tr>
+                                    <tr><td>Poor / no correlation</td><td>Close to 0</td><td>No clear linear relationship</td></tr>
+                                </tbody>
+                            </table>
+ 
+                            <h4>Regression</h4>
+                            <ul>
+                                <li>Regression analysis identifies which variables have a real impact on an outcome.</li>
+                                <li><strong>Linear regression</strong> finds the best-fitting straight line through data showing a linear pattern.</li>
+                                <li>Accuracy depends on the linear relationship between variables — measured by the correlation coefficient.</li>
+                                <li><strong>Pearson's Correlation Coefficient</strong> is standardised covariance and only measures linear relationships.</li>
+                            </ul>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bader, M. and Leuzinger, S. (2025) <em>R-ticulate: A Beginner's Guide to Data Analysis for Natural Scientists</em>, Chapter 8</td>
+                                        <td>Introduces correlation and relationship analysis in R, including statistical methods for examining associations between variables and interpreting outputs.</td>
+                                        <td>Supports practical application of correlation analysis within R, strengthening skills in exploring relationships between variables in real datasets.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>McLeod, S. (2023) <em>Correlation in Psychology: Meaning, Types, Examples &amp; Coefficient</em></td>
+                                        <td>Explains the concept of correlation, different types (positive, negative, and zero), and how correlation coefficients are used to measure relationships between variables.</td>
+                                        <td>Builds foundational understanding of correlation, supporting interpretation of statistical relationships and reinforcing conceptual clarity in data analysis.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 11 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 11 &ndash; Simple Linear Regression in R</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>Importance of Variable Direction</h4>
+                            <ul>
+                                <li><strong>Correlation is not causation.</strong> Variables can appear correlated while being entirely unrelated (e.g. ice cream sales and murder rates in New York, 2009).</li>
+                                <li>In <strong>correlation</strong>, it does not matter which variable is dependent and which is independent.</li>
+                                <li>In <strong>regression</strong>, direction matters — the line predicting X from Y is not the same as the line predicting Y from X.</li>
+                            </ul>
+ 
+                            <h4>R-values and R²</h4>
+                            <ul>
+                                <li>Pearson correlation coefficient <strong>r</strong> ranges from &minus;1 to +1.</li>
+                                <li>Linear regression quantifies goodness of fit as <strong>R²</strong>.</li>
+                                <li>The square of <em>r</em> from correlation equals <em>R²</em> from regression.</li>
+                            </ul>
+ 
+                            <h4>Residuals</h4>
+                            <ul>
+                                <li>The <strong>residual</strong> is the distance between the observed y value and the calculated (predicted) y value.</li>
+                                <li>A best-fitting line minimises the residuals across all data points.</li>
+                                <li>Larger residuals indicate poorer model fit at those points.</li>
+                            </ul>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Zapf, A., Wiessner, C. and König, I. R. (2024) 'Regression Analyses and Their Particularities in Observational Studies', <em>Deutsches Ärzteblatt International</em>, 121(1), pp. 128&ndash;134</td>
+                                        <td>Examines regression analysis methods in observational studies, highlighting methodological challenges such as confounding, bias, and limitations in causal interpretation.</td>
+                                        <td>Supports understanding of how regression models are applied in real-world observational data and develops critical awareness of their limitations, which is essential for accurate interpretation of statistical findings in applied research contexts.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
+ 
+                    <!-- =========================== UNIT 12 =========================== -->
+                    <details class="unit-notes">
+                        <summary><h3>Unit 12 &ndash; Bayes' Theorem and Probability</h3></summary>
+                        <div class="unit-content">
+ 
+                            <h3>Lecturecast Notes</h3>
+ 
+                            <h4>Bayesian Data Analysis</h4>
+                            <ul>
+                                <li>A Bayesian analysis consists of the application of <strong>Bayes' theorem</strong> to a model and a dataset.</li>
+                                <li>The model design is flexible and can be custom-tailored for each application.</li>
+                            </ul>
+ 
+                            <h4>Four Steps of Bayesian Data Analysis</h4>
+                            <ol>
+                                <li>Design a model for the data.</li>
+                                <li>Specify a <strong>prior distribution</strong> for all model parameters.</li>
+                                <li>Calculate the <strong>posterior probability</strong> of model parameters based on the model and dataset.</li>
+                                <li>Summarise and visualise the posterior distribution.</li>
+                            </ol>
+ 
+                            <h4>Bayes' Theorem</h4>
+                            <ul>
+                                <li>Used to take a <strong>prior probability</strong>, update it with data (the <strong>likelihood</strong>), and obtain a <strong>posterior probability</strong>.</li>
+                            </ul>
+ 
+                            <h4>Frequentist vs Bayesian Paradigms</h4>
+                            <table class="notes-table">
+                                <thead>
+                                    <tr><th>Paradigm</th><th>What is fixed?</th><th>What is uncertain?</th><th>Notation</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Frequentist</strong></td>
+                                        <td>Parameters</td>
+                                        <td>Data (repeatable)</td>
+                                        <td>P(data | parameters)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Bayesian</strong></td>
+                                        <td>Observed data</td>
+                                        <td>Parameters</td>
+                                        <td>P(parameters | data)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <ul>
+                                <li><strong>Frequentist statistics</strong> is about repeatability and gathering more data. Concepts previously covered in this module — p-values and confidence intervals — belong to this paradigm.</li>
+                                <li><strong>Bayesian inference</strong> treats the observed data as fixed and expresses uncertainty about the model parameters themselves.</li>
+                            </ul>
+ 
+                            <h3>Reading List</h3>
+                            <table class="reading-list-table">
+                                <thead>
+                                    <tr><th>Source</th><th>Main Concept</th><th>Relevance to the Unit</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Van de Schoot, R. <em>et al.</em> (2021) 'Bayesian statistics and modelling', <em>Nature Reviews Methods Primers</em>, 1, 3</td>
+                                        <td>Provides a comprehensive introduction to Bayesian statistics, including core concepts such as prior and posterior distributions, Bayesian inference, and probabilistic modelling approaches.</td>
+                                        <td>Supports the unit's focus on advanced statistical methodologies by introducing Bayesian approaches as an alternative to frequentist methods, enhancing understanding of uncertainty, evidence updating, and modern statistical modelling techniques.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+ 
+                        </div>
+                    </details>
                 </div>
             </section>
 

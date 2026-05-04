@@ -51,7 +51,217 @@
                     <div class="back-to-module">
                         <a href="/eportfolio/modules/numerical_analysis/numerical_analysis.html">&larr; Back to Numerical Analysis module</a>
                     </div>
-                    <p>There is not available content for this section.</p>
+
+                   <div class="reflective-piece">
+                        <h2>Introduction</h2>
+                        <p>
+                            This reflective piece reviews my learning and professional development throughout the
+                            Numerical Analysis module, using the Four F's framework (Facts, Feelings, Findings and
+                            Future) as an active reviewing tool rather than a rigid structure (The University of
+                            Edinburgh, 2024). The framework enables systematic reflection on what I did, how I
+                            experienced the learning process, what I learned, and how this learning will inform
+                            my future academic and professional practice.
+                        </p>
+                        <p>
+                            The reflection is organised into four categories that mirror how my learning progressed
+                            through the module, and draws explicitly on artefacts created throughout the 12 units.
+                        </p>
+
+                        <p class="theme-heading">R Workflow, IT &amp; Digital Skills, Problem-Solving, and Time Management</p>
+ 
+                        <div class="four-f-block">
+                            <span class="four-f-tag tag-facts">Facts</span>
+                            <p>
+                                My confidence in R was supported by prior coding experience, but early module tasks still
+                                exposed gaps in my data workflow. In Data Activities 1 and 2, I moved from basic descriptive
+                                statistics (mean, median, mode, spread measures) to R data structures and file-based work.
+                                My first real difficulty was not coding itself but managing the dataset correctly — including
+                                understanding how comma-separated data is parsed and how R interprets columns after import
+                                (Bader and Leuzinger, 2024).
+                            </p>
+                        </div>
+ 
+                        <div class="four-f-block">
+                            <span class="four-f-tag tag-feelings">Feelings</span>
+                            <p>
+                                Emotionally, this phase was a mix of confidence and friction: confidence because I could
+                                write code, and friction because the dataset did not behave as expected. When outputs were
+                                not what I anticipated, I initially felt frustrated and worried that I was missing something
+                                basic. This was especially true when variables produced unexpected results — which forced
+                                me to confront the difference between writing code and managing data reliably.
+                            </p>
+                        </div>
+ 
+                        <div class="four-f-block">
+                            <span class="four-f-tag tag-findings">Findings</span>
+                            <p>
+                                The key finding was that data handling discipline is foundational: importing data correctly,
+                                checking structure, and confirming variable types prevents analytical mistakes further down
+                                the pipeline. Across Data Activities 2 and 3, I learned to slow down and repeatedly verify
+                                — checking <code>names()</code>, <code>head()</code>, <code>str()</code>, and row counts
+                                before creating indicators. Creating binary variables such as <code>has_recovery</code> and
+                                the deaths indicator strengthened my ability to translate raw numeric fields into analytically
+                                meaningful features. In DA 3, converting indicators to factors improved interpretability
+                                and set me up for clearer summaries and later visualisation. I also learned that
+                                "simple" steps like <code>table()</code> and <code>prop.table()</code> are not just
+                                descriptive — they are diagnostic tools that reveal how data is distributed before
+                                deeper analysis.
+                            </p>
+                            <p>
+                                Time management developed most clearly through the way I planned and built the End of
+                                Module assignments progressively. Instead of treating the EOM work as a final-week
+                                activity, I recorded reflections and progress after each unit. This helped me distribute
+                                effort, reduce last-minute risk, and create a coherent workflow from unit learning into
+                                final deliverables.
+                            </p>
+                        </div>
+ 
+                        <div class="four-f-block">
+                            <span class="four-f-tag tag-future">Future</span>
+                            <p>
+                                As a result, I now approach new datasets with a deliberate workflow:
+                                <em>import → inspect → clean/convert types → engineer features → summarise → visualise → test/model</em>.
+                                I will apply this directly in future AI projects — for instance, prediction tasks — by
+                                building reproducible R scripts and structured project directories so that data issues
+                                do not undermine modelling outcomes (Bader and Leuzinger, 2024).
+                            </p>
+                        </div>
+
+                        <hr>
+
+                         <p class="theme-heading">Numeracy, Critical Thinking and Research Skills: Statistical Inference and Interpretation</p>
+ 
+                        <div class="four-f-block">
+                            <span class="four-f-tag tag-facts">Facts</span>
+                            <p>
+                                As the module advanced from descriptive statistics into inferential analysis, I applied
+                                a range of statistical methods across multiple data activities. This included using
+                                histograms to explore distributions, performing correlation analysis between continuous
+                                variables, fitting and diagnosing simple linear regression models, selecting parametric
+                                or non-parametric tests based on normality assessment, and interpreting confidence
+                                intervals from ANOVA post-hoc comparisons in the scenario-based exercise.
+                            </p>
+                        </div>
+ 
+                        <div class="four-f-block">
+                            <span class="four-f-tag tag-feelings">Feelings</span>
+                            <p>
+                                Emotionally, this was the hardest part of the module. Even when I could run tests in R,
+                                I often felt uncertain about whether I was selecting the most appropriate method. The
+                                difficulty was not computing p-values or producing outputs, but evaluating assumptions,
+                                matching the test to the question, and then interpreting results responsibly. This
+                                uncertainty became more visible when results were non-significant or when distributional
+                                assumptions were violated. Tutor feedback reinforced this: the work was good, but I
+                                needed to increase the criticality of my discussions and interpretations — highlighting
+                                that correct calculations alone are not sufficient.
+                            </p>
+                        </div>
+ 
+                        <div class="four-f-block">
+                            <span class="four-f-tag tag-findings">Findings</span>
+                            <p>
+                                The main finding was that inference is a decision process. I learned to treat normality
+                                tests and assumption checks as central rather than optional, and to justify choices
+                                clearly (Ranganathan, 2021; Vrbin, 2022). Visual exploration using histograms helped
+                                me recognise skewness and informed later test selection, while correlation analysis
+                                required careful interpretation beyond numerical strength alone. Regression modelling
+                                further reinforced this — examining coefficients, confidence intervals, and diagnostic
+                                plots highlighted the importance of validating assumptions rather than relying solely
+                                on statistical significance.
+                            </p>
+                            <p>
+                                Interpreting 95% confidence intervals in the scenario-based exercise strengthened my
+                                ability to focus on estimation precision and uncertainty rather than dichotomous
+                                "significant/non-significant" conclusions. This perspective was strongly shaped by
+                                engagement with methodological literature on distinguishing statistical significance
+                                from practical importance (Schober, Bossers and Schwarte, 2018; Tijssen, 2021).
+                            </p>
+                        </div>
+ 
+                        <div class="four-f-block">
+                            <span class="four-f-tag tag-future">Future</span>
+                            <p>
+                                Going forward, I will apply this skill directly in AI contexts by treating assumption
+                                checking and diagnostics as part of model validity, reporting uncertainty clearly using
+                                confidence intervals where applicable, and avoiding "significance chasing" when
+                                interpreting results. In modelling projects — especially observational health data —
+                                I will use regression and diagnostic reasoning as part of responsible inference and
+                                reporting (Zapf, Wiessner and König, 2024).
+                            </p>
+                        </div>
+
+                        <hr>
+
+                         <p class="theme-heading">Communication, Interpersonal Skills and Ethical Awareness</p>
+ 
+                        <div class="four-f-block">
+                            <span class="four-f-tag tag-facts">Facts</span>
+                            <p>
+                                I produced multiple summaries and visualisations across Data Activity 4 (bar chart,
+                                pie chart, histogram, line chart) and later tasks (scatter plots with trend lines).
+                                I also engaged in two collaborative discussions: one centred on redesigning and
+                                interpreting a complex table linked to Brown (1994), and another centred on the
+                                interpretation of confidence intervals and p-values.
+                            </p>
+                        </div>
+ 
+                        <div class="four-f-block">
+                            <span class="four-f-tag tag-feelings">Feelings</span>
+                            <p>
+                                Emotionally, I initially treated tables and plots as requirements rather than as
+                                analytical reasoning tools. Peer engagement challenged this. I felt a productive tension
+                                between wanting to simplify outputs for clarity and recognising that simplification can
+                                erase important uncertainty. This was particularly relevant when peers questioned what
+                                should be retained or explained for interpretability.
+                            </p>
+                        </div>
+ 
+                        <div class="four-f-block">
+                            <span class="four-f-tag tag-findings">Findings</span>
+                            <p>
+                                My key learning from Collaborative Discussion 1 was not merely "simplify tables", but
+                                <em>simplify with transparency and retain meaningful uncertainty</em>. In my summary,
+                                I acknowledged peer agreement that thematic aggregation improves interpretability for
+                                decision-making audiences. However, peers raised a crucial point: "no opinion" responses
+                                may represent meaningful ambiguity rather than noise. By framing good presentation as a
+                                balance between reducing complexity and responsibly communicating uncertainty, I realised
+                                that how we present statistics is a direct ethical choice that shapes both interpretation
+                                and downstream decisions (Brown, 1994).
+                            </p>
+                            <p>
+                                Collaborative Discussion 2 deepened my ethical awareness regarding the uncritical
+                                reporting of p-values and confidence intervals. Peer engagement reinforced that
+                                statistical outputs are conditional tools shaped by assumptions, data quality, and
+                                context (Tijssen, 2021). Interpersonally, I also developed by evaluating others' work —
+                                writing peer responses required me to articulate what was clear, what was missing, and
+                                how interpretation could be strengthened, skills that map directly to professional
+                                review processes in analytics teams.
+                            </p>
+                        </div>
+ 
+                        <div class="four-f-block">
+                            <span class="four-f-tag tag-future">Future</span>
+                            <p>
+                                In future assignments and professional projects, I will include assumptions and
+                                limitations statements alongside tests and models, especially for observational data
+                                (Zapf, Wiessner and König, 2024). When creating tables and figures, I will prioritise
+                                interpretability without removing uncertainty, using captions or notes to clarify what
+                                neutrality or missingness means rather than suppressing it.
+                            </p>
+                        </div>
+
+                        <h2>References</h2>
+                        <ul class="references-list">
+                            <li>Bader, M. and Leuzinger, S. (2024). <em>R-ticulate</em>. John Wiley &amp; Sons.</li>
+                            <li>Brown, D.J. (1994). Opinions of general practitioners in Nottinghamshire about provision of intrapartum care. <em>BMJ</em>, 309(6957), pp.777–779. doi:10.1136/bmj.309.6957.777.</li>
+                            <li>Ranganathan, P. (2021). An introduction to statistics: Choosing the correct statistical test. <em>Indian Journal of Critical Care Medicine</em>, 25(S2), pp.184–186. doi:10.5005/jp-journals-10071-23815.</li>
+                            <li>Schober, P., Bossers, S.M. and Schwarte, L.A. (2018). Statistical Significance Versus Clinical Importance of Observed Effect Sizes. <em>Anesthesia &amp; Analgesia</em>, 126(3), pp.1068–1072. doi:10.1213/ane.0000000000002798.</li>
+                            <li>The University of Edinburgh (2024). <em>The four F's of active reviewing</em>. Available at: https://reflection.ed.ac.uk/reflectors-toolkit/reflecting-on-experience/four-f [Accessed 2026].</li>
+                            <li>Tijssen, J.G.P. (2021). More Confidence Intervals and Fewer p Values. <em>Journal of the American College of Cardiology</em>, 77(12), pp.1562–1563. doi:10.1016/j.jacc.2021.02.004.</li>
+                            <li>Vrbin, C.M. (2022). Parametric or Nonparametric Statistical Tests: Considerations when Choosing the Most Appropriate Option for your Data. <em>Cytopathology</em>, 33(6), pp.663–667. doi:10.1111/cyt.13174.</li>
+                            <li>Zapf, A., Wiessner, C. and König, I.R. (2024). Regression analyses and their particularities in observational studies. <em>Deutsches Ärzteblatt international</em>, 121(4). doi:10.3238/arztebl.m2023.0278.</li>
+                        </ul>
+                   </div>
                 </div>
             </div>
         </section>

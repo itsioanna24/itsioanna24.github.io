@@ -3684,7 +3684,7 @@ input, select, textarea {
     	border-radius: 25px;
 	}
 
-	/* Skills grid */
+/* Skills grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -3703,7 +3703,7 @@ input, select, textarea {
             color: #d2a8ff;
             font-size: 0.92em;
         }
-	/* Activity header strip */
+/* Activity header strip */
         .activity-header {
             display: flex;
             align-items: center;
@@ -3730,7 +3730,7 @@ input, select, textarea {
             line-height: 1.3;
         }
  
-        /* Learning outcome cards grid */
+/* Learning outcome cards grid */
         .lo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -3767,7 +3767,7 @@ input, select, textarea {
             margin: 0;
         }
  
-        /* Formula box */
+/* Formula box */
         .formula-box {
             background: #1a1a2e;
             border: 1px solid rgba(94,66,166,0.35);
@@ -3780,7 +3780,7 @@ input, select, textarea {
             margin: 1em 0 1.6em 0;
             letter-spacing: 0.02em;
         }
- 		/* Distribution sections */
+/* Distribution sections */
         .dist-section {
             margin: 0 0 1.4em 0;
         }
@@ -3832,6 +3832,319 @@ input, select, textarea {
             line-height: 1.6;
             margin-bottom: 0.3em;
         }
+ /* Question header */
+        .question-header {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            margin: 2.6em 0 1em 0;
+        }
+        .question-badge {
+            flex-shrink: 0;
+            background: rgba(94,66,166,0.28);
+            border: 1px solid rgba(94,66,166,0.55);
+            color: #c4aaff;
+            border-radius: 6px;
+            font-size: 0.78em;
+            font-weight: bold;
+            padding: 0.3em 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            white-space: nowrap;
+        }
+        .question-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.3;
+        }
+ 
+/* Method pill */
+        .method-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            background: rgba(121,192,255,0.12);
+            border: 1px solid rgba(121,192,255,0.30);
+            color: #79c0ff;
+            border-radius: 20px;
+            font-size: 0.80em;
+            padding: 0.25em 0.85em;
+            margin-bottom: 1em;
+        }
+/* Interpretation callout */
+        .interp-box {
+            background: rgba(255,255,255,0.04);
+            border-left: 3px solid rgba(121,192,255,0.5);
+            border-radius: 0 6px 6px 0;
+            padding: 0.9em 1.3em;
+            margin: 0.6em 0 1.4em 0;
+            font-size: 0.93em;
+            line-height: 1.72;
+        }
+        .interp-box::before {
+            content: "Interpretation";
+            display: block;
+            font-size: 0.72em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #79c0ff;
+            margin-bottom: 0.4em;
+        }
+ 
+/* Hypothesis boxes */
+        .hypothesis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 1em 0 1.4em 0;
+        }
+        @media (max-width: 640px) {
+            .hypothesis-grid { grid-template-columns: 1fr; }
+        }
+        .hyp-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 8px;
+            padding: 1em 1.2em;
+        }
+        .hyp-card .hyp-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #8b949e;
+            margin-bottom: 0.4em;
+        }
+        .hyp-card .hyp-symbol {
+            font-size: 1em;
+            color: #c4aaff;
+            font-weight: bold;
+            margin-bottom: 0.35em;
+        }
+        .hyp-card p {
+            font-size: 0.91em;
+            line-height: 1.65;
+            margin: 0;
+        }
+ 
+/* Verdict banner */
+        .verdict {
+            display: flex;
+            align-items: flex-start;
+            gap: 1em;
+            background: rgba(94,66,166,0.10);
+            border: 1px solid rgba(94,66,166,0.30);
+            border-radius: 8px;
+            padding: 1em 1.3em;
+            margin: 1em 0 1.4em 0;
+        }
+        .verdict-icon {
+            font-size: 1.4em;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 0.1em;
+        }
+        .verdict p {
+            margin: 0;
+            font-size: 0.93em;
+            line-height: 1.7;
+        }
+ 
+/* Reflection Q&A */
+        .reflection-qa {
+            background: rgba(94,66,166,0.08);
+            border-left: 3px solid rgba(94,66,166,0.5);
+            border-radius: 0 8px 8px 0;
+            padding: 1.1em 1.5em;
+            margin: 1.4em 0 0.5em 0;
+        }
+        .reflection-qa::before {
+            content: "Reflection";
+            display: block;
+            font-size: 0.72em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #c4aaff;
+            margin-bottom: 0.8em;
+        }
+        .qa-item { margin-bottom: 0.9em; }
+        .qa-item:last-child { margin-bottom: 0; }
+        .qa-q {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #8b949e;
+            margin-bottom: 0.2em;
+        }
+        .qa-a {
+            font-size: 0.92em;
+            line-height: 1.7;
+            margin: 0;
+        }
+		.results-table {
+            width: 100%; border-collapse: collapse;
+            margin: 1em 0 1.6em 0; font-size: 0.92em;
+        }
+        .results-table th {
+            background: rgba(94,66,166,0.25); color: #c4aaff;
+            padding: 0.65em 1em; text-align: left;
+            border: 1px solid rgba(255,255,255,0.08);
+            text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.82em;
+        }
+        .results-table td {
+            padding: 0.6em 1em; border: 1px solid rgba(255,255,255,0.08);
+        }
+        .results-table tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+        .results-table .highlight td { color: #c4aaff; font-weight: 600; }
+        .results-table .sig td { color: #ff7b72; }
+        .results-table .ns td  { color: #8b949e; }
+
+/* Note box */
+        .note-box {
+            background: rgba(255,255,255,0.03); border-left: 3px solid rgba(255,166,87,0.5);
+            border-radius: 0 6px 6px 0; padding: 0.9em 1.3em;
+            margin: 0.6em 0 1.4em 0; font-size: 0.93em; line-height: 1.72;
+        }
+        .note-box::before {
+            content: "Note"; display: block; font-size: 0.72em;
+            text-transform: uppercase; letter-spacing: 0.1em; color: #ffa657; margin-bottom: 0.4em;
+        }
+/* Overall reflection */
+        .reflection-box {
+            background: rgba(94,66,166,0.10); border: 1px solid rgba(94,66,166,0.30);
+            border-radius: 8px; padding: 1.6em 2em; margin-top: 2.4em;
+        }
+        .reflection-box h2 { margin-top: 0 !important; }
+        .learning-outcome-tag {
+            display: inline-block; background: rgba(94,66,166,0.20);
+            border: 1px solid rgba(94,66,166,0.45); color: #c4aaff;
+            border-radius: 4px; font-size: 0.78em; padding: 0.2em 0.7em;
+            margin-bottom: 1em; text-transform: uppercase; letter-spacing: 0.07em;
+        }
+
+/* Cross-tab tables */
+        .crosstab-wrap {
+            overflow-x: auto;
+            margin: 1em 0 1.6em 0;
+        }
+        .crosstab {
+            border-collapse: collapse;
+            font-size: 0.91em;
+            min-width: 420px;
+        }
+        .crosstab th {
+            background: rgba(94,66,166,0.25); color: #c4aaff;
+            padding: 0.6em 1.1em; text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+            text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.82em;
+        }
+        .crosstab th.row-header { text-align: left; }
+        .crosstab td {
+            padding: 0.55em 1.1em; border: 1px solid rgba(255,255,255,0.08);
+            text-align: center;
+        }
+        .crosstab td.row-label {
+            text-align: left; font-weight: 600; color: #c4aaff;
+            background: rgba(94,66,166,0.10);
+        }
+        .crosstab tr:nth-child(even) td { background: rgba(255,255,255,0.025); }
+        .crosstab tr:nth-child(even) td.row-label { background: rgba(94,66,166,0.12); }
+
+
+/* Severity pill labels */
+        .sev-no     { background: rgba(139,148,158,0.15); color: #8b949e; border-radius: 4px; padding: 0.1em 0.5em; font-size: 0.82em; }
+        .sev-low    { background: rgba(87,210,127,0.15);  color: #57d27f; border-radius: 4px; padding: 0.1em 0.5em; font-size: 0.82em; }
+        .sev-medium { background: rgba(210,168,255,0.15); color: #d2a8ff; border-radius: 4px; padding: 0.1em 0.5em; font-size: 0.82em; }
+        .sev-high   { background: rgba(255,123,114,0.15); color: #ff7b72; border-radius: 4px; padding: 0.1em 0.5em; font-size: 0.82em; }
+
+/* Region mapping visual */
+        .region-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 0.75em;
+            margin: 1em 0 1.6em 0;
+        }
+        .region-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 8px;
+            padding: 0.8em 1em;
+        }
+        .region-card .region-name {
+            font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.08em;
+            color: #c4aaff; margin-bottom: 0.4em;
+        }
+        .region-card ul {
+            margin: 0 0 0 1em; padding: 0;
+        }
+        .region-card ul li {
+            font-size: 0.84em; line-height: 1.55; margin-bottom: 0.2em; color: #8b949e;
+        }
+
+/* ── Four F label tags ── */
+        .four-f-tag {
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 0.72em;
+            font-weight: 700;
+            padding: 0.22em 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.6em;
+        }
+        .tag-facts    { background: rgba(121,192,255,0.15); color: #79c0ff; border: 1px solid rgba(121,192,255,0.35); }
+        .tag-feelings { background: rgba(210,168,255,0.15); color: #d2a8ff; border: 1px solid rgba(210,168,255,0.35); }
+        .tag-findings { background: rgba(87,210,127,0.13);  color: #57d27f; border: 1px solid rgba(87,210,127,0.30); }
+        .tag-future   { background: rgba(255,166,87,0.13);  color: #ffa657; border: 1px solid rgba(255,166,87,0.30); }
+ 
+/* ── Section block ── */
+        .four-f-block {
+            border-left: 3px solid rgba(255,255,255,0.08);
+            padding-left: 1.4em;
+            margin: 0 0 2em 0;
+        }
+        .four-f-block p { line-height: 1.8; margin-bottom: 0.9em; }
+        .four-f-block p:last-child { margin-bottom: 0; }
+ 
+/* ── Theme heading ── */
+        .theme-heading {
+            font-size: 1.25em;
+            font-weight: 700;
+            margin: 2.8em 0 0.3em 0;
+            color: #c4aaff;
+            padding-bottom: 0.4em;
+            border-bottom: 1px solid rgba(94,66,166,0.35);
+        }
+	
+/* ── Skills / PDP tables ── */
+        .wide-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85em;
+            margin: 1.2em 0 2em 0;
+        }
+        .wide-table th {
+            background: rgba(94,66,166,0.25); color: #c4aaff;
+            padding: 0.6em 0.9em; text-align: left;
+            border: 1px solid rgba(255,255,255,0.08);
+            text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.80em;
+        }
+        .wide-table td {
+            padding: 0.6em 0.9em;
+            border: 1px solid rgba(255,255,255,0.08);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+        .wide-table tr:nth-child(even) td { background: rgba(255,255,255,0.025); }
+        .wide-table .skill-cell { color: #c4aaff; font-weight: 600; white-space: nowrap; }
+        .wide-table .level-cell {
+            white-space: nowrap;
+            font-size: 0.82em;
+        }
+        .level-proficient { color: #57d27f; }
+        .level-trained    { color: #79c0ff; }
+
+
 
 
 
