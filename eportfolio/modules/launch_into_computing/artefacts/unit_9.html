@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/eportfolio/assets/css/main.css" />
     <link rel="stylesheet" href="/eportfolio/assets/css/landing.css" />
+    <link rel="stylesheet" href="/eportfolio/assets/css/additional.css" />
     <noscript><link rel="stylesheet" href="/eportfolio/assets/css/noscript.css" /></noscript>
     <link rel="icon" type="image/png" sizes="32x32" href="/eportfolio/images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/eportfolio/images/favicon/favicon-16x16.png">
@@ -49,14 +50,461 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
-                    </div>
+                        <div class="unit-hero">
+                            <div>
+                                <h2>Disaster Recovery<br><em>Plan Development</em></h2>
+                                <p class="sub">
+                                    A comprehensive DRP for a cloud-based Learning Management System (LMS), covering risk identification, step-by-step recovery procedures, tooling, data integrity strategies, and GDPR compliance.
+                                </p>
+                            </div>
+                            <span class="unit-badge">DRP Report</span>
+                        </div>
 
-             </div>
+                        <p class="section-label">The Scenario</p>
+                        <div class="ta-scenario">
+                            <h3>Cloud-Based Learning Management System (LMS)</h3>
+                            <div class="ta-scenario-tags">
+                                <span class="ta-stag ta-stag-p">Academic Institutions</span>
+                                <span class="ta-stag ta-stag-b">AWS Infrastructure</span>
+                                <span class="ta-stag ta-stag-g">Student Data &amp; Assessments</span>
+                            </div>
+                           <p class="prose">
+                            A cloud-based LMS designed to support academic institutions in delivering online
+                            education — enabling course management, assignment submission, student data storage, and
+                            virtual assessments. The platform is fully hosted on AWS infrastructure for computing,
+                            storage, and database management, creating a concentrated cloud dependency that requires
+                            a robust and tested disaster recovery strategy.
+                            </p>
+                        </div>
+
+                        <div class="su-stats">
+                            <div class="su-stat">
+                                <div class="su-stat-n">72<sup>hrs</sup></div>
+                                <div class="su-stat-l">GDPR Breach Window</div>
+                                <div class="su-stat-d">Maximum time to notify supervisory authority following a data breach under GDPR Article 33</div>
+                            </div>
+                            <div class="su-stat">
+                                <div class="su-stat-n">3-2-1</div>
+                                <div class="su-stat-l">Backup Strategy</div>
+                                <div class="su-stat-d">Three copies of data, across two different media types, with one stored off-site — implemented via Bacula</div>
+                            </div>
+                            <div class="su-stat">
+                                <div class="su-stat-n">5</div>
+                                <div class="su-stat-l">Risk Categories</div>
+                                <div class="su-stat-d">Cloud outages, cybersecurity attacks, system failures, authentication failures, and insider threats</div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Risk Identification ───────────────────── -->
+                        <p class="section-label">Identified Risks &amp; Impacts</p>
+                        <p class="prose">
+                            Five distinct risk categories were identified, spanning infrastructure
+                            availability, cybersecurity, software reliability, access control, and internal threats.
+                        </p>
+    
+                        <div class="su-threats">
+                            <div class="su-tc su-tc-r">
+                                <div class="su-tc-ico">🌩️</div>
+                                <div class="su-tc-tag su-tag-r">Critical · Infrastructure</div>
+                                <h3>Cloud Service Outages</h3>
+                                <p>Regional failures in cloud provider infrastructure can render the platform temporarily
+                                inaccessible, disrupting teaching and learning activities at scale. AWS regional
+                                dependencies create single points of failure if multi-region redundancy is absent
+                                (Cotroneo et al., 2019).
+                                </p>
+                            </div>
+                            <div class="su-tc su-tc-a">
+                                <div class="su-tc-ico">🦠</div>
+                                <div class="su-tc-tag su-tag-a">Critical · Cybersecurity</div>
+                                <h3>DDoS, Ransomware &amp; Unauthorised Access</h3>
+                                <p>Cybersecurity threats encompassing DDoS attacks, ransomware infections, and
+                                    unauthorised data access can cause data exposure, service downtime, and legal
+                                    liabilities. Educational platforms are increasingly targeted due to the sensitivity
+                                    of student data (Lallie et al., 2023).
+                                </p>
+                            </div>
+                            <div class="su-tc su-tc-p">
+                                <div class="su-tc-ico">🐛</div>
+                                <div class="su-tc-tag su-tag-p">High · Software</div>
+                                <h3>System Failures</h3>
+                                <p>Software bugs, failed updates, or corrupted databases can impair core platform
+                                    functionality — affecting course access, assignment submission, and automated grading
+                                    during critical academic periods.
+                                </p>
+                            </div>
+                            <div class="su-tc su-tc-t">
+                                <div class="su-tc-ico">🔑</div>
+                                <div class="su-tc-tag su-tag-t">Medium · Access Control</div>
+                                <h3>Authentication Failures</h3>
+                                <p>System-wide authentication failures can lock students, staff, and administrators
+                                    out of the platform during assessments or submission deadlines — with significant
+                                    academic and reputational consequences.
+                                </p>
+                            </div>
+                            <div class="su-tc su-tc-t">
+                                <div class="su-tc-ico">🕵️</div>
+                                <div class="su-tc-tag su-tag-t">Medium · Internal</div>
+                                <h3>Insider Threats</h3>
+                                <p>Malicious or negligent internal actors — staff or administrators with elevated
+                                    privileges — can cause data loss or intentional compromise of student records,
+                                    equiring role-based access controls and audit logging as countermeasures.
+                                </p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                         <!-- ── Recovery Steps ────────────────────────── -->
+                        <p class="section-label">Step-by-Step Recovery Process</p>
+                        <p class="prose">The DRP is structured as an eight-stage process, from automated detection
+                        through to post-incident review and documentation.</p>
+    
+                        <div class="drp-timeline">
+                            <div class="drp-step">
+                                <div class="drp-step-num">01</div>
+                                <div class="drp-step-body">
+                                    <h4>Automated Detection</h4>
+                                    <p>AWS CloudTrail and GuardDuty detect abnormal activity or system failures in
+                                    real time, triggering automated alerts to the incident response team.</p>
+                                </div>
+                            </div>
+                            <div class="drp-step">
+                                <div class="drp-step-num">02</div>
+                                <div class="drp-step-body">
+                                    <h4>Isolation of Affected Systems</h4>
+                                    <p>Immediate isolation of compromised or failing components prevents escalation
+                                    and limits lateral spread — critical for containing ransomware.</p>
+                                </div>
+                            </div>
+                            <div class="drp-step">
+                                <div class="drp-step-num">03</div>
+                                <div class="drp-step-body">
+                                    <h4>Failover Activation</h4>
+                                    <p>AWS Elastic Disaster Recovery shifts operations to a secondary AWS region,
+                                    activating pre-configured failover systems to restore service availability
+                                    (Berenberg and Calder, 2021).</p>
+                                </div>
+                            </div>
+                            <div class="drp-step">
+                                <div class="drp-step-num">04</div>
+                                <div class="drp-step-body">
+                                    <h4>Backup Restoration via Bacula</h4>
+                                    <p>The latest encrypted backup is restored using Bacula — chosen for its
+                                    ransomware-resistant capabilities and native support for the 3-2-1 backup strategy
+                                    with geographically redundant storage (Sheriffdeen &amp; Ade, 2023; Bacula Systems, 2024).</p>
+                                </div>
+                            </div>
+                            <div class="drp-step">
+                                <div class="drp-step-num">05</div>
+                                <div class="drp-step-body">
+                                    <h4>Data Integrity Verification</h4>
+                                    <p>Automated hash-based integrity checks confirm that restored data is complete
+                                    and unmodified — ensuring academic records and submission data are accurate
+                                    before systems are brought back online.</p>
+                                </div>
+                            </div>
+                            <div class="drp-step">
+                                <div class="drp-step-num">06</div>
+                                <div class="drp-step-body">
+                                    <h4>Critical Function Testing</h4>
+                                    <p>Logins, file uploads, and assessment submissions are tested across user roles
+                                    to confirm system stability and correctness before full service restoration.</p>
+                                </div>
+                            </div>
+                            <div class="drp-step">
+                                <div class="drp-step-num">07</div>
+                                <div class="drp-step-body">
+                                    <h4>User Notification</h4>
+                                    <p>Affected users — students, staff, and administrators — are notified via email
+                                    and system status pages with service restoration timelines and any data
+                                    implications requiring disclosure under GDPR.</p>
+                                </div>
+                            </div>
+                            <div class="drp-step">
+                                <div class="drp-step-num">08</div>
+                                <div class="drp-step-body">
+                                    <h4>Post-Incident Review</h4>
+                                    <p>Root causes are identified, DRP documentation is updated, and staff training
+                                    or recovery drill schedules are revised to prevent recurrence.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Tools ─────────────────────────────────── -->
+                        <p class="section-label">Tools &amp; Technologies</p>
+
+                        <p class="prose">
+                            The disaster recovery strategy relies on multiple technologies working together to ensure
+                            resilience, redundancy, monitoring, and secure recovery capabilities.
+                        </p>
+
+                        <div class="su-ai-row">
+                            <div class="su-ai">
+                                <div class="su-ai-ico">☁️</div>
+                                <h4>AWS Elastic Disaster Recovery</h4>
+                                <p>Enables rapid failover to a secondary AWS region with minimal data loss.
+                                Multi-region deployment ensures high availability and redundancy during
+                                infrastructure failures (Berenberg and Calder, 2021).</p>
+                            </div>
+
+                            <div class="su-ai">
+                                <div class="su-ai-ico">💾</div>
+                                <h4>Bacula Backup System</h4>
+                                <p>Open-source enterprise backup tool providing encrypted, flexible backups with
+                                geographically redundant storage. Natively supports the 3-2-1 strategy and is
+                                specifically designed for ransomware resistance (Bacula Systems, 2024).</p>
+                            </div>
+
+                            <div class="su-ai">
+                                <div class="su-ai-ico">🔍</div>
+                                <h4>AWS CloudTrail &amp; GuardDuty</h4>
+                                <p>Real-time monitoring and AI-enhanced threat detection across the AWS environment.
+                                CloudTrail logs all API activity; GuardDuty identifies suspicious patterns using
+                                machine learning (Oye and Clark, 2021).</p>
+                            </div>
+
+                            <div class="su-ai">
+                                <div class="su-ai-ico">🔐</div>
+                                <h4>MFA &amp; Access Controls</h4>
+                                <p>Multi-Factor Authentication and strict role-based access controls reduce
+                                the risk of unauthorised access — a critical defence against both external
+                                attacks and insider threats (Wang et al., 2024).</p>
+                            </div>
+
+                            <div class="su-ai">
+                                <div class="su-ai-ico">🔒</div>
+                                <h4>End-to-End Encryption</h4>
+                                <p>All user data encrypted at rest and in transit. Ensures that even in the event
+                                of a breach, intercepted data is unreadable — a GDPR accountability requirement
+                                (GDPR, 2016).</p>
+                            </div>
+
+                            <div class="su-ai">
+                                <div class="su-ai-ico">🔄</div>
+                                <h4>Recovery Drills &amp; Audits</h4>
+                                <p>Regular DRP rehearsals and compliance audits reinforce both operational
+                                resilience and regulatory readiness — ensuring the plan remains current and
+                                staff-tested (ISO, 2022).</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Compliance ────────────────────────────── -->
+                        <p class="section-label">Legal &amp; Compliance Considerations</p>
+
+                        <div class="su-ai-row">
+                            <div class="su-ai">
+                                <div class="ta-comp-label">Regulation</div>
+                                <h4>GDPR</h4>
+                                <p>Mandates data minimisation, purpose limitation, and lawful processing of student
+                                data. Article 33 requires breach notification to the supervisory authority within
+                                72 hours. All data handling is aligned with accountability and transparency
+                                principles (GDPR, 2016).</p>
+                            </div>
+
+                            <div class="su-ai">
+                                <div class="ta-comp-label">Ethical Framework</div>
+                                <h4>Ethical Design</h4>
+                                <p>The platform prioritises user autonomy, informed consent, and continuity of
+                                digital learning — aligned with ethical design principles for higher education
+                                learning technologies (Lachheb et al., 2023).</p>
+                            </div>
+
+                            <div class="su-ai">
+                                <div class="ta-comp-label">Framework</div>
+                                <h4>ISO/IEC 27001</h4>
+                                <p>Risk-based information security management with regular audits, access control
+                                reviews, and incident management procedures reinforces both compliance and
+                                operational resilience (ISO, 2022).</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Full Report ───────────────────────────── -->
+                        <p class="section-label">Full Report</p>
+
+                        <div class="su-report">
+                            <h3>Overview</h3>
+                            <p>This Disaster Recovery Plan (DRP) is proposed for a cloud-based Learning Management
+                            System (LMS) designed to support academic institutions in delivering online education,
+                            enabling course management, assignment submission, student data storage, and virtual
+                            assessments. The platform is fully hosted on cloud infrastructure, primarily relying on
+                            Amazon Web Services (AWS) for computing, storage, and database management.</p>
+
+                            <h3>Identified Risks and Impacts</h3>
+                            <p>The platform faces several potential risks that could impact its service delivery.
+                            Cloud service outages can occur due to regional failures in cloud provider infrastructure
+                            (Cotroneo et al., 2019), making the platform temporarily inaccessible and disrupting
+                            teaching and learning activities. Cybersecurity risks encompass DDoS attacks, unauthorised
+                            data access, and ransomware infections, potentially leading to data exposure, service
+                            downtime, and legal liabilities (Lallie et al., 2023). System failures caused by software
+                            bugs, failed updates, or corrupted databases can impair core functionality. Additionally,
+                            authentication failures may lock users out during assessments, while insider threats can
+                            result in data loss or intentional compromise.</p>
+
+                            <h3>Disaster Recovery Strategy</h3>
+                            <p>The platform's DRP is designed for rapid service restoration and risk mitigation.
+                            Platform components are deployed across multiple AWS regions and availability zones,
+                            ensuring high availability and redundancy (Berenberg and Calder, 2021).</p>
+
+                            <p>The step-by-step recovery process proceeds as follows:</p>
+
+                            <ol>
+                                <li>Automated alerts detect abnormal activity or system failures.</li>
+                                <li>Immediate isolation of affected systems prevents escalation.</li>
+                                <li>Failover systems, prepared using AWS Elastic Disaster Recovery, are activated to shift operations to a secondary region.</li>
+                                <li>The latest encrypted backup is restored using Bacula, chosen for its ransomware-resistant capabilities and support for the 3-2-1 backup strategy (Sheriffdeen &amp; Ade, 2023; Bacula Systems, 2024).</li>
+                                <li>Data integrity checks are performed.</li>
+                                <li>Critical functions — logins, file uploads, and assessments — are tested to confirm system stability.</li>
+                                <li>Users are notified via email and system status pages.</li>
+                                <li>A post-incident review identifies root causes and documentation is updated accordingly.</li>
+                            </ol>
+
+                            <h3>Tools and Technologies</h3>
+                            <p>The platform leverages AWS CloudTrail and GuardDuty for real-time monitoring and
+                            threat detection (Oye and Clark, 2021); Bacula for encrypted, flexible backups with
+                            geographically redundant storage; and Multi-Factor Authentication (MFA) with strict
+                            access controls to reduce unauthorised access risk (Wang et al., 2024).</p>
+
+                            <h3>Legal, Ethical, and Professional Considerations</h3>
+                            <p>The platform operates under strict legal and ethical obligations for student data.
+                            It complies fully with the General Data Protection Regulation (GDPR), with particular
+                            attention to data minimisation, purpose limitation, and lawful processing
+                            (Aikaterini Daoultzoglou, 2023). If a data breach occurs, the platform complies with
+                            GDPR Article 33 by reporting the incident to the relevant supervisory authority within
+                            72 hours of detection (GDPR, 2016). All user data is encrypted, and data handling
+                            practices are aligned with GDPR's accountability and transparency principles.</p>
+
+                            <p>Ethically, the platform prioritises user autonomy, informed consent, and the
+                            continuity of digital learning, aligning with current research on ethical design in
+                            learning technologies (Lachheb et al., 2023). Regular audits, recovery drills, and
+                            staff training reinforce both compliance and resilience.</p>
+
+                            <h3>Conclusion</h3>
+                            <p>This DRP ensures that the platform remains resilient, secure, and compliant while
+                            delivering uninterrupted digital education. By combining multi-region AWS redundancy,
+                            Bacula's ransomware-resistant backups, real-time threat detection, and a structured
+                            eight-step recovery process, the LMS is positioned to minimise downtime and protect
+                            student data across all failure scenarios.</p>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Reflection ────────────────────────────── -->
+                        <p class="section-label">Reflection</p>
+
+                        <div class="su-qa">
+                            <div class="su-qi">
+                                <p class="su-qq">What did the LMS context add to the DRP?</p>
+                                <p class="su-qa-a">Choosing an educational platform as the scenario made the stakes
+                                concrete in a way a generic e-commerce example would not. Student assessments,
+                                submission deadlines, and academic records are time-sensitive and legally protected —
+                                meaning downtime has a direct and measurable harm. This framing pushed me to think
+                                beyond uptime percentages and consider what specific user journeys must be prioritised
+                                during a partial recovery.</p>
+                            </div>
+
+                            <div class="su-qi">
+                                <p class="su-qq">Why Bacula over other backup tools?</p>
+                                <p class="su-qa-a">Researching backup solutions revealed that Bacula's combination of
+                                native 3-2-1 strategy support, encryption, and explicit ransomware resistance made it
+                                a strong fit for a platform where data integrity is a GDPR obligation, not just an
+                                operational preference. The distinction between a tool that can be configured for
+                                ransomware resistance and one designed with it as a core feature was a meaningful
+                                selection criterion I had not previously considered.</p>
+                            </div>
+
+                            <div class="su-qi">
+                                <p class="su-qq">How did GDPR shape the recovery plan?</p>
+                                <p class="su-qa-a">The 72-hour breach notification window in GDPR Article 33 is not
+                                just a compliance requirement — it is a design constraint. The DRP's detection,
+                                isolation, and notification steps had to be sequenced so that a breach could be
+                                confirmed and reported within that window even under degraded conditions. This made
+                                me think of legal compliance as an input to operational design, not a separate
+                                checklist appended afterwards.</p>
+                            </div>
+
+                            <div class="su-qi">
+                                <p class="su-qq">What would I extend in future work?</p>
+                                <p class="su-qa-a">I would develop quantitative Recovery Time Objectives (RTOs) and
+                                Recovery Point Objectives (RPOs) for each system component, as these are the
+                                measurable targets that make a DRP testable and auditable. I would also design a
+                                formal tabletop exercise protocol — a simulated incident walkthrough — to validate
+                                the eight-step process with actual staff before a real disruption occurs.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── References ─────────────────────────────── -->
+                        <div class="su-ref">
+                            <h4>References</h4>
+                            <ul>
+                                <li>Aikaterini Daoultzoglou (2023). GDPR and education: an approach for e-learning in Greek schools. <em>Ανοικτή Εκπαίδευση</em>, 19(1), pp.191–209. doi:10.12681/jode.31195.</li>
+
+                                <li>Arfeen, A., Ahmed, S., Khan, M.A. and Jafri, S.F.A. (2021). Endpoint Detection &amp; Response: A Malware Identification Solution. <em>2021 International Conference on Cyber Warfare and Security (ICCWS)</em>, pp.1–8. doi:10.1109/iccws53234.2021.9703010.</li>
+
+                                <li>Bacula Systems (2024). <em>Protection from Ransomware</em>. [online] Available at: https://www.baculasystems.com/ransomware/ [Accessed 17 Jun. 2025].</li>
+
+                                <li>Berenberg, A. and Calder, B. (2023). Deployment Archetypes for Cloud Applications. <em>ACM Computing Surveys</em>, 55(3), pp.1–48. doi:10.1145/3498336.</li>
+
+                                <li>Cotroneo, D., De Simone, L., Liguori, P., Natella, R. and Bidokhti, N. (2019). How bad can a bug get? An empirical analysis of software failures in the OpenStack cloud computing platform. doi:10.1145/3338906.3338916.</li>
+
+                                <li>Dawadi, B.R., Adhikari, B. and Srivastava, D.K. (2023). Deep Learning Technique-Enabled Web Application Firewall for the Detection of Web Attacks. <em>Sensors</em>, 23(4), p.2073. doi:10.3390/s23042073.</li>
+
+                                <li>Dissanayake, N., Jayatilaka, A., Zahedi, M. and Babar, M.A. (2021). Software security patch management — A systematic literature review. <em>Information and Software Technology</em>, 144, p.106771. doi:10.1016/j.infsof.2021.106771.</li>
+
+                                <li>ENISA (2023). <em>ENISA Threat Landscape 2023</em>. European Union Agency for Cybersecurity.</li>
+
+                                <li>European Union (2016). <em>Regulation (EU) 2016/679 — General Data Protection Regulation</em>. Official Journal of the European Union.</li>
+
+                                <li>Fatima, S., Rehman, T., Fatima, M., Khan, S. and Ali, M.A. (2022). Comparative Analysis of AES and RSA Algorithms for Data Security in Cloud Computing. <em>IEEC 2022</em>, 20(1). doi:10.3390/engproc2022020014.</li>
+
+                                <li>Formosa, P., Wilson, M. and Richards, D. (2021). A principlist framework for cybersecurity ethics. <em>Computers &amp; Security</em>, 109. doi:10.1016/j.cose.2021.102382.</li>
+
+                                <li>GDPR (2016). <em>General Data Protection Regulation — Article 33</em>. [online] Available at: https://gdpr-info.eu/art-33-gdpr/.</li>
+
+                                <li>Harjinder Singh Lallie, Thompson, A., Titis, E. and Stephens, P. (2023). Understanding Cyber Threats Against the Universities, Colleges, and Schools. <em>arXiv</em>. doi:10.48550/arxiv.2307.07755.</li>
+
+                                <li>ISO (2022). <em>ISO/IEC 27001:2022 — Information security management systems requirements</em>. International Organization for Standardization.</li>
+
+                                <li>Kayode Sheriffdeen and Ade, M. (2023). Evaluating the Effectiveness of Backup and Disaster Recovery Solutions Against Ransomware. ResearchGate.</li>
+
+                                <li>Khadka, K., Ullah, A.B., Ma, W. and Marroquin, E.M. (2024). A Survey on the Principles of Persuasion as a Social Engineering Strategy in Phishing. <em>arXiv.org</em>. doi:10.1109/TrustCom60117.2023.00222.</li>
+
+                                <li>Lachheb, A., Abramenka-Lachheb, V., Moore, S.L. and Gray, C.M. (2023). The role of design ethics in maintaining students' privacy. <em>British Journal of Educational Technology</em>, 54(6), pp.1653–1670. doi:10.1111/bjet.13382.</li>
+
+                                <li>Loi, M. and Christen, M. (2020). Ethical Frameworks for Cybersecurity. <em>The International Library of Ethics, Law and Technology</em>, 21, pp.73–95. doi:10.1007/978-3-030-29053-5_4.</li>
+
+                                <li>Lynn, T., Mooney, J.G., Van, L. and Fox, G. (2021). <em>Data Privacy and Trust in Cloud Computing</em>. Palgrave Macmillan.</li>
+
+                                <li>Meyer, L.A., Romero, S., Bertoli, G., Burt, T., Weinert, A. and Ferres, J.L. (2023). <em>How Effective is Multifactor Authentication at Deterring Cyberattacks?</em> arXiv. doi:10.48550/arXiv.2305.00945.</li>
+
+                                <li>Microsoft (2025). <em>Highly available multi-region design</em>. Microsoft Learn. Available at: https://learn.microsoft.com/en-us/azure/well-architected/reliability/highly-available-multi-region-design [Accessed 15 Jun. 2025].</li>
+
+                                <li>Oye, E. and Clark, A. (2021). AI-Enhanced Network Security Monitoring in AWS: A Practical Approach. ResearchGate.</li>
+
+                                <li>Rahaman, S., Wang, G. and Yao, D. (2019). Security Certification in Payment Card Industry. <em>Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security</em>. doi:10.1145/3319535.3363195.</li>
+
+                                <li>Rodríguez, G.E., Torres, J.G., Flores, P. and Benavides, D.E. (2020). Cross-site scripting (XSS) attacks and mitigation: A survey. <em>Computer Networks</em>, 166. doi:10.1016/j.comnet.2019.106960.</li>
+
+                                <li>Wang, Z., Yang, X., Chen, D., Gao, H., Tian, M., Jia, Y. and Li, W. (2024). Simple But Not Secure: An Empirical Security Analysis of Two-factor Authentication Systems. <em>arXiv</em>. doi:10.48550/arXiv.2411.11551.</li>
+
+                                <li>Zhou, J., Fu, W., Hu, W., Sun, Z., He, T. and Zhang, Z. (2024). Challenges and Advances in Analyzing TLS 1.3-Encrypted Traffic. <em>Electronics</em>, 13(20), pp.4000–4000. doi:10.3390/electronics13204000.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-                <!-- Footer -->
+        <!-- Footer -->
         <footer id="footer" class="wrapper style1-alt">
             <div class="inner">
                 <ul class="menu">

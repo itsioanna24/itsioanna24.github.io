@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/eportfolio/assets/css/main.css" />
     <link rel="stylesheet" href="/eportfolio/assets/css/landing.css" />
+    <link rel="stylesheet" href="/eportfolio/assets/css/additional.css" />
     <noscript><link rel="stylesheet" href="/eportfolio/assets/css/noscript.css" /></noscript>
     <link rel="icon" type="image/png" sizes="32x32" href="/eportfolio/images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/eportfolio/images/favicon/favicon-16x16.png">
@@ -49,10 +50,405 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
-                    </div>
+                        <div class="unit-hero">
+                            <div>
+                                <h2>Threat Assessment &amp;<br><em>Mitigation Plan</em></h2>
+                                <p class="sub">
+                                    A cybersecurity analysis of a hypothetical mid-sized e-commerce enterprise
+                                    operating across Europe and Asia, covering vulnerability identification,
+                                    security protocols, encryption, and legal compliance.
+                                </p>
+                            </div>
+                            <span class="unit-badge">Cybersecurity Report</span>
+                        </div>
 
-             </div>
+                        <p class="section-label">The Scenario</p>
+                        <div class="ta-scenario">
+                            <h3>Hypothetical E-Commerce Enterprise</h3>
+                            <div class="ta-scenario-tags">
+                                <span class="ta-stag ta-stag-p">Europe &amp; Asia Operations</span>
+                                <span class="ta-stag ta-stag-b">Cloud Infrastructure</span>
+                                <span class="ta-stag ta-stag-g">Third-Party Plugin Dependencies</span>
+                            </div>
+                           <p class="prose">
+                            A mid-sized e-commerce enterprise recently suffered attacks that disrupted transaction
+                            processing. The company handles customer financial data, utilises third-party plugins, and
+                            relies on cloud infrastructure for data storage and payment processing — creating a broad
+                            and interconnected attack surface requiring a structured, layered security response.
+                            </p>
+                        </div>
+                        
+                        <hr>
+
+                        <!-- ── Threat Assessment ─────────────────────── -->
+                        <p class="section-label">Threat Assessment — Identified Vulnerabilities</p>
+                        <p class="prose">
+                            Four distinct vulnerability categories were identified, spanning supply chain
+                            risk, human factors, application-layer weaknesses, and cloud misconfiguration.
+                        </p>
+    
+                        <div class="su-threats">
+                            <div class="su-tc su-tc-r">
+                                <div class="su-tc-ico">💣</div>
+                                <div class="su-tc-tag su-tag-r">Critical · Supply Chain</div>
+                                <h3>Ransomware via Outdated Plugin</h3>
+                                <p>A ransomware attack exploited an outdated third-party plugin, revealing absent patch
+                                management and inadequate controls for external software. Third-party plugins are a
+                                common malware entry vector when update cycles are neglected (ENISA, 2023).</p>
+                            </div>
+                            <div class="su-tc su-tc-a">
+                                <div class="su-tc-ico">📧</div>
+                                <div class="su-tc-tag su-tag-a">High · Human Factor</div>
+                                <h3>Phishing &amp; Credential Theft</h3>
+                                <p>Phishing emails targeted customer service staff, successfully extracting login
+                                credentials. This indicates inadequate authentication mechanisms and insufficient
+                                security awareness training (Khadka et al., 2024).</p>
+                            </div>
+                            <div class="su-tc su-tc-p">
+                                <div class="su-tc-ico">💉</div>
+                                <div class="su-tc-tag su-tag-p">High · Application Layer</div>
+                                <h3>XSS &amp; SQL Injection</h3>
+                                <p>The platform is exposed to cross-site scripting (XSS) and SQL injection — two of the
+                                most frequently exploited vulnerabilities in poorly secured web interfaces
+                                (Rodríguez et al., 2020).</p>
+                            </div>
+                            <div class="su-tc su-tc-t">
+                                <div class="su-tc-ico">☁️</div>
+                                <div class="su-tc-tag su-tag-t">Medium · Cloud Infrastructure</div>
+                                <h3>Cloud Misconfiguration</h3>
+                                <p>Cloud services used for data storage and payment processing pose risks if access
+                                settings are improperly configured or if customer data is stored in jurisdictions
+                                with weak privacy protections (Lynn et al., 2021).</p>
+                            </div>
+                        </div>
+
+                        <!-- Risk severity summary -->
+                        <div class="ta-risk-row">
+                            <div class="ta-risk">
+                                <div class="ta-risk-dot ta-rd-r"></div>
+                                <div class="ta-risk-name">Ransomware</div>
+                                <div class="ta-risk-level">Critical severity</div>
+                            </div>
+                            <div class="ta-risk">
+                                <div class="ta-risk-dot ta-rd-a"></div>
+                                <div class="ta-risk-name">Phishing</div>
+                                <div class="ta-risk-level">High severity</div>
+                            </div>
+                            <div class="ta-risk">
+                                <div class="ta-risk-dot ta-rd-b"></div>
+                                <div class="ta-risk-name">XSS / SQLi</div>
+                                <div class="ta-risk-level">High severity</div>
+                            </div>
+                            <div class="ta-risk">
+                                <div class="ta-risk-dot ta-rd-t"></div>
+                                <div class="ta-risk-name">Cloud config</div>
+                                <div class="ta-risk-level">Medium severity</div>
+                            </div>
+                        </div>
+
+
+                        <hr>
+
+                        <!-- ── Mitigation Plan ───────────────────────── -->
+                        <p class="section-label">Mitigation Plan</p>
+    
+                        <div class="su-ai-row">
+                            <div class="su-ai">
+                                <div class="su-ai-ico">🛡️</div>
+                                <h4>Security Protocols</h4>
+                                <p>MFA, WAF, EDR, and regular patch management form the core defensive layer against
+                                both human-targeted and system-level attacks.</p>
+                            </div>
+                            <div class="su-ai">
+                                <div class="su-ai-ico">🔐</div>
+                                <h4>Encryption</h4>
+                                <p>TLS for data in transit and AES-256 for data at rest — particularly in cloud
+                                environments handling payment and personal data.</p>
+                            </div>
+                            <div class="su-ai">
+                                <div class="su-ai-ico">📋</div>
+                                <h4>Compliance &amp; Ethics</h4>
+                                <p>GDPR, PCI DSS, and ISO/IEC 27001 alignment, underpinned by principlist ethical
+                                obligations of beneficence, transparency, and user autonomy.</p>
+                            </div>
+                        </div>
+
+                        <!-- Detailed mitigation table -->
+                        <table class="su-tbl">
+                            <thead>
+                                <tr>
+                                    <th>Control</th>
+                                    <th>Threat Addressed</th>
+                                    <th>Evidence</th>
+                                    <th>Priority</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Multi-Factor Authentication (MFA)</td>
+                                    <td>Credential theft via phishing — requires second verification factor even when passwords are compromised</td>
+                                    <td>Prevents 99.99% of unauthorised access; reduces compromise risk by 98.56% when credentials are leaked (Meyer et al., 2023)</td>
+                                    <td><span class="su-pill su-pill-h">Critical</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Web Application Firewall (WAF)</td>
+                                    <td>Filters malicious traffic; specifically blocks XSS and SQL injection at the application boundary (Dawadi et al., 2023)</td>
+                                    <td>Deep learning-enabled WAFs achieve high detection accuracy on OWASP Top 10 attack patterns</td>
+                                    <td><span class="su-pill su-pill-h">Critical</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Patch Management</td>
+                                    <td>Eliminates known vulnerabilities in third-party plugins before attackers can exploit them (Dissanayake et al., 2021)</td>
+                                    <td>Systematic patch cycles reduce ransomware attack surface significantly; ENISA identifies unpatched plugins as primary entry vectors</td>
+                                    <td><span class="su-pill su-pill-h">Critical</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Endpoint Detection &amp; Response (EDR)</td>
+                                    <td>Real-time monitoring and isolation of malware activity across devices and endpoints (Arfeen et al., 2021)</td>
+                                    <td>Enables rapid containment of ransomware propagation; reduces dwell time between infection and detection</td>
+                                    <td><span class="su-pill su-pill-m">High</span></td>
+                                </tr>
+                                <tr>
+                                    <td>TLS Encryption (in transit)</td>
+                                    <td>Secures data transmitted between users, servers, and payment processors (Zhou et al., 2024)</td>
+                                    <td>Industry standard for e-commerce; required for PCI DSS compliance</td>
+                                    <td><span class="su-pill su-pill-m">High</span></td>
+                                </tr>
+                                <tr>
+                                    <td>AES-256 Encryption (at rest)</td>
+                                    <td>Protects stored customer and payment data in cloud environments (Fatima et al., 2022)</td>
+                                    <td>Widely adopted for cloud data protection; outperforms RSA for large-scale symmetric encryption tasks</td>
+                                    <td><span class="su-pill su-pill-m">High</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Access Controls &amp; IAM</td>
+                                    <td>Enforces least-privilege principles; prevents internal actors from accessing data beyond their role</td>
+                                    <td>Supported by ISO/IEC 27001 risk-based security management and regular access audits (ISO, 2022)</td>
+                                    <td><span class="su-pill su-pill-l">Medium</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Cloud Configuration Review</td>
+                                    <td>Audits access settings, storage locations, and jurisdictional compliance for cloud-hosted data (Lynn et al., 2021)</td>
+                                    <td>Misconfigured cloud storage is a leading cause of data exposure in multi-region deployments</td>
+                                    <td><span class="su-pill su-pill-l">Medium</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <hr>
+
+                        <!-- ── Compliance ────────────────────────────── -->
+                        <p class="section-label">Compliance Considerations</p>
+
+                        <div class="su-ai-row">
+                            <div class="su-ai">
+                                <div class="ta-comp-label">Regulation</div>
+                                <h4>GDPR</h4>
+                                <p>Mandates data minimisation, secure processing, and breach notification within 72 hours.
+                                As an enterprise operating across Europe, GDPR compliance is a legal requirement and
+                                a baseline for customer trust (European Union, 2016).</p>
+                            </div>
+                            <div class="su-ai">
+                                <div class="ta-comp-label">Standard</div>
+                                <h4>PCI DSS</h4>
+                                <p>Required for any enterprise processing payment card data. Mandates encrypted
+                                transmission, access controls, and regular security testing to protect cardholder
+                                data and reduce fraud risk (Rahaman et al., 2019).</p>
+                            </div>
+                            <div class="su-ai">
+                                <div class="ta-comp-label">Framework</div>
+                                <h4>ISO/IEC 27001</h4>
+                                <p>Provides a risk-based information security management framework with structured
+                                controls and regular audit requirements. Supports access control, incident management,
+                                and continuous improvement (ISO, 2022).</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <p class="section-label">Ethical Considerations</p>
+                        <p class="prose">Beyond legal compliance, the enterprise carries ethical obligations to its
+                        users — particularly around transparency and responsible data handling in cloud environments
+                        where privacy expectations are easily undermined.</p>
+    
+                        <div class="ta-ethics">
+                            <div class="ta-eth">
+                                <div class="ta-eth-ico">⚖️</div>
+                                <div>
+                                    <h4>Principlist Framework</h4>
+                                    <p>Cybersecurity practice should follow the principles of beneficence,
+                                    non-maleficence, autonomy, justice, and explicability — requiring the enterprise
+                                    to affirmatively protect users, avoid harm, and ensure transparency in data
+                                    handling (Formosa et al., 2021).</p>
+                                </div>
+                            </div>
+                            <div class="ta-eth">
+                                <div class="ta-eth-ico">🔍</div>
+                                <div>
+                                    <h4>Transparency &amp; Trust</h4>
+                                    <p>Responsible disclosure of breaches and transparent data handling are essential
+                                    to maintaining user trust and respecting digital rights — especially in cloud
+                                    storage contexts where privacy expectations may be undermined (Loi and
+                                    Christen, 2020).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Full Report ───────────────────────────── -->
+                        <p class="section-label">Full Report</p>
+
+                        <div class="su-report">
+                            <h3>Enterprise Context</h3>
+                            <p>This report examines a hypothetical mid-sized e-commerce enterprise operating across
+                            Europe and Asia that recently suffered attacks that disrupted transaction processing.
+                            The company handles customer financial data, utilises third-party plugins, and relies
+                            on cloud infrastructure.</p>
+
+                            <h3>Threat Assessment</h3>
+                            <p>The enterprise is exposed to several cybersecurity threats. Firstly, a ransomware
+                            attack exploited an outdated third-party plugin, revealing that the company lacked proper
+                            updates and controls for external software — a common malware entry vector (ENISA, 2023).
+                            Secondly, phishing emails were sent to customer service staff and successfully tricked
+                            them into revealing login credentials, indicating inadequate use of authentication
+                            mechanisms (Khadka et al., 2024). Thirdly, the platform is exposed to application-level
+                            threats including cross-site scripting (XSS) and SQL injection (Rodríguez et al., 2020),
+                            which are frequently exploited by attackers targeting poorly secured web interfaces.
+                            The enterprise also uses cloud services for data storage and payment processing, which
+                            is risky if access settings are not properly configured or if customer data is stored
+                            in countries with weak privacy laws (Lynn et al., 2021).</p>
+
+                            <h3>Mitigation Plan</h3>
+                            <p>To mitigate these risks, a multi-layered security strategy is essential. The most
+                            important proposition is the implementation of multi-factor authentication (MFA) for all
+                            administrative and customer accounts, which would reduce the likelihood of credential
+                            misuse. Research by Meyer et al. (2023) revealed that MFA can prevent over 99.99% of
+                            unauthorised access attempts, and even when credentials were leaked, MFA reduced
+                            compromise risk by 98.56%. A web application firewall (WAF) should be deployed to filter
+                            malicious traffic and prevent XSS and SQL injection attacks (Dawadi et al., 2023).
+                            Regular patch management must be enforced, especially for third-party plugins, to reduce
+                            exploitation risk (Dissanayake et al., 2021). For threat detection and rapid response,
+                            endpoint detection and response (EDR) tools should be adopted to monitor and isolate
+                            malware activity in real time (Arfeen et al., 2021).</p>
+
+                            <p>Protecting sensitive data requires encryption during transmission and at rest. TLS
+                            secures data during transmission (Zhou et al., 2024), while Advanced Encryption Standard
+                            (AES) is widely used for protecting stored data, particularly in cloud environments
+                            (Fatima et al., 2022). Access controls must be enforced, and compliance with ISO/IEC
+                            27001 supports this through risk-based security management and regular audits (ISO,
+                            2022).</p>
+
+                            <h3>Legal Compliance</h3>
+                            <p>The enterprise is required to align with the General Data Protection Regulation
+                            (GDPR), which mandates data minimisation, breach notification within 72 hours, and
+                            secure processing (European Union, 2016). Compliance with PCI DSS is essential as it
+                            protects cardholder data, reducing the risk of fraud and data breaches (Rahaman et al.,
+                            2019).</p>
+
+                            <h3>Ethical Considerations</h3>
+                            <p>From an ethical perspective, the enterprise is obliged to protect user data in
+                            accordance with principles of privacy and transparency. These practices should follow
+                            ethical principles — beneficence, non-maleficence, autonomy, justice, and explicability
+                            — requiring the enterprise to affirmatively protect users, avoid harm, and ensure
+                            transparency in data handling (Formosa et al., 2021). Transparency about breaches and
+                            responsible data handling are essential to maintaining user trust and respecting digital
+                            rights, particularly in cloud storage contexts where privacy expectations may be
+                            undermined (Loi and Christen, 2020).</p>
+
+                            <h3>Conclusion</h3>
+                            <p>By adopting a layered defence strategy and adhering to legal and ethical standards,
+                            the enterprise can significantly enhance its cybersecurity defences and build trust
+                            with stakeholders.</p>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Reflection ────────────────────────────── -->
+                        <p class="section-label">Reflection</p>
+
+                        <div class="su-qa">
+                            <div class="su-qi">
+                                <p class="su-qq">What did the scenario format add?</p>
+                                <p class="su-qa-a">Grounding the analysis in a concrete hypothetical enterprise made the
+                                threat assessment significantly more focused than a generic overview. Having to think
+                                about a company that uses third-party plugins, cloud infrastructure, and cross-border
+                                data transfers forced me to consider how vulnerabilities interact — for instance, how
+                                an unpatched plugin creates the entry point that ransomware then exploits, which then
+                                triggers GDPR breach notification obligations.</p>
+                            </div>
+
+                            <div class="su-qi">
+                                <p class="su-qq">What surprised me about the MFA evidence?</p>
+                                <p class="su-qa-a">The empirical strength of MFA was striking. A 99.99% reduction in
+                                unauthorised access, and a 98.56% risk reduction even when credentials are already
+                                compromised (Meyer et al., 2023), is a remarkably strong result for a single control.
+                                This reframed MFA for me — not as a supplementary measure but as arguably the single
+                                highest-return security investment available to any enterprise.</p>
+                            </div>
+
+                            <div class="su-qi">
+                                <p class="su-qq">How did compliance and ethics interact?</p>
+                                <p class="su-qa-a">I initially treated GDPR, PCI DSS, and ISO/IEC 27001 as separate
+                                compliance checkboxes. Working through the report made clear they are mutually
+                                reinforcing: ISO 27001 provides the management framework, GDPR mandates the data
+                                minimisation and incident response obligations, and PCI DSS addresses the specific
+                                payment context. The principlist ethical framework from Formosa et al. (2021) then
+                                sits above all three — articulating the human obligations that regulation alone
+                                cannot fully capture.</p>
+                            </div>
+
+                            <div class="su-qi">
+                                <p class="su-qq">What would I extend in future work?</p>
+                                <p class="su-qa-a">I would develop a formal risk register using a quantitative
+                                framework such as FAIR (Factor Analysis of Information Risk) to assign probability
+                                and financial impact estimates to each vulnerability. I would also explore the
+                                specific cloud security challenges introduced by operating across European and Asian
+                                jurisdictions — where data residency requirements and cross-border transfer rules
+                                differ significantly — as this is a real compliance gap for many e-commerce
+                                operators.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- References -->
+                        <div class="su-ref">
+                            <h4>References</h4>
+                            <ul>
+                                <li>Arfeen, A., Ahmed, S., Khan, M.A. and Jafri, S.F.A. (2021). Endpoint Detection &amp; Response: A Malware Identification Solution. <em>2021 International Conference on Cyber Warfare and Security (ICCWS)</em>, pp.1–8. doi:10.1109/iccws53234.2021.9703010.</li>
+
+                                <li>Dawadi, B.R., Adhikari, B. and Srivastava, D.K. (2023). Deep Learning Technique-Enabled Web Application Firewall for the Detection of Web Attacks. <em>Sensors</em>, 23(4), p.2073. doi:10.3390/s23042073.</li>
+
+                                <li>Dissanayake, N., Jayatilaka, A., Zahedi, M. and Babar, M.A. (2021). Software security patch management — A systematic literature review. <em>Information and Software Technology</em>, 144, p.106771. doi:10.1016/j.infsof.2021.106771.</li>
+
+                                <li>ENISA (2023). <em>ENISA Threat Landscape 2023</em>. European Union Agency for Cybersecurity.</li>
+
+                                <li>European Union (2016). <em>Regulation (EU) 2016/679 — General Data Protection Regulation</em>. Official Journal of the European Union.</li>
+
+                                <li>Fatima, S., Rehman, T., Fatima, M., Khan, S. and Ali, M.A. (2022). Comparative Analysis of AES and RSA Algorithms for Data Security in Cloud Computing. <em>IEEC 2022</em>, 20(1). doi:10.3390/engproc2022020014.</li>
+
+                                <li>Formosa, P., Wilson, M. and Richards, D. (2021). A principlist framework for cybersecurity ethics. <em>Computers &amp; Security</em>, 109. doi:10.1016/j.cose.2021.102382.</li>
+
+                                <li>ISO (2022). <em>ISO/IEC 27001:2022 — Information security management systems requirements</em>. International Organization for Standardization.</li>
+
+                                <li>Khadka, K., Ullah, A.B., Ma, W. and Marroquin, E.M. (2024). A Survey on the Principles of Persuasion as a Social Engineering Strategy in Phishing. <em>arXiv.org</em>. doi:10.1109/TrustCom60117.2023.00222.</li>
+
+                                <li>Loi, M. and Christen, M. (2020). Ethical Frameworks for Cybersecurity. <em>The International Library of Ethics, Law and Technology</em>, 21, pp.73–95. doi:10.1007/978-3-030-29053-5_4.</li>
+
+                                <li>Lynn, T., Mooney, J.G., Van, L. and Fox, G. (2021). <em>Data Privacy and Trust in Cloud Computing</em>. Palgrave Macmillan.</li>
+
+                                <li>Meyer, L.A., Romero, S., Bertoli, G., Burt, T., Weinert, A. and Ferres, J.L. (2023). <em>How Effective is Multifactor Authentication at Deterring Cyberattacks?</em> arXiv. doi:10.48550/arXiv.2305.00945.</li>
+
+                                <li>Rahaman, S., Wang, G. and Yao, D. (2019). Security Certification in Payment Card Industry. <em>Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security</em>. doi:10.1145/3319535.3363195.</li>
+
+                                <li>Rodríguez, G.E., Torres, J.G., Flores, P. and Benavides, D.E. (2020). Cross-site scripting (XSS) attacks and mitigation: A survey. <em>Computer Networks</em>, 166. doi:10.1016/j.comnet.2019.106960.</li>
+
+                                <li>Zhou, J., Fu, W., Hu, W., Sun, Z., He, T. and Zhang, Z. (2024). Challenges and Advances in Analyzing TLS 1.3-Encrypted Traffic. <em>Electronics</em>, 13(20), pp.4000–4000. doi:10.3390/electronics13204000.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

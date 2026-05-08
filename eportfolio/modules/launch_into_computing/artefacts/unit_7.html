@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/eportfolio/assets/css/main.css" />
     <link rel="stylesheet" href="/eportfolio/assets/css/landing.css" />
+    <link rel="stylesheet" href="/eportfolio/assets/css/additional.css" />
     <noscript><link rel="stylesheet" href="/eportfolio/assets/css/noscript.css" /></noscript>
     <link rel="icon" type="image/png" sizes="32x32" href="/eportfolio/images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/eportfolio/images/favicon/favicon-16x16.png">
@@ -49,14 +50,289 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
-                    </div>
+                        <!-- Hero -->
+                        <div class="unit-hero">
+                            <div>
+                                <h2>Security Risk<br><em>Assessment Report</em></h2>
+                                <p class="sub">
+                                    An analysis of key cybersecurity threats — from phishing and data breaches
+                                    to adversarial AI attacks — with recommended mitigation strategies for each risk category.
+                                </p>
+                            </div>
+                            <span class="unit-badge">Security Report</span>
+                        </div>
+    
+                        <!-- Overview -->
+                        <p class="section-label">Overview</p>
+                        <p class="prose">
+                            As digital systems become deeply embedded across all sectors, both traditional and emerging
+                            threats demand continuous reassessment. This report examines four interconnected risk areas:
+                            phishing, data breaches, and three classes of adversarial attacks targeting AI systems —
+                            data poisoning, Trojan horse attacks, and model reprogramming. For each threat, mitigations
+                            grounded in current literature are proposed.
+                        </p>
+    
+                        <div class="su-stats">
+                            <div class="su-stat">
+                                <div class="su-stat-n">99.9<sup>%+</sup></div>
+                                <div class="su-stat-l">MFA Effectiveness</div>
+                                <div class="su-stat-d">Reduction in account breach likelihood when Multi-Factor Authentication is applied (Wahab et al., 2023)</div>
+                            </div>
+                            <div class="su-stat">
+                                <div class="su-stat-n">4</div>
+                                <div class="su-stat-l">Threat Categories</div>
+                                <div class="su-stat-d">Phishing, data breaches, data poisoning, and Trojan/reprogramming attacks — each requiring distinct defences</div>
+                            </div>
+                            <div class="su-stat">
+                                <div class="su-stat-n">3</div>
+                                <div class="su-stat-l">AI Attack Vectors</div>
+                                <div class="su-stat-d">Training-time and deployment-time adversarial techniques that specifically target machine learning models</div>
+                            </div>
+                        </div>
 
-             </div>
+                        <hr>
+
+                        <!-- Threat landscape -->
+                        <p class="section-label">Threat Landscape</p>
+                        <p class="prose">
+                            Cybersecurity threats operate at multiple levels — from human psychology to model architecture.
+                            The four primary threats examined span both conventional and AI-specific attack surfaces.
+                        </p>
+    
+                        <div class="su-threats">
+                            <div class="su-tc su-tc-r">
+                                <div class="su-tc-ico">🎣</div>
+                                <div class="su-tc-tag su-tag-r">Traditional · Human Layer</div>
+                                <h3>Phishing</h3>
+                                <p>Deceptive communications — fake emails, messages, or calls — manipulate individuals into
+                                revealing credentials or financial data. Variants include spear-phishing (targeted) and
+                                vishing (voice-based). Exploits psychological rather than technical vulnerabilities
+                                (Desolda et al., 2022).</p>
+                            </div>
+                            <div class="su-tc su-tc-a">
+                                <div class="su-tc-ico">🔓</div>
+                                <div class="su-tc-tag su-tag-a">Traditional · Data Layer</div>
+                                <h3>Data Breaches</h3>
+                                <p>Unauthorised access to or exposure of confidential information. Causes include external
+                                cyberattacks, insider misuse, and negligence. Consequences range from financial and
+                                reputational damage to legal liability. Successful phishing is a frequent entry point
+                                (Molitor et al., 2024).</p>
+                            </div>
+                            <div class="su-tc su-tc-p">
+                                <div class="su-tc-ico">☠️</div>
+                                <div class="su-tc-tag su-tag-p">AI-Specific · Training Time</div>
+                                <h3>Data Poisoning</h3>
+                                <p>Attackers corrupt training data or model architecture to degrade performance, cause
+                                targeted misclassification, or affect specific subpopulations. In graph systems, malicious
+                                nodes manipulate classification and recommendation outputs (Fan et al., 2022).</p>
+                            </div>
+                            <div class="su-tc su-tc-t">
+                                <div class="su-tc-ico">🐴</div>
+                                <div class="su-tc-tag su-tag-t">AI-Specific · Model Layer</div>
+                                <h3>Trojan &amp; Reprogramming</h3>
+                                <p>Trojan attacks embed hidden backdoors directly into model weights, triggered later to
+                                hijack or degrade behaviour. Model reprogramming repurposes a model for entirely unintended
+                                tasks via minor triggers, without requiring data access (Sotiropoulos, 2024).</p>
+                            </div>
+                        </div>
+
+                         <!-- AI taxonomy -->
+                        <p class="section-label">AI Attack Taxonomy</p>
+                        <p class="prose">
+                            Adversarial attacks occur at two distinct stages of the model lifecycle, each requiring
+                            different defensive approaches.
+                        </p>
+    
+                        <div class="su-ai-row">
+                            <div class="su-ai">
+                                <div class="su-ai-ico">🧪</div>
+                                <h4>Availability Attacks</h4>
+                                <p>Raise overall test error rates, degrading the model's general usefulness. Most
+                                detectable via standard performance monitoring.</p>
+                            </div>
+                            <div class="su-ai">
+                                <div class="su-ai-ico">🎯</div>
+                                <h4>Targeted Misclassification</h4>
+                                <p>Stealthy attacks that mislead classifiers about specific inputs while maintaining
+                                normal accuracy elsewhere — harder to detect by routine evaluation.</p>
+                            </div>
+                            <div class="su-ai">
+                                <div class="su-ai-ico">🕳️</div>
+                                <h4>Backdoor Triggers</h4>
+                                <p>Malicious behaviours embedded silently into model weights, remaining dormant until
+                                a specific input pattern or trigger is applied at inference time.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- Mitigations -->
+                        <p class="section-label">Recommended Mitigations</p>
+    
+                        <table class="su-tbl">
+                            <thead>
+                                <tr>
+                                    <th>Mitigation</th>
+                                    <th>How It Works</th>
+                                    <th>Impact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ML-based phishing detection</td>
+                                    <td>Graph inference and logistic regression models trained to identify phishing patterns in emails and URLs (Naqvi et al., 2023)</td>
+                                    <td><span class="su-pill su-pill-h">High</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Endpoint security</td>
+                                    <td>Updated antivirus, malware protection, and host-based intrusion detection systems (HIDS) as a baseline defensive layer (Naqvi et al., 2023)</td>
+                                    <td><span class="su-pill su-pill-m">Medium</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Multi-Factor Authentication</td>
+                                    <td>Requires users to verify identity through more than one method — reduces breach risk by over 99.9% (Wahab et al., 2023)</td>
+                                    <td><span class="su-pill su-pill-h">High</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Majority vote mechanisms</td>
+                                    <td>Multiple base classifiers trained on different data subsets and aggregated — a certified defence against data poisoning (Goldblum et al., 2022)</td>
+                                    <td><span class="su-pill su-pill-h">High</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Dataset auditing</td>
+                                    <td>Inspecting training corpora for anomalous samples, statistical outliers, or mislabelled instances before model training begins</td>
+                                    <td><span class="su-pill su-pill-m">Medium</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Trigger scanning &amp; input filtering</td>
+                                    <td>Detecting known trigger patterns at inference time; rejecting inputs that match suspicious activation profiles associated with Trojan attacks</td>
+                                    <td><span class="su-pill su-pill-l">Supplementary</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <hr>
+
+                            <!-- Full report -->
+                        <p class="section-label">Full Report</p>
+                        <div class="su-report">
+                            <h3>Introduction</h3>
+                            <p>The reliance on digital systems grows across all sectors, and the importance of securing them
+                            becomes increasingly critical. Traditional risks such as phishing and data breaches remain
+                            persistent, while new vulnerabilities emerge with the advancement of Artificial Intelligence (AI).
+                            Cybersecurity threats target systems at multiple levels — from human error to infrastructure
+                            vulnerabilities. This report outlines key threats and recommends effective security measures
+                            to mitigate the risks.</p>
+    
+                            <h3>Phishing &amp; Data Breaches</h3>
+                            <p>Among the various cybersecurity challenges, phishing and data breaches remain two of the most
+                            prevalent and damaging vulnerabilities. Phishing involves deceptive tactics — fake emails,
+                            messages, or calls — that manipulate individuals into revealing sensitive data such as passwords
+                            or financial details (Desolda et al., 2022). These attacks exploit psychological vulnerabilities
+                            and can take various forms, including spear-phishing or voice-based "vishing" (Desolda et al.,
+                            2022). Successful phishing can lead directly to data breaches, which occur when unauthorised
+                            parties access or expose confidential information (Molitor et al., 2024). A breach may result
+                            from cyberattacks, insider misuse, or negligence, and its consequences range from financial loss
+                            to reputational damage (Molitor et al., 2024). Such breaches underscore the critical need for
+                            robust security protocols and accountability mechanisms within organisations.</p>
+    
+                            <h3>Adversarial Attacks on AI Systems</h3>
+                            <p>Adversarial attacks on AI systems can occur during training or deployment and include
+                            techniques such as data poisoning, Trojan horse attacks, and model reprogramming. Data poisoning
+                            targets training data or architecture to degrade model performance, cause targeted
+                            misclassification, or affect specific subpopulations without impacting overall accuracy (Fan
+                            et al., 2022). Attackers may use availability attacks to raise test error rates, or stealthy
+                            targeted attacks to mislead classifiers about specific inputs. In graph-based systems, malicious
+                            nodes can be inserted to manipulate node classification and recommendation algorithms (Fan et al.,
+                            2022).</p>
+                            <p>In contrast, Trojan horse attacks embed malicious behaviours directly into the model without
+                            modifying data. These backdoors can later be triggered to hijack the model or degrade performance
+                            (Sotiropoulos, 2024). Model reprogramming extends this threat by enabling attackers to repurpose
+                            a model for entirely unintended tasks, often using only minor inputs or triggers (Sotiropoulos,
+                            2024), demonstrating the growing sophistication of AI-targeted threats.</p>
+    
+                            <h3>Mitigations</h3>
+                            <p>To mitigate cybersecurity threats, several robust measures can be implemented. Utilising
+                            machine learning techniques — such as graph inference and logistic regression — can effectively
+                            detect and prevent phishing attacks (Naqvi et al., 2023). Implementing endpoint security
+                            measures, including updated antivirus software, malware protection, and host-based intrusion
+                            detection systems (HIDS), enhances defence against malicious activities (Naqvi et al., 2023).
+                            To counteract data poisoning attacks, majority vote mechanisms have been proposed, where
+                            multiple base classifiers trained on different data subsets are combined to produce a robust
+                            aggregate model (Goldblum et al., 2022). Furthermore, implementing Multi-Factor Authentication
+                            (MFA) greatly lowers the chance of unauthorised access by requiring users to verify their
+                            identity through more than one method (Nagaraju Pureti, 2020). Research indicates that MFA can
+                            reduce the likelihood of account breaches by more than 99.9% (Wahab et al., 2023).</p>
+    
+                            <h3>Conclusion</h3>
+                            <p>Cyber threats in computing are diverse, evolving from traditional phishing and data breaches
+                            to more sophisticated attacks targeting AI systems. Addressing risks such as data poisoning and
+                            Trojan horse attacks requires a layered defence strategy combining technical controls, human
+                            awareness, and continuous model monitoring.</p>
+                        </div>
+
+                        <hr>
+
+                        <!-- Reflection -->
+                        <p class="section-label">Reflection</p>
+                        <div class="su-qa">
+                            <div class="su-qi">
+                                <p class="su-qq">What was new to me in this topic?</p>
+                                <p class="su-qa-a">I was familiar with phishing and data breaches at a conceptual level,
+                                but the taxonomy of adversarial AI attacks — particularly the distinction between data
+                                poisoning (training-time) and Trojan/reprogramming attacks (model-level) — was largely
+                                new. The idea that an attacker can embed a backdoor into model weights without touching
+                                the training data significantly changed how I think about ML model supply chains and
+                                third-party model use.</p>
+                            </div>
+                            <div class="su-qi">
+                                <p class="su-qq">What connection did I find most striking?</p>
+                                <p class="su-qa-a">The link between phishing and data breaches is intuitive, but
+                                researching ML-based phishing detection — specifically that logistic regression, the same
+                                algorithm used in the previous unit's fake news classifier, is applied to detect phishing
+                                — made the cross-unit connection concrete. The same technique that can be weaponised
+                                (adversarial ML) can also defend against conventional threats, illustrating how dual-use
+                                machine learning truly is.</p>
+                            </div>
+                            <div class="su-qi">
+                                <p class="su-qq">What challenged me in writing?</p>
+                                <p class="su-qa-a">Synthesising sources across very different attack categories — human-layer
+                                social engineering, infrastructure-level breaches, and model-level adversarial attacks —
+                                into a coherent layered defence narrative required careful structural thinking. I initially
+                                treated each threat in isolation, but the revision process pushed me towards a more
+                                integrated argument: that no single control is sufficient and a layered strategy
+                                is essential.</p>
+                            </div>
+                            <div class="su-qi">
+                                <p class="su-qq">What would I extend in future?</p>
+                                <p class="su-qa-a">I would investigate certified defences against data poisoning more
+                                deeply — particularly randomised smoothing and differential privacy techniques, which
+                                offer provable robustness guarantees rather than heuristic ones. I would also explore
+                                how the EU AI Act imposes specific security obligations on AI system providers,
+                                situating these technical mitigations within a legal and governance framework.</p>
+                            </div>
+                        </div>
+    
+                        <!-- References -->
+                        <div class="su-ref">
+                            <h4>References</h4>
+                            <ul>
+                                <li>Desolda, G., Ferro, L.S., Marrella, A., Catarci, T. and Costabile, M.F. (2022). Human Factors in Phishing Attacks: A Systematic Literature Review. <em>ACM Computing Surveys</em>, 54(8), pp.1–35. doi:10.1145/3469886.</li>
+                                <li>Fan, J., Yan, Q., Li, M., Qu, G. and Xiao, Y. (2022). A Survey on Data Poisoning Attacks and Defenses. In: <em>2022 7th IEEE International Conference on Data Science in Cyberspace (DSC)</em>. pp.48–55. doi:10.1109/dsc55868.2022.00014.</li>
+                                <li>Goldblum, M., Tsipras, D., Xie, C., Chen, X., Schwarzschild, A., Song, D., Madry, A., Li, B. and Goldstein, T. (2022). Dataset Security for Machine Learning. <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em>, 45(2). doi:10.1109/tpami.2022.3162397.</li>
+                                <li>Molitor, D., Aditya Saharia, Viju Raghupathi and Wullianallur Raghupathi (2024). Exploring the Characteristics of Data Breaches. <em>Journal of Information Security</em>, 15(02), pp.168–195. doi:10.4236/jis.2024.152011.</li>
+                                <li>Nagaraju Pureti (2020). Implementing Multi-Factor Authentication (MFA) to Enhance Security. <em>International Journal of Machine Learning Research in Cybersecurity and Artificial Intelligence</em>, 11(1), pp.15–29.</li>
+                                <li>Naqvi, B., Perova, K., Farooq, A., Makhdoom, I., Oyedeji, S. and Porras, J. (2023). Mitigation Strategies against the Phishing Attacks: A Systematic Literature Review. <em>Computers &amp; Security</em>, 132, p.103387. doi:10.1016/j.cose.2023.103387.</li>
+                                <li>Sotiropoulos, J. (2024). <em>Adversarial AI Attacks, Mitigations, and Defense Strategies</em>. Packt Publishing Ltd.</li>
+                                <li>Wahab, A.K., Oliveros, F. and Idris Wonuola (2023). Enhancing Cloud Security: Analyzing the Effectiveness and Implementation of Multi-factor Authentication. ResearchGate.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-                <!-- Footer -->
+        <!-- Footer -->
         <footer id="footer" class="wrapper style1-alt">
             <div class="inner">
                 <ul class="menu">

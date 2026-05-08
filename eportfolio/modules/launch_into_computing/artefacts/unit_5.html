@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/eportfolio/assets/css/main.css" />
     <link rel="stylesheet" href="/eportfolio/assets/css/landing.css" />
+    <link rel="stylesheet" href="/eportfolio/assets/css/additional.css" />
     <noscript><link rel="stylesheet" href="/eportfolio/assets/css/noscript.css" /></noscript>
     <link rel="icon" type="image/png" sizes="32x32" href="/eportfolio/images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/eportfolio/images/favicon/favicon-16x16.png">
@@ -68,6 +69,285 @@
                                     <br>    The discussion of data privacy is a valuable inclusion, highlighting ethical concerns in behavioural analytics. The example of regulatory action adds credibility, but this section could be improved by linking ethical challenges to technical solutions, such as data anonymisation.
                                     <br>    Overall, this reflection helped me recognise the importance of balancing technical performance with ethical responsibility. In future work, I will aim to incorporate more critical analysis and evaluation of alternative approaches.
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artefact">
+                         <!-- ── Hero ─────────────────────────────────── -->
+                        <div class="unit-hero">
+                            <h2>Airbnb European Listings<br><em>Analysis &amp; Storage Reflection</em></h2>
+                            <span class="unit-badge">Coding Assignment</span>
+                        </div>
+    
+                        <!-- ── Overview ──────────────────────────────── -->
+                        <p class="section-label">Overview</p>
+                        <p class="prose">
+                            This assignment uses the publicly available Airbnb European City Dataset, which covers listings
+                            across ten major cities — Amsterdam, Athens, Barcelona, Berlin, Budapest, Lisbon, London, Paris,
+                            Rome, and Vienna. Using Python with Pandas, Seaborn, and Matplotlib, the dataset was loaded,
+                            cleaned, and analysed to surface pricing patterns across cities and day types.
+                            A 200-word reflection then compares SQL and NoSQL storage models in the context of this dataset's
+                            structure and use case.
+                        </p>
+    
+                        <div class="download-strip">
+                            <a class="download-btn" href="/eportfolio/assets/files/airbnb_analysis.ipynb" download>
+                                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V4h3v4H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx=".75"/></svg>
+                                Download Notebook (.ipynb)
+                            </a>
+                            <a class="download-btn" href="/eportfolio/assets/files/Reflection_report.docx" download>
+                                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V4h3v4H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx=".75"/></svg>
+                                Download Reflection Report (.docx)
+                            </a>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Part 1: Python Analysis ────────────────── -->
+                        <p class="section-label">Part 1 — Python Analysis</p>
+    
+                        <p class="prose">
+                            The analysis followed a three-stage pipeline: loading and merging per-city CSV files, cleaning
+                            the unified dataframe, and computing descriptive statistics before producing visualisations.
+                        </p>
+    
+                        <div class="pipeline">
+                            <div class="pipeline-step">
+                                <div class="step-num">01 — Load</div>
+                                <h4>Import &amp; Merge</h4>
+                                <p>All city CSV files from the <code>data/</code> folder were looped over, tagged with a
+                                city column, and concatenated into a single dataframe using <code>pd.concat()</code>.</p>
+                            </div>
+                            <div class="pipeline-step">
+                                <div class="step-num">02 — Clean</div>
+                                <h4>Standardise &amp; Filter</h4>
+                                <p>Duplicates removed, <code>realSum</code> renamed to <code>price</code>, rows with missing
+                                prices dropped, and outliers outside €10–€1,000 filtered out.</p>
+                            </div>
+                            <div class="pipeline-step">
+                                <div class="step-num">03 — Analyse</div>
+                                <h4>Describe &amp; Correlate</h4>
+                                <p>City and day-type columns extracted via regex. Mean, median, group averages, and
+                                numeric correlations computed with Pandas aggregations.</p>
+                            </div>
+                        </div>
+    
+                        <!-- Code snippet -->
+                        <p class="section-label">Key Code</p>
+                        <div class="code-wrap">
+                            <div class="code-header">
+                                <span class="code-dot r"></span>
+                                <span class="code-dot y"></span>
+                                <span class="code-dot g"></span>
+                                <span class="code-filename">airbnb_analysis.ipynb</span>
+                            </div>
+                            <pre><span class="cm"># ── Load all city CSVs ──────────────────────────────</span>
+                            <span class="kw">for</span> <span class="va">file</span> <span class="kw">in</span> <span class="fn">os.listdir</span>(<span class="st">'data/'</span>):
+                                <span class="va">df</span> = <span class="fn">pd.read_csv</span>(<span class="va">file_path</span>)
+                                <span class="va">df</span>[<span class="st">'city'</span>] = <span class="va">file</span>.<span class="fn">replace</span>(<span class="st">'.csv'</span>, <span class="st">''</span>)
+                                <span class="va">dfs</span>.<span class="fn">append</span>(<span class="va">df</span>)
+                            <span class="va">df_all</span> = <span class="fn">pd.concat</span>(<span class="va">dfs</span>, ignore_index=<span class="nm">True</span>)
+                            
+                            <span class="cm"># ── Clean ────────────────────────────────────────────</span>
+                            <span class="va">df_all</span> = <span class="va">df_all</span>.<span class="fn">drop_duplicates</span>()
+                            <span class="va">df_all</span> = <span class="va">df_all</span>.<span class="fn">rename</span>(columns={<span class="st">'realSum'</span>: <span class="st">'price'</span>})
+                            <span class="va">df_all</span> = <span class="va">df_all</span>[(<span class="va">df_all</span>[<span class="st">'price'</span>] >= <span class="nm">10</span>) &amp; (<span class="va">df_all</span>[<span class="st">'price'</span>] &lt; <span class="nm">1000</span>)]
+                            
+                            <span class="cm"># ── Extract city &amp; day type from filename ────────────</span>
+                            <span class="va">df_all</span>[[<span class="st">'base_city'</span>, <span class="st">'day_type'</span>]] = \
+                                <span class="va">df_all</span>[<span class="st">'city'</span>].<span class="fn">str.extract</span>(<span class="st">r'(.+?)_(weekdays|weekends)$'</span>)
+                            
+                            <span class="cm"># ── Group statistics ─────────────────────────────────</span>
+                            <span class="va">avg_city</span> = <span class="va">df_all</span>.<span class="fn">groupby</span>(<span class="st">'base_city'</span>)[<span class="st">'price'</span>].<span class="fn">mean</span>().<span class="fn">sort_values</span>(ascending=<span class="nm">False</span>)
+                            <span class="va">correlations</span> = <span class="va">df_all</span>.<span class="fn">corr</span>(numeric_only=<span class="nm">True</span>)[<span class="st">'price'</span>].<span class="fn">sort_values</span>(ascending=<span class="nm">False</span>)</pre>
+                        </div>
+                            
+                        <!-- ── Visualisations ──────────────────────────── -->
+                        <p class="section-label">Visualisations</p>
+    
+                        <div class="viz-grid wide">
+                            <div class="viz-card">
+                                <img src="/eportfolio/images/launch_into_computing_images/avg_price_by_city.png"
+                                    alt="Average Airbnb Price per City (All Days)">
+                                <div class="viz-card-caption">
+                                    <strong>Figure 1 — Average Price per City (All Days)</strong>
+                                    <p>Amsterdam leads by a clear margin at ~€478, with Paris (€360) and London (€315)
+                                    following. Athens is the most affordable at ~€149.</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="viz-grid">
+                            <div class="viz-card">
+                                <img src="/eportfolio/images/launch_into_computing_images/avg_price_city_daytype.png"
+                                    alt="Weekdays vs Weekends by City">
+                                <div class="viz-card-caption">
+                                    <strong>Figure 2 — Weekdays vs Weekends</strong>
+                                    <p>Amsterdam shows the sharpest weekend premium (~€40 uplift). Paris and London
+                                    are notably stable across day types.</p>
+                                </div>
+                            </div>
+                            <div class="viz-card">
+                                <img src="/eportfolio/images/launch_into_computing_images/price_vs_capacity.png"
+                                    alt="Price vs Person Capacity">
+                                <div class="viz-card-caption">
+                                    <strong>Figure 3 — Price vs Person Capacity</strong>
+                                    <p>A positive but modest correlation: larger listings command slightly higher prices,
+                                    with substantial variance at every capacity level.</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- ── Key Findings ───────────────────────────── -->
+                        <p class="section-label">Key Findings</p>
+                        <div class="findings-grid">
+                            <div class="finding-card">
+                                <div class="finding-icon">🏙️</div>
+                                <span class="finding-stat">€478</span>
+                                <h4>Amsterdam — Priciest City</h4>
+                                <p>Highest average across all days; largest gap between weekday and weekend rates of any city.</p>
+                            </div>
+                            <div class="finding-card">
+                                <div class="finding-icon">📅</div>
+                                <span class="finding-stat">+8–10%</span>
+                                <h4>Weekend Premium</h4>
+                                <p>Most cities show a modest weekend uplift; Athens is the exception with near-identical weekday and weekend prices.</p>
+                            </div>
+                            <div class="finding-card">
+                                <div class="finding-icon">👥</div>
+                                <span class="finding-stat">r ≈ +0.2</span>
+                                <h4>Capacity Correlation</h4>
+                                <p>Weak positive correlation between person capacity and price — capacity alone is not a strong price predictor.</p>
+                            </div>
+                        </div>
+    
+                        <hr>
+
+                        <!-- ── Part 2: Storage Reflection ─────────────── -->
+                        <p class="section-label">Part 2 — Storage Model Reflection</p>
+    
+                        <p class="prose">
+                            The reflection below (≈200 words) compares SQL and NoSQL database models in the context of
+                            this dataset's structure and analytical requirements.
+                        </p>
+    
+                        <div class="reflection-block">
+                            <h3>Reflection Report: SQL vs. NoSQL for the Airbnb Dataset</h3>
+                            <p class="prose">
+                                For the analysis of Airbnb listings across major European cities, the dataset was highly
+                                structured, tabular, and contained consistent fields such as <code>price</code>,
+                                <code>room_type</code>, <code>city</code>, <code>person_capacity</code> and various
+                                numerical indicators like <code>cleanliness_rating</code> and <code>metro_dist</code>.
+                                This structured format makes a relational database (SQL) the most appropriate choice for
+                                storing and analysing this data.
+                            </p>
+                            <p class="prose">
+                                Using SQL databases such as PostgreSQL or MySQL would allow for efficient querying,
+                                filtering, grouping and joining operations (Alkin Tezuysal and Ahmed, 2024). For example,
+                                calculating the average price by city or correlating room capacity with price using
+                                SQL operations such as <code>GROUP BY</code> and <code>JOIN</code>. SQL's schema
+                                enforcement also ensures data consistency and integrity, which is crucial when working
+                                with standardised fields like booleans and floats (Alkin Tezuysal and Ahmed, 2024).
+                            </p>
+                            <p class="prose">
+                                Alternatively, NoSQL databases such as MongoDB are better suited to semi-structured or
+                                evolving data formats (Taipalus, 2024) — for instance, user reviews or nested booking
+                                metadata — fields not present in this dataset. While NoSQL offers flexibility, it does
+                                not provide the same level of built-in support for complex analytical queries as SQL,
+                                making it less suitable for this use case.
+                            </p>
+                            <p class="prose">
+                                In conclusion, given the dataset's clean structure and analytical focus, a relational
+                                SQL database would be ideal for both storage and querying in this project.
+                            </p>
+                        </div>
+    
+                        <!-- Storage comparison table -->
+                        <p class="section-label">Storage Model Comparison</p>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Criterion</th>
+                                    <th class="sql-col">SQL (PostgreSQL / MySQL)</th>
+                                    <th class="nosql-col">NoSQL (MongoDB)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Data structure</td>
+                                    <td>Fixed schema — ideal for this tabular dataset</td>
+                                    <td>Flexible schema — suited to nested / evolving data</td>
+                                </tr>
+                                <tr>
+                                    <td>Analytical queries</td>
+                                    <td><span class="badge-yes">✓ Strong</span> — GROUP BY, AVG, JOIN</td>
+                                    <td><span class="badge-no">✗ Limited</span> — aggregation pipelines less expressive</td>
+                                </tr>
+                                <tr>
+                                    <td>Data integrity</td>
+                                    <td><span class="badge-yes">✓ Enforced</span> — types, constraints, ACID</td>
+                                    <td>Relaxed — schema-on-read, no type enforcement</td>
+                                </tr>
+                                <tr>
+                                    <td>Scalability</td>
+                                    <td>Vertical — complex sharding for horizontal scale</td>
+                                    <td><span class="badge-yes">✓ Horizontal</span> — built for distributed workloads</td>
+                                </tr>
+                                <tr>
+                                    <td>Best for this dataset?</td>
+                                    <td><span class="badge-yes">✓ Yes</span> — clean, typed, analytical</td>
+                                    <td><span class="badge-no">✗ No</span> — would suit review / metadata extensions</td>
+                                </tr>
+                                <tr class="verdict-row">
+                                    <td>Verdict</td>
+                                    <td colspan="2">SQL is the recommended storage model for this structured, query-heavy Airbnb dataset.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+    
+                        <div class="references">
+                            <h4>References</h4>
+                            <ul>
+                                <li>Alkin Tezuysal and Ahmed, I. (2024). <em>Database Design and Modeling with PostgreSQL and MySQL</em>. Packt Publishing.</li>
+                                <li>Taipalus, T. (2024). Database management system performance comparisons: A systematic literature review. <em>Journal of Systems and Software</em>, 208(1), p.111872. doi:10.1016/j.jss.2023.111872.</li>
+                            </ul>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Overall Reflection ─────────────────────── -->
+                        <p class="section-label">Overall Reflection</p>
+    
+                        <div class="qa-list">
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn from the data cleaning process?</p>
+                                <p class="qa-a">Cleaning the dataset was more demanding than expected. Handling the city
+                                column — which encoded both city name and day type in a single string — required regex
+                                extraction, an approach I had not previously used in a data pipeline. This reinforced
+                                that real-world datasets require creative parsing, not just null removal.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What did the visualisations reveal?</p>
+                                <p class="qa-a">The city-level bar chart made Amsterdam's premium immediately legible in a
+                                way that descriptive statistics alone could not. The weekday/weekend comparison showed that
+                                pricing strategy varies significantly by city — a pattern invisible in a single average.
+                                Choosing the right chart type was itself an analytical decision, not just a presentational one.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What did the storage reflection add?</p>
+                                <p class="qa-a">Thinking about database storage forced me to articulate <em>why</em> the
+                                dataset's structure matters beyond the analysis itself. The insight that the same data could
+                                justify different storage choices depending on whether future extensions include unstructured
+                                content (reviews, photos) was new and practically valuable.</p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What would I improve in future work?</p>
+                                <p class="qa-a">I would extend the correlation analysis to include additional features —
+                                superhost status, distance to city centre, cleanliness rating — to build a richer
+                                understanding of what drives price. I would also explore cloud-native storage options
+                                such as Google BigQuery, which combines SQL querying with horizontal scalability, as a
+                                more production-ready alternative to local PostgreSQL.</p>
                             </div>
                         </div>
                     </div>

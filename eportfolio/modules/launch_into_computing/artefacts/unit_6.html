@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/eportfolio/assets/css/main.css" />
     <link rel="stylesheet" href="/eportfolio/assets/css/landing.css" />
+        <link rel="stylesheet" href="/eportfolio/assets/css/additional.css" />
     <noscript><link rel="stylesheet" href="/eportfolio/assets/css/noscript.css" /></noscript>
     <link rel="icon" type="image/png" sizes="32x32" href="/eportfolio/images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/eportfolio/images/favicon/favicon-16x16.png">
@@ -49,10 +50,296 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
-                    </div>
+                        <div class="unit-hero">
+                            <div>
+                                <h2>Fake News Detection<br><em>with Logistic Regression</em></h2>
+                                <p class="sub">
+                                    A binary text classifier trained on ~45,000 labelled news articles using
+                                    TF-IDF vectorisation and Logistic Regression, achieving 98.27% accuracy.
+                                </p>
+                            </div>
+                            <span class="unit-badge">ML Assignment</span>
+                        </div>
+    
+                        <!-- ── Overview ──────────────────────────────── -->
+                        <p class="section-label">The Problem</p>
+                        <p class="prose">
+                            Misinformation in the media is a growing challenge with significant societal consequences.
+                            This project applies supervised machine learning to automatically classify news articles
+                            as either <strong>fake (0)</strong> or <strong>real (1)</strong>, using a publicly available
+                            dataset of nearly 45,000 labelled articles. The model is built with Python's Scikit-learn
+                            library, using TF-IDF for text representation and Logistic Regression as the classifier.
+                        </p>
+    
+                        <div class="download-strip">
+                            <a class="download-btn" href="/eportfolio/assets/files/FakeNews_Analysis.ipynb" download>
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V4h3v4H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx=".75"/></svg>
+                                Download Notebook (.ipynb)
+                            </a>
+                            <a class="download-btn" href="/eportfolio/assets/files/FakeNews_Analysis.docx" download>
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V4h3v4H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx=".75"/></svg>
+                                Download Full Report (.docx)
+                            </a>
+                        </div>
 
-             </div>
+                        <hr>
+
+                        <!-- ── Pipeline ───────────────────────────────── -->
+                        <p class="section-label">ML Pipeline</p>
+ 
+                        <div class="pipeline unit-6">
+                            <div class="p-step unit-6">
+                                <div class="p-step-dot unit-6">📥</div>
+                                <div class="p-step-title unit-6">01 — Load</div>
+                                <div class="p-step-desc unit-6">Two CSVs (Fake.csv, True.csv) labelled and concatenated</div>
+                            </div>
+                            <div class="p-step unit-6">
+                                <div class="p-step-dot unit-6">🧹</div>
+                                <div class="p-step-title unit-6">02 — Clean</div>
+                                <div class="p-step-desc unit-6">Drop unused columns, strip whitespace, shuffle rows</div>
+                            </div>
+                            <div class="p-step unit-6">
+                                <div class="p-step-dot unit-6">🔢</div>
+                                <div class="p-step-title unit-6">03 — Vectorise</div>
+                                <div class="p-step-desc unit-6">TF-IDF transforms raw text into weighted numeric features</div>
+                            </div>
+                            <div class="p-step unit-6">
+                                <div class="p-step-dot unit-6">🤖</div>
+                                <div class="p-step-title unit-6">04 — Train</div>
+                                <div class="p-step-desc unit-6">Logistic Regression fitted on 80% of the data</div>
+                            </div>
+                            <div class="p-step unit-6">
+                                <div class="p-step-dot unit-6">📊</div>
+                                <div class="p-step-title unit-6">05 — Evaluate</div>
+                                <div class="p-step-desc unit-6">Accuracy, precision, recall and F1 measured on test set</div>
+                            </div>
+                        </div>
+ 
+                        <!-- ── Key Code ───────────────────────────────── -->
+                        <p class="section-label">Key Code</p>
+                        <div class="code-wrap">
+                            <div class="code-header">
+                                <span class="code-dot r"></span>
+                                <span class="code-dot y"></span>
+                                <span class="code-dot g"></span>
+                                <span class="code-filename">FakeNews_Analysis.ipynb</span>
+                            </div>
+                            <pre><span class="cm"># ── Label & combine datasets ─────────────────────────────</span>
+                            <span class="va">df_fake</span>[<span class="st">"label"</span>] = <span class="nm">0</span>   <span class="cm"># Fake</span>
+                            <span class="va">df_real</span>[<span class="st">"label"</span>] = <span class="nm">1</span>   <span class="cm"># Real</span>
+                            <span class="va">df</span> = <span class="fn">pd.concat</span>([<span class="va">df_fake</span>, <span class="va">df_real</span>]).<span class="fn">sample</span>(frac=<span class="nm">1</span>, random_state=<span class="nm">42</span>)
+                            
+                            <span class="cm"># ── Keep only text and label, strip whitespace ────────────</span>
+                            <span class="va">df</span> = <span class="va">df</span>[[<span class="st">"text"</span>, <span class="st">"label"</span>]]
+                            <span class="va">df</span>[<span class="st">"text"</span>] = <span class="va">df</span>[<span class="st">"text"</span>].<span class="fn">str.strip</span>()
+                            
+                            <span class="cm"># ── TF-IDF vectorisation ─────────────────────────────────</span>
+                            <span class="va">tfidf</span> = <span class="cls">TfidfVectorizer</span>(stop_words=<span class="st">'english'</span>, max_df=<span class="nm">0.7</span>)
+                            <span class="va">X_train_tfidf</span> = <span class="va">tfidf</span>.<span class="fn">fit_transform</span>(<span class="va">X_train</span>)
+                            <span class="va">X_test_tfidf</span>  = <span class="va">tfidf</span>.<span class="fn">transform</span>(<span class="va">X_test</span>)
+                            
+                            <span class="cm"># ── Train Logistic Regression ─────────────────────────────</span>
+                            <span class="va">model</span> = <span class="cls">LogisticRegression</span>(max_iter=<span class="nm">1000</span>)
+                            <span class="va">model</span>.<span class="fn">fit</span>(<span class="va">X_train_tfidf</span>, <span class="va">y_train</span>)
+                            
+                            <span class="cm"># ── Evaluate ──────────────────────────────────────────────</span>
+                            <span class="kw">print</span>(<span class="fn">classification_report</span>(<span class="va">y_test</span>, <span class="va">y_pred</span>,
+                                target_names=[<span class="st">"Fake"</span>, <span class="st">"Real"</span>]))</pre>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Performance ────────────────────────────── -->
+                        <p class="section-label">Model Performance</p>
+                        <p class="prose">
+                            The model was evaluated on the held-out 20% test set. All four metrics indicate strong
+                            classification quality, with a healthy balance between sensitivity and specificity.
+                        </p>
+    
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-name">Accuracy</div>
+                                <div class="metric-val">98<span>.27%</span></div>
+                                <div class="metric-desc">Share of all articles correctly classified</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-name">Precision</div>
+                                <div class="metric-val">97<span>.85%</span></div>
+                                <div class="metric-desc">Of articles predicted real, proportion that are truly real</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-name">Recall</div>
+                                <div class="metric-val">98<span>.52%</span></div>
+                                <div class="metric-desc">Of all real articles, proportion correctly identified</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-name">F1-Score</div>
+                                <div class="metric-val">98<span>.19%</span></div>
+                                <div class="metric-desc">Harmonic mean of precision and recall</div>
+                            </div>
+                        </div>
+ 
+                        <!-- ── Confusion Matrix ───────────────────────── -->
+                        <p class="section-label">Confusion Matrix</p>
+                        <div class="cm-wrap">
+                            <div class="cm-table-wrap">
+                                <table class="cm-table">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th colspan="2">Predicted</th>
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Fake</th>
+                                            <th>Real</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="axis-label" rowspan="2" style="writing-mode:vertical-rl; transform:rotate(180deg); text-align:center; font-size:0.68rem; letter-spacing:0.08em;">ACTUAL</td>
+                                            <td class="axis-label">Fake</td>
+                                            <td class="cm-tn">~4,470<br><small>True Negative</small></td>
+                                            <td class="cm-fp">~70<br><small>False Positive</small></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="axis-label">Real</td>
+                                            <td class="cm-fn">~65<br><small>False Negative</small></td>
+                                            <td class="cm-tp">~4,395<br><small>True Positive</small></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="cm-legend">
+                                <strong>Reading the matrix</strong>
+                                <p><span class="legend-dot good"></span><strong>True Positive / True Negative</strong> — correct predictions. The model correctly identifies the vast majority of both fake and real articles.</p>
+                                <br>
+                                <p><span class="legend-dot bad"></span><strong>False Positive</strong> — real articles mislabelled as fake. The more consequential error: legitimate journalism incorrectly flagged.</p>
+                                <br>
+                                <p><span class="legend-dot bad"></span><strong>False Negative</strong> — fake articles mislabelled as real. Misinformation that slips through undetected.</p>
+                                <br>
+                                <p style="font-size:0.75rem; font-style: italic;">Note: cell values are approximate, derived from the reported metrics. Run the notebook for exact figures.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Ethical Considerations ─────────────────── -->
+                        <p class="section-label">Ethical Considerations</p>
+                        <p class="prose">
+                            High accuracy does not guarantee responsible deployment. Three core ethical concerns apply
+                            to this model and to fake news detection systems more broadly.
+                        </p>
+    
+                        <div class="ethics-grid">
+                            <div class="ethics-card bias">
+                                <div class="e-icon">⚖️</div>
+                                <h4>Dataset Bias</h4>
+                                <p>If certain sources or political perspectives are over-represented in the training data,
+                                the model may incorrectly label genuine content as fake. Balanced, diverse training
+                                corpora are essential to mitigate systematic bias (P, 2020).</p>
+                            </div>
+                            <div class="ethics-card transp">
+                                <div class="e-icon">🔍</div>
+                                <h4>Transparency</h4>
+                                <p>Logistic Regression is interpretable by design — feature weights can be inspected to
+                                understand which words drive predictions. More opaque models (deep neural networks)
+                                would demand additional explainability tooling to meet responsible AI standards.</p>
+                            </div>
+                            <div class="ethics-card oversee">
+                                <div class="e-icon">🧑‍⚖️</div>
+                                <h4>Human Oversight</h4>
+                                <p>Automated classification at scale risks suppressing legitimate dissenting or minority
+                                viewpoints. Human review of flagged content, particularly near the decision boundary,
+                                is essential before any real-world deployment.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Limitations ────────────────────────────── -->
+                        <p class="section-label">Model Limitations</p>
+                        <div class="limit-list">
+                            <div class="limit-item">
+                                <span class="limit-num">01</span>
+                                <p><strong>Static vocabulary</strong>The TF-IDF vocabulary is fixed at training time. New terminology, slang, or evolving misinformation tactics introduced after training will be poorly represented.</p>
+                            </div>
+                            <div class="limit-item">
+                                <span class="limit-num">02</span>
+                                <p><strong>No semantic understanding</strong>TF-IDF captures word frequency, not meaning. Sarcasm, irony, or contextually misleading text with familiar vocabulary may be misclassified.</p>
+                            </div>
+                            <div class="limit-item">
+                                <span class="limit-num">03</span>
+                                <p><strong>Dataset domain</strong>The model was trained on a specific corpus of English-language articles. Performance on other languages, domains, or publication formats is unknown.</p>
+                            </div>
+                            <div class="limit-item">
+                                <span class="limit-num">04</span>
+                                <p><strong>Binary framing</strong>The fake/real label is a simplification. Real-world misinformation exists on a spectrum — satire, misleading framing, and selective omission sit between these two poles.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Reflection ─────────────────────────────── -->
+                        <p class="section-label">Reflection</p>
+    
+                        <div class="qa-list">
+                            <div class="qa-item">
+                                <p class="qa-q">What did I learn from the NLP pipeline?</p>
+                                <p class="qa-a">
+                                    Before this assignment I had only encountered TF-IDF as a formula. Implementing it
+                                    as a <code>TfidfVectorizer</code> step in a pipeline — watching raw text become a
+                                    sparse numeric matrix — made the transformation concrete. The <code>max_df=0.7</code>
+                                    parameter was a practical decision, filtering out words appearing in over 70% of
+                                    documents as they carry little discriminatory signal. Understanding why each
+                                    hyperparameter exists deepened my engagement with the method significantly.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What did the metrics tell me beyond accuracy?</p>
+                                <p class="qa-a">
+                                    Accuracy of 98.27% is impressive, but the precision and recall figures are more
+                                    informative for this task. A false positive — real journalism flagged as fake —
+                                    has different real-world consequences from a false negative — misinformation
+                                    classified as real. The model's near-equal precision and recall suggest it is not
+                                    biased toward one error type, which is a meaningful design quality for a
+                                    content-moderation use case.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">How did this change my view of "high accuracy"?</p>
+                                <p class="qa-a">
+                                    Writing the ethics section was the most challenging part of the assignment and the
+                                    most valuable. A model with 98% accuracy on a benchmark dataset can still be
+                                    systematically unfair if the benchmark itself encodes bias. This gap between
+                                    statistical performance and real-world reliability is something I had previously
+                                    underappreciated, and it has reshaped how I will evaluate AI systems going forward.
+                                </p>
+                            </div>
+                            <div class="qa-item">
+                                <p class="qa-q">What would I extend in future work?</p>
+                                <p class="qa-a">
+                                    I would compare Logistic Regression against a transformer-based model such as
+                                    DistilBERT, which captures semantic relationships that TF-IDF cannot. I would also
+                                    apply LIME or SHAP to explain individual predictions, making the model's reasoning
+                                    auditable — a prerequisite for responsible deployment in any content moderation
+                                    context.
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="references">
+                            <h4>References</h4>
+                            <ul>
+                                <li>P, D. (2020). Ethical Considerations in Data-Driven Fake News Detection.
+                                <em>Data Science for Fake News</em>, pp.205–232.
+                                doi:10.1007/978-3-030-62696-9_10.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
