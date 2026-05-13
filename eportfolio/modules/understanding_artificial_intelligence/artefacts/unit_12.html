@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/eportfolio/assets/css/main.css" />
     <link rel="stylesheet" href="/eportfolio/assets/css/landing.css" />
+    <link rel="stylesheet" href="/eportfolio/assets/css/additional.css" />
     <noscript><link rel="stylesheet" href="/eportfolio/assets/css/noscript.css" /></noscript>
     <link rel="icon" type="image/png" sizes="32x32" href="/eportfolio/images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/eportfolio/images/favicon/favicon-16x16.png">
@@ -49,14 +50,417 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
-                    </div>
+                        <div class="unit-hero">
+                            <div>
+                                <h2>Credit Risk Assessment:<br><em>WEKA to Revolut</em></h2>
+                                <p class="sub">
+                                    A controlled WEKA experiment comparing J48, Logistic Regression, and
+                                    Random Forest on the German Credit Dataset — then bridging prototype findings
+                                    to Revolut's production AI roadmap.
+                                </p>
+                            </div>
+                            <span class="unit-badge">Full Report</span>
+                        </div>
 
-             </div>
+                        <hr>
+
+                        <!-- ── Unit connection ───────────────────────── -->
+                        <p class="section-label">Unit Connection</p>
+                        <div class="m2u10-connection">
+                            <div class="m2u10-conn-card m2u10-next">
+                                <div class="m2u10-conn-label">Unit 10 — This Artefact</div>
+                                <h4>Draft Outline</h4>
+                                <p>Structure, dataset, methodology, and algorithm selection — submitted for tutor feedback</p>
+                            </div>
+                            <div class="m2u10-conn-arrow">→</div>
+                            <div class="m2u10-conn-card m2u10-here">
+                                <div class="m2u10-conn-label">Unit 12 — Marked Submission</div>
+                                <h4>Full WEKA Report</h4>
+                                <p>Executed experiments, results, screenshots, and complete Revolut recommendations</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Quick specs ───────────────────────────── -->
+                        <div class="m2u10-specs grid-5">
+                            <div class="m2u10-spec">
+                                <div class="m2u10-spec-l">Dataset</div>
+                                <div class="m2u10-spec-v">German Credit<br>1,000 instances</div>
+                            </div>
+                            <div class="m2u10-spec">
+                                <div class="m2u10-spec-l">Validation</div>
+                                <div class="m2u10-spec-v">10-fold CV<br>no leakage</div>
+                            </div>
+                            <div class="m2u10-spec">
+                                <div class="m2u10-spec-l">Imbalance fix</div>
+                                <div class="m2u10-spec-v">SMOTE<br>(train only)</div>
+                            </div>
+                            <div class="m2u10-spec">
+                                <div class="m2u10-spec-l">Key metric</div>
+                                <div class="m2u10-spec-v">Recall<br>(minority class)</div>
+                            </div>
+                            <div class="m2u10-spec">
+                                <div class="m2u10-spec-l">Environment</div>
+                                <div class="m2u10-spec-v">WEKA<br>reproducible</div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Three algorithms ──────────────────────── -->
+                        <p class="section-label">Algorithm Results</p>
+                        <div class="m2u10-algos">
+                            <div class="m2u10-algo m2u10-a1">
+                                <div class="m2u10-algo-tag">J48 Decision Tree</div>
+                                <h4>Interpretable Benchmark</h4>
+                                <div class="m2u12-algo-stats">
+                                    <div class="m2u12-algo-stat-item">
+                                        <span class="m2u12-algo-stat-n">71.2%</span>
+                                        <span class="m2u12-algo-stat-l">Accuracy (SMOTE)</span>
+                                    </div>
+                                    <div class="m2u12-algo-stat-item">
+                                        <span class="m2u12-algo-stat-n">0.52</span>
+                                        <span class="m2u12-algo-stat-l">Recall (SMOTE)</span>
+                                    </div>
+                                </div>
+                                <p>SMOTE raised minority recall from 0.39 → 0.52 and Kappa from 0.25 → 0.32, while accuracy stayed stable. Explicit decision paths support regulatory explainability.</p>
+                            </div>
+                            <div class="m2u10-algo m2u10-a2">
+                                <div class="m2u10-algo-tag">Logistic Regression</div>
+                                <h4>Statistical Baseline</h4>
+                                <div class="m2u12-algo-stats">
+                                    <div class="m2u12-algo-stat-item">
+                                        <span class="m2u12-algo-stat-n">75.2%</span>
+                                        <span class="m2u12-algo-stat-l">Accuracy (no SMOTE)</span>
+                                    </div>
+                                    <div class="m2u12-algo-stat-item">
+                                        <span class="m2u12-algo-stat-n">0.60</span>
+                                        <span class="m2u12-algo-stat-l">Recall (SMOTE)</span>
+                                    </div>
+                                </div>
+                                <p>ROC area 0.785 without SMOTE. After SMOTE, accuracy dipped to 72.4% but minority recall improved to 0.60. Transparent coefficients make feature contributions directly readable.</p>
+                            </div>
+                            <div class="m2u10-algo m2u10-a3">
+                                <div class="m2u10-algo-tag">Random Forest</div>
+                                <h4>Best Overall Performance</h4>
+                                <div class="m2u12-algo-stats">
+                                    <div class="m2u12-algo-stat-item">
+                                        <span class="m2u12-algo-stat-n">76.5%</span>
+                                        <span class="m2u12-algo-stat-l">Accuracy (no SMOTE)</span>
+                                    </div>
+                                    <div class="m2u12-algo-stat-item">
+                                        <span class="m2u12-algo-stat-n">0.56</span>
+                                        <span class="m2u12-algo-stat-l">Recall (SMOTE)</span>
+                                    </div>
+                                </div>
+                                <p>Highest accuracy and F-measure (0.746) across all models. SMOTE raised Kappa 0.37 → 0.42. Reduced interpretability requires SHAP integration for regulatory compliance.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Comparative results table ─────────────── -->
+                        <p class="section-label">Comparative Results Table</p>
+
+                        <table class="su-tbl">
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Accuracy</th>
+                                    <th>Recall (bad)</th>
+                                    <th>Precision (bad)</th>
+                                    <th>F1 (bad)</th>
+                                    <th>ROC Area</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>J48</td>
+                                    <td>70.7%</td>
+                                    <td>0.39</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                </tr>
+
+                                <tr>
+                                    <td>J48</td>
+                                    <td>71.2%</td>
+                                    <td><span class="su-pill su-pill-h">0.52</span></td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                    <td>Kappa 0.32</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Logistic Regression</td>
+                                    <td>75.2%</td>
+                                    <td>0.490</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                    <td>0.785</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Logistic Regression</td>
+                                    <td>72.4%</td>
+                                    <td><span class="su-pill su-pill-h">0.600</span></td>
+                                    <td>0.536</td>
+                                    <td>0.566</td>
+                                    <td>0.764</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Random Forest</td>
+                                    <td><span class="su-pill su-pill-m">76.5%</span></td>
+                                    <td>0.417</td>
+                                    <td>—</td>
+                                    <td>0.746 overall</td>
+                                    <td>0.79</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Random Forest</td>
+                                    <td>76.0%</td>
+                                    <td><span class="su-pill su-pill-h">0.563</span></td>
+                                    <td>0.608</td>
+                                    <td>0.585</td>
+                                    <td>Kappa 0.42</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <hr>
+
+                        <p class="section-label">Transferability to Revolut</p>
+
+                        <div class="ta-scenario">
+                            <h3>From WEKA Prototypes to Production AI</h3>
+
+                            <p class="prose">
+                                The WEKA experiments illustrate core principles that directly inform Revolut's production pipeline. SMOTE demonstrated that synthetic oversampling improves minority recall — but in production, Revolut would favour class-weighted loss functions or Focal Loss over SMOTE to avoid distribution distortion at scale.
+                            </p>
+
+                            <p>
+                                Random Forest's superiority confirms that ensemble methods are well-suited to Revolut's heterogeneous financial data. However, their limited interpretability must be addressed with SHAP explainability layers to satisfy regulators (Hjelkrem and Lange, 2023; Hlongwane et al., 2024). The step beyond WEKA involves Graph Neural Networks for modelling borrower relationship networks, transformer embeddings for narrative text fields, and temporal cross-validation to simulate recessionary stress — all discussed in the Unit 9 report.
+                            </p>
+
+                            <p>
+                                Under the EU AI Act, Revolut must maintain human oversight, fairness auditing across 30+ markets, and traceable model documentation. The WEKA experiment provides the methodological foundation; the Unit 9 AI report provides the production blueprint.
+                            </p>
+
+                            <div class="ta-scenario-tags">
+                                <span class="ta-stag ta-stag-p">SMOTE &amp; Recall Optimisation</span>
+                                <span class="ta-stag ta-stag-b">Random Forest Ensembles</span>
+                                <span class="ta-stag ta-stag-g">SHAP Explainability</span>
+                                <span class="ta-stag ta-stag-y">EU AI Act Compliance</span>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Full Report ───────────────────────────── -->
+                        <p class="section-label">Full Report</p>
+
+                        <div class="su-report">
+                            <h3>1. Introduction and Business Context</h3>
+                            <p>The financial technology sector is entering a new stage where artificial intelligence is no longer an optional add-on but a central capability for competitiveness (Chang et al., 2024; Pasupuleti, 2024). Revolut already applies AI in fraud prevention and customer verification (Revolut, 2023). Ensemble methods such as gradient-boosted trees form part of the credit scoring pipeline, while supervised classifiers power fraud detection models (Zhou, Shen and Ballester, 2023; Valdrighi et al., 2024). This report investigates the feasibility of deploying AI for credit risk assessment using a controlled WEKA experiment, demonstrating how methodological choices affect business outcomes, and bridging from these prototypes toward advanced hybrid and graph-based approaches.</p>
+
+                            <h3>2. Dataset Selection</h3>
+                            <p>The German Credit Dataset from the UCI Machine Learning Repository (Hofmann, 1994) contains 1,000 loan applicants described by 20 attributes — credit history, savings, employment status, and personal characteristics — with a binary label indicating good or bad credit risk. It mirrors the structured tabular data Revolut would analyse for loan applications. The dataset's ~70/30 class imbalance (good/bad credit) reflects the real-world challenge that defaults are rarer but far more consequential. Its moderate size and well-documented nature make it ideal for methodological experimentation in WEKA, though it remains a simplified proxy for Revolut's richer behavioural and transactional features.</p>
+
+                            <h3>3. Approach</h3>
+                            <p>Following import and preprocessing (converting categorical attributes to nominal variables), model evaluation was performed using 10-fold cross-validation — training on nine folds and testing on one in rotation. This provides a robust generalisation estimate particularly valuable for a 1,000-record dataset (Teodorescu and Brașoveanu, 2025). SMOTE was applied within training folds only to generate synthetic minority examples, preserving evaluation integrity. Three classifiers — J48, Logistic Regression, and Random Forest — were evaluated with and without SMOTE, with emphasis on recall for the minority "bad credit" class.</p>
+
+                            <h3>4. Algorithm Selection</h3>
+                            <p>J48 provides interpretable decision paths for regulatory accountability. Logistic Regression offers the historical baseline of the financial industry, with coefficients directly describing feature importance (Chen and Ye, 2022; Shi et al., 2022). Random Forest, as the ensemble method, introduces greater predictive robustness at the cost of reduced interpretability — an issue addressed in production via SHAP (Hjelkrem and Lange, 2023; Hlongwane, Ramabao and Mongwe, 2024). Together, the three algorithms create a structured progression from transparent to powerful.</p>
+
+                            <h3>5. Results</h3>
+
+                            <h4>5.1 J48 Decision Tree</h4>
+                            <p>Without SMOTE: 70.7% accuracy, Recall (bad) = 0.39, Kappa = 0.25. With SMOTE: accuracy stable at 71.2%, Recall (bad) improved to 0.52, Kappa to 0.32. SMOTE effectively balanced the learning process, improving coverage of risky profiles with minor precision loss.</p>
+
+                            <h4>5.2 Logistic Regression</h4>
+                            <p>Without SMOTE: 75.2% accuracy, Kappa 0.375, ROC area 0.785, Recall (bad) 0.490. With SMOTE: accuracy 72.4%, Recall (bad) 0.600, Precision 0.536, F-Measure 0.566. The model benefited from rebalancing despite reduced overall accuracy — confirming the importance of class distribution correction.</p>
+
+                            <h4>5.3 Random Forest</h4>
+                            <p>Without SMOTE: 76.5% accuracy, Kappa 0.37, ROC area 0.79, Recall (bad) 0.417. With SMOTE: accuracy 76.0%, Recall (bad) 0.563, Kappa 0.42, Precision 0.608, F-Measure 0.585. Random Forest retained predictive power under resampling and offered superior generalisation across all comparisons.</p>
+
+                            <h4>5.4 Comparative Analysis</h4>
+                            <p>Random Forest achieved the highest overall accuracy (76.5%) and F-measure (0.746) without SMOTE. Logistic Regression offered strong interpretability and stable accuracy (75.2%). SMOTE marginally improved minority recall for all models but slightly reduced overall accuracy. Random Forest maintained the best precision-recall balance; Logistic Regression offers practical interpretability for compliance contexts. J48, while easiest to explain, produced the lowest predictive power.</p>
+
+                            <h3>6. Transferability to Revolut</h3>
+                            <p>The WEKA experiments provide actionable insights for Revolut's credit risk pipeline. SMOTE illustrated how oversampling mitigates class imbalance, though in production Revolut would favour algorithmic approaches such as class-weighted or focal loss optimisation (Batista, Prati and Monard, 2004). Random Forest's superiority confirms ensemble methods suit Revolut's heterogeneous data, but explainability via SHAP remains essential for regulatory compliance (Hjelkrem and Lange, 2023). Under the EU AI Act, human oversight, fairness auditing, and traceable model documentation are mandatory (Veale and Zuiderveen Borgesius, 2021; European Commission, 2024).</p>
+
+                            <h3>7. Conclusion</h3>
+                            <p>This experiment demonstrated how machine learning can enhance Revolut's credit risk assessment by balancing predictive accuracy with regulatory transparency. Through comparative evaluation and SMOTE-based adjustment, the study highlighted the trade-offs between interpretability and performance, offering a foundation for developing scalable, compliant, and explainable credit decisioning models.</p>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Reflection ────────────────────────────── -->
+                        <p class="section-label">Reflection</p>
+
+                        <div class="su-qa">
+                            <div class="su-qi">
+                                <p class="su-qq">How did the Unit 10 outline help?</p>
+                                <p class="su-qa-a">The outline forced algorithm selection and metric prioritisation decisions before running a single experiment. Deciding in advance to emphasise recall over accuracy — and to justify that choice in writing — meant the analysis had a clear business interpretation from the start. Without the outline, there is a risk of selecting metrics post-hoc to make results look favourable. Pre-registering recall as the primary metric made the SMOTE improvements meaningful rather than cherry-picked.</p>
+                            </div>
+
+                            <div class="su-qi">
+                                <p class="su-qq">What did the results confirm and what surprised me?</p>
+                                <p class="su-qa-a">Random Forest's superiority was expected. What was more interesting was Logistic Regression's recall of 0.60 after SMOTE — the highest of any model — despite being the simplest. This is counterintuitive: the most interpretable model achieved the best minority recall after resampling. The explanation lies in the decision boundary: Logistic Regression's linear boundary shifts more dramatically in response to the rebalanced training distribution than the non-parametric Random Forest, which partially buffers the effect through ensemble averaging.</p>
+                            </div>
+
+                            <div class="su-qi">
+                                <p class="su-qq">How does this connect to the Unit 9 report?</p>
+                                <p class="su-qa-a">The Unit 9 report proposed GNNs, transformer embeddings, Focal Loss, and federated learning for Revolut — all sophisticated production techniques. This WEKA experiment shows why those techniques are needed: even the best WEKA model (Random Forest + SMOTE) achieves only 0.563 recall on a clean, simplified dataset. On Revolut's actual data — with millions of records, hundreds of features, cross-border complexity, and adversarial fraud — the gap between WEKA baselines and production requirements becomes the entire engineering and research agenda.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="su-ref">
+                            <h4>References</h4>
+                            <ul>
+                                <li>Batista, G.E.A.P.A., Prati, R.C. and Monard, M.C. (2004). A study of the behavior of several methods for balancing machine learning training data. <em>ACM SIGKDD Explorations Newsletter</em>, 6(1), pp.20–29. doi:10.1145/1007730.1007735.</li>
+
+                                <li>Bone-Winkel, G.F. and Reichenbach, F. (2024). Improving credit risk assessment in P2P lending with explainable machine learning survival analysis. <em>Digital Finance</em>, 6(3), pp.501–542. doi:10.1007/s42521-024-00114-3.</li>
+
+                                <li>Chang, V. et al. (2024). Credit Risk Prediction Using Machine Learning and Deep Learning. <em>Risks</em>, 12(11), p.174. doi:10.3390/risks12110174.</li>
+
+                                <li>Chen, D. and Ye, W. (2022). Monotonic Neural Additive Models: Pursuing Regulated Machine Learning Models for Credit Scoring. arXiv:2209.10070.</li>
+
+                                <li>European Commission (2024). AI Act enters into force. European Commission press release, August 2024.</li>
+
+                                <li>FinRegLab (2023). Explainability &amp; Fairness in Machine Learning for Credit Underwriting. FinRegLab Research Report.</li>
+
+                                <li>Gafsi, N. (2025). Machine Learning Approaches to Credit Risk. <em>Journal of Risk and Financial Management</em>, 18(7), p.345. doi:10.3390/jrfm18070345.</li>
+
+                                <li>Hjelkrem, L.O. and Lange, P.E. de (2023). Explaining Deep Learning Models for Credit Scoring with SHAP. <em>Journal of Risk and Financial Management</em>, 16(4), p.221. doi:10.3390/jrfm16040221.</li>
+
+                                <li>Hlongwane, R., Ramabao, K. and Mongwe, W. (2024). A novel framework for enhancing transparency in credit scoring via Shapley values. <em>PLoS ONE</em>, 19(8), e0308718. doi:10.1371/journal.pone.0308718.</li>
+
+                                <li>Hofmann, H. (1994). Statlog (German Credit Data). <em>UCI Machine Learning Repository</em>. doi:10.24432/C5NC77.</li>
+
+                                <li>Pasupuleti, M.K. (2024). AI-Driven FinTech: Revolutionizing Fraud Detection and Risk Management. ResearchGate. doi:10.62311/nesx/46656.</li>
+
+                                <li>Revolut (2023). <em>Financial Crime and Consumer Security Report 2023</em>. Revolut Ltd.</li>
+
+                                <li>Sabbani, G. (2022). Machine Learning for Credit Risk Assessment in Banking. <em>Journal of Artificial Intelligence &amp; Cloud Computing</em>, 1(3). doi:10.47363/jaicc/2022(1)e102.</li>
+
+                                <li>Shi, S. et al. (2022). Machine learning-driven credit risk: a systemic review. <em>Neural Computing and Applications</em>, 34(17), pp.14327–14339. doi:10.1007/s00521-022-07472-2.</li>
+
+                                <li>Teodorescu, V. and Brașoveanu, L.O. (2025). Assessing the Validity of k-Fold Cross-Validation for Model Selection. <em>Computation</em>, 13(5), pp.127–127. doi:10.3390/computation13050127.</li>
+
+                                <li>Valdrighi, G. et al. (2024). Best Practices for Responsible Machine Learning in Credit Scoring. arXiv:2409.20536.</li>
+
+                                <li>Veale, M. and Zuiderveen Borgesius, F. (2021). Demystifying the Draft EU Artificial Intelligence Act. <em>Computer Law Review International</em>, 22(4), pp.97–112. doi:10.9785/cri-2021-220402.</li>
+
+                                <li>Zhang, W. et al. (2021). A novel multi-stage ensemble model with enhanced outlier adaptation for credit scoring. <em>Expert Systems with Applications</em>, 165, p.113872. doi:10.1016/j.eswa.2020.113872.</li>
+
+                                <li>Zhou, Y., Shen, L. and Ballester, L. (2023). A two-stage credit scoring model based on random forest. <em>International Review of Financial Analysis</em>, 89, p.102755. doi:10.1016/j.irfa.2023.102755.</li>
+                            </ul>
+                        </div>
+                        
+                        <hr>
+
+                        <!-- ── WEKA Screenshots ──────────────────────── -->
+                        <p class="section-label">Appendix A — WEKA Output Screenshots</p>
+    
+                        <div class="m2u12-screenshots">
+                            <div class="m2u12-screenshot-card">
+                                <img src="/eportfolio/images/understanding_artificial_intelligence_images/weka_j48.png"
+                                    alt="J48 Decision Tree without SMOTE — WEKA output"
+                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="m2u12-screenshot-placeholder" style="display:none;">
+                                    <div class="m2u12-ph-ico">🖥️</div>
+                                    <div class="m2u12-ph-txt">weka_j48.png</div>
+                                </div>
+                                <div class="m2u12-screenshot-caption">
+                                    <strong>Figure A1 — J48 without SMOTE</strong>
+                                    <p>Accuracy 70.7%, Recall (bad) 0.39, Kappa 0.25</p>
+                                </div>
+                            </div>
+    
+                            <div class="m2u12-screenshot-card">
+                                <img src="/eportfolio/images/understanding_artificial_intelligence_images/weka_j48_w_smote.png"
+                                    alt="J48 Decision Tree with SMOTE — WEKA output"
+                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="m2u12-screenshot-placeholder" style="display:none;">
+                                    <div class="m2u12-ph-ico">🖥️</div>
+                                    <div class="m2u12-ph-txt">weka_j48_smote.png</div>
+                                </div>
+                                <div class="m2u12-screenshot-caption">
+                                    <strong>Figure A2 — J48 with SMOTE</strong>
+                                    <p>Accuracy 71.2%, Recall (bad) 0.52, Kappa 0.32 — minority recall +33%</p>
+                                </div>
+                            </div>
+    
+                            <div class="m2u12-screenshot-card">
+                                <img src="/eportfolio/images/understanding_artificial_intelligence_images/weka_logistic.png"
+                                    alt="Logistic Regression without SMOTE — WEKA output"
+                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="m2u12-screenshot-placeholder" style="display:none;">
+                                    <div class="m2u12-ph-ico">🖥️</div>
+                                    <div class="m2u12-ph-txt">weka_lr.png</div>
+                                </div>
+                                <div class="m2u12-screenshot-caption">
+                                    <strong>Figure A3 — Logistic Regression without SMOTE</strong>
+                                    <p>Accuracy 75.2%, ROC area 0.785, Recall (bad) 0.490</p>
+                                </div>
+                            </div>
+    
+                            <div class="m2u12-screenshot-card">
+                                <img src="/eportfolio/images/understanding_artificial_intelligence_images/weka_logistic_w_smote.png"
+                                    alt="Logistic Regression with SMOTE — WEKA output"
+                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="m2u12-screenshot-placeholder" style="display:none;">
+                                    <div class="m2u12-ph-ico">🖥️</div>
+                                    <div class="m2u12-ph-txt">weka_lr_smote.png</div>
+                                </div>
+                                <div class="m2u12-screenshot-caption">
+                                    <strong>Figure A4 — Logistic Regression with SMOTE</strong>
+                                    <p>Accuracy 72.4%, Recall (bad) 0.600, F1 0.566</p>
+                                </div>
+                            </div>
+    
+                            <div class="m2u12-screenshot-card">
+                                <img src="/eportfolio/images/understanding_artificial_intelligence_images/weka_random_forest.png"
+                                    alt="Random Forest without SMOTE — WEKA output"
+                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="m2u12-screenshot-placeholder" style="display:none;">
+                                    <div class="m2u12-ph-ico">🖥️</div>
+                                    <div class="m2u12-ph-txt">weka_rf.png</div>
+                                </div>
+                                <div class="m2u12-screenshot-caption">
+                                    <strong>Figure A5 — Random Forest without SMOTE</strong>
+                                    <p>Accuracy 76.5%, ROC area 0.79, overall F-measure 0.746 — best without SMOTE</p>
+                                </div>
+                            </div>
+    
+                            <div class="m2u12-screenshot-card">
+                                <img src="/eportfolio/images/understanding_artificial_intelligence_images/weka_random_forest_w_smote.png"
+                                    alt="Random Forest with SMOTE — WEKA output"
+                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="m2u12-screenshot-placeholder" style="display:none;">
+                                    <div class="m2u12-ph-ico">🖥️</div>
+                                    <div class="m2u12-ph-txt">weka_rf_smote.png</div>
+                                </div>
+                                <div class="m2u12-screenshot-caption">
+                                    <strong>Figure A6 — Random Forest with SMOTE</strong>
+                                    <p>Accuracy 76.0%, Recall (bad) 0.563, Kappa 0.42 — best overall SMOTE result</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-                <!-- Footer -->
+        <!-- Footer -->
         <footer id="footer" class="wrapper style1-alt">
             <div class="inner">
                 <ul class="menu">

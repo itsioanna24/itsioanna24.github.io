@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/eportfolio/assets/css/main.css" />
     <link rel="stylesheet" href="/eportfolio/assets/css/landing.css" />
+    <link rel="stylesheet" href="/eportfolio/assets/css/additional.css" />
     <noscript><link rel="stylesheet" href="/eportfolio/assets/css/noscript.css" /></noscript>
     <link rel="icon" type="image/png" sizes="32x32" href="/eportfolio/images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/eportfolio/images/favicon/favicon-16x16.png">
@@ -49,14 +50,210 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
-                    </div>
+                        <div class="unit-hero">
+                            <div>
+                                <h2>WEKA Experiment Outline:<br><em>Credit Risk at Revolut</em></h2>
+                                <p class="sub">
+                                     A draft outline for the Unit 12 marked assignment — comparing Decision Tree,
+                                    Logistic Regression, and Random Forest classifiers on the German Credit Dataset,
+                                    then translating findings into strategic recommendations for Revolut.
+                                </p>
+                            </div>
+                            <span class="unit-badge">Assignment Outline</span>
+                        </div>
 
-             </div>
+                        <hr>
+
+                        <!-- ── Unit connection ───────────────────────── -->
+                        <p class="section-label">Unit Connection</p>
+                        <div class="m2u10-connection">
+                            <div class="m2u10-conn-card m2u10-here">
+                                <div class="m2u10-conn-label">Unit 10 — This Artefact</div>
+                                <h4>Draft Outline</h4>
+                                <p>Structure, dataset, methodology, and algorithm selection — submitted for tutor feedback</p>
+                            </div>
+                            <div class="m2u10-conn-arrow">→</div>
+                            <div class="m2u10-conn-card m2u10-next">
+                                <div class="m2u10-conn-label">Unit 12 — Marked Submission</div>
+                                <h4>Full WEKA Report</h4>
+                                <p>Executed experiments, results, screenshots, and complete Revolut recommendations</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Quick specs ───────────────────────────── -->
+                        <p class="section-label">At a Glance</p>
+                        <div class="m2u10-specs">
+                            <div class="m2u10-spec">
+                                <div class="m2u10-spec-l">Dataset</div>
+                                <div class="m2u10-spec-v">German Credit<br>(UCI Repository)</div>
+                            </div>
+                            <div class="m2u10-spec">
+                                <div class="m2u10-spec-l">Split</div>
+                                <div class="m2u10-spec-v">70:30 train/test<br>+ 10-fold CV</div>
+                            </div>
+                            <div class="m2u10-spec">
+                                <div class="m2u10-spec-l">Key Metric</div>
+                                <div class="m2u10-spec-v">Recall (AUC,<br>F1, Precision)</div>
+                            </div>
+                            <div class="m2u10-spec">
+                                <div class="m2u10-spec-l">Environment</div>
+                                <div class="m2u10-spec-v">WEKA<br>+ SMOTE</div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Three algorithms ──────────────────────── -->
+                        <p class="section-label">Algorithms Chosen</p>
+                        <div class="m2u10-algos">
+                            <div class="m2u10-algo m2u10-a1">
+                                <div class="m2u10-algo-tag">Interpretable benchmark</div>
+                                <h4>Decision Tree (J48)</h4>
+                                <p>Transparent model producing human-readable rules — essential for demonstrating explainability to regulators in credit decisions.</p>
+                            </div>
+                            <div class="m2u10-algo m2u10-a2">
+                                <div class="m2u10-algo-tag">Statistical baseline</div>
+                                <h4>Logistic Regression</h4>
+                                <p>Well-understood probabilistic classifier providing a clean baseline for comparison. Naturally outputs calibrated probabilities for AUC evaluation.</p>
+                            </div>
+                            <div class="m2u10-algo m2u10-a3">
+                                <div class="m2u10-algo-tag">Ensemble method</div>
+                                <h4>Random Forest</h4>
+                                <p>Stronger predictive performance through bagging — expected to outperform on recall, at the cost of reduced interpretability.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ── Full outline ──────────────────────────── -->
+                        <p class="section-label">Full Outline</p>
+    
+                        <div class="m2u10-outline">
+                            <div class="m2u10-section">
+                                <div class="m2u10-sec-num">1</div>
+                                <div class="m2u10-sec-body">
+                                    <h4>Introduction and Business Context</h4>
+                                    <ul>
+                                        <li>Brief overview of Revolut as a fintech platform</li>
+                                        <li>Objective: comparative assessment of AI-based credit risk models using WEKA, translating insights into strategic recommendations for Revolut</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="m2u10-section">
+                                <div class="m2u10-sec-num">2</div>
+                                <div class="m2u10-sec-body">
+                                    <h4>Dataset Selection</h4>
+                                    <ul>
+                                        <li>Dataset: German Credit Dataset (UCI Repository)</li>
+                                        <li>Justification:
+                                            <ul>
+                                                <li>Structured financial/demographic data relevant to credit scoring</li>
+                                                <li>Imbalanced classes reflecting real-world credit defaults</li>
+                                                <li>Widely used in academic benchmarking</li>
+                                            </ul>
+                                        </li>
+                                        <li>Limitations: small size, simplified features vs. Revolut's internal data</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="m2u10-section">
+                                <div class="m2u10-sec-num">3</div>
+                                <div class="m2u10-sec-body">
+                                    <h4>Methodology / Approach</h4>
+                                    <ul>
+                                        <li>Preprocessing: convert categorical variables, handle imbalance with SMOTE</li>
+                                        <li>Training/testing split (70:30) + 10-fold cross-validation</li>
+                                        <li>Evaluation metrics: Precision, Recall, F1, AUC — emphasis on Recall</li>
+                                        <li>WEKA environment for reproducibility and transparency</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="m2u10-section">
+                                <div class="m2u10-sec-num">4</div>
+                                <div class="m2u10-sec-body">
+                                    <h4>Algorithms Chosen</h4>
+                                    <ul>
+                                        <li>Decision Tree (J48) — interpretable benchmark</li>
+                                        <li>Logistic Regression — statistical baseline</li>
+                                        <li>Random Forest — stronger ensemble method</li>
+                                        <li>Selection criterion: compare interpretability vs. predictive performance</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="m2u10-section">
+                                <div class="m2u10-sec-num">5</div>
+                                <div class="m2u10-sec-body">
+                                    <h4>Results &amp; Analysis <span style="font-size:0.75rem; font-family: 'DM Mono', monospace; color: var(--m2u10-muted); font-weight: normal;">(Unit 12)</span></h4>
+                                    <ul>
+                                        <li>Confusion matrices, ROC curves, and key metrics with screenshots</li>
+                                        <li>Comparative analysis of strengths and weaknesses per algorithm</li>
+                                        <li>Business interpretation of results</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="m2u10-section">
+                                <div class="m2u10-sec-num">6</div>
+                                <div class="m2u10-sec-body">
+                                    <h4>Transferability to Revolut</h4>
+                                    <ul>
+                                        <li>How WEKA findings scale to Revolut's GCP microservices environment</li>
+                                        <li>Need for advanced methods: GNNs, transformers, fairness auditing</li>
+                                        <li>Trade-off between explainability and accuracy in regulated fintech</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="m2u10-section">
+                                <div class="m2u10-sec-num">7</div>
+                                <div class="m2u10-sec-body">
+                                    <h4>Conclusion</h4>
+                                    <ul>
+                                        <li>Summary of insights from WEKA experiments</li>
+                                        <li>Practical implications for Revolut's AI credit risk roadmap</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="m2u10-section">
+                                <div class="m2u10-sec-num">8</div>
+                                <div class="m2u10-sec-body">
+                                    <h4>References</h4>
+                                    <ul>
+                                        <li>Academic sources on WEKA algorithms and credit risk</li>
+                                        <li>Dataset source: UCI Machine Learning Repository</li>
+                                        <li>Industry sources: Revolut Annual Report, Financial Times</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+ 
+                        <hr>
+
+                        <!-- ── Reflection ────────────────────────────── -->
+                        <p class="section-label">Reflection on this Artefact</p>
+
+                        <div class="su-qa">
+                            <div class="su-qi">
+                                <p class="su-qq">Why WEKA for a Revolut analysis?</p>
+                                <p class="su-qa-a">WEKA's value here is not that Revolut would use it — they wouldn't. It's a controlled environment for understanding model behaviour before the complexity of production systems obscures the fundamentals. Running three algorithms on the same dataset in WEKA makes it possible to isolate the effect of algorithm choice on recall and AUC, without confounding variables from data pipelines, feature engineering, or infrastructure. The Unit 12 report will then use these controlled results as a foundation for arguing what Revolut would need to do differently at scale.</p>
+                            </div>
+
+                            <div class="su-qi">
+                                <p class="su-qq">Why emphasise recall over accuracy?</p>
+                                <p class="su-qa-a">In credit risk, a false negative — approving a loan that defaults — carries far greater financial cost than a false positive — rejecting a creditworthy applicant. Accuracy is misleading on imbalanced datasets: a model that predicts "good credit" for everyone scores ~70% accuracy on the German Credit Dataset but catches zero defaults. Recall on the minority class (defaults) is the metric that reflects the real cost structure. This is also why SMOTE is included in the preprocessing — to give the model a fair chance of learning the minority class pattern before we evaluate it.</p>
+                            </div>
+
+                            <div class="su-qi">
+                                <p class="su-qq">What do I expect the Unit 12 findings to show?</p>
+                                <p class="su-qa-a">Based on the literature, Random Forest is likely to outperform on AUC and recall, while Decision Tree (J48) will produce the most interpretable rules — potentially showing which features (duration, credit amount, employment status) are most predictive. Logistic Regression should perform reasonably as a baseline. The more interesting part will be Section 6: translating a WEKA result on 1,000 rows of German 1990s data into a recommendation for a platform processing millions of transactions in 30+ markets using GNNs and transformers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-                <!-- Footer -->
+        <!-- Footer -->
         <footer id="footer" class="wrapper style1-alt">
             <div class="inner">
                 <ul class="menu">

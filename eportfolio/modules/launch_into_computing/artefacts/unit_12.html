@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/eportfolio/assets/css/main.css" />
     <link rel="stylesheet" href="/eportfolio/assets/css/landing.css" />
+    <link rel="stylesheet" href="/eportfolio/assets/css/additional.css" />
     <noscript><link rel="stylesheet" href="/eportfolio/assets/css/noscript.css" /></noscript>
     <link rel="icon" type="image/png" sizes="32x32" href="/eportfolio/images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/eportfolio/images/favicon/favicon-16x16.png">
@@ -49,14 +50,371 @@
                     </div>
 
                     <div class="artefact">
-                        <p>There is no available content for this unit.</p>
+                        <!-- ── Part overview cards ────────────────────── -->
+                        <div class="u12-parts">
+                            <div class="u12-part-tab u12-active-a">
+                                <div class="u12-part-letter">A</div>
+                                <div class="u12-part-title">Individual Programming Exercise</div>
+                                <h3>Python vs Java — AI Chatbot</h3>
+                                <p>A comparative study of two functionally equivalent customer service chatbot
+                                implementations, analysing development models, syntax, performance, scalability,
+                                and security across FastAPI and Spring Boot.</p>
+                            </div>
+                            <div class="u12-part-tab u12-active-b">
+                                <div class="u12-part-letter">B</div>
+                                <div class="u12-part-title">Individual Reflection Presentation</div>
+                                <h3>Building Responsible AI</h3>
+                                <p>A 10-slide, 20-minute evidence-based presentation critically evaluating AI's
+                                technical potential, ethical challenges, security risks, and regulatory responses
+                                — supported by 10+ academic references.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- ════════════════════════════════════════════
+                         PART A
+                        ════════════════════════════════════════════ -->
+                        <div class="part-a">
+                            <div class="u12-part-heading">
+                                <span class="u12-part-pill u12-pill-a">Part A</span>
+                                <h2>Comparative Analysis: <em>Python vs Java</em><br>for AI Chatbot Development</h2>
+                            </div>
+ 
+                            <!-- GitHub repo -->
+                            <p class="section-label">Source Code</p>
+                            <a class="u12-repo" href="https://github.com/itsioanna24" target="_blank" rel="noopener">
+                                <div class="u12-repo-ico">🐙</div>
+                                <div>
+                                    <div class="u12-repo-label">GitHub Repository</div>
+                                    <h4>github.com/itsioanna24</h4>
+                                    <p>Python (FastAPI) and Java (Spring Boot) chatbot implementations — full source, inline comments, and test cases</p>
+                                </div>
+                                <div class="u12-repo-arrow">→</div>
+                            </a>
+
+                            <hr>
+
+                            <!-- UML Diagrams -->
+                            <p class="section-label">UML Diagrams</p>
+                            <p class="prose">Four UML diagrams document the chatbot architecture — class structure,
+                            deployment topology, full conversation flow, and a worked sequence trace.</p>
+        
+                            <div class="u12-diagrams">
+                                <div class="u12-diagram-card">
+                                    <img src="/eportfolio/images/launch_into_computing_images/class_diagram_chatbot.png"
+                                        alt="Class diagram — ChatBot, CatalogEntry, Order, Rule">
+                                    <div class="u12-diagram-caption">
+                                        <strong>Class Diagram</strong>
+                                        <p>ChatBot holds a registry of Rules and reads CatalogEntry and Order objects. The <code>get_reply()</code> method delegates to matched intent handlers.</p>
+                                    </div>
+                                </div>
+                                <div class="u12-diagram-card">
+                                    <img src="/eportfolio/images/launch_into_computing_images/component_deployment_diagram_chatbot.png"
+                                        alt="Component deployment — Browser → FastAPI → catalog.json / orders.json">
+                                    <div class="u12-diagram-caption">
+                                        <strong>Component &amp; Deployment Diagram</strong>
+                                        <p>Browser (HTML + JS) communicates via HTTP GET /init and POST /chat to Uvicorn/FastAPI, which reads catalog.json and orders.json in read-only mode.</p>
+                                    </div>
+                                </div>
+                                <div class="u12-diagram-card">
+                                    <img src="/eportfolio/images/launch_into_computing_images/sequence_diagram_chatbot.png"
+                                        alt="Sequence diagram — Shopper → Browser → FastAPI → ChatBot → orders.json">
+                                    <div class="u12-diagram-caption">
+                                        <strong>Sequence Diagram</strong>
+                                        <p>A "track order 1002" interaction traced end-to-end: POST /chat → get_reply() → read orders.json → reply JSON → frontend waits ~1s → shows reply bubble.</p>
+                                    </div>
+                                </div>
+                                <div class="u12-diagram-card u12-wide">
+                                    <img src="/eportfolio/images/launch_into_computing_images/uml_diagram.png"
+                                        alt="Full UML activity / flow diagram">
+                                    <div class="u12-diagram-caption">
+                                        <strong>Full Conversation Flow Diagram</strong>
+                                        <p>Complete intent-matching logic: from message receipt and normalisation through all intent branches (greeting, shipping, category search, order tracking, stock check, cancellation, return reason, follow-up) to final response selection.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <!-- Language comparison -->
+                            <p class="section-label">Language Comparison</p>
+        
+                            <div class="u12-lang-split">
+                                <div class="u12-lang">
+                                    <div class="u12-lang-head u12-py">
+                                        <span class="u12-lang-name">🐍 Python</span>
+                                        <span class="u12-lang-fw">FastAPI + Uvicorn</span>
+                                    </div>
+                                    <ul class="u12-lang-body">
+                                        <li>Functional / procedural with decorator-based intent registration — concise and expressive</li>
+                                        <li>900 lines of code — dynamic typing enables rapid development cycles</li>
+                                        <li>Response time: 0.002s — near-instantaneous startup, minimal configuration overhead</li>
+                                        <li>Async/await architecture for superior I/O-bound concurrent request handling</li>
+                                        <li>Pydantic auto-validation integrates security at the framework level</li>
+                                        <li>6 explicit dependencies in requirements.txt — rapid environment reproduction</li>
+                                    </ul>
+                                </div>
+                                <div class="u12-lang">
+                                    <div class="u12-lang-head u12-java">
+                                        <span class="u12-lang-name">☕ Java</span>
+                                        <span class="u12-lang-fw">Spring Boot + Maven</span>
+                                    </div>
+                                    <ul class="u12-lang-body">
+                                        <li>Object-oriented via Chain of Responsibility pattern — enforces explicit class hierarchy</li>
+                                        <li>1,948 lines of code (2.16× more verbose) — static typing requires explicit declarations</li>
+                                        <li>Response time: 0.001s — 0.479s startup overhead from framework initialisation</li>
+                                        <li>Threading model with connection pooling — effective in CPU-bound scenarios</li>
+                                        <li>Spring Security, CSRF protection and role-based access for enterprise-grade security</li>
+                                        <li>Maven pom.xml with transitive dependency resolution and automated security scanning</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <!-- Metrics table -->
+                            <p class="section-label">Empirical Results</p>
+
+                            <table class="su-tbl">
+                                <thead>
+                                    <tr>
+                                        <th>Criterion</th>
+                                        <th>Python (FastAPI)</th>
+                                        <th>Java (Spring Boot)</th>
+                                        <th>Winner</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lines of code</td>
+                                        <td>900</td>
+                                        <td>1,948</td>
+                                        <td><span class="su-pill su-pill-h">Python</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Response time</td>
+                                        <td>0.002s</td>
+                                        <td>0.001s</td>
+                                        <td><span class="su-pill su-pill-m">Java</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Startup time</td>
+                                        <td>~instant</td>
+                                        <td>0.479s</td>
+                                        <td><span class="su-pill su-pill-h">Python</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Development model</td>
+                                        <td>Functional / procedural</td>
+                                        <td>Object-oriented</td>
+                                        <td><span class="su-pill su-pill-l">Context-dependent</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type safety</td>
+                                        <td>Dynamic (runtime errors)</td>
+                                        <td>Static (compile-time)</td>
+                                        <td><span class="su-pill su-pill-m">Java</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Security framework</td>
+                                        <td>Pydantic + OAuth2</td>
+                                        <td>Spring Security + RBAC</td>
+                                        <td><span class="su-pill su-pill-m">Java</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ease of development</td>
+                                        <td>High — minimal boilerplate</td>
+                                        <td>Medium — enterprise overhead</td>
+                                        <td><span class="su-pill su-pill-h">Python</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enterprise scalability</td>
+                                        <td>Good for I/O-bound tasks</td>
+                                        <td>Superior for CPU-bound systems</td>
+                                        <td><span class="su-pill su-pill-m">Java</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <hr>
+
+                            <!-- ── References ─────────────────────────────── -->
+                            <div class="su-ref">
+                                <h4>Part A — Selected References</h4>
+                                <ul>
+                                    <li>Bloch, J. (2018). <em>Effective Java</em>. 3rd ed. Addison-Wesley.</li>
+                                    <li>Friesen, J. (2024). <em>Learn Java for Android Development</em>. Apress.</li>
+                                    <li>Kamalmeet Singh, Ianculescu, A. and Lucian-Paul Torje (2018). <em>Java Design Patterns and Architecture</em>. Packt Publishing.</li>
+                                    <li>Malhar Lathkar (2023). <em>FastAPI Cookbook</em>. Packt Publishing.</li>
+                                    <li>Puig, A. (2024). <em>Spring Boot 3 Recipes</em>. Apress.</li>
+                                    <li>Voron, F. (2023). <em>Building Data Science Applications with FastAPI</em>. Packt Publishing.</li>
+                                    <li>Yang, J., Milanova, A. and Hirzel, M. (2022). Type Inference for Python. <em>ACM SIGPLAN</em>. doi:10.1145/3563340.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <!-- ════════════════════════════════════════════
+                         PART B
+                        ════════════════════════════════════════════ -->
+                        <div class="part-b">
+
+                            <div class="u12-part-heading u12-ph-b">
+                                <span class="u12-part-pill u12-pill-b">Part B</span>
+                                <h2>Presentation: <em>Building Responsible AI</em><br>Innovation, Ethics &amp; Security</h2>
+                            </div>
+
+                            <p class="section-label">Slide Deck Overview</p>
+                            <p class="prose">A 10-slide, evidence-based presentation addressing: <em>"Emerging
+                                technologies such as AI introduce significant ethical and security risks — critically evaluate
+                                AI and discuss how enterprises can balance innovation with security and ethical
+                                considerations."</em>
+                            </p>
+
+                            <div class="pdf-embed">
+                                <iframe src="/eportfolio/assets/files/AI presentation - FINAL.pdf"
+                                        width="100%"
+                                        height="700px"
+                                        title="Building Responsible AI: Innovation, Ethics and Security">
+                                    <p>Your browser does not support embedded PDFs.
+                                       <a href="/eportfolio/assets/files/AI presentation - FINAL.pdf">Download the slides here</a>.</p>
+                                </iframe>
+                            </div>
+
+                            <div class="u12-slides">
+                                <div class="u12-slide">
+                                    <div class="u12-slide-n">Slide 01</div>
+                                    <h4>Title</h4>
+                                    <p>Building Responsible AI: Innovation, Ethics and Security</p>
+                                </div>
+                                <div class="u12-slide">
+                                    <div class="u12-slide-n">Slide 02</div>
+                                    <h4>Overview</h4>
+                                    <p>$1.8T global AI market by 2030. Six-section roadmap: promise vs responsibility</p>
+                                </div>
+                                <div class="u12-slide">
+                                    <div class="u12-slide-n">Slide 03</div>
+                                    <h4>Technical Overview</h4>
+                                    <p>ML, NLP, Deep Learning, Computer Vision — foundations of modern AI systems</p>
+                                </div>
+                                <div class="u12-slide">
+                                    <div class="u12-slide-n">Slide 04</div>
+                                    <h4>Practical Applications</h4>
+                                    <p>DeepMind AKI (12.4% → 3.3%), IndexGPT, chatbots, Fortune 500 HR tools</p>
+                                </div>
+                                <div class="u12-slide">
+                                    <div class="u12-slide-n">Slide 05</div>
+                                    <h4>Ethical Challenges</h4>
+                                    <p>Algorithmic bias, privacy violations, black-box opacity, job displacement</p>
+                                </div>
+                                <div class="u12-slide">
+                                    <div class="u12-slide-n">Slide 06</div>
+                                    <h4>Security Risks</h4>
+                                    <p>Threat pyramid: data poisoning → adversarial attacks → model theft → deepfakes</p>
+                                </div>
+                                <div class="u12-slide">
+                                    <div class="u12-slide-n">Slide 07</div>
+                                    <h4>Regulatory Frameworks</h4>
+                                    <p>GDPR right to explanation, EU AI Act risk tiers, NIST AI RMF voluntary framework</p>
+                                </div>
+                                <div class="u12-slide">
+                                    <div class="u12-slide-n">Slide 08</div>
+                                    <h4>Case Studies</h4>
+                                    <p>Amazon bias (2018), Microsoft Tay manipulation, Facebook Deepfake Challenge</p>
+                                </div>
+                                <div class="u12-slide">
+                                    <div class="u12-slide-n">Slide 09</div>
+                                    <h4>Path Forward</h4>
+                                    <p>Ethics and security must co-evolve with innovation; governance must be built-in</p>
+                                </div>
+                                <div class="u12-slide">
+                                    <div class="u12-slide-n">Slide 10</div>
+                                    <h4>References</h4>
+                                    <p>10+ peer-reviewed and institutional sources including Bommasani, Russell &amp; Norvig, Rudin, NIST</p>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <!-- ── Reflection ─────────────────────────────── -->
+                            <p class="section-label">Overall Reflection</p>
+                            <div class="su-qa">
+                                <div class="su-qi">
+                                    <p class="su-qq">What did implementing both languages reveal?</p>
+                                    <p class="su-qa-a">The most surprising finding was the performance result: Java's
+                                    0.001s vs Python's 0.002s is a negligible real-world difference, yet Java is
+                                    2.16× more verbose. This challenged the assumption that compiled, statically-typed
+                                    languages always win on performance. For I/O-bound chatbot applications, the
+                                    framework's async architecture matters more than language-level execution speed.
+                                    The practical takeaway: language choice should be driven by team expertise,
+                                    security requirements, and operational context — not by performance benchmarks
+                                    alone.</p>
+                                </div>
+                                <div class="su-qi">
+                                    <p class="su-qq">How did the chatbot connect Parts A and B?</p>
+                                    <p class="su-qa-a">Implementing an AI chatbot for Part A and then critically
+                                    evaluating AI risks for Part B created an unusual and productive tension. I built
+                                    the technology and immediately had to analyse its vulnerabilities. The adversarial
+                                    attack and data poisoning risks discussed in the presentation are directly
+                                    applicable to the chatbot's intent-matching logic — a sufficiently crafted input
+                                    could potentially manipulate the regex-based Rule engine. This made the security
+                                    analysis in the presentation feel earned rather than abstract.</p>
+                                </div>
+                                <div class="su-qi">
+                                    <p class="su-qq">What did the presentation format demand?</p>
+                                    <p class="su-qa-a">Compressing a 20-minute spoken argument into 10 slides
+                                    required deciding what the slides were for — they are not the argument, they
+                                    are anchors for the argument. The most challenging slide to design was the
+                                    security pyramid (Slide 6): layering four threat types in ascending impact order
+                                    forced a structural decision about which risk is foundational and which is
+                                    most visible. Data poisoning at the base (invisible, systemic) and deepfakes
+                                    at the apex (highly visible, public-facing) was a deliberate choice that the
+                                    transcript then had to justify.</p>
+                                </div>
+                                <div class="su-qi">
+                                    <p class="su-qq">What would I extend if given more time?</p>
+                                    <p class="su-qa-a">For Part A, I would add load testing results at higher
+                                    concurrency (100+ simultaneous users) where the async/threading difference
+                                    between FastAPI and Spring Boot becomes meaningful, and where Python's GIL
+                                    becomes a genuine constraint. For Part B, I would extend the case study
+                                    analysis to include the EU AI Act's first enforcement actions — the regulation
+                                    came into force in 2024, and its practical impact on enterprise AI governance
+                                    is now observable, not speculative.</p>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="su-ref">
+                                <h4>Part B — Selected References</h4>
+                                <ul>
+                                    <li>Bonney, K. et al. (2024). The impact of AI on the workforce. <em>Economics Letters</em>, 244, p.111971. doi:10.1016/j.econlet.2024.111971.</li>
+                                    <li>Cadwalladr, C. and Graham-Harrison, E. (2018). Cambridge Analytica. <em>The Guardian</em>.</li>
+                                    <li>Dastin, J. (2018). Amazon Scraps Secret AI Recruiting Tool. <em>Reuters</em>.</li>
+                                    <li>Girdhar, R., Hong, R. and Moore, A. (2023). Adversarial Attacks on AI Systems. <em>CVPR 2023</em>.</li>
+                                    <li>Grand View Research (2023). <em>AI Market Size &amp; Forecast Report</em>.</li>
+                                    <li>Liang, B. et al. (2024). Model Extraction Attacks and Defences. <em>IEEE S&amp;P 2024</em>.</li>
+                                    <li>Ljubiša Metikoš and Ausloos, J. (2025). GDPR and AI Explainability. <em>Computer Law &amp; Security Review</em>.</li>
+                                    <li>Momeni, F. (2024). Deepfakes and Political Manipulation. <em>Journal of Information Security</em>.</li>
+                                    <li>NIST (2023). <em>AI Risk Management Framework 1.0</em>. National Institute of Standards and Technology.</li>
+                                    <li>Rudin, C. (2019). Stop explaining black box machine learning models. <em>Nature Machine Intelligence</em>, 1, pp.206–215.</li>
+                                    <li>Russell, S. and Norvig, P. (2020). <em>Artificial Intelligence: A Modern Approach</em>. 4th ed. Pearson.</li>
+                                    <li>Schuett, J. (2022). Deep dive into the EU AI Act. <em>Foundation Model Regulation</em>. arXiv:2210.02667.</li>
+                                    <li>Yao, Y. et al. (2024). Data Poisoning in Large Language Models. <em>ACL 2024</em>.</li>
+                                </ul>
+                            </div>
+
+                        </div>
                     </div>
 
-             </div>
+                </div>
             </div>
         </section>
 
-                <!-- Footer -->
+        <!-- Footer -->
         <footer id="footer" class="wrapper style1-alt">
             <div class="inner">
                 <ul class="menu">
